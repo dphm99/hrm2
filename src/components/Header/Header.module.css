@@ -11,8 +11,17 @@
     width: 100%;
     background-color: #bf202e;
 }
+.topHeader ul {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon li img{
+    width: 2rem;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
 .headerBox{
-    background: rgba(105, 105, 105, 0.3);
+    background: rgba(105, 105, 105, 0.3 );
 }
 .header{
     display: flex;
@@ -23,9 +32,9 @@
 .headerMenu {
     display: flex; 
     justify-content: space-between;
-    
+    color: #fff;
 }
 
-.headerLogo{
-    
+.logoImg{
+    width: 10rem;
 }
