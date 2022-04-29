@@ -1,4 +1,24 @@
 .footerBox{
     height: 635px;
     background-color: #bf202e;
+    /* position: absolute; */
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    padding-top: 45px;
+}
+
+.footerContainer {
+    padding-bottom: 100px;
+    border-bottom: 1px solid #fff;
+}
+
+.logoImg {
+    width: 10rem;
+}
+
+.fb {
+    height: 200px;
+    width: 200px;
+    z-index: 5;
 }

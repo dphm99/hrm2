@@ -1,12 +1,13 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   return (
     <>
       <Header />
-      <h1 style={{padding: "40px"}}>abc</h1>
+      <Banner />
       <Footer />
     </>
   );
