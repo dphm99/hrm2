@@ -1,0 +1,31 @@
+
+.headerWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.topHeader {
+    height: 40px;
+    width: 100%;
+    background-color: #bf202e;
+}
+.headerBox{
+    background: rgba(105, 105, 105, 0.3);
+}
+.header{
+    display: flex;
+    height: 100px;
+    align-items: center;
+
+}
+.headerMenu {
+    display: flex; 
+    justify-content: space-between;
+    
+}
+
+.headerLogo{
+    
+}
