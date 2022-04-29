@@ -1,23 +1,23 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logomau.png";
-import fbIcon from "../../assets/svg/FacebookMini-Icon.svg"
-import inIcon from "../../assets/svg/FacebookMini-Icon.svg"
-import liIcon from "../../assets/svg/FacebookMini-Icon.svg"
-import yoIcon from "../../assets/svg/FacebookMini-Icon.svg"
-import zaIcon from "../../assets/svg/FacebookMini-Icon.svg"
+import facebook from "../../assets/img/icon-svg/facebook.svg";
+import instagram from "../../assets/img/icon-svg/instagram.svg";
+import linkedin from "../../assets/img/icon-svg/linkedin.svg"
+import youtube from "../../assets/img/icon-svg/youtube.svg";
+import zalo from "../../assets/img/icon-svg/zalo.svg"
 
 
 function Header() {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
-        <ul className={styles.icon}>
-          <li><img src={fbIcon} alt="" /></li>
-          <li><img src={inIcon} alt="" /></li>
-          <li><img src={liIcon} alt="" /></li>
-          <li><img src={yoIcon} alt="" /></li>
-          <li><img src={zaIcon} alt="" /></li>
+        <ul className={`${styles.icon} container`}>
+          <li><img src={facebook} className={styles.iconSVG} alt="" /></li>
+          <li><img src={instagram} className={styles.iconSVG} alt="" /></li>
+          <li><img src={linkedin} className={styles.iconSVG} alt="" /></li>
+          <li><img src={youtube} className={styles.iconSVG} alt="" /></li>
+          <li><img src={zalo} className={styles.iconSVG} alt="" /></li>
         </ul>
       </div>
       <div className={styles.headerBox}>
