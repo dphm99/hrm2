@@ -1,0 +1,44 @@
+.jobCategory {
+  margin-bottom: 2rem;
+}
+.jobCategoryGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.jobCategoryItem {
+  width: 170px;
+  height: 170px;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.jobCategoryItem.active {
+  background-color: #bf202e;
+  color: #fff;
+}
+.jobCategoryItem.active .jobCategoryImg {
+  filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(183deg)
+    brightness(92%) contrast(111%);
+}
+.jobCategoryImg {
+  margin-top: 10px;
+
+  width: 60px;
+  height: 60px;
+}
+
+.jobCategoryName {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.jobCategoryQuantity{
+    margin-bottom: 8px;
+}
