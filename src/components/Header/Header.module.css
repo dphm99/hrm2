@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 }
 
 .topHeader {
@@ -30,14 +31,13 @@
 }
 
 .headerBox{
-    background: rgba(105, 105, 105, 0.3 );
+    background: rgba(255, 255, 255, 0.5 );
 }
 
 .header{
     display: flex;
     height: 100px;
     align-items: center;
-
 }
 
 .headerMenu {
