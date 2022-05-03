@@ -1,40 +1,65 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logomau.png";
-import facebook from "../../assets/img/icon-svg/facebook.svg";
-import instagram from "../../assets/img/icon-svg/instagram.svg";
-import linkedin from "../../assets/img/icon-svg/linkedin.svg"
-import youtube from "../../assets/img/icon-svg/youtube.svg";
-import zalo from "../../assets/img/icon-svg/zalo.svg"
-
+// import fbIcon from "../../assets/svg/FacebookMini Icon.svg";
+// import inIcon from "../../assets/svg/InstagramMini Icon.svg";
+// import liIcon from "../../assets/svg/linkedin.svg";
+// import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
+// import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
 
 function Header() {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
-        <ul className={`${styles.icon} container`}>
-          <li><img src={facebook} className={styles.iconSVG} alt="" /></li>
-          <li><img src={instagram} className={styles.iconSVG} alt="" /></li>
-          <li><img src={linkedin} className={styles.iconSVG} alt="" /></li>
-          <li><img src={youtube} className={styles.iconSVG} alt="" /></li>
-          <li><img src={zalo} className={styles.iconSVG} alt="" /></li>
+        <ul className={styles.icon}>
+          {/* <li><img src={fbIcon} alt="" /></li>
+          <li><img src={inIcon} alt="" /></li>
+          <li><img src={liIcon} alt="" /></li>
+          <li><img src={yoIcon} alt="" /></li>
+          <li><img src={zaIcon} alt="" /></li> */}
+
+          <li>
+            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
+          </li>
+          <li>
+            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
+          </li>
+          <li>
+            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
+          </li>
+          <li>
+            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
+          </li>
+          <li>
+            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
+          </li>
         </ul>
       </div>
       <div className={styles.headerBox}>
-          <div className="container">
-              <div className={`${styles.header} row`}>
-                <a href="" className={`${styles.headerLogo} col-3`}>
-                  <img src={logo} alt="" className={styles.logoImg}/>
-                </a>
-                <ul className={`${styles.headerMenu} col-9`}>
-                  <li>TRANG CHỦ</li>
-                  <li>VỊ TRÍ TUYỂN DỤNG</li>
-                  <li>ĐỊNH HƯỚNG NGHỀ NGHIỆP</li>
-                  <li>ĐÀO TẠO</li>
-                  <li>TRỢ GIÚP</li>
-                </ul>
-              </div>
+        <div className="container">
+          <div className={`${styles.header} row`}>
+            <a href="/" className={`${styles.headerLogo} col-3`}>
+              <img src={logo} alt="" className={styles.logoImg} />
+            </a>
+            <ul className={`${styles.headerMenu} col-9`}>
+              <li>
+                <a href="/">TRANG CHỦ</a>
+              </li>
+              <li>
+                <a href="/">VỊ TRÍ TUYỂN DỤNG</a>
+              </li>
+              <li>
+                <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
+              </li>
+              <li>
+                <a href="/">ĐÀO TẠO</a>
+              </li>
+              <li>
+                <a href="/">TRỢ GIÚP</a>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
     </div>
   );
