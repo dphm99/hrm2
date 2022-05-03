@@ -4,12 +4,14 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import JobBox from "./components/JobBox/JobBox";
 import Career from "./components/Career/Career";
+import Sliders from "./components/Slider/Slider";
 
 function App() {
   return (
     <>
       <Header />
-      <Banner />
+      <Sliders />
+      {/* <Banner /> */}
       <JobBox />
       <Career />
       <Footer />

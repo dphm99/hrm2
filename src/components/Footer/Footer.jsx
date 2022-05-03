@@ -13,7 +13,7 @@ function Footer() {
         <div className={`${styles.list} row mt-5`}>
           <div className="col-5">
             <div className={styles.footerTitle}>
-              CÔNG TY CỔ PHẦN DILIGO HOLDINGS
+              <h5>CÔNG TY CỔ PHẦN DILIGO HOLDINGS</h5>
             </div>
             <div className={styles.footerContent}>
               <ul>
@@ -24,7 +24,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-2">
-            <div className={styles.footerTitle}>VỀ CÔNG TY</div>
+            <div className={styles.footerTitle}><h5>VỀ CÔNG TY</h5></div>
             <div className={styles.footerContent}>
               <ul>
                 <li>Vị trí tuyển dụng</li>
@@ -38,7 +38,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-2">
-            <div className={styles.footerTitle}>HỖ TRỢ</div>
+            <div className={styles.footerTitle}><h5>HỖ TRỢ</h5></div>
             <div className={styles.footerContent}>
               <ul>
                 <li>Kiểm tra kết quả ứng tuyển</li>
@@ -52,7 +52,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-3">
-            <div className={styles.footerTitle}>FANPAGE TUYỂN DỤNG</div>
+            <div className={styles.footerTitle}><h5 style={{textAlign: "right"}}>FANPAGE TUYỂN DỤNG</h5></div>
             <div className={styles.footerContent}>
             </div>
           </div>
