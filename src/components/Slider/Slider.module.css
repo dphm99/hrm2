@@ -1,0 +1,10 @@
+.banner img {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    display: table-cell;
+    vertical-align: bottom;
+    object-fit: cover;
+}
