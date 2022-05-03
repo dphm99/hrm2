@@ -61,6 +61,45 @@ const jobCategory = [
     quantity: "100 việc làm",
   },
 ];
+const jobLists = [
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  },
+  {
+    title: "Nhân viên kinh doanh",
+    quantity: 57
+  }
+]
+
 
 function JobBox() {
   return (
@@ -81,8 +120,31 @@ function JobBox() {
           ))}
         </ul>
       </div>
+      <div className={`d-flex ${styles.jobList}`}> 
+      
+        {jobLists.map((job, index) => (
+         
+            <JobList
+              title={job.title}
+              quantity={job.quantity}
+            />
+            ))}
+            
+      </div>
     </div>
   );
+}
+function JobList(props) {
+  return (
+    <div
+      key={props.index}
+      className={`${styles.JobList}`}
+    >
+      <div className={styles.jobListItem}>
+        <h5>{props.title} ({props.quantity} vị trí) ...</h5>
+      </div>
+    </div>
+  )
 }
 
 export default JobBox;
