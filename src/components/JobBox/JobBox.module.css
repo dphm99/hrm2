@@ -1,11 +1,20 @@
 .jobCategory {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 .jobCategoryGroup {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
+}
+
+.jobRef{
+  margin-top: 90px;
+}
+.title h3{
+  text-transform: uppercase;
+  margin-bottom: 46px;
+
 }
 
 .jobCategoryItem {
@@ -41,6 +50,9 @@
 .jobCategoryQuantity{
     margin-bottom: 8px;
 }
+.JobList{
+  margin-right: 0;
+}
 
 .jobListItem{
   background-color: #bf202e;
@@ -49,4 +61,9 @@
 }
 .jobListTitle{
   margin: 20px 0;
+}
+.jobListTitle h5{
+  padding: 0 50px;
+  font-size: 16px;
+  color: #fff;
 }
