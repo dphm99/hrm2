@@ -15,10 +15,11 @@ function Sliders() {
     slidesToScroll: 1,
   };
 
-  let renderSlides = [1, 2, 3, 4, 5, 6, 7, 8].map((ele, index) => {
+  let renderSlides = [1, 2, 3].map((ele, index) => {
     return (
       <div className={styles.banner} key={index}>
         <img style={{width:"100vw",height:"80vh"}} src={demoImage} alt="" />
+        <div className={styles.overlay}></div>
       </div>
     );
   });

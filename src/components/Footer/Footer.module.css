@@ -22,3 +22,22 @@
     width: 200px;
     z-index: 5;
 }
+
+.footerContent ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding-right: 0;
+
+}
+
+ul li:hover a{
+    text-decoration: underline;
+}
+
+.listItem {
+    padding-right: 0!important;
+}
+
+.listItem:last-child {
+    padding-left: 0;
+}
