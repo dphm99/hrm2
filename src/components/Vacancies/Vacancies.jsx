@@ -1,5 +1,6 @@
-import styles from "./Vancancies.module.css";
-import { useState } from "react";
+import styles from "./Vancancies.module.css"
+import { useState} from "react"
+import formatNumber from "../extensions/formatNumber"
 import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
 import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
@@ -99,25 +100,6 @@ function Vancancies() {
         </button>
       </div>
     </div>
-  );
-}
-function formatNumber(a, b, c, d) {
-  var e = isNaN((b = Math.abs(b))) ? 2 : b;
-  b = void 0 === c ? "," : c;
-  d = void 0 === d ? "," : d;
-  c = 0 > a ? "-" : "";
-  var g = parseInt((a = Math.abs(+a || 0).toFixed(e))) + "",
-    n = 3 < (n = g.length) ? n % 3 : 0;
-  return (
-    c +
-    (n ? g.substr(0, n) + d : "") +
-    g.substr(n).replace(/(\d{3})(?=\d)/g, "$1" + d) +
-    (e
-      ? b +
-        Math.abs(a - g)
-          .toFixed(e)
-          .slice(2)
-      : "")
   );
 }
 function VancaniesItem({ props, index }) {
