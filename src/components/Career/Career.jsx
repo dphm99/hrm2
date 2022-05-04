@@ -32,7 +32,7 @@ function Career() {
     },
   ];
   const settings = {
-    //   autoplay:true,
+      // autoplay:true,
     dots: true,
     infinite: true,
     speed: 500,
