@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const Recruit = lazy(() => import("./pages/Recruit"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
+const JobPosition = lazy(() => import("./pages/JobPosition/JobPosition"));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
           <Route exact path="/" component={App} />
           {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
+          <Route path="/vi-tri-tuyen-dung" component={JobPosition} />
           <Route path="/*" component={PageNotFound} />
         </Switch>
       </Suspense>

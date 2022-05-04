@@ -46,7 +46,7 @@ function Header() {
                 <a href="/">TRANG CHỦ</a>
               </li>
               <li>
-                <a href="/">VỊ TRÍ TUYỂN DỤNG</a>
+                <a href="/vi-tri-tuyen-dung">VỊ TRÍ TUYỂN DỤNG</a>
               </li>
               <li>
                 <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
