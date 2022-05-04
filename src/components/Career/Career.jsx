@@ -7,27 +7,27 @@ import Slider from "react-slick";
 function Career() {
   const cardList = [
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
-      text: "Một số cách viết CV cho sinh viên mới ra trường",
+      text: "Một số cách viết CV cho sinh viên mới ra trường...",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
   ];
@@ -87,7 +87,7 @@ function Career() {
             <div className={styles.Career__tikitiki}>
               <p className={styles.Career__tiki}>
                 {props.text}
-                {/* <h8 className={styles.Career__h8}>Đọc thêm</h8> */}
+                <h8 className={styles.Career__h8}>Đọc thêm</h8>
               </p>
             </div>
             <div class="d-flex justify-content-between align-items-center">
