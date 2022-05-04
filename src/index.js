@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { RecruitProvider } from "./components/contexts/ContextRecuit";
+import { BlogProvider } from "./components/contexts/ContextBlog";
 import Loading from "./components/Loading/Loading";
 
 import './index.css';
@@ -16,6 +17,7 @@ const rootElement = ReactDOM.createRoot(document.getElementById('root'));
 rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
+    <BlogProvider>
       <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={App} />
@@ -24,6 +26,7 @@ rootElement.render(
           <Route path="/*" component={PageNotFound} />
         </Switch>
       </Suspense>
+      </BlogProvider>
     </RecruitProvider>
   </BrowserRouter>
 );
