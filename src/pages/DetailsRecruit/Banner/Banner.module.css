@@ -9,7 +9,7 @@
 }
 
 .Banner_flex {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .Banner_h6 {
@@ -26,7 +26,7 @@
 }
 
 .Banner_ul {
-    margin-top: 15px;
+    margin-top: -10px;
 }
 
 .Banner_button {
@@ -70,4 +70,50 @@
 
 img {
     width:5%;
+}
+
+.Banner_hh6 {
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.Banner_uul {
+    margin-left: 10px;
+}
+
+.Banner_uul p {
+    margin-top: -9px;
+}
+
+.Banner_hh4 {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.Banner_select {
+    width: 38%;
+    margin-left: 15px;
+    height: 52px;
+    margin-bottom: 15px;
+}
+
+.Banner_checkbox {
+    margin-top: 15px;
+}
+
+.Banner_check {
+    margin-left: 15px;
+}
+
+.Banner__btoon {
+    text-align: center;
+}
+
+.Banner__btn {
+    box-shadow: 1px 2px 3px;
+    background-color: #fff;
+    font-style: normal;
+    border-color: #fff;
 }
