@@ -7,26 +7,32 @@ import Slider from "react-slick";
 function Career() {
   const cardList = [
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
     {
+      title:"Cách để viết CV",
       text: "Một số cách viết CV cho sinh viên mới ra trường",
       img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
     },
@@ -70,7 +76,7 @@ function Career() {
 
   const CardItem = (props) => {
     return (
-      <div class="col">
+      <div className="col">
         <div className={styles.Career__card}>
           <div className={styles.Career__img}>
             <div>
@@ -80,9 +86,9 @@ function Career() {
             </div>
           </div>
 
-          <div className>
+          <div className={styles.Wrapper}>
             <div className={styles.Career__titlename}>
-              <h5 className={styles.Career__title}>Cách để viết CV</h5>
+              <h5 className={styles.Career__title}>{props.title}</h5>
             </div>
             <div className={styles.Career__tikitiki}>
               <p className={styles.Career__tiki}>
@@ -90,8 +96,8 @@ function Career() {
                 {/* <h8 className={styles.Career__h8}>Đọc thêm</h8> */}
               </p>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group"></div>
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="btn-group"></div>
             </div>
           </div>
         </div>
@@ -104,10 +110,10 @@ function Career() {
         <div className={styles.Career__h4}>
           <h4>ĐỊNH HƯỚNG NGHỀ NGHỆP</h4>
         </div>
-        <div class="row">
+        <div className="row">
           <Slider {...settings}>
             {cardList.map((e, index) => {
-              return <CardItem src={e.img} text={e.text} key={index} />;
+              return <CardItem title={e.title} src={e.img} text={e.text} key={index} />;
             })}
           </Slider>
         </div>

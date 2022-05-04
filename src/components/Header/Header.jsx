@@ -39,25 +39,27 @@ function Header() {
         <div className="container">
           <div className={`${styles.header} row`}>
             <a href="/" className={`${styles.headerLogo} col-3`}>
-              <img src={logo} alt="" className={styles.logoImg} />
+              <img src={logo} alt="" className={styles.logoImg}/>
             </a>
-            <ul className={`${styles.headerMenu} col-9`}>
-              <li>
-                <a href="/">TRANG CHỦ</a>
-              </li>
-              <li>
-                <a href="/">VỊ TRÍ TUYỂN DỤNG</a>
-              </li>
-              <li>
-                <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
-              </li>
-              <li>
-                <a href="/">ĐÀO TẠO</a>
-              </li>
-              <li>
-                <a href="/">TRỢ GIÚP</a>
-              </li>
-            </ul>
+            <div className={"col-9"}>
+              <ul className={`${styles.headerMenu}`}  style={{paddingRight:"10px!important"}}>
+                <li>
+                  <a href="/">TRANG CHỦ</a>
+                </li>
+                <li>
+                  <a href="/">VỊ TRÍ TUYỂN DỤNG</a>
+                </li>
+                <li>
+                  <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
+                </li>
+                <li>
+                  <a href="/">ĐÀO TẠO</a>
+                </li>
+                <li>
+                  <a href="/">TRỢ GIÚP</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
