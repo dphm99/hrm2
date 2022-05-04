@@ -28,7 +28,6 @@
 }
 .jobCategoryImg {
   margin-top: 10px;
-
   width: 60px;
   height: 60px;
 }
@@ -41,4 +40,13 @@
 
 .jobCategoryQuantity{
     margin-bottom: 8px;
+}
+
+.jobListItem{
+  background-color: #bf202e;
+  padding: 0 !important ;
+  margin: 0;
+}
+.jobListTitle{
+  margin: 20px 0;
 }
