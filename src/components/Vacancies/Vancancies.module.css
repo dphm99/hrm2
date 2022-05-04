@@ -59,7 +59,7 @@
 }
 .vancanciesText{
   overflow: hidden;
-   
+   margin-top: 16px;
 }
 .containerImage{
     padding: 0 13px;
@@ -68,7 +68,7 @@
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 .vancanciesBtn{
     display: block;

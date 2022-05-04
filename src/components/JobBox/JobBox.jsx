@@ -120,17 +120,17 @@ function JobBox() {
           ))}
         </ul>
       </div>
-      <div className={`d-flex ${styles.jobList}`}> 
-      
-        {jobLists.map((job, index) => (
-         
+      <div  className={styles.jobListItem}>
+      <div className={`row`}>  
+        {jobLists.map((job, index) => ( 
             <JobList
+             key={index}
               title={job.title}
               quantity={job.quantity}
             />
-            ))}
-            
+            ))}  
       </div>
+    </div>
     </div>
   );
 }
@@ -138,9 +138,9 @@ function JobList(props) {
   return (
     <div
       key={props.index}
-      className={`${styles.JobList}`}
+      className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
     >
-      <div className={styles.jobListItem}>
+      <div className={styles.jobListTitle}>
         <h5>{props.title} ({props.quantity} vị trí) ...</h5>
       </div>
     </div>

@@ -42,8 +42,11 @@
     margin-bottom: 8px;
 }
 
-.jobList{
+.jobListItem{
   background-color: #bf202e;
-  margin: 0 -12px;
-  flex-wrap: wrap;
+  padding: 0 !important ;
+  margin: 0;
+}
+.jobListTitle{
+  margin: 20px 0;
 }
