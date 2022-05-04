@@ -1,10 +1,19 @@
 .banner img {
-    display: inline-block;
+  display: inline-block;
+}
+
+.banner img:after {
+  content: "";
+  background: rgba(145, 143, 143, 0.9);
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 0;
 }
 
 img {
-    width: 100%;
-    display: table-cell;
-    vertical-align: bottom;
-    object-fit: cover;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  object-fit: cover;
 }

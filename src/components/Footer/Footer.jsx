@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/img/logo.png";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 function Footer() {
   return (
@@ -11,47 +12,47 @@ function Footer() {
         </div>
 
         <div className={`${styles.list} row mt-5`}>
-          <div className="col-5">
+          <div className={`${styles.listItem} col-4`}>
             <div className={styles.footerTitle}>
               <h5>CÔNG TY CỔ PHẦN DILIGO HOLDINGS</h5>
             </div>
             <div className={styles.footerContent}>
               <ul>
-                <li>Văn phòng miền Bắc</li>
-                <li>Văn phòng miền Nam</li>
-                <li>Nhà máy DILIGO HOLDINGS</li>
+                <li><a href=""><ArrowRightIcon/>Văn phòng miền Bắc</a></li>
+                <li><a href=""><ArrowRightIcon/>Văn phòng miền Nam</a></li>
+                <li><a href=""><ArrowRightIcon/>Nhà máy DILIGO HOLDINGS</a></li>
               </ul>
             </div>
           </div>
-          <div className="col-2">
+          <div className={`${styles.listItem} col-3`}>
             <div className={styles.footerTitle}><h5>VỀ CÔNG TY</h5></div>
             <div className={styles.footerContent}>
               <ul>
-                <li>Vị trí tuyển dụng</li>
-                <li>Định hướng nghề nghiệp</li>
-                <li>Đào tạo</li>
-                <li>Về chúng tôi</li>
-                <li>Diligo.vn</li>
-                <li>Lipzo.com</li>
-                <li>Nivahealthcare.com</li>
+                <li><a href=""><ArrowRightIcon/>Vị trí tuyển dụng</a></li>
+                <li><a href=""><ArrowRightIcon/>Định hướng nghề nghiệp</a></li>
+                <li><a href=""><ArrowRightIcon/>Đào tạo</a></li>
+                <li><a href=""><ArrowRightIcon/>Về chúng tôi</a></li>
+                <li><a href=""><ArrowRightIcon/>Diligo.vn</a></li>
+                <li><a href=""><ArrowRightIcon/>Lipzo.com</a></li>
+                <li><a href=""><ArrowRightIcon/>Nivahealthcare.com</a></li>
               </ul>
             </div>
           </div>
-          <div className="col-2">
+          <div className={`${styles.listItem} col-3`}>
             <div className={styles.footerTitle}><h5>HỖ TRỢ</h5></div>
             <div className={styles.footerContent}>
               <ul>
-                <li>Kiểm tra kết quả ứng tuyển</li>
-                <li>Tìm việc gần bạn</li>
-                <li>Câu hỏi thường gặp</li>
-                <li>Quy trình tuyển dụng</li>
-                <li>Dành cho nhân viên cũ</li>
-                <li>Nhà phân phối sắp khai trương</li>
-                <li>Siêu thị sắp khai trương</li>
+                <li><a href=""><ArrowRightIcon/>Kiểm tra kết quả ứng tuyển</a></li>
+                <li><a href=""><ArrowRightIcon/>Tìm việc gần bạn</a></li>
+                <li><a href=""><ArrowRightIcon/>Câu hỏi thường gặp</a></li>
+                <li><a href=""><ArrowRightIcon/>Quy trình tuyển dụng</a></li>
+                <li><a href=""><ArrowRightIcon/>Dành cho nhân viên cũ</a></li>
+                <li><a href=""><ArrowRightIcon/>Nhà phân phối sắp khai trương</a></li>
+                <li><a href=""><ArrowRightIcon/>Siêu thị sắp khai trương</a></li>
               </ul>
             </div>
           </div>
-          <div className="col-3">
+          <div className={`${styles.listItem} col-2`}>
             <div className={styles.footerTitle}><h5 style={{textAlign: "right"}}>FANPAGE TUYỂN DỤNG</h5></div>
             <div className={styles.footerContent}>
             </div>
