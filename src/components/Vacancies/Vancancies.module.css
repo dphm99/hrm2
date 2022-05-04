@@ -1,0 +1,90 @@
+.vancancieImage {
+    width: 64px;
+    height: 60px;
+
+}
+.active .vancancieImage{
+    filter:invert(30%) brightness(0.9) sepia(1) hue-rotate(-59deg) saturate(5)
+
+}
+.active .vancancieTitle{
+    color:#bf202e;
+}
+.active .vancanciesGroup{
+    border: 1px solid #bf202e;
+}
+.title {
+    margin-bottom: 44px;
+    text-transform: uppercase;
+}
+
+.vancanciesGroup {
+    align-items: center;
+}
+.containerItem:hover{
+    cursor: pointer;
+}
+
+.vancancieAddress{
+    margin: 0;
+  
+}
+.vancancieAddress,.vancancieSalary{
+    font-size: 16px;
+    font-style: italic;
+    text-overflow: ellipsis; 
+
+}
+
+.vancancieTitle{
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap; 
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+.vancancieTitle,.vancancieImage,.vancanciesGroup{
+    transition:0.25s ease all;
+}
+
+.containerItem{
+    padding-bottom:24px;
+    transition: 0.2s linear all; 
+}
+.vancanciesGroup {
+    min-height: 107px;
+    border: 1px solid #000;
+    width: 100%;
+}
+.vancanciesText{
+  overflow: hidden;
+   margin-top: 16px;
+}
+.containerImage{
+    padding: 0 13px;
+}
+.vancancieSalary{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+.vancanciesBtn{
+    display: block;
+    margin: 0 auto; 
+    font-weight: 600;
+    box-shadow: 0 0 4px rgba(174, 174, 174, 0.4);
+    border: 1px solid rgba(174, 174, 174, 0.4);
+    background-color:#fff;
+    text-align: center;
+    padding: 8px 47px;
+}
+.overlay{
+    position: relative;
+    top: -34px;
+    background-color: #fff;
+    box-shadow: 0 -21px  10px rgba(250, 249, 249, 0.86) ;
+    margin-top: -24px;
+}
+

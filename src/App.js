@@ -6,14 +6,15 @@ import JobBox from "./components/JobBox/JobBox";
 import Career from "./components/Career/Career";
 import Sliders from "./components/Slider/Slider";
 
+import Vancancies from "./components/Vacancies/Vacancies"
 function App() {
   return (
     <>
       <Header />
-      <Sliders />
-      {/* <Banner /> */}
+      <Banner />
       <JobBox />
       <Career />
+      <Vancancies/>
       <Footer />
     </>
   );
