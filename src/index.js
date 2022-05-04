@@ -13,8 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobPosition = lazy(() => import("./pages/JobPosition/JobPosition"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = ReactDOM.createRoot(document.getElementById('root'));
+rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
       <Suspense fallback={<Loading />}>
@@ -27,6 +27,5 @@ root.render(
         </Switch>
       </Suspense>
     </RecruitProvider>
-  </BrowserRouter>,
-  root
+  </BrowserRouter>
 );
