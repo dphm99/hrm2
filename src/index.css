@@ -140,3 +140,10 @@ code {
 ul{
   padding: 0!important;
 }
+ul li{
+  padding: 0!important;
+}
+
+#root{
+  overflow: hidden;
+}

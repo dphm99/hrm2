@@ -61,6 +61,8 @@
 }
 .jobListTitle{
   margin: 20px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis!important;
 }
 .jobListTitle h5{
   padding: 0 50px;
