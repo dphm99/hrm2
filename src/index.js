@@ -9,6 +9,7 @@ import Loading from "./components/Loading/Loading";
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DetailsRecuit from './pages/DetailsRecruit/DetailsRecuit';
 
 // const Recruit = lazy(() => import("./pages/Recruit"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
@@ -21,6 +22,7 @@ rootElement.render(
       <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={App} />
+          <Route exact path="/tuyen-dung" component={DetailsRecuit} />
           {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
           <Route path="/*" component={PageNotFound} />

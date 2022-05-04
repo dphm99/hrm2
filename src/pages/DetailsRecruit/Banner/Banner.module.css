@@ -1,0 +1,119 @@
+.Banner {
+    width: 90%;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.Banner_h2 {
+    margin-bottom: 80px;
+}
+
+.Banner_flex {
+    margin-top: 0px;
+}
+
+.Banner_h6 {
+    display: flex;
+    margin-left: 140px;
+    margin-top: -21px;
+    color: black ;
+    font-size: 13px;
+}
+
+.Banner_li {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.Banner_ul {
+    margin-top: -10px;
+}
+
+.Banner_button {
+    text-align: center;
+    margin-top: 16px;
+}
+.Banner_button1 {
+    width: 87%;
+    font-size: 24px;
+    margin-bottom: 20px;
+    height: 65px;
+} 
+
+.Banner_link {
+    margin-left: 29px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.Banner_icon {
+    width: 100%;
+    font-size: 10px;
+}
+
+.Banner_copy {
+    border-bottom: 1px solid;
+    text-decoration: none;
+    color: black;
+}
+
+.Banner_Icon {
+    display: flex;
+    width: 117px;
+    margin-left: 200px;
+    margin-top: -28px;
+}
+
+.Banner_fb {
+    margin-left: 10px;
+}
+
+img {
+    width:5%;
+}
+
+.Banner_hh6 {
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.Banner_uul {
+    margin-left: 10px;
+}
+
+.Banner_uul p {
+    margin-top: -9px;
+}
+
+.Banner_hh4 {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.Banner_select {
+    width: 38%;
+    margin-left: 15px;
+    height: 52px;
+    margin-bottom: 15px;
+}
+
+.Banner_checkbox {
+    margin-top: 15px;
+}
+
+.Banner_check {
+    margin-left: 15px;
+}
+
+.Banner__btoon {
+    text-align: center;
+}
+
+.Banner__btn {
+    box-shadow: 1px 2px 3px;
+    background-color: #fff;
+    font-style: normal;
+    border-color: #fff;
+}
