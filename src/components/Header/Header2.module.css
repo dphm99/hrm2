@@ -1,0 +1,89 @@
+.Header2 {
+  height: 80px;
+  width: 100%;
+  background-color: #bf202e;
+}
+
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iconSVG {
+  width: 1rem;
+  filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(183deg)
+    brightness(92%) contrast(111%);
+  position: fixed;
+  top: 30px;
+}
+
+.footerTitle {
+  font-size: 50px;
+}
+
+.icon li img {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.header {
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+.headerMenu {
+  display: flex;
+  justify-content: space-between;
+  /* color: #fff; */
+  width: 55%;
+  margin-left: 160px;
+}
+
+.headerMenu li a {
+  color: #fff;
+  /* text-decoration: none; */
+}
+
+.headerMenuA {
+  text-decoration: none;
+}
+
+.headerMenu li:hover a {
+  text-decoration: underline;
+}
+
+.logoImg {
+  width: 10rem;
+  text-align: center;
+  margin-left: 200px;
+}
+
+.logoImg img {
+  color: #fff;
+}
+
+.Header3 {
+  height: 80px;
+  width: 100%;
+  background-color: rgb(41, 98, 114);
+}
+
+.Header3_name {
+  display: flex;
+  height: 90px;
+  align-items: center;
+}
+
+.Header3_name p {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 23px;
+}
+
+.header3_a {
+        color: gold;
+        text-decoration: none;
+}
