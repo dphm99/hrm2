@@ -5,7 +5,11 @@
 }
 
 .Career__h4 {
-  margin-bottom: 25px;
+  margin-top: 68px;
+  margin-bottom: 48px;
+}
+.Career__h4 h4 {
+  font-size: 30px !important;
 }
 
 .Career {
@@ -36,10 +40,10 @@
 }
 
 .Career__banner {
-    position: relative;
-    width: 100%;
-    height: 50%;
-  
+  position: relative;
+  width: 100%;
+  height: 50%;
+
   /* background-image: url('https://dulichvietnam.com.vn/du-lich-anh/wp-content/uploads/2020/04/ngon-ngu-anh-1.jpg'); */
 }
 
@@ -59,6 +63,7 @@
 }
 
 .Career_imge img {
+  height: 120px;
   object-fit: cover;
 }
 
@@ -67,8 +72,6 @@
   margin-left: 10px;
   margin-top: 8px;
 }
-
-
 
 .Career__tiki {
   font-size: 13px;
@@ -79,11 +82,11 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  
 }
 
 .Career__card {
   width: 300px;
+  height: 200px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -93,6 +96,13 @@
   background-clip: border-box;
   border: 2px solid rgba(0, 0, 0, 0.125);
   justify-content: space-between;
+}
+
+.Career__img{
+  height: 120px;
+}
+.Wrapper{
+  height: 80px;
 }
 
 .Career__banner img {
@@ -115,11 +125,11 @@
 
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 1023px) {
-    .Career__card {
-        width: 215px;
-    }
+  .Career__card {
+    width: 215px;
+  }
 
-    .Career__banner {
-        width: 100%;
-    }    
+  .Career__banner {
+    width: 100%;
+  }
 }

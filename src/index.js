@@ -13,8 +13,8 @@ import DetailsRecuit from './pages/DetailsRecruit/DetailsRecuit';
 // const Recruit = lazy(() => import("./pages/Recruit"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = ReactDOM.createRoot(document.getElementById('root'));
+rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
       <Suspense fallback={<Loading />}>
@@ -27,6 +27,5 @@ root.render(
         </Switch>
       </Suspense>
     </RecruitProvider>
-  </BrowserRouter>,
-  root
+  </BrowserRouter>
 );

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/img/logo.png";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Footer() {
   return (
@@ -18,9 +19,21 @@ function Footer() {
             </div>
             <div className={styles.footerContent}>
               <ul>
-                <li><a href=""><ArrowRightIcon/>Văn phòng miền Bắc</a></li>
-                <li><a href=""><ArrowRightIcon/>Văn phòng miền Nam</a></li>
-                <li><a href=""><ArrowRightIcon/>Nhà máy DILIGO HOLDINGS</a></li>
+                <li>
+                  <h7><LocationOnIcon/>Văn phòng miền Bắc</h7>
+                  <p>Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân Tảo, quận Bắc Từ Liêm, Hà Nội, VN</p>
+                  <a href="">Xem bản đồ</a>
+                </li>
+                <li>
+                  <h7><LocationOnIcon/>Văn phòng miền Nam</h7>
+                  <p>Số 25 Nguyễn Lương Bằng, Tân Phú, Quận 7, Tp.Hồ Chí Minh, VN</p>
+                  <a href="">Xem bản đồ</a>
+                  </li>
+                <li>
+                  <h7><LocationOnIcon/>Nhà máy DILIGO HOLDINGS</h7>
+                  <p>Lô CB-27.1 KCN Thuận Thành II, An Bình, Thuận Thành, Bắc Ninh</p>
+                  <a href="">Xem bản đồ</a>
+                  </li>
               </ul>
             </div>
           </div>
@@ -55,6 +68,18 @@ function Footer() {
           <div className={`${styles.listItem} col-2`}>
             <div className={styles.footerTitle}><h5 style={{textAlign: "right"}}>FANPAGE TUYỂN DỤNG</h5></div>
             <div className={styles.footerContent}>
+            <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftuyendungdiligo&tabs=timeline&width=220&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=719322076103425"
+                width="220"
+                height="331"
+                style={{ border: "none", overflow: "hidden" }}
+                scrolling="no"
+                frameBorder="0"
+                data-hide-cover="false"
+                data-show-facepile="false"
+                allowFullScreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
             </div>
           </div>
         </div>
