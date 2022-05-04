@@ -21,10 +21,10 @@ function Footer() {
             <div className={styles.footerContent}>
               <ul>
                 <li>
-                  <h7>
+                  <h6>
                     <LocationOnIcon />
                     Văn phòng miền Bắc
-                  </h7>
+                  </h6>
                   <p>
                     Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân Tảo,
                     quận Bắc Từ Liêm, Hà Nội, VN
@@ -32,20 +32,20 @@ function Footer() {
                   <a href="">Xem bản đồ</a>
                 </li>
                 <li>
-                  <h7>
+                  <h6>
                     <LocationOnIcon />
                     Văn phòng miền Nam
-                  </h7>
+                  </h6>
                   <p>
                     Số 25 Nguyễn Lương Bằng, Tân Phú, Quận 7, Tp.Hồ Chí Minh, VN
                   </p>
                   <a href="">Xem bản đồ</a>
                 </li>
                 <li>
-                  <h7>
+                  <h6>
                     <LocationOnIcon />
                     Nhà máy DILIGO HOLDINGS
-                  </h7>
+                  </h6>
                   <p>
                     Lô CB-27.1 KCN Thuận Thành II, An Bình, Thuận Thành, Bắc
                     Ninh
@@ -171,7 +171,7 @@ function Footer() {
                 frameBorder="0"
                 data-hide-cover="false"
                 data-show-facepile="false"
-                allowFullScreen="true"
+                allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               ></iframe>
             </div>
