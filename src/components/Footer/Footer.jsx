@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/img/logo.png";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Footer() {
   return (
@@ -18,9 +19,9 @@ function Footer() {
             </div>
             <div className={styles.footerContent}>
               <ul>
-                <li><a href=""><ArrowRightIcon/>Văn phòng miền Bắc</a></li>
-                <li><a href=""><ArrowRightIcon/>Văn phòng miền Nam</a></li>
-                <li><a href=""><ArrowRightIcon/>Nhà máy DILIGO HOLDINGS</a></li>
+                <li><a href=""><LocationOnIcon/>Văn phòng miền Bắc</a></li>
+                <li><a href=""><LocationOnIcon/>Văn phòng miền Nam</a></li>
+                <li><a href=""><LocationOnIcon/>Nhà máy DILIGO HOLDINGS</a></li>
               </ul>
             </div>
           </div>
