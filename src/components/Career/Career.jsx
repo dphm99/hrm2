@@ -78,7 +78,8 @@ function Career() {
 
   const CardItem = (props) => {
     return (
-      <div className="col">
+      
+      <div className={`${styles.Career_col} col px-3`}>
         <div className={styles.Career__card}>
           <div className={styles.Career__img}>
             <div>

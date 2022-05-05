@@ -9,7 +9,7 @@ function DetailsRecuit() {
     <>
       <Header2 />
       <Banner />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
