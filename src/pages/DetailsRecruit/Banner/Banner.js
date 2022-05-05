@@ -79,11 +79,11 @@ const Banner = () => {
           <h2 className={styles.Banner_h2}>
             NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)
           </h2>
-          <div class="row mb-2">
-            <div class="col-md-4">
+          <div className="row mb-2">
+            <div className="col-md-4">
               <div className={styles.Banner__fixx}>
-              <div class="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="">
+              <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div className="">
                   <div className={styles.Banner_flex}>
                     <ul>
                       <li className={styles.Banner_li}> Nơi làm việc: </li>
@@ -156,9 +156,9 @@ const Banner = () => {
               </div>
             </div>
             <div className={`${styles.Banner_md7} col-md-7`}>
-              <div class="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <img src={demo} style={{ width: "100%" }} />
-                {/* <div class="col p-4 d-flex flex-column position-static">
+                {/* <div className="col p-4 d-flex flex-column position-static">
                   
                 </div> */}
                 <div>

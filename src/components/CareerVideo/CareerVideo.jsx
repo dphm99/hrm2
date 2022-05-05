@@ -6,16 +6,16 @@ const CareerVideo = () => {
   return (
     <div>
        <div  className={`${styles.Career2_banner} container`}>   
-        <div class="row mb-2">
-          <div class="col-md-6">
-            <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+        <div className="row mb-2">
+          <div className="col-md-6">
+            <div className="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
               <div className={styles.Career2_img}>
                 <img  src={seongon} />
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+          <div className="col-md-6">
+            <div className="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
             <div className={styles.Career2_img}>
                 <img  src={seongon} />
               </div>
