@@ -4,6 +4,12 @@
   background-color: #bf202e;
 }
 
+.headerWrapper {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
 .icon {
   display: flex;
   justify-content: flex-end;
@@ -36,9 +42,9 @@
 .headerMenu {
   display: flex;
   justify-content: space-between;
-  /* color: #fff; */
   width: 55%;
   margin-left: 160px;
+  margin-top: -18px;
 }
 
 .headerMenu li a {
@@ -74,6 +80,8 @@
   display: flex;
   height: 90px;
   align-items: center;
+  margin: auto;
+    padding: 10px;
 }
 
 .Header3_name p {

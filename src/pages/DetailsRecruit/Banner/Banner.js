@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../Banner/Banner.module.css";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
@@ -6,11 +6,14 @@ import { FacebookIcon, LinkedinIcon } from "react-share";
 import zalo from "../../../assets/img/icon-svg/zalo-logo.jpg";
 import demo from "../../../assets/img/icon-svg/1045.jpg";
 import CV from "../../../assets/img/Job-Icon-svg/CV.svg";
+import { RecruitContext } from "../../../components/contexts/ContextRecuit";
 
 const Banner = () => {
-  const [data, setData] = useState([]);
+  const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
+   const { data } = useContext(RecruitContext);
+  console.log(data)
   const bannerAPI = [
     {
       img: CV,
@@ -63,9 +66,9 @@ const Banner = () => {
   useEffect(() => {
     fetch(postAPI)
       .then((result) => result.json())
-      .then((data) => {
-        setData(data.data);
-        console.log(data.data);
+      .then((city) => {
+        setCity(city.data);
+        console.log(city.data);
       });
   }, []);
 
@@ -78,6 +81,7 @@ const Banner = () => {
           </h2>
           <div class="row mb-2">
             <div class="col-md-4">
+              <div className={styles.Banner__fixx}>
               <div class="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="">
                   <div className={styles.Banner_flex}>
@@ -148,6 +152,7 @@ const Banner = () => {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
             <div className={`${styles.Banner_md7} col-md-7`}>
@@ -246,9 +251,9 @@ const Banner = () => {
                   </h4>
                   <div>
                     <select className={styles.Banner_select}>
-                      <option selected>Toàn quốc</option>
-                      {data &&
-                        data.map((e, index) => (
+                      <option selected disabled>Toàn quốc</option>
+                      {city &&
+                        city.map((e, index) => (
                           <option key={index}>{e.name}</option>
                         ))}
                     </select>

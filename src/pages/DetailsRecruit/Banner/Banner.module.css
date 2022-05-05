@@ -15,7 +15,7 @@
 .Banner_h6 {
   display: flex;
   margin-left: 140px;
-  margin-top: -21px;
+  margin-top: -18px;
   color: black;
   font-size: 13px;
 }
@@ -143,6 +143,11 @@ img {
   margin-bottom: 20px;
 }
 
+.Banner__recruit .Banner__recruitLI:hover {
+  /* background-color: rgb(197, 197, 197); */
+  color: red;
+}
+
 .Banner__recruitUL {
   display: flex;
   justify-content: space-between;
@@ -169,21 +174,21 @@ img {
     color: #bf202e;
 }
 
+.Banner__recruitLI:hover {
+  color: #bf202e;
+}
+
 .Banner__recruitLI.active .Banner__icon {
     filter: invert(100%) sepia(100%) saturate(7464%) hue-rotate(183deg)
       brightness(92%) ;
   }
 
-.Banner__recruitLI img {
-   /* color: #fff; */
-}
 
 .Banner__icon {
-  margin-top: -8px;
+  margin-top: 8px;
   width: 50px;
   height: 60px;
   color: #fff;
-  z-index: 999;
   filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
       brightness(92%) ;
 }

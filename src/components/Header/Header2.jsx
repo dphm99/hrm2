@@ -34,14 +34,15 @@ const Header2 = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.Header3}>
+        <div className={styles.Header3}>
         <div className="">
            <div className={styles.Header3_name}>
            <p className={styles.header3_p}>TUYỂN DỤNG NHÂN SỰ KINH DOANH TOÀN QUỐC TẠI CÁC KÊNH GT, MT , HIỆU THUỐC , CHÀO THẦU ... LÊN TỚI <a className={styles.header3_a}>500</a> NGƯỜI </p>
            </div>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
