@@ -42,7 +42,7 @@ function Career() {
   // ];
   const settings = {
     autoplay:true,
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,

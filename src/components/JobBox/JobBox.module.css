@@ -61,8 +61,13 @@
 }
 .jobListTitle{
   margin: 20px 0;
-  white-space: nowrap;
+  max-width:100%;
+  /* white-space: nowrap; */
   text-overflow: ellipsis!important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden
 }
 .jobListTitle h5{
   padding: 0 50px;
