@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { RecruitProvider } from "./components/contexts/ContextRecuit";
@@ -15,8 +15,8 @@ import DetailsRecuit from './pages/DetailsRecruit/DetailsRecuit';
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobRecruit = lazy(() => import("./pages/JobRecruit/JobRecruit"));
 
-const rootElement = ReactDOM.createRoot(document.getElementById('root'));
-rootElement.render(
+const rootElement = document.getElementById('root');
+ReactDOM.render(
   <BrowserRouter>
     <RecruitProvider>
     <BlogProvider>
@@ -33,4 +33,4 @@ rootElement.render(
       </BlogProvider>
     </RecruitProvider>
   </BrowserRouter>
-);
+,rootElement);

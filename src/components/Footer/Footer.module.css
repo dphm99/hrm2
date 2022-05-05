@@ -1,5 +1,5 @@
 .footerBox{
-    height: 635px;
+    min-height: 635px;
     background-color: #bf202e;
     /* position: absolute; */
     width: 100%;
@@ -22,13 +22,43 @@
     width: 200px;
     z-index: 5;
 }
+.textContent{
+    margin-left: 15px;
 
+}
 .footerContent ul li a{
     color: #fff;
     text-decoration: none;
     padding-right: 0;
 }
+.p_Element{
+    margin-bottom: 0;
+    color:#f5f5f5;
+}
+.icon_location{
+    font-size: 2.1rem !important;
+}
+.ul_Element{
+    margin-left: -13px;
+}
+.ul_Element li a {
+    display: block;
+    font-size: 16px; 
+    font-weight: 500;
+    margin: 10px 0;
+    color:#f5f5f5 !important;
 
+}
+.office_title{
+    font-weight: 400;
+}
+.map_link{
+    display: block;
+    font-weight:  700 !important;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 22px;
+}
 ul li {
     padding-top: 20px;
 }
@@ -41,7 +71,15 @@ ul li:hover a{
     /* padding-right: 0!important; */
     padding: auto 0!important;
 }
-
+.title_heading{
+    margin-top: 46px;
+    margin-bottom: 40px;
+    font-size: 19px;
+}
 .listItem .footerTitle:last-child {
     padding-left: 0;
+}
+.copyright{
+    padding: 40px 0 60px 0;
+    margin-left: 37px;
 }

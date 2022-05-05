@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logomau.png";
+import ListIcon from '@mui/icons-material/List';
 // import fbIcon from "../../assets/svg/FacebookMini Icon.svg";
 // import inIcon from "../../assets/svg/InstagramMini Icon.svg";
 // import liIcon from "../../assets/svg/linkedin.svg";
@@ -8,6 +9,10 @@ import logo from "../../assets/img/logomau.png";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
 
 function Header() {
+  const [toggleMenu,setToggleMenu] = useState(false);
+  const handleMenu =()=>{
+    console.log("1")
+  }
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
@@ -31,13 +36,13 @@ function Header() {
       </div>
       <div className={styles.headerBox}>
         <div className="container">
-          <div className={`${styles.header} row`}>
-            <a href="/" className={`${styles.headerLogo} col-3`}>
+          <div className={`${styles.header} d-flex`}>
+            <a href="/" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
             </a>
-            <div className={"col-9"}>
+            <div className={`d-flex col-lg-9 ${styles.menu_show}`}>
               <ul
-                className={`${styles.headerMenu}`}
+                className={`${styles.headerMenu} ${styles.active} col-lg-12`}
                 style={{ paddingRight: "10px!important" }}
               >
                 <li>
@@ -56,6 +61,11 @@ function Header() {
                   <a href="/">TRỢ GIÚP</a>
                 </li>
               </ul>
+               <ListIcon 
+               className={styles.menu_icon}
+               onClick={e=>handleMenu()}
+               >
+               </ListIcon>
             </div>
           </div>
         </div>
