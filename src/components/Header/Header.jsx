@@ -10,9 +10,7 @@ import ListIcon from '@mui/icons-material/List';
 
 function Header() {
   const [toggleMenu,setToggleMenu] = useState(false);
-  const handleMenu =()=>{
-    console.log("1")
-  }
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
@@ -36,14 +34,15 @@ function Header() {
       </div>
       <div className={styles.headerBox}>
         <div className="container">
-          <div className={`${styles.header} d-flex`}>
+          <div className={toggleMenu? `${styles.header}  ${styles.active}  d-flex`
+          :`${styles.header}  ${styles.active}  d-flex`}>
             <a href="/" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
             </a>
-            <div className={`d-flex col-lg-9 ${styles.menu_show}`}>
+            <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
               <ul
-                className={`${styles.headerMenu} ${styles.active} col-lg-12`}
-                style={{ paddingRight: "10px!important" }}
+                className={ toggleMenu ?` ${styles.headerMenu} ${styles.active} col-lg-12 col-md-12 col-sm-12`
+                :` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`}
               >
                 <li>
                   <a href="/">TRANG CHỦ</a>
@@ -63,7 +62,7 @@ function Header() {
               </ul>
                <ListIcon 
                className={styles.menu_icon}
-               onClick={e=>handleMenu()}
+               onClick={e=> setToggleMenu(!toggleMenu) }
                >
                </ListIcon>
             </div>

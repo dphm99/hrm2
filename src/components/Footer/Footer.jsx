@@ -19,7 +19,7 @@ function Footer() {
               <h4  className={`${styles.title_heading} `}>CÔNG TY CỔ PHẦN DILIGO HOLDINGS</h4>
             </div>
             <div className={styles.footerContent}>
-              <ul>
+              <ul className={styles.ul_left}>
                 <li className="d-flex ">
                     <LocationOnIcon className={styles.icon_location}/>
                   <div className={styles.textContent}>
@@ -62,52 +62,52 @@ function Footer() {
             </div>
           </div>
         <div className="col-lg-8">
-        <div className="d-flex">
+        <div className="row ">
             <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
             <div className={styles.footerTitle}>
               <h4  className={styles.title_heading}>VỀ CÔNG TY</h4>
             </div>
             <div className={styles.footerContent}>
               <ul className={styles.ul_Element}>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Vị trí tuyển dụng
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Định hướng nghề nghiệp
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Đào tạo
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Về chúng tôi
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Diligo.vn
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Lipzo.com
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Nivahealthcare.com
                   </a>
                 </li>
@@ -120,45 +120,45 @@ function Footer() {
             </div>
             <div className={styles.footerContent}>
               <ul className={styles.ul_Element}>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Kiểm tra kết quả ứng tuyển
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Tìm việc gần bạn
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Câu hỏi thường gặp
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Quy trình tuyển dụng
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Dành cho nhân viên cũ
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Nhà phân phối sắp khai trương
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Siêu thị sắp khai trương
                   </a>
                 </li>
@@ -188,8 +188,10 @@ function Footer() {
         </div>
         </div>
       </div>
-      <div className={`container ${styles.copyright}`}>
-        <a>Copyright ©2022 by Diligo Holdings. All Right Reserved.</a>
+      <div className="container">
+    <p className={styles.copyright}>
+        <a href='#'> Copyright ©2022 by Diligo Holdings. All Right Reserved.</a>
+    </p>
       </div>
     </div>
   );
