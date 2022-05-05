@@ -1,4 +1,3 @@
-
 html,
 body,
 div,
@@ -107,7 +106,7 @@ body {
 ol,
 ul {
   list-style: none;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 blockquote,
 q {
@@ -127,7 +126,7 @@ table {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -137,13 +136,16 @@ code {
     monospace;
 } */
 
-ul{
-  padding: 0!important;
+ul {
+  padding: 0 !important;
 }
-ul li{
-  padding: 0;
+ul li {
+  padding: 0 !important;
 }
 
-#root{
+#root {
   overflow: hidden;
+}
+p {
+  margin-bottom: 0 !important;
 }
