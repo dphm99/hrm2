@@ -1,137 +1,136 @@
-import styles from "./Vancancies.module.css"
-import { useState} from "react"
-import formatNumber from "../extensions/formatNumber"
+import styles from "./Vancancies.module.css";
+import { useState, useContext } from "react";
+import formatNumber from "../extensions/formatNumber";
 import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
 import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
 import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-// import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import { RecruitContext } from "../contexts/ContextRecuit";
+
 function Vancancies() {
-  const listVancanies = [
+  const [active, setActive] = useState(false);
+  const { data } = useContext(RecruitContext);
+  const [category, setCategory] = useState("office");
+  console.log(data);
+
+  const jobCategory = [
     {
-      id: 1,
-      image: kinhdoanh,
-      vancanies: "Nhân viên kinh doanh",
-      address: "Hà nội",
-      minSalary: 8000000,
-      maxSalary: 15000000,
+      img: kinhdoanh,
+      short: "office",
     },
     {
-      id: 2,
-      image: marketing,
-      vancanies: "Trường ekip Truyền thông",
-      address: "Hà nội",
-      minSalary: 10000000,
-      maxSalary: 20000000,
+      img: marketing,
+      short: "marketing",
     },
     {
-      id: 3,
-      image: nhasanxuat,
-      vancanies: "Công nhân đóng gói",
-      address: "Bắc Ninh",
-      minSalary: 6000000,
-      maxSalary: 7000000,
+      img: nhasanxuat,
+      short: "factory",
     },
     {
-      id: 4,
-      image: taichinh,
-      vancanies: "Nhân viên kinh doanh",
-      address: "Hà nội",
-      minSalary: 8000000,
-      maxSalary: 15000000,
+      img: taichinh,
+      short: "taichinh",
     },
     {
-      id: 5,
-      image: nhansu,
-      vancanies: "Thiết kế 2D",
-      address: "Hà nội",
-      minSalary: 12000000,
-      maxSalary: 14000000,
+      img: nhansu,
+      short: "nhansu",
     },
     {
-      id: 6,
-      image: congnghe,
-      vancanies: "Quản lí chuỗi cung ứng",
-      address: "Bắc Ninh",
-      minSalary: 12000000,
-      maxSalary: 14000000,
+      img: congnghe,
+      short: "it",
     },
     {
-      id: 7,
-      image: kinhdoanh,
-      vancanies: "Nhân viên kinh doanh",
-      address: "Hà nội",
-      minSalary: 8000000,
-      maxSalary: 15000000,
-    },
-    {
-      id: 8,
-      image: kinhdoanh,
-      vancanies: "Nhân viên kinh doanh",
-      address: "Hà nội",
-      minSalary: 8000000,
-      maxSalary: 15000000,
-    },
-    {
-      id: 9,
-      image: kinhdoanh,
-      vancanies: "Nhân viên kinh doanh",
-      address: "Hà nội",
-      minSalary: 8000000,
-      maxSalary: 15000000,
+      img: nhaphanphoi,
+      short: "inventory",
     },
   ];
+
   const handleOnclick = () => {
     // document.querySelector(".vancancieBtn")
   };
+
+  console.log();
   return (
-    <div className="container">
-      <h3 className={styles.title}>Vị trí tuyển dụng nổi bật</h3>
-      <div className={`row`}>
-        {listVancanies.map((vancancies, index) => (
-          <VancaniesItem key={index} index={index} props={vancancies} />
-        ))}
-      </div>
-      <div className={styles.overlay}>
-        <button onClick={handleOnclick()} className={styles.vancanciesBtn}>
-          Xem thêm
-        </button>
+    <div className={styles.Vancancies}>
+      <div className="container">
+        <h3 className={styles.title}>Vị trí tuyển dụng nổi bật</h3>
+        <div className={`row`}>
+          {data &&
+            data
+              .filter((e) => e.status === true)
+              .map((vancancies, index) => (
+                <div
+                  key={index}
+                  className={
+                    active
+                      ? `${styles.containerItem} ${styles.active} col-sm-6 col-md-6 col-lg-4`
+                      : `${styles.containerItem}  col-sm-6 col-md-6 col-lg-4`
+                  }
+                >
+                  {console.log(vancancies)}
+
+                  <div className={`${styles.vancanciesGroup} d-flex`}>
+                    <div className={styles.containerImage}>
+                      {jobCategory.map((e, index) => {
+                        if (e.short === vancancies.category) {
+                          return (
+                            <img
+                              key={index}
+                              className={styles.vancancieImage}
+                              src={e.img}
+                              alt={vancancies.vancanies}
+                            />
+                          );
+                        }
+                      })}
+                    </div>
+                    <div className={styles.vancanciesText}>
+                      <h4 className={styles.vancancieTitle}>
+                        {vancancies.name.name}
+                      </h4>
+                      <p className={styles.vancancieAddress}>
+                        Tại: {vancancies.address.name}
+                      </p>
+                      <p className={styles.vancancieSalary}>
+                        {/* {formatNumber(vancancies.minSalary, 0, ",", ".")} -{" "} */}
+
+                        {vancancies.salary[0] !== "ltt" ? (
+                          <>
+                            Từ{" "}
+                            {formatNumber(
+                              vancancies.salary.split(" - ")[0].slice(0, -4),
+                              0,
+                              ",",
+                              "."
+                            )}{" "}
+                            -{" "}
+                            {formatNumber(
+                              vancancies.salary.split(" - ")[1].slice(0, -4),
+                              0,
+                              ",",
+                              "."
+                            )}{" "}
+                            {vancancies.salary.slice(-4)}
+                          </>
+                        ) : (
+                          "Lương thoả thuận"
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+        </div>
+        <div className={styles.overlay}>
+          <button onClick={handleOnclick()} className={styles.vancanciesBtn}>
+            Xem thêm
+          </button>
+        </div>
       </div>
     </div>
   );
 }
-function VancaniesItem({ props, index }) {
-  const [active, setActive] = useState(false);
-  return (
-    <div
-      className={
-        active
-          ? `${styles.containerItem} ${styles.active} col-sm-6 col-md-6 col-lg-4`
-          : `${styles.containerItem}  col-sm-6 col-md-6 col-lg-4`
-      }
-      onMouseOver={(e) => setActive(true)}
-      onMouseOut={(e) => setActive(false)}
-    >
-      <div className={`${styles.vancanciesGroup} d-flex`}>
-        <div className={styles.containerImage}>
-          <img
-            className={styles.vancancieImage}
-            src={props.image}
-            alt={props.vancanies}
-          />
-        </div>
-        <div className={styles.vancanciesText}>
-          <h4 className={styles.vancancieTitle}>{props.vancanies}</h4>
-          <p className={styles.vancancieAddress}>Tại: {props.address}</p>
-          <p className={styles.vancancieSalary}>
-            {formatNumber(props.minSalary, 0, ",", ".")} -{" "}
-            {formatNumber(props.maxSalary, 0, ",", ".")} ++VNĐ
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+
 export default Vancancies;
