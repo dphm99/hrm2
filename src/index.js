@@ -20,7 +20,7 @@ rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
     <BlogProvider>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}> */}
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/tuyen-dung" component={DetailsRecuit} />
@@ -29,7 +29,7 @@ rootElement.render(
           <Route path="/vi-tri-tuyen-dung" component={JobRecruit} />
           <Route path="/*" component={PageNotFound} />
         </Switch>
-      </Suspense>
+      {/* </Suspense> */}
       </BlogProvider>
     </RecruitProvider>
   </BrowserRouter>
