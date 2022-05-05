@@ -13,153 +13,161 @@ function Footer() {
           <img src={logo} alt="" className={styles.logoImg} />
         </div>
 
-        <div className={`${styles.list} row mt-5`}>
-          <div className={`${styles.listItem} col-4`}>
+        <div className={`${styles.list} row `}>
+          <div className={`${styles.listItem} col-lg-4  `}>
             <div className={styles.footerTitle}>
-              <h5>CÔNG TY CỔ PHẦN DILIGO HOLDINGS</h5>
+              <h4  className={`${styles.title_heading} `}>CÔNG TY CỔ PHẦN DILIGO HOLDINGS</h4>
             </div>
             <div className={styles.footerContent}>
-              <ul>
-                <li>
-                  <h6>
-                    <LocationOnIcon />
+              <ul className={styles.ul_left}>
+                <li className="d-flex ">
+                    <LocationOnIcon className={styles.icon_location}/>
+                  <div className={styles.textContent}>
+                  <h6 className={styles.office_title}>
                     Văn phòng miền Bắc
                   </h6>
-                  <p>
+                  <p className={styles.p_Element}>
                     Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân Tảo,
                     quận Bắc Từ Liêm, Hà Nội, VN
                   </p>
-                  <a href="">Xem bản đồ</a>
+                  <a href="" className={styles.map_link}>Xem bản đồ</a>
+                  </div>
                 </li>
-                <li>
-                  <h6>
-                    <LocationOnIcon />
+                <li className={`d-flex`}>
+                    <LocationOnIcon className={styles.icon_location}/>
+                <div className={styles.textContent}>
+                <h6 className={styles.office_title}>
                     Văn phòng miền Nam
                   </h6>
-                  <p>
+                  <p className={styles.p_Element}>
                     Số 25 Nguyễn Lương Bằng, Tân Phú, Quận 7, Tp.Hồ Chí Minh, VN
                   </p>
-                  <a href="">Xem bản đồ</a>
+                  <a href="" className={styles.map_link}>Xem bản đồ</a>
+                </div>
                 </li>
-                <li>
-                  <h6>
-                    <LocationOnIcon />
+                <li className={`d-flex`}>
+                    <LocationOnIcon className={styles.icon_location}/>
+                   <div className={styles.textContent}>
+                 <h6 className={styles.office_title}>
                     Nhà máy DILIGO HOLDINGS
                   </h6>
-                  <p>
+                  <p className={styles.p_Element}>
                     Lô CB-27.1 KCN Thuận Thành II, An Bình, Thuận Thành, Bắc
                     Ninh
                   </p>
-                  <a href="">Xem bản đồ</a>
+                  <a href="" className={styles.map_link}>Xem bản đồ</a>
+                 </div>
                 </li>
               </ul>
             </div>
           </div>
-          <div className={`${styles.listItem} col-3`}>
+        <div className="col-lg-8">
+        <div className="row ">
+            <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
             <div className={styles.footerTitle}>
-              <h5>VỀ CÔNG TY</h5>
+              <h4  className={styles.title_heading}>VỀ CÔNG TY</h4>
             </div>
             <div className={styles.footerContent}>
-              <ul>
-                <li>
-                  <a href="">
+              <ul className={styles.ul_Element}>
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Vị trí tuyển dụng
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Định hướng nghề nghiệp
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Đào tạo
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Về chúng tôi
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Diligo.vn
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Lipzo.com
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Nivahealthcare.com
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className={`${styles.listItem} col-3`}>
+          <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
             <div className={styles.footerTitle}>
-              <h5>HỖ TRỢ</h5>
+              <h4  className={styles.title_heading}>HỖ TRỢ</h4>
             </div>
             <div className={styles.footerContent}>
-              <ul>
-                <li>
-                  <a href="">
+              <ul className={styles.ul_Element}>
+                <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Kiểm tra kết quả ứng tuyển
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Tìm việc gần bạn
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Câu hỏi thường gặp
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Quy trình tuyển dụng
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Dành cho nhân viên cũ
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Nhà phân phối sắp khai trương
                   </a>
                 </li>
-                <li>
-                  <a href="">
+                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
+                  <a href="">
                     Siêu thị sắp khai trương
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className={`${styles.listItem} col-2`}>
+          <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
             <div className={styles.footerTitle}>
-              <h5 style={{ textAlign: "right" }}>FANPAGE TUYỂN DỤNG</h5>
+              <h4  className={styles.title_heading}>FANPAGE TUYỂN DỤNG</h4>
             </div>
             <div className={styles.footerContent}>
               <iframe
@@ -177,6 +185,13 @@ function Footer() {
             </div>
           </div>
         </div>
+        </div>
+        </div>
+      </div>
+      <div className="container">
+    <p className={styles.copyright}>
+        <a href='#'> Copyright ©2022 by Diligo Holdings. All Right Reserved.</a>
+    </p>
       </div>
     </div>
   );

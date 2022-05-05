@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logomau.png";
+import ListIcon from '@mui/icons-material/List';
 // import fbIcon from "../../assets/svg/FacebookMini Icon.svg";
 // import inIcon from "../../assets/svg/InstagramMini Icon.svg";
 // import liIcon from "../../assets/svg/linkedin.svg";
@@ -8,6 +9,8 @@ import logo from "../../assets/img/logomau.png";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
 
 function Header() {
+  const [toggleMenu,setToggleMenu] = useState(false);
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
@@ -31,14 +34,15 @@ function Header() {
       </div>
       <div className={styles.headerBox}>
         <div className="container">
-          <div className={`${styles.header} row`}>
-            <a href="/" className={`${styles.headerLogo} col-3`}>
+          <div className={toggleMenu? `${styles.header}  ${styles.active}  d-flex`
+          :`${styles.header}  ${styles.active}  d-flex`}>
+            <a href="/" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
             </a>
-            <div className={"col-9"}>
+            <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
               <ul
-                className={`${styles.headerMenu}`}
-                style={{ paddingRight: "10px!important" }}
+                className={ toggleMenu ?` ${styles.headerMenu} ${styles.active} col-lg-12 col-md-12 col-sm-12`
+                :` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`}
               >
                 <li>
                   <a href="/">TRANG CHỦ</a>
@@ -56,6 +60,11 @@ function Header() {
                   <a href="/">TRỢ GIÚP</a>
                 </li>
               </ul>
+               <ListIcon 
+               className={styles.menu_icon}
+               onClick={e=> setToggleMenu(!toggleMenu) }
+               >
+               </ListIcon>
             </div>
           </div>
         </div>
