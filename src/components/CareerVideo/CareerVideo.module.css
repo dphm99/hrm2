@@ -1,0 +1,17 @@
+.Career2_banner {
+    margin-top: 80px;
+}
+
+.Career2_img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Career2_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 100%;
+}

@@ -38,7 +38,7 @@ function Career() {
     },
   ];
   const settings = {
-      // autoplay:true,
+    autoplay:true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -76,7 +76,8 @@ function Career() {
 
   const CardItem = (props) => {
     return (
-      <div className="col">
+      
+      <div className={`${styles.Career_col} col px-3`}>
         <div className={styles.Career__card}>
           <div className={styles.Career__img}>
             <div>
@@ -113,7 +114,7 @@ function Career() {
         <div className="row">
           <Slider {...settings}>
             {cardList.map((e, index) => {
-              return <CardItem title={e.title} src={e.img} text={e.text} key={index} />;
+              return <CardItem index={index} title={e.title} src={e.img} text={e.text} key={index} />;
             })}
           </Slider>
         </div>

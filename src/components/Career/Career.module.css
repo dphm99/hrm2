@@ -47,6 +47,10 @@
   /* background-image: url('https://dulichvietnam.com.vn/du-lich-anh/wp-content/uploads/2020/04/ngon-ngu-anh-1.jpg'); */
 }
 
+/* .Career_col {
+  padding-left: 15px;
+} */
+
 .Career__bannerp {
   text-align: center;
   color: #333;
@@ -85,7 +89,7 @@
 }
 
 .Career__card {
-  width: 300px;
+  /* width: 300px; */
   height: 200px;
   position: relative;
   display: flex;
@@ -130,6 +134,24 @@
   }
 
   .Career__banner {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .Career__card {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  .Career__card {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .Career__card {
     width: 100%;
   }
 }
