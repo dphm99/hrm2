@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../Slider/Slider.module.css";
+import './slider.scss'
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,6 +10,7 @@ import Slider from "react-slick";
 import demoImage from "../../assets/img/banner1.png";
 function Sliders() {
   var settings = {
+    autoplay: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -24,7 +27,7 @@ function Sliders() {
     );
   });
   return (
-    <div className="App">
+    <div className="Slider">
       <Slider {...settings}>{renderSlides}</Slider>
     </div>
   );

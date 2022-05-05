@@ -13,7 +13,6 @@ import { RecruitContext } from "../contexts/ContextRecuit";
 
 function JobBox() {
   const { data } = useContext(RecruitContext);
-  console.log(data);
 
   const [active, setActive] = useState(0);
   const [category, setCategory] = useState("office");

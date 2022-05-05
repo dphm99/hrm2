@@ -1,0 +1,13 @@
+.breadLink_active{
+    color:#6a6a6a !important;
+}
+.breadLink a{
+    color:#2b2b2b !important;
+    text-decoration: none !important;
+}
+.breadLink a:hover{
+    text-decoration: underline !important;
+}
+.breadLink + .breadLink::before,.breadLink_active::before{
+   content: var(--bs-breadcrumb-divider, ">") !important;
+}

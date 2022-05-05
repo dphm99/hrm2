@@ -1,0 +1,58 @@
+
+.head_recruit{
+    margin: 30px -24px !important;
+}
+.head_input{
+    position: relative;  
+    width: 100%;
+    height: 38px;
+    padding-left: 44px;
+}
+.sudoLocation{
+    content:"s";
+    position: absolute;
+    display:block;
+    top: 3px;
+    left: 55px;
+    width: 10px;
+    height: 32px;
+    border-right: 1px solid #999999;
+    z-index: 10;
+}
+.sudoSearch{
+    content:"s";
+    position: absolute;
+    display:block;
+    top: 3px;
+    left: 55px;
+    width: 10px;
+    height: 32px;
+    border-right: 1px solid #999999;
+    z-index: 10;
+}
+.head_input_search{
+  position: relative;
+
+}
+
+.head_input_location{ 
+  position: relative;
+}
+
+
+.head_input::placeholder{
+    line-height: 15px ;
+    color:#707070;
+}
+.head_col{
+    
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+.searchIcon{
+    position: absolute;
+    left: 32px;
+    bottom: 6px;
+    color:#707070;
+    width: 20px;
+}

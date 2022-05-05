@@ -11,13 +11,7 @@ function Header() {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
-        <ul className={styles.icon}>
-          {/* <li><img src={fbIcon} alt="" /></li>
-          <li><img src={inIcon} alt="" /></li>
-          <li><img src={liIcon} alt="" /></li>
-          <li><img src={yoIcon} alt="" /></li>
-          <li><img src={zaIcon} alt="" /></li> */}
-
+        {/* <ul className={styles.icon}>
           <li>
             <img src="../../assets/img/FacebookMini Icon.png" alt="" />
           </li>
@@ -33,21 +27,24 @@ function Header() {
           <li>
             <img src="../../assets/img/FacebookMini Icon.png" alt="" />
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className={styles.headerBox}>
         <div className="container">
           <div className={`${styles.header} row`}>
             <a href="/" className={`${styles.headerLogo} col-3`}>
-              <img src={logo} alt="" className={styles.logoImg}/>
+              <img src={logo} alt="" className={styles.logoImg} />
             </a>
             <div className={"col-9"}>
-              <ul className={`${styles.headerMenu}`}  style={{paddingRight:"10px!important"}}>
+              <ul
+                className={`${styles.headerMenu}`}
+                style={{ paddingRight: "10px!important" }}
+              >
                 <li>
                   <a href="/">TRANG CHỦ</a>
                 </li>
                 <li>
-                  <a href="/">VỊ TRÍ TUYỂN DỤNG</a>
+                  <a href="/vi-tri-tuyen-dung">VỊ TRÍ TUYỂN DỤNG</a>
                 </li>
                 <li>
                   <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
