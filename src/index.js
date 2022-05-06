@@ -4,6 +4,7 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { RecruitProvider } from "./components/contexts/ContextRecuit";
 import { BlogProvider } from "./components/contexts/ContextBlog";
+import BlogDetail from "./pages/BlogDetail/BlogDetail"
 import Loading from "./components/Loading/Loading";
 
 import './index.css';
@@ -27,6 +28,7 @@ ReactDOM.render(
           {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
           <Route path="/vi-tri-tuyen-dung" component={JobRecruit} />
+          <Route path="/blog-chi-tiet" component={BlogDetail} />
           <Route path="/*" component={PageNotFound} />
         </Switch>
       {/* </Suspense> */}
