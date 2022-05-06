@@ -8,38 +8,7 @@ import { BlogContext } from "../contexts/ContextBlog";
 function Career() {
   const {data} = useContext(BlogContext);
   console.log(data)
-  // const cardList = [
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  //   {
-  //     title: "Cách để viết CV",
-  //     text: "Một số cách viết CV cho sinh viên mới ra trường",
-  //     img: "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg",
-  //   },
-  // ];
+  
   const settings = {
     autoplay:true,
     dots: false,
