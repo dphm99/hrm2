@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-const BlogContext = createContext("");
+const BlogContext = createContext();
 function BlogProvider({ children }) {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState("");
