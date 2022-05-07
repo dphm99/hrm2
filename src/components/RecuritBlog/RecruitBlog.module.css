@@ -1,32 +1,40 @@
-.Block__Normal {
-    display: flex;
+.main {
+}
+
+
+
+.jobName,
+.deadLine  {
+  font-size: 15px;
+}
+.address {
+  font-size: 11px;
+}
+
+h7 {
+  position: relative;
+  cursor: pointer;
+  font-style: italic;
+  font-size: 13px;
+  color: rgb(177, 0, 0);
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (max-width: 739px) {
+  .Block__Normal_PP {
+    font-size: 13px !important;
   }
-  
-  .Block__Normal_FW {
-    font-size: 15px;
+}
+
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .Block__Normal_PP {
+    font-size: 13px !important;
   }
-  
-  .Block__Normal .Block__Normal_PP {
-    margin-left: 78px;
-    font-size: 15px;
+  .main {
+    margin-top: 13rem;
   }
-  
-  .Block__Normal_PY {
-    font-size: 11px;
+  .title {
+    margin: 2rem 0 !important;
   }
-  
-  .Block__Normal55 {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: -21px;
-  }
-  
-  .Block__Normal55 h7 {
-      position: relative;
-      cursor: pointer;
-      font-style: italic;
-      margin-left: 66px;
-      font-size: 13px;
-      color: rgb(177, 0, 0);
-  }
-  
+}
