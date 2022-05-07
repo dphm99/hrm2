@@ -84,7 +84,7 @@ function Header() {
                   <NavLink
                     className="navbar-item"
                     activeClassName="is-active"
-                    to="daotao.diligo.vn"
+                    to={{pathname: "daotao.diligo.vn" }}
                   >
                     ĐÀO TẠO
                   </NavLink>

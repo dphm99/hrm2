@@ -1,0 +1,23 @@
+.MuiPaper-root,
+.MuiAccordion-root {
+  border-radius: 10px !important;
+  margin-bottom: 10px;
+}
+.MuiAccordion-root {
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%);
+  &:before {
+    background-color: transparent;
+  }
+}
+
+.MuiPaper-root:before {
+  background-color: transparent;
+}
+
+.MuiPaper-root{
+    margin: 1rem 0 0!important;
+
+}
+.MuiAccordion-root:before{
+    display: none
+}
