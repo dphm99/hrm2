@@ -1,0 +1,19 @@
+.cardBanner {
+  margin-top: 1rem;
+  gap: 45px;
+}
+.cardBox {
+  min-width: 230px;
+  background: #fff;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.accordion .MuiPaper-root {
+  background-color: red !important;
+}
+
+.FAQ {
+  margin: 15rem 0 0;
+}
