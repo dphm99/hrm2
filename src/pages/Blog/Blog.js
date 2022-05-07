@@ -8,7 +8,7 @@ const Blog = () => {
     <>
         <Header2 />
         <BlogContent />
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }

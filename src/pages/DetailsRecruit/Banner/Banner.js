@@ -7,6 +7,7 @@ import zalo from "../../../assets/img/icon-svg/zalo-logo.jpg";
 import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import CV from "../../../assets/img/Job-Icon-svg/CV.svg";
 import { RecruitContext } from "../../../components/contexts/ContextRecuit";
+import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 
 const Banner = () => {
   const [city, setCity] = useState([]);
@@ -14,6 +15,32 @@ const Banner = () => {
   const [category, setCategory] = useState("office");
   const { data } = useContext(RecruitContext);
   // console.log(data);
+
+  const breadcrumItem = [
+    {
+        href: "/",
+        title: "Trang chủ",
+        isActive: false
+    },
+
+    {
+        href: "/vi-tri-tuyen-dung",
+        title: "Vị trí tuyển dụng",
+        isActive: true
+    },
+    
+    {
+      href: "/kinh-doanh",
+      title: "kinh-doanh",
+      isActive: true
+    },
+
+    {
+      href: "/nhan-vien-kinh-doanh",
+      title: "nhan-vien-kinh-doanh",
+      isActive: true
+  }
+]
   const bannerAPI = [
     {
       img: CV,
@@ -63,6 +90,9 @@ const Banner = () => {
     <>
       <div className="container">
         <div className={styles.Banner}>
+          <Breadcrumbs
+            breadItem={breadcrumItem}
+          />
           <h2 className={styles.Banner_h2}>
             NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)
           </h2>
