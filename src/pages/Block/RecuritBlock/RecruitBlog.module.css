@@ -1,0 +1,32 @@
+.Block__Normal {
+    display: flex;
+  }
+  
+  .Block__Normal_FW {
+    font-size: 15px;
+  }
+  
+  .Block__Normal .Block__Normal_PP {
+    margin-left: 78px;
+    font-size: 15px;
+  }
+  
+  .Block__Normal_PY {
+    font-size: 11px;
+  }
+  
+  .Block__Normal55 {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: -21px;
+  }
+  
+  .Block__Normal55 h7 {
+      position: relative;
+      cursor: pointer;
+      font-style: italic;
+      margin-left: 66px;
+      font-size: 13px;
+      color: rgb(177, 0, 0);
+  }
+  
