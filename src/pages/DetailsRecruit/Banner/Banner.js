@@ -49,20 +49,7 @@ const Banner = () => {
 
   const postAPI =
     "https://api-nextcrm.nextcrm.vn/api/public/provinces?search[parent_id]=0";
-
-  // fetch(postAPI)
-  // .then(response => response.json())
-  // .then(function (posts) {
-  //   console.log(posts)
-  //   posts.data.map(function (post){
-  //     console.log(post.name)
-  //     return `
-  //     <select className={styles.Banner_select}>
-  //     <option selected>${post.name}</option>
-  //   </select>
-  //     `
-  //   })
-  // })
+    
   useEffect(() => {
     fetch(postAPI)
       .then((result) => result.json())
