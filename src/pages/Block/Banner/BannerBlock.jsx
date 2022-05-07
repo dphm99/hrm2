@@ -11,23 +11,29 @@ const BannerBlock = () => {
       <div className="container">
         <div className={styles.Banner}>
           <div className="row">
-             <div className="col-sm-4">
-                  <div className={styles.BannerNavBanne}>
+             <div className="col-sm-2">
                   <div className={styles.BannerNav}>
                     <p>Moi nhất</p>
                   </div>
+             </div>
+             <div className="col-sm-2">
                   <div className={styles.BannerNav}>
                     <p>Moi nhất</p>
                   </div>
+             </div>
+             <div className="col-sm-2">
                   <div className={styles.BannerNav}>
                     <p>Moi nhất</p>
                   </div>
+             </div>
+             <div className="col-sm-2">
                   <div className={styles.BannerNav}>
                     <p>Moi nhất</p>
                   </div>
+             </div>
+             <div className="col-sm-2">
                   <div className={styles.BannerNav}>
                     <p>Moi nhất</p>
-                  </div>
                   </div>
              </div>
           </div>
