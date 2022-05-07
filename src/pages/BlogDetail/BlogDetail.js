@@ -6,7 +6,9 @@ import Breadcrumbs from '../../components/BreadCrumb/Breadcrumb'
 import { BlogContext } from '../../components/contexts/ContextBlog'
 import Header2 from '../../components/Header/Header2'
 function BlogDetail() {
+  const blogIndex = window.location.hash.split("#")[1];
   const { data } = useContext(BlogContext);
+  
   const breadcrumItem = [
     {
       href: "/",
