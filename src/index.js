@@ -11,18 +11,19 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DetailsRecuit from './pages/DetailsRecruit/DetailsRecuit';
+// const Recruit = la zy(() => import("./pages/Recruit"));
+
 import DetailBlock from './pages/Block/DetailBlock';
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
 
-
-// const Recruit = lazy(() => import("./pages/Recruit"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
-const JobRecruit = lazy(() => import("./pages/JobRecruit/JobRecruit"));
+const JobList = lazy(() => import("./pages/JobList/JobList"))
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <RecruitProvider>
+
 
     <BlogProvider>
       <Suspense fallback={<Loading />}>
@@ -33,13 +34,11 @@ ReactDOM.render(
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
           <Route path="/vi-tri-tuyen-dung" component={JobRecruit} />
           <Route path="/blog-chi-tiet" component={BlogDetail} />
-
           <Route path="/dinh-huong-nghe-nghiep" component={DetailBlock} />
             <Route path="/ung-tuyen" component={FormRecruit} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
-
       </BlogProvider>
     </RecruitProvider>
   </BrowserRouter>,
