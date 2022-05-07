@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../RecuritBlock/RecruitBlog.module.css";
+import styles from "../RecuritBlog/RecruitBlog.module.css";
 
 const RecruitBlog = () => {
   return (
