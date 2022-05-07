@@ -38,7 +38,134 @@ const BannerBlock = () => {
                 </div>
               </div>
               <div class="pb-1 mb-4 fst-italic border-bottom"></div>
+
+              <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                <div
+                  className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                >
+                  <img
+                    class="bd-placeholder-img"
+                    width="20"
+                    height="160"
+                    src={demo}
+                  ></img>
+                  {/* <img  class="bd-placeholder-img" src={demo}  /> */}
+                </div>
+                <div class="col  d-flex flex-column position-static">
+                  <h6 className={`${styles.Block_H6} mb-2`}>
+                    Những bài học đắt giá mà chỉ những nhân viên lớn tuổi mới
+                    biết
+                  </h6>
+                  <p className={`${styles.Block_P} mb-auto`}>
+                    Điều mà chỉ những nhân viên lớn tuổi mới biết dựa vào kinh
+                    nghiệm làm việc nhiều năm của mình
+                  </p>
+                  <div className={styles.Block__link}>
+                    <a href="#" className={`${styles.Block_A} stretched-link`}>
+                      Kinh nghiệm tuyển dụng
+                    </a>
+                    <p>- 2.500 lượt xem</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-1 mb-4 fst-italic border-bottom"></div>
+
+              <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                <div
+                  className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                >
+                  <img
+                    class="bd-placeholder-img"
+                    width="20"
+                    height="160"
+                    src={demo}
+                  ></img>
+                  {/* <img  class="bd-placeholder-img" src={demo}  /> */}
+                </div>
+                <div class="col  d-flex flex-column position-static">
+                  <h6 className={`${styles.Block_H6} mb-2`}>
+                    Những bài học đắt giá mà chỉ những nhân viên lớn tuổi mới
+                    biết
+                  </h6>
+                  <p className={`${styles.Block_P} mb-auto`}>
+                    Điều mà chỉ những nhân viên lớn tuổi mới biết dựa vào kinh
+                    nghiệm làm việc nhiều năm của mình
+                  </p>
+                  <div className={styles.Block__link}>
+                    <a href="#" className={`${styles.Block_A} stretched-link`}>
+                      Kinh nghiệm tuyển dụng
+                    </a>
+                    <p>- 2.500 lượt xem</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-1 mb-4 fst-italic border-bottom"></div>
+
+              <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                <div
+                  className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                >
+                  <img
+                    class="bd-placeholder-img"
+                    width="20"
+                    height="160"
+                    src={demo}
+                  ></img>
+                  {/* <img  class="bd-placeholder-img" src={demo}  /> */}
+                </div>
+                <div class="col  d-flex flex-column position-static">
+                  <h6 className={`${styles.Block_H6} mb-2`}>
+                    Những bài học đắt giá mà chỉ những nhân viên lớn tuổi mới
+                    biết
+                  </h6>
+                  <p className={`${styles.Block_P} mb-auto`}>
+                    Điều mà chỉ những nhân viên lớn tuổi mới biết dựa vào kinh
+                    nghiệm làm việc nhiều năm của mình
+                  </p>
+                  <div className={styles.Block__link}>
+                    <a href="#" className={`${styles.Block_A} stretched-link`}>
+                      Kinh nghiệm tuyển dụng
+                    </a>
+                    <p>- 2.500 lượt xem</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-1 mb-4 fst-italic border-bottom"></div>
+
+              <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                <div
+                  className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                >
+                  <img
+                    class="bd-placeholder-img"
+                    width="20"
+                    height="160"
+                    src={demo}
+                  ></img>
+                  {/* <img  class="bd-placeholder-img" src={demo}  /> */}
+                </div>
+                <div class="col  d-flex flex-column position-static">
+                  <h6 className={`${styles.Block_H6} mb-2`}>
+                    Những bài học đắt giá mà chỉ những nhân viên lớn tuổi mới
+                    biết
+                  </h6>
+                  <p className={`${styles.Block_P} mb-auto`}>
+                    Điều mà chỉ những nhân viên lớn tuổi mới biết dựa vào kinh
+                    nghiệm làm việc nhiều năm của mình
+                  </p>
+                  <div className={styles.Block__link}>
+                    <a href="#" className={`${styles.Block_A} stretched-link`}>
+                      Kinh nghiệm tuyển dụng
+                    </a>
+                    <p>- 2.500 lượt xem</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-1 mb-4 fst-italic border-bottom"></div>
             </div>
+
+            
+            
             <div class="col-md-5">
               <div className="col-10">
                 <div className="card mb-4">

@@ -32,7 +32,7 @@ ReactDOM.render(
           <Route exact path="/tuyen-dung" component={DetailsRecuit} />
           {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
-          <Route path="/vi-tri-tuyen-dung" component={JobRecruit} />
+          <Route path="/vi-tri-tuyen-dung" component={JobList} />
           <Route path="/blog-chi-tiet" component={BlogDetail} />
           <Route path="/dinh-huong-nghe-nghiep" component={DetailBlock} />
             <Route path="/ung-tuyen" component={FormRecruit} />
