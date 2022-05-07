@@ -1,15 +1,16 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logomau.png";
-import ListIcon from '@mui/icons-material/List';
+import ListIcon from "@mui/icons-material/List";
 // import fbIcon from "../../assets/svg/FacebookMini Icon.svg";
 // import inIcon from "../../assets/svg/InstagramMini Icon.svg";
-// import liIcon from "../../assets/svg/linkedin.svg";
+// import liIcon from "../../assets/svg/NavLinkedin.svg";
 // import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
+import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
 
 function Header() {
-  const [toggleMenu,setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <div className={styles.headerWrapper}>
@@ -34,37 +35,74 @@ function Header() {
       </div>
       <div className={styles.headerBox}>
         <div className="container">
-          <div className={toggleMenu? `${styles.header}  ${styles.active}  d-flex`
-          :`${styles.header}  ${styles.active}  d-flex`}>
-            <a href="/" className={`${styles.headerLogo} col-lg-3`}>
+          <div
+            className={
+              toggleMenu
+                ? `${styles.header}  ${styles.active}  d-flex`
+                : `${styles.header}  ${styles.active}  d-flex`
+            }
+          >
+            <Link to="/#" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
-            </a>
+            </Link>
             <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
               <ul
-                className={ toggleMenu ?` ${styles.headerMenu} ${styles.active} col-lg-12 col-md-12 col-sm-12`
-                :` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`}
+                className={
+                  toggleMenu
+                    ? ` ${styles.headerMenu} ${styles.active} col-lg-12 col-md-12 col-sm-12`
+                    : ` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`
+                }
               >
                 <li>
-                  <a href="/">TRANG CHỦ</a>
+                  <NavLink
+                    className="navbar-item"
+                    activeClassName="is-active"
+                    to="/#"
+                  >
+                    TRANG CHỦ
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/vi-tri-tuyen-dung">VỊ TRÍ TUYỂN DỤNG</a>
+                  <NavLink
+                    className="navbar-item"
+                    activeClassName="is-active"
+                    to="/vi-tri-tuyen-dung"
+                  >
+                    VỊ TRÍ TUYỂN DỤNG
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/">ĐỊNH HƯỚNG NGHỀ NGHIỆP</a>
+                  <NavLink
+                    className="navbar-item"
+                    activeClassName="is-active"
+                    to="/dinh-huong-nghe-nghiep"
+                  >
+                    ĐỊNH HƯỚNG NGHỀ NGHIỆP
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/">ĐÀO TẠO</a>
+                  <NavLink
+                    className="navbar-item"
+                    activeClassName="is-active"
+                    to="daotao.diligo.vn"
+                  >
+                    ĐÀO TẠO
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/">TRỢ GIÚP</a>
+                  <NavLink
+                    className="navbar-item"
+                    activeClassName="is-active"
+                    to="/tro-giup"
+                  >
+                    TRỢ GIÚP
+                  </NavLink>
                 </li>
               </ul>
-               <ListIcon 
-               className={styles.menu_icon}
-               onClick={e=> setToggleMenu(!toggleMenu) }
-               >
-               </ListIcon>
+              <ListIcon
+                className={styles.menu_icon}
+                onClick={(e) => setToggleMenu(!toggleMenu)}
+              ></ListIcon>
             </div>
           </div>
         </div>

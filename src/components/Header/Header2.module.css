@@ -12,6 +12,10 @@
   top:0
 }
 
+.headerLogo{
+  text-align: left;
+}
+
 .icon {
   display: flex;
   justify-content: flex-end;

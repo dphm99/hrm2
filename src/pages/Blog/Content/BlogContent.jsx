@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import styles from "../Banner/BannerBlock.module.css";
+import styles from "./BlogContent.module.css";
 import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
-import RecruitBlog from "../RecuritBlock/RecruitBlog";
+import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 const BannerBlock = () => {
   const { data } = useContext(BlogContext);
   console.log(data);
