@@ -5,14 +5,44 @@
 }
 
 .BannerNav {
+  background-color: rgb(243, 241, 241);
+  cursor: pointer;
+  vertical-align: middle;
   justify-content: center;
   margin-left: 10px;
   display: flex;
-  border: 1px solid #333;
-  width: 100%;
+  border: 1px solid rgb(206, 205, 205);
+  width: 110%;
   margin-bottom: 50px;
+  margin-left: 2px;
 }
 
+.BannerNav:hover {
+  color: #fff;
+  background-color: rgb(208, 28, 28);
+}
+
+.BannerLink {
+  text-decoration: none;
+}
+
+.BannerNav.active  {
+  color: #fff;
+  background-color: rgb(208, 28, 28);
+}
+
+.BannerActive {
+  text-align: center;
+  overflow: hidden;
+  width: 55%;
+}
+
+
+.BannerNav.active .BannerActive:hover  {
+  color: #fff;
+  /* filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
+    brightness(92%); */
+}
 
 .Block_img img {
   width: 100%;

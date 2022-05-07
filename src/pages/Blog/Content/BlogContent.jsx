@@ -1,49 +1,95 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
-const BannerBlock = () => {
+import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
+import { Link } from "react-router-dom";
+export default function  BannerBlock () {
   const { data } = useContext(BlogContext);
+  const [active, setactive] = useState(0);
+  const [category, setCategory] = useState("office");
   console.log(data);
+  let { id } = useParams();
+  console.log(id)
+  const breadcrumItem = [
+    {
+      href: "/",
+      title: "Trang chủ",
+      isActive: false,
+    },
+
+    {
+      href: "/vi-tri-tuyen-dung",
+      title: "Vị trí tuyển dụng",
+      isActive: true,
+    },
+  ];
+
+  const New = [
+    {
+      title: "MỚI NHẤT",
+      short: "office",
+    },
+    {
+      title: "KINH NGHIỆM TUYỂN DỤNG",
+      short: "office",
+    },
+    {
+      title: "BẢN TIN TUYỂN DỤNG",
+      short: "office",
+    },
+    {
+      title: "VĂN HÓA DILIGO",
+      short: "office",
+    },
+    {
+      title: "VIDEO",
+      short: "office",
+    },
+  ];
   return (
     <div>
       <div className="container">
         <div className={styles.Banner}>
-          <div className="row">
-             <div className="col-sm-2">
-                  <div className={styles.BannerNav}>
-                    <p>Moi nhất</p>
+          <Breadcrumbs breadItem={breadcrumItem} />
+          
+          <div className="row mt-5">
+            {New.map((e, index) => {
+              return (
+                <div className="col-sm-2">
+                  <div
+                    key={index}
+                    className={
+                      active === index
+                        ? `${styles.BannerNav} ${styles.active}`
+                        : `${styles.BannerNav}`
+                    }
+                    onClick={() => {
+                      setactive(index);
+                      setCategory(e.short);
+                    }}
+                    style={{
+                      height: `58px`,
+                      display: `flex`,
+                      alignItems: `center`,
+                    }}
+                  >
+                    <div className={styles.BannerActive}>{e.title}</div>
                   </div>
-             </div>
-             <div className="col-sm-2">
-                  <div className={styles.BannerNav}>
-                    <p>Moi nhất</p>
-                  </div>
-             </div>
-             <div className="col-sm-2">
-                  <div className={styles.BannerNav}>
-                    <p>Moi nhất</p>
-                  </div>
-             </div>
-             <div className="col-sm-2">
-                  <div className={styles.BannerNav}>
-                    <p>Moi nhất</p>
-                  </div>
-             </div>
-             <div className="col-sm-2">
-                  <div className={styles.BannerNav}>
-                    <p>Moi nhất</p>
-                  </div>
-             </div>
+                </div>
+              );
+            })}
           </div>
           <div className="row mb-2">
             <div className="col-md-6">
               {data &&
                 data.map((e, index) => {
                   return (
-                   <>
-                    <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                    <>
+                      <Link className={styles.BannerLink} to='/blog-chi-tiet'>
+                      <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
                         <div
                           className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
                         >
@@ -58,11 +104,12 @@ const BannerBlock = () => {
                           className={`${styles.BannerBlockflex} col d-flex flex-column position-static`}
                         >
                           <h6 className={`${styles.Block_H6} mb-2`}>
-                           {e.title}
+                            {e.title}
                           </h6>
-                          <p className={`${styles.Block_P} mb-auto`} dangerouslySetInnerHTML={{ __html: `${e.content}` }}>
-                            
-                          </p>
+                          <p
+                            className={`${styles.Block_P} mb-auto`}
+                            dangerouslySetInnerHTML={{ __html: `${e.content}` }}
+                          ></p>
                           <div className={styles.Block__link}>
                             <a
                               href="#"
@@ -74,99 +121,15 @@ const BannerBlock = () => {
                           </div>
                         </div>
                       </div>
+                      </Link>
                       <div className="pb-1 mb-4 fst-italic border-bottom"></div>
-                   </>   
+                    </>
                   );
-                })} 
+                })}
             </div>
             <div className="col-md-5">
               <div className="col-10">
-                
-                  {/* <div className="card-header py-3">
-                    <h5 className="my-0 fw-normal">TIN TUYỂN DỤNG NỔI BẬT</h5>
-                  </div>
-                  <div className="card-header py-3">
-                    <div className={`${styles.Block__Normal} col-12`}>
-                      <p
-                        className={`${styles.Block__Normal_FW} my-0 fw-normal`}
-                      >
-                        Chuyển viên hỗ trợ kinh doanh
-                      </p>
-                      <p className={styles.Block__Normal_PP}>04/05/2022</p>
-                    </div>
-                    <div className={`${styles.Block__Normal55} col-12`}>
-                      <p className={styles.Block__Normal_PY}>
-                        Hà Nội, TP.Hồ Chí Minh và 2 tỉnh thành khác
-                      </p>
-                      <h7>ỨNG TUYỂN</h7>
-                    </div>
-                  </div>
-                  <div className="card-header py-3">
-                    <div className={`${styles.Block__Normal} col-12`}>
-                      <p
-                        className={`${styles.Block__Normal_FW} my-0 fw-normal`}
-                      >
-                        Chuyển viên hỗ trợ kinh doanh
-                      </p>
-                      <p className={styles.Block__Normal_PP}>04/05/2022</p>
-                    </div>
-                    <div className={`${styles.Block__Normal55} col-12`}>
-                      <p className={styles.Block__Normal_PY}>
-                        Hà Nội, TP.Hồ Chí Minh và 2 tỉnh thành khác
-                      </p>
-                      <h7>ỨNG TUYỂN</h7>
-                    </div>
-                  </div>
-                  <div className="card-header py-3">
-                    <div className={`${styles.Block__Normal} col-12`}>
-                      <p
-                        className={`${styles.Block__Normal_FW} my-0 fw-normal`}
-                      >
-                        Chuyển viên hỗ trợ kinh doanh
-                      </p>
-                      <p className={styles.Block__Normal_PP}>04/05/2022</p>
-                    </div>
-                    <div className={`${styles.Block__Normal55} col-12`}>
-                      <p className={styles.Block__Normal_PY}>
-                        Hà Nội, TP.Hồ Chí Minh và 2 tỉnh thành khác
-                      </p>
-                      <h7>ỨNG TUYỂN</h7>
-                    </div>
-                  </div>
-                  <div className="card-header py-3">
-                    <div className={`${styles.Block__Normal} col-12`}>
-                      <p
-                        className={`${styles.Block__Normal_FW} my-0 fw-normal`}
-                      >
-                        Chuyển viên hỗ trợ kinh doanh
-                      </p>
-                      <p className={styles.Block__Normal_PP}>04/05/2022</p>
-                    </div>
-                    <div className={`${styles.Block__Normal55} col-12`}>
-                      <p className={styles.Block__Normal_PY}>
-                        Hà Nội, TP.Hồ Chí Minh và 2 tỉnh thành khác
-                      </p>
-                      <h7>ỨNG TUYỂN</h7>
-                    </div>
-                  </div>
-                  <div className="card-header py-3">
-                    <div className={`${styles.Block__Normal} col-12`}>
-                      <p
-                        className={`${styles.Block__Normal_FW} my-0 fw-normal`}
-                      >
-                        Chuyển viên hỗ trợ kinh doanh
-                      </p>
-                      <p className={styles.Block__Normal_PP}>04/05/2022</p>
-                    </div>
-                    <div className={`${styles.Block__Normal55} col-12`}>
-                      <p className={styles.Block__Normal_PY}>
-                        Hà Nội, TP.Hồ Chí Minh và 2 tỉnh thành khác
-                      </p>
-                      <h7>ỨNG TUYỂN</h7>
-                    </div>
-                  </div> */}
-                  <RecruitBlog />
-               
+                <RecruitBlog />
               </div>
             </div>
           </div>
@@ -176,4 +139,4 @@ const BannerBlock = () => {
   );
 };
 
-export default BannerBlock;
+// export default BannerBlock;
