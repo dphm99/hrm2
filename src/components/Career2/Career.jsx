@@ -4,7 +4,7 @@ import seongon from "../../assets/img/icon-svg/seongon-2.jpg"
 
 const Career2 = () => {
   return (
-    <div>
+    <>
       <div  className={`${styles.Career2_banner} container`}>   
         <div className="row mb-2">
           <div className="col-md-6">
@@ -23,7 +23,7 @@ const Career2 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
