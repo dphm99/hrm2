@@ -9,9 +9,8 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DetailsRecuit from "./pages/DetailsRecruit/DetailsRecuit";
-// const Recruit = la zy(() => import("./pages/Recruit"));
-
-import DetailBlock from "./pages/Block/DetailBlock";
+// const Recruit = lazy(() => import("./pages/Recruit"));
+import Blog from "./pages/Blog/Blog";
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import FAQs from "./pages/FAQs/FAQs";
@@ -32,7 +31,7 @@ ReactDOM.render(
             {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
             <Route path="/vi-tri-tuyen-dung" component={JobList} />
             <Route path="/blog-chi-tiet" component={BlogDetail} />
-            <Route path="/dinh-huong-nghe-nghiep" component={DetailBlock} />
+            <Route path="/dinh-huong-nghe-nghiep" component={Blog} />
             <Route path="/ung-tuyen" component={FormRecruit} />
             <Route path="/tro-giup" component={FAQs} />
             <Route path="/*" component={PageNotFound} />
