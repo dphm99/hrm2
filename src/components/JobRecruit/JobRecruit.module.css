@@ -90,6 +90,7 @@
     border:1px solid #ccc;
     width: 100%;
 }
+
 .wrapListJob{
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
@@ -319,12 +320,15 @@
     .apply_job{
         width: 100%;
         margin-top: 6px;
-        padding:5px 3px ;
+        padding:5px 3px;
     }
    
     .foot_text{
         flex-wrap: wrap;
     }
+   .head_checkbox{
+       width: 30px;
+   }
    
 }
 @media(max-width:768px){
