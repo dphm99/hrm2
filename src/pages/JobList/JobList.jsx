@@ -5,7 +5,7 @@ import JobRecruits from "../../components/JobRecruit/JobRecruit";
 function JobRecruit() {
   return (
     <>
-      <Header2 />
+      {/* <Header2 /> */}
       <JobRecruits />
       <Footer />
     </>

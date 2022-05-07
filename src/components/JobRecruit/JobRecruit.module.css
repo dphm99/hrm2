@@ -68,7 +68,7 @@
 }
 .head_checkbox{
  
-    box-shadow:1px 1px 3px rgba(144, 144, 144, 0.4);
+    /* box-shadow:1px 1px 3px rgba(144, 144, 144, 0.4); */
     border-radius: 0px !important;
     margin-right: 10px;
     min-width: 20px;
@@ -80,6 +80,13 @@
     text-overflow: ellipsis;
 }
 .wrapCategory{
+    padding-right: 0;
+    
+}
+.wrapCategory{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
     border:1px solid #ccc;
     width: 100%;
 }
@@ -153,6 +160,7 @@
     color:#fff;
 }
 .ul_listFilter{
+    list-style: none;
     border:none !important; 
 }
 .listJob_item{
@@ -175,7 +183,6 @@
 /* component ItemJob */
 .warpItem{
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
 }
 .warpIcon_job{
     width: 100px;
@@ -194,7 +201,11 @@
 }
 .text_job{
     font-size: 14px;
+    margin: 0 !important;
 }
+.col_wrap{
+    padding-left:12px;
+ }
 .money_icon{
     position: relative;
     top: -3px;
@@ -264,7 +275,7 @@
     line-height: 26px;
     border-radius: 4px;
     box-shadow:1px 1px 1px #9d9d9d66 ;
-    margin:0 4px;
+    margin:0 4px !important;
     color:rgb(124, 124, 124);
 }
 .btn_pagi:hover{
@@ -275,16 +286,11 @@
     cursor:default;
     opacity: 1;
 }
-.col_wrap{
-   padding-left:0;
-}
-.wrap_border{
-    padding-right: 0;
-}
+
+
 .wrap_all{
     border: 1px solid #707070;
     margin-bottom: 12px;
-
 }
 .banner_foot{
     width: 100% ;
@@ -294,6 +300,18 @@
     position: relative;
     margin:40px 0;
 }
+.pagination{
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+.col_wrap{
+    padding-left:0;
+ }
+ .wrap_border{
+     padding-right: 0;
+ }
+
+
 @media (max-width:992px) {
     .foot_space{
         display: none;
@@ -301,17 +319,21 @@
     .apply_job{
         width: 100%;
         margin-top: 6px;
+        padding:5px 3px ;
     }
+   
     .foot_text{
         flex-wrap: wrap;
     }
+   
+}
+@media(max-width:768px){
     .col_wrap{
-        padding-left:12px;
+        padding-left:12px !important;
      }
      .wrap_border{
-         padding-right: 12px;
+         padding-right: 12px !important;
      }
-    
 }
 @media (max-width:576px) {
     .sortJob_sm{
