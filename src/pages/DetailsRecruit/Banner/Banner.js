@@ -49,20 +49,7 @@ const Banner = () => {
 
   const postAPI =
     "https://api-nextcrm.nextcrm.vn/api/public/provinces?search[parent_id]=0";
-
-  // fetch(postAPI)
-  // .then(response => response.json())
-  // .then(function (posts) {
-  //   console.log(posts)
-  //   posts.data.map(function (post){
-  //     console.log(post.name)
-  //     return `
-  //     <select className={styles.Banner_select}>
-  //     <option selected>${post.name}</option>
-  //   </select>
-  //     `
-  //   })
-  // })
+    
   useEffect(() => {
     fetch(postAPI)
       .then((result) => result.json())
@@ -71,7 +58,7 @@ const Banner = () => {
         console.log(city.data);
       });
   }, []);
-  
+
   return (
     <>
       <div className="container">
@@ -80,9 +67,15 @@ const Banner = () => {
             NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)
           </h2>
           <div className="row mb-2">
-            <div className="col-md-4">
-              <div className={styles.Banner__fixx}>
-                <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div
+              className="col-md-4"
+            >
+              <div className={styles.Banner_sticky}
+              >
+                <div
+                  className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+
+                >
                   <div className="">
                     <div className={styles.Banner_flex}>
                       <ul>

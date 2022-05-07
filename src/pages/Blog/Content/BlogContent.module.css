@@ -1,0 +1,73 @@
+.Banner {
+  width: 90%;
+  margin-left: 160px;
+  margin-top: 200px;
+}
+
+.BannerNavBanne {
+  display: flex;
+  width: 100%;
+}
+
+.BannerNav {
+  margin-left: 10px;
+  display: flex;
+  border: 1px solid #333;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.Block_img img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.Block_H6 {
+  margin-top: 10px;
+  margin-left: -30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.Block_P {
+  margin-left: -30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  color: black;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.Block_P  *{
+  color: black!important;
+  text-decoration: none!important;
+  font-weight: normal;
+}
+
+.Block_A {
+  margin-left: -30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.Block__link {
+  display: flex;
+}
+
+.Block__link a {
+  text-decoration: none;
+}
+.Block__link p {
+  margin-left: 5px;
+}
+
+.BannerBlockflex {
+  margin-left: 42px;
+}
