@@ -44,9 +44,8 @@
 .headerMenu {
   display: flex;
   justify-content: space-between;
-  width: 55%;
+  width: 75%;
   margin-left: 160px;
-  margin-top: -18px;
 }
 
 .headerMenu li a {
@@ -63,6 +62,7 @@
 }
 
 .logoImg {
+  margin-top: 20px;
   width: 10rem;
   text-align: center;
   margin-left: 200px;
@@ -83,7 +83,7 @@
   height: 90px;
   align-items: center;
   margin: auto;
-    padding: 10px;
+  padding: 10px;
 }
 
 .Header3_name p {
@@ -94,6 +94,218 @@
 }
 
 .header3_a {
-        color: gold;
-        text-decoration: none;
+  color: gold;
+  text-decoration: none;
 }
+
+/* ------------------------- tablets & mobile--------------------- */
+@media only screen and (max-width: 768px) {
+  .logoImg {
+    width: 130px;
+    margin-left: 25px;
+    margin-top: 22px;
+  }
+
+  .Header3_name p {
+    font-size: 11px;
+  }
+
+  .menu_icon {
+    visibility: visible;
+    font-size: 4rem !important;
+    color: #fff;
+    z-index: 6;
+    float: right;
+    margin-top: -64px;
+
+  }
+
+  .headerMenu li a {
+    color: blue;
+  }
+
+  .header__fixx {
+    margin-bottom: -21px!important;
+  }
+  .header__fixloi {
+    margin-top: -15px!important;
+  }
+
+  .menu_show .active {
+    height: 245px;
+    display: block;
+  }
+
+  .headerMenu {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .active.headerMenu {
+    display: block;
+    /* box-shadow: 0 0 4px rgb(174 174 174 / 40%); */
+    padding: 0px 0 0 0 !important;
+  }
+
+  .active.headerMenu li a {
+    display: inline-block;
+    margin: 12px 0 12px 0;
+  }
+
+  .active.headerMenu li {
+    border-bottom: 1px solid #e1e1e1;
+    width: 720px;
+    margin: 0 auto;
+    padding-right: var(--bs-gutter-x, 0.75rem) !important;
+    padding-left: var(--bs-gutter-x, 0.75rem) !important;
+    -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .active.headerMenu li:last-child {
+    border-bottom: none;
+  }
+
+  .headerMenu {
+    width: 100%;
+    margin-top: -3px;
+    background-color: #fff;
+    position: fixed;
+    left: -160px;
+    -webkit-animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  .menu_show .active {
+    right: 0;
+  }
+  .active.headerMenu li {
+    display: block;
+  }
+}
+
+@media only screen and (max-width:992px) {
+  .logoImg {
+    width: 130px;
+    margin-left: 25px;
+    margin-top: 22px;
+  }
+
+  .Header3_name p {
+    font-size: 11px;
+  }
+
+  .menu_icon {
+    visibility: visible;
+    font-size: 4rem !important;
+    color: #fff;
+    z-index: 6;
+    float: right;
+    margin-top: -64px;
+
+  }
+
+  .headerMenu li a {
+    color: blue;
+  }
+
+  .header__fixx {
+    margin-bottom: -21px!important;
+  }
+  .header__fixloi {
+    margin-top: -15px!important;
+  }
+
+  .menu_show .active {
+    height: 245px;
+    display: block;
+  }
+
+  .headerMenu {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .active.headerMenu {
+    display: block;
+    /* box-shadow: 0 0 4px rgb(174 174 174 / 40%); */
+    padding: 0px 0 0 0 !important;
+  }
+
+  .active.headerMenu li a {
+    display: inline-block;
+    margin: 12px 0 12px 0;
+  }
+
+  .active.headerMenu li {
+    border-bottom: 1px solid #e1e1e1;
+    width: 720px;
+    margin: 0 auto;
+    padding-right: var(--bs-gutter-x, 0.75rem) !important;
+    padding-left: var(--bs-gutter-x, 0.75rem) !important;
+    -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .active.headerMenu li:last-child {
+    border-bottom: none;
+  }
+
+  .headerMenu {
+    width: 100%;
+    margin-top: -3px;
+    background-color: #fff;
+    position: fixed;
+    left: -160px;
+    -webkit-animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  .menu_show .active {
+    right: 0;
+  }
+  .active.headerMenu li {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1224px){
+  .menu_icon {
+    opacity: 0;
+  }
+
+  .logoImg {
+    margin-top: 20px;
+    width: 10rem;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .headerMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 30px;
+  }
+
+  
+.Header3_name p {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+}
+}
+
+@media screen and (min-width: 1224px) {
+  .menu_icon {
+    opacity: 0;
+  }
+}
+

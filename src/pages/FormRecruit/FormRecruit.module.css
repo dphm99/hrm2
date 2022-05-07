@@ -1,0 +1,100 @@
+.Recruit {
+  margin-top: 40px;
+}
+.jobTitle {
+  font-size: 36px;
+  color: #c50c0c;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 32px 0;
+}
+
+form {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(235, 235, 235);
+  padding: 40px;
+}
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+
+  outline: none;
+  padding: 12px;
+}
+label {
+  margin-top: 16px;
+}
+.inputField {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0 20px;
+}
+
+.formRecruit {
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputFile {
+  margin: 16px auto;
+}
+
+.inputName {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+}
+.inputLeft,
+.inputRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+}
+.desc {
+  text-align: left;
+}
+
+.desc p {
+  font-weight: bold;
+}
+
+.buttonSubmit{
+  margin: 16px auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #ccc;
+}
+.buttonSubmit.active{
+  margin: 16px auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #c50c0c;
+  color: #fff;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+.noCV {
+  margin-top: 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #ccc;
+}

@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { RecruitProvider } from "./components/contexts/ContextRecuit";
@@ -11,17 +11,21 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DetailsRecuit from './pages/DetailsRecruit/DetailsRecuit';
+import DetailBlock from './pages/Block/DetailBlock';
+import FormRecruit from "./pages/FormRecruit/FormRecruit";
+
 
 // const Recruit = lazy(() => import("./pages/Recruit"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobRecruit = lazy(() => import("./pages/JobRecruit/JobRecruit"));
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <RecruitProvider>
+
     <BlogProvider>
-      {/* <Suspense fallback={<Loading />}> */}
+      <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/tuyen-dung" component={DetailsRecuit} />
@@ -29,10 +33,15 @@ ReactDOM.render(
           {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
           <Route path="/vi-tri-tuyen-dung" component={JobRecruit} />
           <Route path="/blog-chi-tiet" component={BlogDetail} />
-          <Route path="/*" component={PageNotFound} />
-        </Switch>
-      {/* </Suspense> */}
+
+          <Route path="/dinh-huong-nghe-nghiep" component={DetailBlock} />
+            <Route path="/ung-tuyen" component={FormRecruit} />
+            <Route path="/*" component={PageNotFound} />
+          </Switch>
+        </Suspense>
+
       </BlogProvider>
     </RecruitProvider>
-  </BrowserRouter>
-,rootElement);
+  </BrowserRouter>,
+  rootElement
+);
