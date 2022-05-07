@@ -36,7 +36,7 @@ function JobRecruits() {
     ]
 
     return (
-        <div className="container" >
+        <div className="container" style={{marginTop:"12rem"}}>
             <Breadcrumbs
                 breadItem={breadcrumItem}
             />
