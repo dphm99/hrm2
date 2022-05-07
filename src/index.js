@@ -26,7 +26,7 @@ ReactDOM.render(
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={App} />
-            <Route exact path="/tuyen-dung" component={DetailsRecuit} />
+            <Route exact path="/tuyen-dung" component={DetailsRecuit} />s
             {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
             {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
             <Route path="/vi-tri-tuyen-dung" component={JobList} />
