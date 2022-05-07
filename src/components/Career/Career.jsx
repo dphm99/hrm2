@@ -79,7 +79,7 @@ function Career() {
     );
   };
   return (
-    <div>
+    <>
       <div className="container">
         <div className={styles.Career__h4}>
           <h4>ĐỊNH HƯỚNG NGHỀ NGHỆP</h4>
@@ -103,7 +103,7 @@ function Career() {
           <img src="https://dulichvietnam.com.vn/du-lich-anh/wp-content/uploads/2020/04/ngon-ngu-anh-1.jpg" />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

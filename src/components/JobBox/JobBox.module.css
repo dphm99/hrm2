@@ -58,6 +58,7 @@
   background-color: #bf202e;
   padding: 0 !important ;
   margin: 0;
+  min-height: 168px;
 }
 .jobListTitle{
   margin: 12px 0;
