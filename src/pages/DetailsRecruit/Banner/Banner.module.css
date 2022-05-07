@@ -130,7 +130,8 @@ img {
 .Banner__procedure {
   width: 100%;
   height: 400px;
-  background-color: brown;
+  /* background-color: brown; */
+  background-image: url('../../../assets/img/icon-svg/banner22.jpg');
 }
 
 .Banner__procedureh6 {
@@ -143,9 +144,13 @@ img {
   margin-bottom: 20px;
 }
 
-.Banner__recruit .Banner__recruitLI:hover {
+.Banner__recruit .Banner__recruitLI .Banner__buoc :hover {
   /* background-color: rgb(197, 197, 197); */
   color: red;
+}
+
+.Banner__recruit .Banner_hover:hover {
+  color: #bf202e;
 }
 
 .Banner__recruitUL {
@@ -159,7 +164,7 @@ img {
   margin-right: 9px;
   width: 133px;
   margin-left: 9px;
-  height: 165px;
+  height: 175px;
   background-color: rgba(248, 247, 247, 0.5);
   display: flex;
   justify-content: space-between;
@@ -169,20 +174,29 @@ img {
   /* opacity: 0.3; */
 }
 
-.Banner__recruitLI.active{
-    opacity: 1;
-    color: #bf202e;
-}
-
-.Banner__recruitLI:hover {
+.Banner__recruitLI.active {
+  opacity: 1;
   color: #bf202e;
 }
 
-.Banner__recruitLI.active .Banner__icon {
-    filter: invert(100%) sepia(100%) saturate(7464%) hue-rotate(183deg)
-      brightness(92%) ;
-  }
+.Banner__recruitLI:hover {
+  background-color: rgba(207, 203, 203, 0.5);
+}
 
+.Banner__recruitLI.active .Banner__buoc {
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
+}
+
+.Banner__recruitLI.active .Banner__upload {
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
+}
+
+.Banner__recruitLI.active .Banner__icon {
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
+}
 
 .Banner__icon {
   margin-top: 8px;
@@ -190,7 +204,7 @@ img {
   height: 60px;
   color: #fff;
   filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
-      brightness(92%) ;
+    brightness(92%);
 }
 
 .Banner__buoc {
@@ -250,25 +264,219 @@ img {
   font-style: italic;
 }
 
-.Banner_md7 {
-    margin-bottom: 25px;
+ul li {
+  padding-top: 20px !important;
+}
+p {
+  margin-bottom: 15px !important;
 }
 
-/* .Banner__MapMap:hover {
-   color: red;
-} */
+.Banner_md7 {
+  margin-bottom: 25px;
+}
 
 .Banner__MapP {
-    color: black;
-    cursor: pointer;
+  color: black;
+  cursor: pointer;
 }
 
 .Banner_demo {
-    width: 100%;
-    height: 270px;
+  width: 100%;
+  height: 270px;
 }
 
 .Banner_demo img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .Banner_h2 {
+    font-size: 13px;
+    margin-top: 185px;
+    margin-bottom: 25px;
+  }
+
+  .Banner {
     width: 100%;
-    height: 100%;
+    margin-left: 0px;
+    margin-top: 100px;
+  }
+
+  .Banner_Icon {
+    margin-left: 0px;
+    display: flex;
+    width: 163px;
+    margin-top: -6px;
+    float: right;
+  }
+
+  .Banner__recruitUL {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .Banner__recruitLI {
+    margin-right: 9px;
+    width: 96%;
+    margin-left: 9px;
+    height: 54px;
+    background-color: rgba(248, 247, 247, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 6px;
+  }
+
+  .Banner__procedureh6 {
+    font-size: 15px;
+    margin-top: 13px;
+  }
+
+  .Banner__btn5 {
+    font-size: 10px;
+    padding: 4px 23px;
+  }
+
+  .Banner__btoon5 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  .Banner__icon {
+    margin-top: -11px;
+    margin-left: -240px;
+    width: 34px;
+    height: 60px;
+  }
+
+  .Banner__buoc {
+    margin-top: -40px;
+  }
+
+  .Banner__Apply {
+    font-size: 15px;
+    margin-top: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .Banner_h2 {
+    font-size: 13px;
+    margin-top: 185px;
+    margin-bottom: 25px;
+  }
+
+  .Banner {
+    width: 132%;
+    margin-left: -71px;
+    margin-top: 100px;
+  }
+
+  .Banner_Icon {
+    margin-left: 0px;
+    display: flex;
+    width: 163px;
+    margin-top: -6px;
+    float: right;
+  }
+
+  .Banner__recruitUL {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .Banner__recruitLI {
+    margin-right: 9px;
+    width: 96%;
+    margin-left: 9px;
+    height: 54px;
+    background-color: rgba(248, 247, 247, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 6px;
+  }
+
+  .Banner__procedureh6 {
+    font-size: 15px;
+    margin-top: 13px;
+  }
+
+  .Banner__btn5 {
+    font-size: 10px;
+    padding: 4px 23px;
+  }
+
+  .Banner__btoon5 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  .Banner__icon {
+    margin-top: -11px;
+    margin-left: -270px;
+    width: 34px;
+    height: 60px;
+  }
+
+  .Banner__buoc {
+    margin-top: -40px;
+  }
+
+  .Banner__Apply {
+    font-size: 15px;
+    margin-top: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
+  .Banner {
+    width: 114%;
+    margin-top: 200px;
+    margin-left: -21px;
+  }
+
+  .Banner_h2 {
+    margin-bottom: 30px;
+  }
+
+  .Banner_Icon {
+    display: flex;
+    width: 117px;
+    margin-left: 170px;
+    margin-top: -28px;
+  }
+
+  .Banner__icon {
+    margin-top: 8px;
+    width: 43px;
+    height: 57px;
+    color: #fff;
+    filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg) brightness(92%);
+  }
+}
+
+p {
+  margin-bottom: 1rem!important;
+}
+
+
+ul {
+  padding: 0.2rem!important;
+}
+ul li {
+  padding: 0.2rem!important;
 }
