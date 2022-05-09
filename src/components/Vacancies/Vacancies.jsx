@@ -10,6 +10,7 @@ import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
 import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
 import { RecruitContext } from "../contexts/ContextRecuit";
 
+
 function Vancancies() {
   const [active, setActive] = useState(false);
   const { data } = useContext(RecruitContext);
@@ -69,7 +70,6 @@ function Vancancies() {
                       : `${styles.containerItem}  col-sm-6 col-md-6 col-lg-4`
                   }
                 >
-                  {console.log(vancancies)}
 
                   <div className={`${styles.vancanciesGroup} d-flex`}>
                     <div className={styles.containerImage}>
