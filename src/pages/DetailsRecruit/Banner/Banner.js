@@ -158,7 +158,7 @@ const Banner = () => {
                     <ContentCopyIcon
                       style={{ fontSize: "20px", marginTop: "-8px" }}
                     ></ContentCopyIcon>
-                    <a className={styles.Banner_copy}>Copy link</a>
+                    <a href="/" className={styles.Banner_copy}>Copy link</a>
                     <div className={styles.Banner_Icon}>
                       <div className={styles.Banner_fb}>
                         <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
@@ -269,7 +269,7 @@ const Banner = () => {
 
                 <div>
                   <h4 className={styles.Banner_hh4}>
-                    Địa điểm làm việc (<a style={{ color: "red" }}>64</a> tỉnh
+                    Địa điểm làm việc (<a href="/" style={{ color: "red" }}>64</a> tỉnh
                     thành)
                   </h4>
                   <div>
@@ -423,7 +423,7 @@ const Banner = () => {
                               setCategory(e.short);
                             }}
                           >
-                            <img src={e.img} className={styles.Banner__icon} />
+                            <img src={e.img} className={styles.Banner__icon} alt={e.title}/>
                             <div className={styles.Banner__buoc}>{e.name}</div>
                             <div className={styles.Banner__upload}>
                               {e.title}

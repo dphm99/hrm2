@@ -117,7 +117,7 @@ export default function BannerBlock() {
                           search: `#${e.id}`,
                         }}
                       >
-                        <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                        <div className="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
                           <div
                             className={`${styles.Block_img} col-auto d-lg-block col-4`}
                           >

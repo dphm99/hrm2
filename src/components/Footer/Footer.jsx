@@ -171,7 +171,7 @@ function Footer() {
               <h4  className={styles.title_heading}>FANPAGE TUYỂN DỤNG</h4>
             </div>
             <div className={styles.footerContent}>
-              <iframe
+              {/* <iframe
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftuyendungdiligo&tabs=timeline&width=220&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=719322076103425"
                 width="220"
                 height="331"
@@ -182,7 +182,7 @@ function Footer() {
                 data-show-facepile="false"
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              ></iframe>
+              ></iframe> */}
             </div>
           </div>
         </div>
