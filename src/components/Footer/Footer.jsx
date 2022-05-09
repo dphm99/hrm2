@@ -4,6 +4,7 @@ import styles from "./Footer.module.css";
 import logo from "../../assets/img/logo.png";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -71,21 +72,21 @@ function Footer() {
               <ul className={styles.ul_Element}>
                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
-                  <a href="">
+                  <Link to='/vi-tri-tuyen-dung'>
                     Vị trí tuyển dụng
-                  </a>
+                  </Link>
                 </li>
                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
-                  <a href="">
+                  <Link to='/dinh-huong-nghe-nghiep'>
                     Định hướng nghề nghiệp
-                  </a>
+                  </Link>
                 </li>
                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />
-                  <a href="">
+                  <Link to="/tro-giup">
                     Đào tạo
-                  </a>
+                  </Link>
                 </li>
                 <li className='d-flex align-items-center'>
                     <ArrowRightIcon />

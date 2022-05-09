@@ -1,15 +1,19 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link , useParams} from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { toSlug } from "../../../components/extensions/toSlug";
-import { Link } from "react-router-dom";
 export default function BannerBlock() {
   const { data } = useContext(BlogContext);
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
+  const [pagination, setpagination] = useState(0);
+  const [paginationactive, setPaginationactive] = useState("office");
+
   console.log(data);
   let { id } = useParams();
   console.log(id);
@@ -49,16 +53,34 @@ export default function BannerBlock() {
       short: "office",
     },
   ];
+  const Pagination = [
+    {
+      title: "1",
+      short: "office",
+    },
+    {
+      title: "2",
+      short: "office",
+    },
+    {
+      title: "3",
+      short: "office",
+    },
+    {
+      title: "4",
+      short: "office",
+    },
+  ];
   return (
     <div>
       <div className="container">
         <div className={styles.Banner}>
           <Breadcrumbs breadItem={breadcrumItem} />
 
-          <div className="row mt-5">
+          <div className={`${styles.BlogTop} row mt-5`}>
             {New.map((e, index) => {
               return (
-                <div className="col-sm-2">
+                <div className={`${styles.BannerCol} col-sm-2`}>
                   <div
                     key={index}
                     className={
@@ -83,18 +105,21 @@ export default function BannerBlock() {
             })}
           </div>
           <div className="row mb-2">
-            <div className="col-md-6">
+            <div className={`${styles.BlogCol6} col-md-6`}>
               {data &&
                 data.map((e, index) => {
                   return (
                     <>
                       <Link
                         className={styles.BannerLink}
-                        to="/dinh-huong-nghe-nghiep"
+                        to={{
+                          pathname: `/blog-chi-tiet/${toSlug(e.title)}`,
+                          search: `#${e.id}`,
+                        }}
                       >
                         <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
                           <div
-                            className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                            className={`${styles.Block_img} col-auto d-lg-block col-4`}
                           >
                             <img
                               className="bd-placeholder-img"
@@ -139,11 +164,39 @@ export default function BannerBlock() {
                   );
                 })}
             </div>
-            <div className="col-md-5">
-              <div className="col-10">
-                <RecruitBlog />
-              </div>
+            <div className={`${styles.BlogCol4} col-md-4`}>
+              <RecruitBlog />
             </div>
+          </div>
+        </div>
+        <div className={styles.BlogPagination}>
+          <div
+            className={`${styles.pagination} d-flex align-items-center justify-content-center`}
+          >
+            <KeyboardArrowLeftIcon
+              className={styles.btn_pagi}
+            ></KeyboardArrowLeftIcon>
+            {Pagination.map((e, index) => {
+              return (
+                <Link className={styles.Blogpagination}>
+                  {" "}
+                  <p
+                    className={
+                      pagination === index
+                        ? `${styles.btn_pagi} ${styles.pagination}`
+                        : `${styles.btn_pagi}`
+                    }
+                    onClick={() => {
+                      setpagination(index);
+                      setPaginationactive(e.short);
+                    }}
+                  >
+                    {e.title}
+                  </p>
+                </Link>
+              );
+            })}
+            <ChevronRightIcon className={styles.btn_pagi}></ChevronRightIcon>
           </div>
         </div>
       </div>
