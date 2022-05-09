@@ -10,6 +10,10 @@
   width: 100%;
   top: 0;
 }
+/* 
+.active {
+  text-decoration: underline;
+} */
 
 .headerLogo {
   text-align: left;
@@ -52,7 +56,7 @@
 
 .headerMenu li a {
   color: #fff;
-  /* text-decoration: none; */
+  text-decoration: none;
   font-weight: bold;
 }
 
