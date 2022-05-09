@@ -82,7 +82,7 @@ function Index() {
         />
       </div>
 
-      <div className={`container ${width}`} style={{ marginTop: "35px" }}>
+      <div className={`container ${width} `} style={{ marginTop: "35px" }}>
         <h3 className="text-center title">
           Hãy xem chúng tôi có thể giúp gì cho bạn
         </h3>

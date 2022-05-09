@@ -30,8 +30,11 @@ ReactDOM.render(
             {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
             {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
             <Route path="/vi-tri-tuyen-dung" component={JobList} />
-            <Route path="/blog-chi-tiet" component={BlogDetail} />
-            <Route path="/dinh-huong-nghe-nghiep" component={Blog} />
+            <Route exact path="/dinh-huong-nghe-nghiep" component={Blog} />
+            <Route
+              path="/dinh-huong-nghe-nghiep/:name"
+              component={BlogDetail}
+            />
             <Route path="/ung-tuyen" component={FormRecruit} />
             <Route path="/tro-giup" component={Index} />
             <Route path="/*" component={PageNotFound} />
