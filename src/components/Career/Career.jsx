@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import { BlogContext } from "../contexts/ContextBlog";
 import { Link } from "react-router-dom";
 import { toSlug } from "../../components/extensions/toSlug";
+import './Career.scss'
+
 function Career() {
   const { data } = useContext(BlogContext);
   // console.log(data);
