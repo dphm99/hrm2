@@ -4,27 +4,19 @@ import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
-<<<<<<< HEAD
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { toSlug } from "../../../components/extensions/toSlug";
-=======
-import { toSlug } from "../../../components/extensions/toSlug";
-import { Link } from "react-router-dom";
->>>>>>> 0c2bf34b6294c9a0ec7f6ee21b2860c2a9c71692
 export default function BannerBlock() {
   const { data } = useContext(BlogContext);
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
-<<<<<<< HEAD
   const [pagination, setpagination] = useState(0);
   const [paginationactive, setPaginationactive] = useState("office");
 
-=======
   console.log(data);
   let { id } = useParams();
   console.log(id);
->>>>>>> 0c2bf34b6294c9a0ec7f6ee21b2860c2a9c71692
   const breadcrumItem = [
     {
       href: "/",
@@ -120,7 +112,6 @@ export default function BannerBlock() {
                     <>
                       <Link
                         className={styles.BannerLink}
-<<<<<<< HEAD
                         to={{
                           pathname: `/blog-chi-tiet/${toSlug(e.title)}`,
                           search: `#${e.id}`,
@@ -129,23 +120,13 @@ export default function BannerBlock() {
                         <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
                           <div
                             className={`${styles.Block_img} col-auto d-lg-block col-4`}
-=======
-                        to="/dinh-huong-nghe-nghiep"
-                      >
-                        <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
-                          <div
-                            className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
->>>>>>> 0c2bf34b6294c9a0ec7f6ee21b2860c2a9c71692
                           >
                             <img
                               className="bd-placeholder-img"
                               width="20"
                               height="160"
                               src={e.avatar}
-<<<<<<< HEAD
-=======
                               alt="banner"
->>>>>>> 0c2bf34b6294c9a0ec7f6ee21b2860c2a9c71692
                             ></img>
                           </div>
                           <div
@@ -161,14 +142,6 @@ export default function BannerBlock() {
                               }}
                             ></p>
                             <div className={styles.Block__link}>
-<<<<<<< HEAD
-                              <a
-                                href="#"
-                                className={`${styles.Block_A} stretched-link`}
-                              >
-                                {e.tag_ids.name}
-                              </a>
-=======
                               <Link
                                 to={{
                                   pathname: `/dinh-huong-nghe-nghiep/${toSlug(
@@ -181,7 +154,6 @@ export default function BannerBlock() {
                                 {e.tag_ids.name}
                               </Link>
 
->>>>>>> 0c2bf34b6294c9a0ec7f6ee21b2860c2a9c71692
                               <p>- 2.500 lượt xem</p>
                             </div>
                           </div>
