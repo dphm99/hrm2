@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
-import ListIcon from "@mui/icons-material/List";
 import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
-
+import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
@@ -62,12 +61,7 @@ const Header2 = () => {
                     </li>
                   </ul>
                 </div>
-                {/* <ListIcon 
-               className={styles.menu_icon}
-               onClick={e=> setToggleMenu(!toggleMenu)}
-               >
-               </ListIcon> */}
-                {/* <div
+                <div
                   class="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
@@ -80,7 +74,7 @@ const Header2 = () => {
                     className={styles.menu_icon}
                     onClick={(e) => setToggleMenu(!toggleMenu)}
                   ></ListIcon>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

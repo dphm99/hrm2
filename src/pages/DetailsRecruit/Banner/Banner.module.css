@@ -135,6 +135,9 @@ img {
 .Banner__procedure {
   width: 100%;
   height: 400px;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   /* background-color: brown; */
   background-image: url('../../../assets/img/icon-svg/banner22.jpg');
 }
@@ -482,6 +485,6 @@ p {
 ul {
   padding: 0.2rem!important;
 }
-ul li {
+/* ul li {
   padding: 0.2rem!important;
-}
+} */
