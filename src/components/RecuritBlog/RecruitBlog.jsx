@@ -20,10 +20,10 @@ const RecruitBlog = () => {
         >
           <h5 className="my-0 fw-normal">TIN TUYỂN DỤNG NỔI BẬT</h5>
         </div>
-        {data.map((e, index) => {
+        {data && data.map((e, index) => {
           if (index < 5) {
             return (
-              <div className="card-header py-3 ">
+              <div className="card-header py-3 " key={index}>
                 <div className={`row d-flex`}>
                   <p className={`${styles.jobName} my-0 fw-normal col-8`}>
                     {e.industry ? e.industry : "Chuyên viên Marketing"}

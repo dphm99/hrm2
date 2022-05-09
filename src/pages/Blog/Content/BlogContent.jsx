@@ -77,7 +77,7 @@ export default function BlogContent() {
           <Breadcrumbs breadItem={breadcrumItem} />
 
           <div className={`${styles.BlogTop} row mt-5`}>
-            {New.map((e, index) => {
+            {New && New.map((e, index) => {
               return (
                 <div key={index} className={`${styles.BannerCol} col-sm-2`}>
                   <div
