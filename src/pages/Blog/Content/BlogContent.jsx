@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./BlogContent.module.css";
-import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";

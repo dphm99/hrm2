@@ -13,7 +13,7 @@ import DetailsRecuit from "./pages/DetailsRecruit/DetailsRecuit";
 import Blog from "./pages/Blog/Blog";
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
-import FAQs from "./pages/FAQs/FAQs";
+import Index from "./pages/FAQs/index";
 
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
@@ -33,7 +33,7 @@ ReactDOM.render(
             <Route path="/blog-chi-tiet" component={BlogDetail} />
             <Route path="/dinh-huong-nghe-nghiep" component={Blog} />
             <Route path="/ung-tuyen" component={FormRecruit} />
-            <Route path="/tro-giup" component={FAQs} />
+            <Route path="/tro-giup" component={Index} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
