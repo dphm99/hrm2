@@ -17,3 +17,19 @@
 .FAQ {
   margin: 15rem 0 0;
 }
+/* -------------------------mobile--------------------- */
+@media only screen and (max-width: 739px) {
+  .cardBanner {
+    display: none !important;
+  }
+  .FAQ {
+    margin: 13rem 0 0;
+  }
+}
+
+/* -------------------------tablets--------------------- */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .FAQ {
+    margin: 13rem 0 0;
+  }
+}

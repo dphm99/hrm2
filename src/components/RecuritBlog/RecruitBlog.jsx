@@ -11,19 +11,14 @@ const RecruitBlog = () => {
         style={{
           position: `sticky`,
           top: `11rem`,
-          border: ` 1px solid #ddd`
-
+          border: ` 1px solid #ddd`,
         }}
       >
         <div
           className="card-header py-3"
           style={{ borderBottom: `solid 1px #ddd` }}
-
         >
-          <h5
-            className="my-0 fw-normal"
-          >
-            TIN TUYỂN DỤNG NỔI BẬT</h5>
+          <h5 className="my-0 fw-normal">TIN TUYỂN DỤNG NỔI BẬT</h5>
         </div>
         {data.map((e, index) => {
           if (index < 5) {
@@ -33,26 +28,18 @@ const RecruitBlog = () => {
                   <p className={`${styles.jobName} my-0 fw-normal col-8`}>
                     {e.industry ? e.industry : "Chuyên viên Marketing"}
                   </p>
-                  <p className={`${styles.deadLine}  col-4`}>
-                    {e.deadline}
-                  </p>
-
+                  <p className={`${styles.deadLine}  col-4`}>{e.deadline}</p>
                 </div>
 
                 <div className={`row d-flex`}>
-                  <p className={`${styles.address}  col-8`}>
-                    {e.address.name}
-                  </p>
-                  <h7 className={`  col-4`}>
-                    ỨNG TUYỂN
-                  </h7>
+                  <p className={`${styles.address}  col-8`}>{e.address.name}</p>
+                  <h5 className={`  col-4`}>ỨNG TUYỂN</h5>
                 </div>
-              </div >
-            )
+              </div>
+            );
           }
         })}
-
-      </div >
+      </div>
     </>
   );
 };

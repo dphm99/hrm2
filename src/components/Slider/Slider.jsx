@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../Slider/Slider.module.css";
-import './slider.scss'
-
+import "./slider.scss";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,12 +15,17 @@ function Sliders() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   let renderSlides = [1, 2, 3].map((ele, index) => {
     return (
       <div className={styles.banner} key={index}>
-        <img style={{width:"100vw",height:"80vh"}} src={demoImage} alt="" />
+        <img
+          style={{ width: "100vw", height: "80vh" }}
+          src={demoImage}
+          alt=""
+        />
         <div className={styles.overlay}></div>
       </div>
     );

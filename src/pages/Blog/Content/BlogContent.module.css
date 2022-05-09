@@ -31,7 +31,7 @@
   text-decoration: none;
 }
 
-.BannerNav.active  {
+.BannerNav.active {
   color: #fff;
   background-color: rgb(208, 28, 28);
 }
@@ -42,8 +42,7 @@
   width: 66%;
 }
 
-
-.BannerNav.active .BannerActive:hover  {
+.BannerNav.active .BannerActive:hover {
   color: #fff;
   /* filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
     brightness(92%); */
@@ -74,9 +73,9 @@
   -webkit-box-orient: vertical;
 }
 
-.Block_P  *{
-  color: black!important;
-  text-decoration: none!important;
+.Block_P * {
+  color: black !important;
+  text-decoration: none !important;
   font-weight: normal;
 }
 
