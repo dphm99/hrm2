@@ -130,7 +130,7 @@ export default function  BannerBlock () {
             <div className="col-md-5">
               <div className="col-10">
                 <RecruitBlog />
-              </div>
+              </div>                                                                                                                                                                                                                                                                                                                              
             </div>
           </div>
         </div>
