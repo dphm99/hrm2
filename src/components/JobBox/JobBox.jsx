@@ -62,7 +62,7 @@ function JobBox() {
   ];
 
   return (
-    <div className={`${styles.jobRef} container`}>
+    <div className={`${styles.jobRef} container-xl`}>
       <div className={styles.title}>
         <h3>Việc làm theo phòng ban</h3>
       </div>

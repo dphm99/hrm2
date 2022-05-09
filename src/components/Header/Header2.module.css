@@ -1,18 +1,17 @@
 .Header2 {
   height: 80px;
-  width: 100%;
+  width: 100vw;
   background-color: #bf202e;
-
 }
 
 .headerWrapper {
   position: fixed;
   z-index: 999;
   width: 100%;
-  top:0
+  top: 0;
 }
 
-.headerLogo{
+.headerLogo {
   text-align: left;
 }
 
@@ -119,7 +118,6 @@
     z-index: 6;
     float: right;
     margin-top: -64px;
-
   }
 
   .headerMenu li a {
@@ -127,10 +125,10 @@
   }
 
   .header__fixx {
-    margin-bottom: -21px!important;
+    margin-bottom: -21px !important;
   }
   .header__fixloi {
-    margin-top: -15px!important;
+    margin-top: -15px !important;
   }
 
   .menu_show .active {
@@ -189,7 +187,7 @@
   }
 }
 
-@media only screen and (max-width:992px) {
+@media only screen and (max-width: 992px) {
   .logoImg {
     width: 130px;
     margin-left: 25px;
@@ -207,7 +205,6 @@
     z-index: 6;
     float: right;
     margin-top: -64px;
-
   }
 
   .headerMenu li a {
@@ -215,10 +212,10 @@
   }
 
   .header__fixx {
-    margin-bottom: -21px!important;
+    margin-bottom: -21px !important;
   }
   .header__fixloi {
-    margin-top: -15px!important;
+    margin-top: -15px !important;
   }
 
   .menu_show .active {
@@ -277,7 +274,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1224px){
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
   .menu_icon {
     opacity: 0;
   }
@@ -296,13 +293,12 @@
     margin-left: 30px;
   }
 
-  
-.Header3_name p {
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 17px;
-}
+  .Header3_name p {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+  }
 }
 
 @media screen and (min-width: 1224px) {
@@ -310,4 +306,3 @@
     opacity: 0;
   }
 }
-

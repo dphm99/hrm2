@@ -4,14 +4,15 @@ import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
+import { toSlug } from "../../../components/extensions/toSlug";
 import { Link } from "react-router-dom";
-export default function  BannerBlock () {
+export default function BannerBlock() {
   const { data } = useContext(BlogContext);
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
   console.log(data);
   let { id } = useParams();
-  console.log(id)
+  console.log(id);
   const breadcrumItem = [
     {
       href: "/",
@@ -53,7 +54,7 @@ export default function  BannerBlock () {
       <div className="container">
         <div className={styles.Banner}>
           <Breadcrumbs breadItem={breadcrumItem} />
-          
+
           <div className="row mt-5">
             {New.map((e, index) => {
               return (
@@ -87,39 +88,51 @@ export default function  BannerBlock () {
                 data.map((e, index) => {
                   return (
                     <>
-                      <Link className={styles.BannerLink} to='/blog-chi-tiet'>
-                      <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
-                        <div
-                          className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
-                        >
-                          <img
-                            className="bd-placeholder-img"
-                            width="20"
-                            height="160"
-                            src={e.avatar}
-                          ></img>
-                        </div>
-                        <div
-                          className={`${styles.BannerBlockflex} col d-flex flex-column position-static`}
-                        >
-                          <h6 className={`${styles.Block_H6} mb-2`}>
-                            {e.title}
-                          </h6>
-                          <p
-                            className={`${styles.Block_P} mb-auto`}
-                            dangerouslySetInnerHTML={{ __html: `${e.content}` }}
-                          ></p>
-                          <div className={styles.Block__link}>
-                            <a
-                              href="#"
-                              className={`${styles.Block_A} stretched-link`}
-                            >
-                              {e.tag_ids.name}
-                            </a>
-                            <p>- 2.500 lượt xem</p>
+                      <Link
+                        className={styles.BannerLink}
+                        to="/dinh-huong-nghe-nghiep"
+                      >
+                        <div class="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                          <div
+                            className={`${styles.Block_img} col-auto d-none d-lg-block col-4`}
+                          >
+                            <img
+                              className="bd-placeholder-img"
+                              width="20"
+                              height="160"
+                              src={e.avatar}
+                              alt="banner"
+                            ></img>
+                          </div>
+                          <div
+                            className={`${styles.BannerBlockflex} col d-flex flex-column position-static`}
+                          >
+                            <h6 className={`${styles.Block_H6} mb-2`}>
+                              {e.title}
+                            </h6>
+                            <p
+                              className={`${styles.Block_P} mb-auto`}
+                              dangerouslySetInnerHTML={{
+                                __html: `${e.content}`,
+                              }}
+                            ></p>
+                            <div className={styles.Block__link}>
+                              <Link
+                                to={{
+                                  pathname: `/dinh-huong-nghe-nghiep/${toSlug(
+                                    e.title
+                                  )}`,
+                                  search: `#${index}#${e.id}`,
+                                }}
+                                className={`${styles.Block_A} stretched-link`}
+                              >
+                                {e.tag_ids.name}
+                              </Link>
+
+                              <p>- 2.500 lượt xem</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
                       </Link>
                       <div className="pb-1 mb-4 fst-italic border-bottom"></div>
                     </>
@@ -136,6 +149,6 @@ export default function  BannerBlock () {
       </div>
     </div>
   );
-};
+}
 
 // export default BannerBlock;
