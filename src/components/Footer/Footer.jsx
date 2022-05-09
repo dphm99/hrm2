@@ -67,6 +67,7 @@ function Footer() {
               </ul>
             </div>
           </div>
+
           <div className="col-lg-8">
             <div className="row ">
               <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
@@ -168,6 +169,7 @@ function Footer() {
                   ></iframe>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
