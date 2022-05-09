@@ -13,12 +13,12 @@
 }
 .title h3 {
   text-transform: uppercase;
-  margin-bottom: 46px;
+  margin: 46px 0;
 }
 
 .jobCategoryItem {
   width: 170px;
-  height: 190px;
+  height: 200px;
   background-color: #e5e5e5;
   display: flex;
   justify-content: space-between;
@@ -31,8 +31,7 @@
   color: #fff;
 }
 .jobCategoryItem.active .jobCategoryImg {
-  filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(183deg)
-    brightness(92%) contrast(111%);
+  filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(183deg) brightness(92%) contrast(111%);
 }
 .jobCategoryImg {
   margin-top: 10px;
@@ -78,8 +77,8 @@
 }
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
-  .jobListTitle h5{
-    
+  .jobListTitle {
+    margin-bottom: 0px;
   }
 }
 /* -------------------------small mobile--------------------- */

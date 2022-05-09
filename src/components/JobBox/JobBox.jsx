@@ -100,8 +100,8 @@ function JobBox() {
                       key={index}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
                     >
-                      <div className={styles.jobListTitle}>
-                        <h5>
+                      <div className={`${styles.jobListTitle}`} >
+                        <h5 style={{display:`flex`}}>
                           <ArrowRightIcon />
                           {value.name.name} ({value.number} vị trí)
                         </h5>

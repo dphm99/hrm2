@@ -1,22 +1,38 @@
 import React, { useContext, useState } from "react";
-import { Link , useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { toSlug } from "../../../components/extensions/toSlug";
-export default function BannerBlock() {
+import Pagination from "../../../components/extensions/Pagination/Pagination";
+
+let PageSize = 3;
+
+export default function BlogContent() {
   const { data } = useContext(BlogContext);
   const [active, setactive] = useState(0);
-  const [category, setCategory] = useState("office");
-  const [pagination, setpagination] = useState(0);
-  const [paginationactive, setPaginationactive] = useState("office");
 
-  console.log(data);
-  let { id } = useParams();
-  console.log(id);
+  const [category, setCategory] = useState("office");
+  const [dataSliced, setdataSliced] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const currentTableData = React.useEffect(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+
+    const lastPageIndex = firstPageIndex + PageSize;
+
+    return data.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage]);
+  React.useEffect(() => {
+    if (data) {
+      const firstPageIndex = (currentPage - 1) * PageSize;
+      const lastPageIndex = firstPageIndex + PageSize;
+      setdataSliced(data.slice(firstPageIndex, lastPageIndex));
+      {console.log(data.length)}
+
+    }
+  }, [data, currentPage]);
+
   const breadcrumItem = [
     {
       href: "/",
@@ -53,24 +69,7 @@ export default function BannerBlock() {
       short: "office",
     },
   ];
-  const Pagination = [
-    {
-      title: "1",
-      short: "office",
-    },
-    {
-      title: "2",
-      short: "office",
-    },
-    {
-      title: "3",
-      short: "office",
-    },
-    {
-      title: "4",
-      short: "office",
-    },
-  ];
+
   return (
     <div>
       <div className="container">
@@ -80,9 +79,8 @@ export default function BannerBlock() {
           <div className={`${styles.BlogTop} row mt-5`}>
             {New.map((e, index) => {
               return (
-                <div className={`${styles.BannerCol} col-sm-2`}>
+                <div key={index} className={`${styles.BannerCol} col-sm-2`}>
                   <div
-                    key={index}
                     className={
                       active === index
                         ? `${styles.BannerNav} ${styles.active}`
@@ -106,11 +104,12 @@ export default function BannerBlock() {
           </div>
           <div className="row mb-2">
             <div className={`${styles.BlogCol6} col-md-6`}>
-              {data &&
-                data.map((e, index) => {
+              {dataSliced &&
+                dataSliced.map((e, index) => {
                   return (
                     <>
                       <Link
+                      key={index}
                         className={styles.BannerLink}
                         to={{
                           pathname: `/blog-chi-tiet/${toSlug(e.title)}`,
@@ -173,30 +172,13 @@ export default function BannerBlock() {
           <div
             className={`${styles.pagination} d-flex align-items-center justify-content-center`}
           >
-            <KeyboardArrowLeftIcon
-              className={styles.btn_pagi}
-            ></KeyboardArrowLeftIcon>
-            {Pagination.map((e, index) => {
-              return (
-                <Link className={styles.Blogpagination}>
-                  {" "}
-                  <p
-                    className={
-                      pagination === index
-                        ? `${styles.btn_pagi} ${styles.pagination}`
-                        : `${styles.btn_pagi}`
-                    }
-                    onClick={() => {
-                      setpagination(index);
-                      setPaginationactive(e.short);
-                    }}
-                  >
-                    {e.title}
-                  </p>
-                </Link>
-              );
-            })}
-            <ChevronRightIcon className={styles.btn_pagi}></ChevronRightIcon>
+            <Pagination
+              className="pagination-bar"
+              currentPage={currentPage}
+              totalCount={data.length}
+              pageSize={5}
+              onPageChange={(page) => setCurrentPage(page)}
+            />
           </div>
         </div>
       </div>
