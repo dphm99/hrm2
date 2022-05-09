@@ -14,7 +14,6 @@ import Blog from "./pages/Blog/Blog";
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import Index from "./pages/FAQs/index";
-
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -26,9 +25,8 @@ ReactDOM.render(
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={App} />
-            <Route exact path="/tuyen-dung" component={DetailsRecuit} />s
+            <Route exact path="/tuyen-dung/:name" component={DetailsRecuit} />
             {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
-            {/* <Route path="/tuyen-dung/:name" component={Recruit} /> */}
             <Route path="/vi-tri-tuyen-dung" component={JobList} />
             <Route exact path="/dinh-huong-nghe-nghiep" component={Blog} />
             <Route
