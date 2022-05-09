@@ -4,13 +4,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { BlogContext } from "../contexts/ContextBlog";
-
+import { Link } from "react-router-dom";
+import { toSlug } from "../../components/extensions/toSlug";
 function Career() {
-  const {data} = useContext(BlogContext);
-  console.log(data)
-  
+  const { data } = useContext(BlogContext);
+  // console.log(data);
+
   const settings = {
-    autoplay:true,
+    autoplay: true,
     dots: false,
     infinite: true,
     speed: 500,
@@ -47,7 +48,6 @@ function Career() {
 
   const CardItem = (props) => {
     return (
-      
       <div className={`${styles.Career_col} col px-3`}>
         <div className={styles.Career__card}>
           <div className={styles.Career__img}>
@@ -63,11 +63,11 @@ function Career() {
               <h5 className={styles.Career__title}>{props.title}</h5>
             </div>
             <div className={styles.Career__tikitiki}>
-
-              <p className={styles.Career__tiki} dangerouslySetInnerHTML={{ __html: `${props.text}` }}>
-                
+              <p
+                className={styles.Career__tiki}
+                dangerouslySetInnerHTML={{ __html: `${props.text}` }}
+              >
                 {/* <h8 className={styles.Career__h8}>Đọc thêm</h8> */}
-
               </p>
             </div>
             <div className="d-flex justify-content-between align-items-center">
@@ -89,12 +89,14 @@ function Career() {
             {data &&
               data.map((e, index) => {
                 return (
-                  <CardItem
-                    title={e.title}
-                    src={e.avatar}
-                    text={e.content}
-                    key={index}
-                  />
+                  
+                    <CardItem
+                      title={e.title}
+                      src={e.avatar}
+                      text={e.content}
+                      key={index}
+                    />
+                  
                 );
               })}
           </Slider>
