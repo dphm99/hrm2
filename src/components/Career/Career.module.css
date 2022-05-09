@@ -102,10 +102,10 @@
   justify-content: space-between;
 }
 
-.Career__img{
+.Career__img {
   height: 120px;
 }
-.Wrapper{
+.Wrapper {
   height: 80px;
 }
 
@@ -126,7 +126,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.link {
+  text-decoration: none;
+  color: #000;
+}
+.link:hover {
+  color: #000;
+}
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 1023px) {
   .Career__card {
