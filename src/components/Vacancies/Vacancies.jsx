@@ -48,11 +48,7 @@ function Vancancies() {
     },
   ];
 
-  const handleOnclick = () => {
-    // document.querySelector(".vancancieBtn")
-  };
-
-  console.log();
+ 
   return (
     <div className={styles.Vancancies}>
       <div className="container">
@@ -124,7 +120,7 @@ function Vancancies() {
               ))}
         </div>
         <div className={styles.overlay}>
-          <button onClick={handleOnclick()} className={styles.vancanciesBtn}>
+          <button  className={styles.vancanciesBtn}>
             Xem thêm
           </button>
         </div>
