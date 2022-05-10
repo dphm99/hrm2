@@ -60,7 +60,6 @@ const jobCategory = [
 ];
 function JobRecruits() {
   const data = useContext(RecruitContext);
-  console.log(data);
 //   const [dataSliced, setdataSliced] = useState([]);
 //   const [currentPage, setCurrentPage] = useState(1);
 //   let PageSize = 10;

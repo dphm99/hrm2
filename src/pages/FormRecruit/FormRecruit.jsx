@@ -11,9 +11,9 @@ function FormRecruit() {
   const [email, setEmail] = useState();
   const [cv, setCv] = useState([]);
   const onChange = (e) => {
-    console.log("attachment", e.target.files[0]);
+    // console.log("attachment", e.target.files[0]);
     setCv([e.target.files[0]]);
-    console.log(cv);
+    // console.log(cv);
   };
 
   const bodyFormData = new FormData();

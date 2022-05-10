@@ -15,7 +15,6 @@ function Vancancies() {
   const [active, setActive] = useState(false);
   const { data } = useContext(RecruitContext);
   const [category, setCategory] = useState("office");
-  console.log(data);
 
   const jobCategory = [
     {
@@ -52,7 +51,6 @@ function Vancancies() {
     // document.querySelector(".vancancieBtn")
   };
 
-  console.log();
   return (
     <div className={styles.Vancancies}>
       <div className="container">

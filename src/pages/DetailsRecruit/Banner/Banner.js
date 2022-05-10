@@ -82,7 +82,7 @@ const Banner = () => {
       .then((result) => result.json())
       .then((city) => {
         setCity(city.data);
-        console.log(city.data);
+        // console.log(city.data);
       });
   }, []);
 
@@ -409,7 +409,7 @@ const Banner = () => {
                   <div className={styles.Banner__recruit}>
                     <ul className={styles.Banner__recruitUL}>
                       {bannerAPI.map((e, index) => {
-                        console.log(e.img);
+                        // console.log(e.img);
                         return (
                           <li
                             key={index}
