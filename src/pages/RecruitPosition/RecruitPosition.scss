@@ -1,0 +1,23 @@
+.RecruitPosition {
+  .MuiBox-root {
+    margin: 0 auto;
+  }
+  .MuiSvgIcon-root {
+    color: #bf202e;
+  }
+  .MuiSvgIcon-root.Mui-completed {
+    color: #bf202e;
+  }
+  .MuiStepIcon-root.Mui-active{
+    color: #bf202e;
+  }
+  .MuiStepIcon-root{
+    color: #a8a8a8;
+  }
+  .MuiButton-root.MuiButton-contained {
+    background-color: #bf202e;
+  }
+  .MuiButton-disabled {
+    background-color: transparent;
+  }
+}

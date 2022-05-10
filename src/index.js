@@ -12,6 +12,7 @@ import DetailsRecuit from "./pages/DetailsRecruit/DetailsRecuit";
 // const Recruit = lazy(() => import("./pages/Recruit"));
 import Blog from "./pages/Blog/Blog";
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
+import RecruitPosition from "./pages/RecruitPosition/RecruitPosition";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import Index from "./pages/FAQs/index";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
@@ -34,6 +35,7 @@ ReactDOM.render(
               component={BlogDetail}
             />
             <Route path="/ung-tuyen/:name" component={FormRecruit} />
+            <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
             <Route path="/tro-giup" component={Index} />
             <Route path="/*" component={PageNotFound} />
           </Switch>

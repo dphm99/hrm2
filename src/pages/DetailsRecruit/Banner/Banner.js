@@ -39,8 +39,8 @@ const Banner = () => {
     },
 
     {
-      href: "/nhan-vien-kinh-doanh",
-      title: "nhan-vien-kinh-doanh",
+      href: "/nhan-viên-kinh-doanh",
+      title: "nhan-viên-kinh-doanh",
       isActive: true
     }
   ]
@@ -92,11 +92,11 @@ const Banner = () => {
   return (
     <>
       <div className="container">
-        <div className={styles.Banner}>
+        <div className={styles.detailsRecuit}>
           <Breadcrumbs
             breadItem={breadcrumItem}
           />
-          <h2 className={styles.Banner_h2}>
+          <h2>
             NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)
           </h2>
           <div className="row mb-2">
@@ -202,16 +202,12 @@ const Banner = () => {
                 }
               </div>
             </div>
-            <div className={`${styles.Banner_md7} col-md-7`}>
+            <div className={`${styles.detailsSidebar} col-md-8`}>
               <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <img src={demo} style={{ width: "100%" }} />
-                {/* <div className="col p-4 d-flex flex-column position-static">
-                  
-                </div> */}
-                <div>
-                  <h4 className={styles.Banner_hh6}>Mô tả công việc</h4>
+                  <h4>Mô tả công việc</h4>
                   <div>
-                    <ul className={styles.Banner_uul}>
+                    <ul>
                       <p>
                         - Tư vấn hỗ trợ khách hàng đến siêu thị Bách Hóa Xanh để
                         mua sắn, trải nghiệm
@@ -234,12 +230,10 @@ const Banner = () => {
                       </p>
                     </ul>
                   </div>
-                </div>
-
                 <div>
-                  <h4 className={styles.Banner_hh4}>Yêu cầu công việc</h4>
+                  <h5>Yêu cầu công việc</h5>
                   <div>
-                    <ul className={styles.Banner_uul}>
+                    <ul>
                       <p>- Nam/nữ từ 18-40 tuổi</p>
                       <p>- Thân thiện, nhiệt tình, muốn gắn bó lâu dài</p>
                       <p>- Có sức khỏe tốt, tháo vác, có trách nhiệm.</p>
@@ -257,9 +251,9 @@ const Banner = () => {
                 </div>
 
                 <div>
-                  <h4 className={styles.Banner_hh4}>Chính sách & Phúc lợi</h4>
+                  <h5>Chính sách & Phúc lợi</h5>
                   <div>
-                    <ul className={styles.Banner_uul}>
+                    <ul>
                       <p>
                         - Thu nhập trung bình từ 7-10 triệu trở lên theo hiệu
                         quả làm việc và giờ công làm việc
@@ -291,13 +285,13 @@ const Banner = () => {
                   </div>
                 </div>
 
-                <div>
-                  <h4 className={styles.Banner_hh4}>
-                    Địa điểm làm việc (<a href="/" style={{ color: "red" }}>64</a> tỉnh
+                <div className={styles.detailsSideBarCity}>
+                  <h4>
+                    Địa điểm làm việc (<a href="/" style={{ color: "#bf202e", textDecoration: "none" }}>64</a> tỉnh
                     thành)
                   </h4>
                   <div>
-                    <select className={styles.Banner_select}>
+                    <select className={styles.detailsSelect}>
                       <option selected disabled>
                         Toàn quốc
                       </option>
@@ -307,7 +301,7 @@ const Banner = () => {
                         ))}
                     </select>
 
-                    <div className={`${styles.Banner_check} form-check`}>
+                    <div className={`${styles.detailscheck} form-check`}>
                       <input
                         className="form-check-input"
                         type="checkbox"
@@ -317,13 +311,13 @@ const Banner = () => {
                       <label
                         className="form-check-label"
                         htmlFor="flexCheckDefault"
-                        style={{ color: "rgb(185, 9, 9)" }}
+                        style={{ color:"#bf202e", marginTop: "5px", marginLeft:"12px"}}
                       >
                         Xem địa điểm làm việc gần bạn nhất
                       </label>
                     </div>
-                    <div className={styles.Banner_checkbox}>
-                      <div className={`${styles.Banner_check} form-check`}>
+                    <div>
+                      <div className={`${styles.detailscheck} form-check`}>
                         <input
                           className="form-check-input"
                           type="radio"
@@ -333,6 +327,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
+                          style={{ marginTop: "-6px", marginLeft:"12px"}}
                         >
                           Tầng 2,Tòa nhà N03T5, khu Đoàn ngoại giao,p.Xuân
                           Tảo,q.Bắc Từ Liêm,Hà Nội, VN.
@@ -347,7 +342,7 @@ const Banner = () => {
                           </h6>
                         </label>
                       </div>
-                      <div className={`${styles.Banner_check} form-check`}>
+                      <div className={`${styles.detailscheck} form-check`}>
                         <input
                           className="form-check-input"
                           type="radio"
@@ -357,6 +352,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
+                          style={{ marginTop: "-6px", marginLeft:"12px"}}
                         >
                           Số 25, Nguyễn Lương Bằng, phường Tân Phú, Quận 7,
                           TP.Hồ Chí Minh, VN.
@@ -371,16 +367,18 @@ const Banner = () => {
                           </h6>
                         </label>
                       </div>
-                      <div className={`${styles.Banner_check} form-check`}>
+                      <div className={`${styles.detailscheck} form-check`}>
                         <input
                           className="form-check-input"
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
+                          
                         />
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
+                          style={{ marginTop: "-6px", marginLeft:"12px"}}
                         >
                           Tòa nhà AN06, Nguyễn Chí Thanh,p.Chùa Láng,q.Đống
                           Đa,Hà Nội,VN.
@@ -395,7 +393,7 @@ const Banner = () => {
                           </h6>
                         </label>
                       </div>
-                      <div className={`${styles.Banner_check} form-check`}>
+                      <div className={`${styles.detailscheck} form-check`}>
                         <input
                           className="form-check-input"
                           type="radio"
@@ -405,6 +403,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
+                          style={{ marginTop: "-6px", marginLeft:"12px"}}
                         >
                           Số 1001, Bàng Đỏ,p.Phường Hoa Phượng Đỏ,tx.Kiến An,Hải
                           Phòng, VN.
@@ -420,18 +419,18 @@ const Banner = () => {
                         </label>
                       </div>
                     </div>
-                    <div className={styles.Banner__btoon}>
-                      <button className={styles.Banner__btn}>Xem thêm</button>
+                    <div className={styles.detailsButton}>
+                      <button>Xem thêm</button>
                     </div>
                   </div>
                 </div>
 
-                <div className={styles.Banner__procedure}>
-                  <h4 className={styles.Banner__procedureh6}>
+                <div className={styles.detailsProcedure}>
+                  <h4>
                     QUY TRÌNH TUYỂN DỤNG
                   </h4>
-                  <div className={styles.Banner__recruit}>
-                    <ul className={styles.Banner__recruitUL}>
+                  <div className={styles.detailsRecruit}>
+                    <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
                         // console.log(e.img);
                         return (
@@ -439,57 +438,57 @@ const Banner = () => {
                             key={index}
                             className={
                               active === index
-                                ? `${styles.Banner__recruitLI} ${styles.active}`
-                                : `${styles.Banner__recruitLI}`
+                                ? `${styles.detailsRecruitLI} ${styles.active}`
+                                : `${styles.detailsRecruitLI}`
                             }
                             onClick={() => {
                               setactive(index);
                               setCategory(e.short);
                             }}
                           >
-                            <img src={e.img} className={styles.Banner__icon} alt={e.title} />
-                            <div className={styles.Banner__buoc}>{e.name}</div>
-                            <div className={styles.Banner__upload}>
+                            <img src={e.img} className={styles.detailsRecruiIcon} alt={e.title}/>
+                            <h1 className={styles.detailsRecruiBuoc}>{e.name}</h1>
+                            <span className={styles.detailsRecruiUpload}>
                               {e.title}
-                            </div>
+                            </span>
                           </li>
                         );
                       })}
                     </ul>
                   </div>
-                  <div className={styles.Banner__btoon5}>
-                    <button className={styles.Banner__btn5}>
+                  <div className={styles.detailsRecruiBtn}>
+                    <button>
                       Xem chi tiết tại đây
                     </button>
                   </div>
                 </div>
 
-                <div className={styles.Banner__Applynow}>
-                  <div className={styles.Banner__Apply}>
+                <div className={styles.detailsApplynow}>
+                  <div className={styles.detailsApply}>
                     <a>GỬI CV, ỨNG TUYỂN NGAY</a>
                   </div>
                 </div>
 
-                <div className={styles.Banner__Map}>
-                  <h5 className={styles.Banner__MapH5}>
+                <div className={styles.detailsMap}>
+                  <h5>
                     Một số vị trí tương đương
                   </h5>
                   <ul>
-                    <p className={styles.Banner__MapMap}>
+                    <p>
                       - Chuyên viên hỗ trợ kinh doanh (kinh doanh) <a>tại</a>{" "}
-                      <a className={styles.Banner__MapP}>Hà Nội</a>
+                      <a className={styles.detailsText}>Hà Nội</a>
                     </p>
-                    <p className={styles.Banner__MapMap}>
+                    <p>
                       - Quản lý sàn TMĐT (Marketing) <a>tại</a>{" "}
-                      <a className={styles.Banner__MapP}>TP.Hồ Chí Minh</a>
+                      <a className={styles.detailsText}>TP.Hồ Chí Minh</a>
                     </p>
-                    <p className={styles.Banner__MapMap}>
+                    <p>
                       - Giám sát khu vực (kinh doanh) <a>tại</a>{" "}
-                      <a className={styles.Banner__MapP}>Hải Dương</a>
+                      <a className={styles.detailsText}>Hải Dương</a>
                     </p>
                   </ul>
                 </div>
-                <div className={styles.Banner_demo}>
+                <div className={styles.detailsImage}>
                   <img src={demo} />
                 </div>
               </div>
