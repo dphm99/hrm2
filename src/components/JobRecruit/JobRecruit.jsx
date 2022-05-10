@@ -24,10 +24,13 @@ import banner1 from "../../assets/img/Vacancies/banner2.png";
 import Pagination from "../extensions/Pagination/Pagination";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
+import { formatDate } from "../extensions/formatDate";
+import formatNumber from "../extensions/formatNumber";
 const jobCategory = [
   {
     img: kinhdoanh,
     short: "office",
+
   },
   {
     img: marketing,
@@ -58,21 +61,26 @@ const jobCategory = [
     short: "south",
   },
 ];
+
+
+
 function JobRecruits() {
   const data = useContext(RecruitContext);
-//   const [dataSliced, setdataSliced] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   let PageSize = 10;
-//   useEffect(() => {
-//     if (data) {
-//       const firstPageIndex = (currentPage - 1) * PageSize;
-//       const lastPageIndex = firstPageIndex + PageSize;
-//       setdataSliced(data.slice(firstPageIndex, lastPageIndex));
-//     }
-//     const firstPageIndex = (currentPage - 1) * PageSize;
-//     const lastPageIndex = firstPageIndex + PageSize;
-//     return data.slice(firstPageIndex, lastPageIndex);
-//   }, [data, currentPage]);
+  console.log(data);
+  //   const [dataSliced, setdataSliced] = useState([]);
+  //   const [currentPage, setCurrentPage] = useState(1);
+  //   let PageSize = 10;
+  //   useEffect(() => {
+  //     if (data) {
+  //       const firstPageIndex = (currentPage - 1) * PageSize;
+  //       const lastPageIndex = firstPageIndex + PageSize;
+  //       setdataSliced(data.slice(firstPageIndex, lastPageIndex));
+  //     }
+  //     const firstPageIndex = (currentPage - 1) * PageSize;
+  //     const lastPageIndex = firstPageIndex + PageSize;
+  //     return data.slice(firstPageIndex, lastPageIndex);
+  //   }, [data, currentPage]);
+
   const breadcrumItem = [
     {
       href: "/",
@@ -95,11 +103,11 @@ function JobRecruits() {
     });
 
   return (
-    <div className="container" style={{ marginTop: "12rem" }}>
+    <div className={`container ${styles.customContainer}`} style={{ marginTop: "12rem" }}>
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>
         <div
-          className={`${styles.head_col} ${styles.head_input_search} col-lg-4 col-md-6 col-sm-6`}
+          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.head_input_search} `}
         >
           <input
             className={`${styles.head_input}`}
@@ -111,10 +119,10 @@ function JobRecruits() {
           </div>
         </div>
         <div
-          className={`${styles.head_col} ${styles.head_input_location} col-lg-4 col-md-6 col-sm-6`}
+          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.head_input_location} `}
         >
           <input
-            className={`${styles.head_input}`}
+            className={`${styles.head_input} ${styles.head_checkAddress}`}
             placeholder="Địa điểm làm việc"
           />
           <div className={styles.input_icon}>
@@ -122,11 +130,11 @@ function JobRecruits() {
             <FmdGoodIcon className={styles.searchIcon}></FmdGoodIcon>
           </div>
         </div>
-        <div className={`${styles.head_col} col-lg-4 col-md-12 col-sm-12`}>
+        <div className={`${styles.head_col} col-sm-6 col-md-4 ${styles.wrapCheckbox}`}>
           <div className={`${styles.containCheckbox} `}>
             <input type="checkbox" className={styles.head_checkbox} />
-            <div className="overflow-hidden">
-              <h6 className={styles.head_title}>Tìm việc gần bạn</h6>
+            <div className={`${styles.head__address} overflow-hidden`}>
+              <h5 className={styles.head_title}>Tìm việc gần bạn</h5>
               <p className={styles.head_text}>
                 (Áp dụng tại Hà Nội, TP.HCM, Bắc Ninh)
               </p>
@@ -153,12 +161,12 @@ function JobRecruits() {
                     <span className={styles.higlight_text}>
                       {data.data.length}
                     </span>{" "}
-                    công việc
+                    việc làm
                   </p>
                   <div
                     className={`${styles.wrap_selectSort} d-flex align-items-center`}
                   >
-                    <p className="mb-0">Xếp theo:</p>
+                    <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
                     <select className={styles.priority}>
                       <option value="">Độ ưu tiên</option>
                       <option value="">Xếp theo </option>
@@ -184,7 +192,7 @@ function JobRecruits() {
                     />
                   ))}
               </div>
-                {/* <Pagination
+              {/* <Pagination
                     className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={data.length}
@@ -223,9 +231,9 @@ function JobRecruits() {
           alt=""
         />
         <div className={styles.overlay}>
-          <div className={styles.overlay_center}>
-            <h5>Banner tuyển dụng</h5>
-            <h5> (Demo)</h5>
+          <div className={`${styles.overlay_center} ${styles.overlay_title}`}>
+            <h2 className={styles.banner_title}>Banner tuyển dụng</h2>
+            <h2 className={styles.banner_title}> (Demo)</h2>
           </div>
         </div>
       </div>
@@ -266,13 +274,26 @@ function JobItem({
               {index + 1}. {name}{" "}
             </h5>
             <p className={`${styles.text_job} `}>
-              Số lượng {number} người | Nơi làm việc: {address}
+              Số lượng {number} người <span className={styles.spaceCount}>|</span> Nơi làm việc: {address}
             </p>
-            <p className={styles.text_job}>
+            <p className={`${styles.text_job} ${styles.text_price}`}>
               <AttachMoneyIcon
                 className={`${styles.money_icon} rounded-circle`}
               ></AttachMoneyIcon>{" "}
-              {salary == "ltt" ? `${salary}` : `${salary} ++VNĐ`}{" "}
+              {salary == "ltt" ? `Lương thỏa thuận` : `${formatNumber(
+                salary.split(" - ")[0].slice(0, -4),
+                0,
+                ",",
+                "."
+              )} -
+                           ${formatNumber(
+                salary.split(" - ")[1].slice(0, -4),
+                0,
+                ",",
+                "."
+              )}
+                            
+                            ++VNĐ`}
             </p>
           </div>
         </div>
@@ -280,21 +301,23 @@ function JobItem({
           <div
             className={`d-flex justify-content-between align-items-center ${styles.foot_text}`}
           >
-            <p className={styles.text_job}>Ngày đăng tuyển {start}</p>
+            <p className={`${styles.text_job} ${styles.text_jobStart}`}>Ngày đăng tuyển {formatDate(start, "-", "/")}</p>
 
-            <p className={styles.text_job}>
+            <p className={`${styles.text_job} ${styles.text_jobEnd}`}>
               <span className={styles.foot_space}> | </span>
-              Ngày hết hạn {end}
+              Ngày hết hạn {formatDate(end, "-", "/")}
             </p>
-            <Link
-              className={styles.apply_job}
-              to={{
-                pathname: `/tuyen-dung/${toSlug(name)}`,
-                search: `#${index}`,
-              }}
-            >
-            Ứng tuyển ngay
-            </Link>          
+            <div className={`${styles.containApply}`}>
+              <Link
+                className={styles.apply_job}
+                to={{
+                  pathname: `/tuyen-dung/${toSlug(name)}`,
+                  search: `#${index}`,
+                }}
+              >
+                Ứng tuyển ngay
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -302,7 +325,7 @@ function JobItem({
   );
 }
 function Category({ department, address }) {
-  const [job, setJob] = useState({});
+  const [job, setJob] = useState(0);
   return (
     <div className={`${styles.wrapCategory}`}>
       <Accordion>
@@ -312,17 +335,21 @@ function Category({ department, address }) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Việc làm theo phòng ban</Typography>
+          <Typography className={styles.accordi_title}>Việc làm theo phòng ban</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography className={styles.ul_listFilter}>
+        <AccordionDetails className={styles.accordionDetails}>
+          <Typography className={styles.ul_listFilterbot}>
             {department.map((depar, index) => (
               <li
                 key={index}
                 className={styles.filter_item}
-                onClick={(e) => setJob()}
+
               >
-                <a href="/" className={styles.filter_text}>
+                <a
+                  onClick={(e) => setJob(index)}
+                  href="#"
+                  className={job === index ? `${styles.filter_text} ${styles.ftActive}`
+                    : `${styles.filter_text}`}>
                   {depar}
                 </a>
               </li>
@@ -332,14 +359,15 @@ function Category({ department, address }) {
       </Accordion>
       <Accordion>
         <AccordionSummary
+          className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Việc làm theo vi trí địa lí</Typography>
+          <Typography className={styles.accordi_title}>Việc làm theo vi trí địa lý</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography className={styles.ul_listFilter}>
+        <AccordionDetails className={styles.accordionDetails}>
+          <Typography className={styles.ul_listFilterbot}>
             {address.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
                 <a href="/" className={styles.filter_text}>
@@ -352,14 +380,15 @@ function Category({ department, address }) {
       </Accordion>
       <Accordion>
         <AccordionSummary
+          className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Việc làm theo chuyên môn</Typography>
+          <Typography className={styles.accordi_title}>Việc làm theo chuyên môn</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className={styles.ul_listFilter}>
+          <Typography className={styles.ul_listFilterbot}>
             <li className={styles.filter_item}>
               <a href="/" className={styles.filter_text}>
                 kinh doanh
@@ -390,14 +419,15 @@ function Category({ department, address }) {
       </Accordion>
       <Accordion>
         <AccordionSummary
+          className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Việc làm theo thời gian</Typography>
+          <Typography className={styles.accordi_title}>Việc làm theo thời gian</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className={styles.ul_listFilter}>
+          <Typography className={styles.ul_listFilterbot}>
             <li className={styles.filter_item}>
               <a href="/" className={styles.filter_text}>
                 kinh doanh
