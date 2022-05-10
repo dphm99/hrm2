@@ -27,7 +27,7 @@ ReactDOM.render(
             <Route exact path="/" component={App} />
             <Route exact path="/tuyen-dung/:name" component={DetailsRecuit} />
             {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
-            <Route path="/vi-tri-tuyen-dung" component={JobList} />
+            <Route path="/tuyen-dung" component={JobList} />
             <Route exact path="/dinh-huong-nghe-nghiep" component={Blog} />
             <Route
               path="/dinh-huong-nghe-nghiep/:name"
