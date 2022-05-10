@@ -62,7 +62,7 @@ const Header2 = () => {
                       </NavLink>
                     </li>
                     <li className={styles.header__fixx}>
-                      <NavLink to="/vi-tri-tuyen-dung">
+                      <NavLink to="/tuyen-dung">
                         VỊ TRÍ TUYỂN DỤNG
                       </NavLink>
                     </li>
