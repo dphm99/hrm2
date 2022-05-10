@@ -1,4 +1,4 @@
-import React, { useState,useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 const RecruitContext = createContext("");
 function RecruitProvider({ children }) {
   const [data, setData] = useState([]);

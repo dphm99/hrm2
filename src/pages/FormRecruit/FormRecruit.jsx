@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./FormRecruit.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import axios from "axios";
 import FormData from "form-data"
+import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
 function FormRecruit() {
+  const data = useContext(RecruitContext);
+
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
@@ -36,7 +39,7 @@ function FormRecruit() {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((response) => {
-        alert(response,"Ban da ung tuyen thanh cong");
+        alert(response, "Ban da ung tuyen thanh cong");
       })
       .catch((error) => {
         alert(error.message);
@@ -56,6 +59,8 @@ function FormRecruit() {
       isActive: true,
     },
   ];
+  const blogIndex = window.location.hash.split("#")[1];
+
   return (
     <>
       <Header2 />
@@ -64,7 +69,10 @@ function FormRecruit() {
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
           <h4 className={styles.jobTitle}>
-            Nhân viên kinh doanh (Nhãn hàng Lipzo)
+            {data.data[0] && data.data.find((e) => e.id == blogIndex).name.name}
+          </h4>
+          <h4 className={styles.jobTitle}>
+            {blogIndex}
           </h4>
           <div className={styles.formRecruit}>
             <form encType="multipart/form-data">
@@ -72,6 +80,8 @@ function FormRecruit() {
                 <label htmlFor="inputName" className={styles.inputLabel}>
                   Họ và tên đầy đủ
                 </label>
+                <input type="hidden" value="2102" id="job_id" />
+                <input type="hidden" value="Chuyên viên abc" id="job_name" />
                 <input
                   type="text"
                   id="inputName"

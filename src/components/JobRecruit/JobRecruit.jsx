@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
 import formatNumber from "../extensions/formatNumber";
+
 const jobCategory = [
   {
     img: kinhdoanh,
@@ -67,6 +68,7 @@ const jobCategory = [
 function JobRecruits() {
   const data = useContext(RecruitContext);
   console.log(data);
+
   //   const [dataSliced, setdataSliced] = useState([]);
   //   const [currentPage, setCurrentPage] = useState(1);
   //   let PageSize = 10;
@@ -456,11 +458,11 @@ function Category({ department, address }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-
-      <div className={styles.joinJob}>
-        <h4 className={styles.joinText}>Ứng tuyển </h4>
-        <h4 className={styles.joinText}>theo chuyên môn</h4>
-      </div>
+      
+        <div className={styles.joinJob}>
+          <h4 className={styles.joinText}>Ứng tuyển </h4>
+          <h4 className={styles.joinText}>theo chuyên môn</h4>
+        </div>
       <div className={styles.wrap_banner}>
         <img className={styles.banner_cate} src={banner1} alt="/" />
         <div className={styles.overlay}>

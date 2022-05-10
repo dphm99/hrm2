@@ -7,7 +7,8 @@ import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
 import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
-
+import { Link } from "react-router-dom";
+import { toSlug } from "../extensions/toSlug";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { RecruitContext } from "../contexts/ContextRecuit";
 
@@ -96,17 +97,23 @@ function JobBox() {
               .map((value, index) => {
                 if (index < 9) {
                   return (
-                    <div
+                    <Link
                       key={index}
+                      to={{
+                        pathname: `/ung-tuyen/${toSlug(value.name.name)}`,
+                        search: `#${value.id}`,
+                      }}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
+
                     >
                       <div className={`${styles.jobListTitle}`} >
-                        <h5 style={{display:`flex`}}>
+                        <h5 style={{ display: `flex` }}>
                           <ArrowRightIcon />
                           {value.name.name} ({value.number} vị trí)
                         </h5>
                       </div>
-                    </div>
+
+                    </Link>
                   );
                 }
               })}

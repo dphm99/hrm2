@@ -1,6 +1,7 @@
-.Vancancies{
-    background-color: #eeeeee;
-    padding: 16px 0 0 0;
+.Vancancies {
+  background-color: #ccc;
+  padding: 16px 0 0 0;
+
 }
 .vancancieImage {
   width: 64px;
@@ -53,6 +54,8 @@
 .containerItem {
   padding-bottom: 24px;
   transition: 0.2s ease all;
+  text-decoration: none;
+  color: #000;
 }
 .vancanciesGroup {
   min-height: 107px;

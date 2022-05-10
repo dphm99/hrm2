@@ -34,7 +34,7 @@ ReactDOM.render(
               path="/dinh-huong-nghe-nghiep/:name"
               component={BlogDetail}
             />
-            <Route path="/ung-tuyen" component={FormRecruit} />
+            <Route path="/ung-tuyen/:name" component={FormRecruit} />
             <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
             <Route path="/tro-giup" component={Index} />
             <Route path="/*" component={PageNotFound} />

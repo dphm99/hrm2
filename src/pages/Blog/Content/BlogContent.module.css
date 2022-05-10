@@ -154,6 +154,7 @@ ul li {
   background-color: #bf202e;
   color: #fff;
   border: none;
+  border-radius: 3px;
 }
 
 /* ------------------------- tablets & mobile--------------------- */
