@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import { BlogContext } from "../contexts/ContextBlog";
 import { Link } from "react-router-dom";
 import { toSlug } from "../../components/extensions/toSlug";
-import './Career.scss'
+import "./Career.scss";
 
 function Career() {
   const { data } = useContext(BlogContext);
@@ -91,14 +91,20 @@ function Career() {
             {data &&
               data.map((e, index) => {
                 return (
-                  
+                  <Link
+                    to={{
+                      pathname: `/dinh-huong-nghe-nghiep/${toSlug(e.title)}`,
+                      search: `#${index}#${e.id}`,
+                    }}
+                    className={`${styles.link}`}
+                  >
                     <CardItem
                       title={e.title}
                       src={e.avatar}
                       text={e.content}
                       key={index}
                     />
-                  
+                  </Link>
                 );
               })}
           </Slider>
