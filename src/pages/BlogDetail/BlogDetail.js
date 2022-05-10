@@ -47,7 +47,7 @@ function BlogDetail() {
                 {data[blogIndex].title}
               </h1>
             </div>
-            <div className={`row`}>
+            <div>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data[blogIndex].content,
