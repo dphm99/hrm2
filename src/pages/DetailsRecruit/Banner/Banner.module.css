@@ -1,123 +1,141 @@
-.Banner {
+.detailsRecuit {
   width: 90%;
-  margin-left: 100px;
-  margin-top: 200px;
+  margin-left: 55px;
+  margin-top: 280px;
 }
 
-.Banner_h2 {
-  margin-top: 50px;
-  margin-bottom: 80px;
+.detailsRecuit h2 {
+  margin-top: 65px;
+  margin-bottom: 78px;
+  font-size: 30px;
 }
-.Banner_sticky{
+.detailsSticky{
   position: -webkit-sticky;
   position: sticky;
   top: 12rem;
 }
-.Banner_flex {
-  margin-top: 0px;
+.detailsFlex {
+  margin-top: 8px;
 }
 
-.Banner_h6 {
+.detailsFlex h6 {
   display: flex;
   margin-left: 140px;
   margin-top: -18px;
   color: black;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
-.Banner_li {
+.detailsFlex li {
   margin-left: 20px;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
-.Banner_ul {
+.detailsFlex ul {
   margin-top: -10px;
 }
 
-.Banner_button {
+.detailsBtn  {
   text-align: center;
   margin-top: 16px;
 }
-.Banner_button1 {
-  width: 87%;
-  font-size: 24px;
+
+.detailsBtn button:hover {
+  background-color: #ae1825;
+}
+.detailsBtn button {
+  width: 76%;
+  font-size: 19px;
   margin-bottom: 20px;
-  height: 65px;
+  height: 68px;
+  background-color: #bf202e;
+  border-color: #bf202e;
 }
 
-.Banner_link {
+.detailsLink {
   margin-left: 29px;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
   cursor: pointer;
 }
 
-.Banner_icon {
-  width: 100%;
-  font-size: 10px;
-}
-
-.Banner_copy {
+.detailsLink a {
   border-bottom: 1px solid;
   text-decoration: none;
   color: black;
 }
 
-.Banner_Icon {
+.detailsIcon {
   display: flex;
   width: 117px;
-  margin-left: 200px;
-  margin-top: -28px;
+  margin-left: 167px;
+  margin-top: -26px;
 }
 
-.Banner_fb {
+.detailsfb {
   margin-left: 10px;
 }
 
-img {
-  width: 5%;
-}
-
-.Banner_hh6 {
-  margin-top: 30px;
+.detailsSidebar h4 {
+  font-size: 19px;
+  margin-top: 40px;
   margin-left: 15px;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.Banner_uul {
+.detailsSidebar ul {
   margin-left: 10px;
+  margin-top: -7px;
 }
 
-.Banner_uul p {
+.detailsSidebar p {
   margin-top: -9px;
+  font-size: 16px;
 }
 
-.Banner_hh4 {
-  margin-top: 15px;
+.detailsSidebar h5 {
+  font-size: 19px;
+  margin-top: 5px;
   margin-left: 15px;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.Banner_select {
+.detailsSelect {
   width: 38%;
   margin-left: 15px;
   height: 52px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.Banner_checkbox {
-  margin-top: 15px;
+.form-check-label {
+  margin-top: 5px;
 }
 
-.Banner_check {
+.detailscheck {
+  margin-top: 25px;
   margin-left: 15px;
+  margin-bottom: 14px;
 }
 
-.Banner__btoon {
+.detailsButton {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 89px;
+  margin-top: -5px;
 }
 
-.Banner__btn {
+.detailsButton button {
   display: block;
   margin: 0 auto;
   font-weight: 600;
@@ -125,54 +143,54 @@ img {
   border: 1px solid #fff;
   background-color: #fff;
   text-align: center;
-  padding: 8px 47px;
+  padding: 7px 58px;
 }
 
-.Banner__btn:hover {
+.detailsButton:hover {
   background-color: rgb(245, 238, 238);
 }
 
-.Banner__procedure {
+.detailsProcedure {
   width: 100%;
-  height: 400px;
+  height: 425px;
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  /* background-color: brown; */
-  background-image: url('../../../assets/img/icon-svg/banner22.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../assets/img/icon-svg/banner22.jpg");
 }
 
-.Banner__procedureh6 {
+.detailsProcedure h4 {
   color: #fff;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 37px;
+  margin-bottom: 44px;
 }
 
-.Banner__recruit {
+.detailsRecruit {
   margin-bottom: 20px;
 }
 
-.Banner__recruit .Banner__recruitLI .Banner__buoc :hover {
+.detailsRecruit .detailsRecruitLI .Banner__buoc:hover {
   /* background-color: rgb(197, 197, 197); */
   color: red;
 }
 
-.Banner__recruit .Banner_hover:hover {
+.detailsRecruit:hover {
   color: #bf202e;
 }
 
-.Banner__recruitUL {
+.detailsRecruitUL {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
-.Banner__recruitLI {
+.detailsRecruitLI {
   margin-right: 9px;
-  width: 133px;
-  margin-left: 9px;
-  height: 175px;
+    width: 143px;
+    margin-left: 9px;
+    height: 200px;
   background-color: rgba(248, 247, 247, 0.5);
   display: flex;
   justify-content: space-between;
@@ -182,32 +200,33 @@ img {
   /* opacity: 0.3; */
 }
 
-.Banner__recruitLI.active {
+.detailsRecruitLI.active {
   opacity: 1;
   color: #bf202e;
 }
 
-.Banner__recruitLI:hover {
+.detailsRecruitLI:hover {
   background-color: rgba(207, 203, 203, 0.5);
+  color: #bf202e;
 }
 
-.Banner__recruitLI.active .Banner__buoc {
+.detailsRecruitLI.active .detailsRecruiBuoc {
   filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
     brightness(92%);
 }
 
-.Banner__recruitLI.active .Banner__upload {
+.detailsRecruitLI.active .detailsRecruiUpload {
   filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
     brightness(92%);
 }
 
-.Banner__recruitLI.active .Banner__icon {
+.detailsRecruitLI.active .detailsRecruiIcon {
   filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
     brightness(92%);
 }
 
-.Banner__icon {
-  margin-top: 8px;
+.detailsRecruiIcon {
+  margin-top: 0px;
   width: 50px;
   height: 60px;
   color: #fff;
@@ -215,28 +234,29 @@ img {
     brightness(92%);
 }
 
-.Banner__buoc {
-  margin-top: 20px;
+.detailsRecruiBuoc {
+  margin-top: 22px;
   color: #fff;
   z-index: 1;
   opacity: 1;
   font-size: 18px;
 }
 
-.Banner__upload {
-  font-size: 12px;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #fff;
+.detailsRecruiUpload {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 100px;
+    color: #fff;
+    width: 75%;
 }
 
-.Banner__btoon5 {
+.detailsRecruiBtn {
   text-align: center;
   margin-bottom: 40px;
   margin-top: 40px;
 }
 
-.Banner__btn5 {
+.detailsRecruiBtn button {
   display: block;
   margin: 0 auto;
   font-weight: 600;
@@ -244,17 +264,17 @@ img {
   border: 1px solid #fff;
   background-color: #fff;
   text-align: center;
-  padding: 8px 47px;
+  padding: 6px 47px;
 }
 
-.Banner__Applynow {
-  margin-top: 50px;
+.detailsApplynow {
+  margin-top: 43px;
   width: 100%;
   height: 63px;
   background-color: rgb(184, 30, 30);
 }
 
-.Banner__Apply {
+.detailsApply {
   display: flex;
   color: #fff;
   text-align: center;
@@ -263,55 +283,68 @@ img {
   margin-top: 12px;
 }
 
-.Banner__Map {
-  margin-top: 35px;
+.detailsMap {
+  margin-top: 42px;
   margin-left: 15px;
 }
 
-.Banner__MapH5 {
+.detailsMap h5 {
   font-style: italic;
 }
 
 ul li {
-  padding-top: 20px !important;
+  padding-top: 10px !important;
 }
 p {
   margin-bottom: 15px !important;
 }
 
-.Banner_md7 {
-  margin-bottom: 25px;
-}
-
-.Banner__MapP {
+.detailsMap p {
   color: black;
   cursor: pointer;
 }
 
-.Banner_demo {
-  width: 100%;
-  height: 270px;
+.detailsMap ul {
+  margin-top: 12px;
 }
 
-.Banner_demo img {
+.detailsText {
+  color: black;
+  text-decoration: underline;
+}
+
+.detailsImage {
+  width: 100%;
+  height: 316px;
+}
+
+.detailsImage img {
   width: 100%;
   height: 100%;
 }
 
+.detailsSideBarCity h4 {
+  font-size: 19px;
+  margin-top: 34px;
+  margin-left: 15px;
+  margin-bottom: 23px;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 768px) {
-  .Banner_h2 {
+  .detailsRecuit h2 {
     font-size: 13px;
     margin-top: 185px;
     margin-bottom: 25px;
   }
 
-  .Banner {
+  .detailsRecuit {
     width: 100%;
     margin-left: 0px;
     margin-top: 100px;
   }
 
-  .Banner_Icon {
+  .detailsIcon {
     margin-left: 0px;
     display: flex;
     width: 163px;
@@ -319,7 +352,7 @@ p {
     float: right;
   }
 
-  .Banner__recruitUL {
+  .detailsRecruitUL {
     display: block;
     justify-content: space-between;
     align-items: center;
@@ -327,7 +360,7 @@ p {
     margin-top: 22px;
   }
 
-  .Banner__recruitLI {
+  .detailsRecruitLI {
     margin-right: 9px;
     width: 96%;
     margin-left: 9px;
@@ -341,53 +374,53 @@ p {
     margin-bottom: 6px;
   }
 
-  .Banner__procedureh6 {
+  .detailsProcedure h4 {
     font-size: 15px;
     margin-top: 13px;
   }
 
-  .Banner__btn5 {
+  .detailsRecruiBtn {
     font-size: 10px;
     padding: 4px 23px;
   }
 
-  .Banner__btoon5 {
+  .detailsRecruiBtn button {
     text-align: center;
     margin-bottom: 0px;
     margin-top: 0px;
   }
 
-  .Banner__icon {
+  .detailsRecruiIcon {
     margin-top: -11px;
     margin-left: -240px;
     width: 34px;
     height: 60px;
   }
 
-  .Banner__buoc {
+  .detailsRecruiBuoc {
     margin-top: -40px;
   }
 
-  .Banner__Apply {
+  .detailsApply {
     font-size: 15px;
     margin-top: 18px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  .Banner_h2 {
+  .detailsRecuit h2 {
     font-size: 13px;
     margin-top: 185px;
     margin-bottom: 25px;
   }
 
-  .Banner {
+  .detailsRecuit {
     width: 132%;
     margin-left: -71px;
     margin-top: 100px;
   }
 
-  .Banner_Icon {
+  .detailsIcon {
     margin-left: 0px;
     display: flex;
     width: 163px;
@@ -395,7 +428,7 @@ p {
     float: right;
   }
 
-  .Banner__recruitUL {
+  .detailsRecruitUL {
     display: block;
     justify-content: space-between;
     align-items: center;
@@ -403,7 +436,7 @@ p {
     margin-top: 22px;
   }
 
-  .Banner__recruitLI {
+  .detailsRecruitLI {
     margin-right: 9px;
     width: 96%;
     margin-left: 9px;
@@ -417,12 +450,12 @@ p {
     margin-bottom: 6px;
   }
 
-  .Banner__procedureh6 {
+  .detailsProcedure h4 {
     font-size: 15px;
     margin-top: 13px;
   }
 
-  .Banner__btn5 {
+  .detailsRecruiBtn {
     font-size: 10px;
     padding: 4px 23px;
   }
@@ -433,57 +466,48 @@ p {
     margin-top: 0px;
   }
 
-  .Banner__icon {
+  .detailsRecruiBtn button {
     margin-top: -11px;
     margin-left: -270px;
     width: 34px;
     height: 60px;
   }
 
-  .Banner__buoc {
+  .detailsRecruiBuoc {
     margin-top: -40px;
   }
 
-  .Banner__Apply {
+  .detailsApply {
     font-size: 15px;
     margin-top: 18px;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1224px) {
-  .Banner {
+  .detailsRecuit {
     width: 114%;
     margin-top: 200px;
     margin-left: -21px;
   }
 
-  .Banner_h2 {
+  .detailsRecuit h2 {
     margin-bottom: 30px;
   }
 
-  .Banner_Icon {
+  .detailsIcon {
     display: flex;
     width: 117px;
     margin-left: 170px;
     margin-top: -28px;
   }
-
-  .Banner__icon {
-    margin-top: 8px;
-    width: 43px;
-    height: 57px;
-    color: #fff;
-    filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg) brightness(92%);
-  }
 }
 
 p {
-  margin-bottom: 1rem!important;
+  margin-bottom: 1rem !important;
 }
 
-
 ul {
-  padding: 0.2rem!important;
+  padding: 0.2rem !important;
 }
 /* ul li {
   padding: 0.2rem!important;

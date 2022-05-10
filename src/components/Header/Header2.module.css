@@ -1,6 +1,6 @@
 .Header2 {
-  height: 80px;
-  width: 100vw;
+  height: 100px;
+  width: 100%;
   background-color: #bf202e;
 }
 
@@ -51,13 +51,14 @@
 .headerMenu {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 92%;
 }
 
 .headerMenu li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 19px;
 }
 
 .headerMenuA {
@@ -69,9 +70,10 @@
 }
 
 .logoImg {
-  margin-top: 20px;
-  width: 10rem;
-  text-align: center;
+    margin-top: 20px;
+    width: 12rem;
+    text-align: center;
+    margin-left: 56px;
 }
 
 .logoImg img {
@@ -79,14 +81,14 @@
 }
 
 .Header3 {
-  height: 80px;
+  height: 99px;
   width: 100%;
   background-color: rgb(41, 98, 114);
 }
 
 .Header3_name {
   display: flex;
-  height: 90px;
+  height: 116px;
   align-items: center;
   margin: auto;
   padding: 10px;
@@ -96,7 +98,7 @@
   width: 100%;
   text-align: center;
   color: #fff;
-  font-size: 23px;
+  font-size: 30px;
 }
 
 .header3_a {
