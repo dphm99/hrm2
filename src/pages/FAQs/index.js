@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import Accordition from "./QuestionDemo";
 import Card from "./Card";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
-import './custom.scss'
+import "./custom.scss";
 
 function Index() {
   const breadcrumItem = [
@@ -38,11 +38,11 @@ function Index() {
     };
   }, []);
   return (
-    <div className={styles.FAQ}>
+    <div className={`${styles.FAQ} FAQs`}>
       <Header2 />
       <Breadcrumbs breadItem={breadcrumItem} />
       <div
-        className={`w-100 d-flex justify-content-center align-items-center ${styles.cardBanner}`}
+        className={`w-100 d-flex justify-content-center align-items-center ${styles.cardBanner} cardBanner`}
       >
         <Card
           title="Những câu hỏi thường gặp"
@@ -82,7 +82,7 @@ function Index() {
         />
       </div>
 
-      <div className={`container ${width} `} style={{ marginTop: "35px" }}>
+      <div className={`container FAQaccordition ${width} `} style={{ marginTop: "35px" }}>
         <h3 className="text-center title">
           Hãy xem chúng tôi có thể giúp gì cho bạn
         </h3>

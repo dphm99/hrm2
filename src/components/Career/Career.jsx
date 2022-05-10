@@ -86,7 +86,7 @@ function Career() {
         <div className={styles.Career__h4}>
           <h4>ĐỊNH HƯỚNG NGHỀ NGHỆP</h4>
         </div>
-        <div className="row">
+        <div className="row career">
           <Slider {...settings}>
             {data &&
               data.map((e, index) => {
