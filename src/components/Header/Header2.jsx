@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
+import banner from "../../assets/img/icon-svg/banner.jpg";
 import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
@@ -8,28 +9,6 @@ const Header2 = () => {
   const [active, setactive] = useState(0);
 
   const [category, setCategory] = useState("office");
-  const Menu = [
-      {
-        title: "TRANG CHỦ",
-        short: "office",
-      },
-      {
-        title: "VỊ TRÍ TUYỂN DỤNG",
-        short: "office",
-      },
-      {
-        title: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
-        short: "office",
-      },
-      {
-        title: "ĐAÒ TẠO",
-        short: "office",
-      },
-      {
-        title: "TRỢ GIÚP",
-        short: "office",
-      },
-  ]
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -49,45 +28,36 @@ const Header2 = () => {
                 <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
                   <ul
                     className={
-                      toggleMenu
-                        ? ` ${styles.headerMenu} ${styles.active} col-9`
-                        : ` ${styles.headerMenu} col-9}`
+                      active == '0'
+                        ? `${styles.headerMenu} ${styles.active} col-9`
+                        : `${styles.headerMenu} col-9`
                     }
+
+                    onClick={() => {
+                      setactive(0);
+                    }}
                   >
-                    <li
-                      className={`${styles.header__fixx} `}
-                    >
-                      <NavLink to="/" >
-                        TRANG CHỦ
-                      </NavLink>
+                    <li className={`${styles.header__fixx} `}>
+                      <NavLink to="/">TRANG CHỦ</NavLink>
                     </li>
                     <li className={styles.header__fixx}>
-                      <NavLink to="/tuyen-dung">
-                        VỊ TRÍ TUYỂN DỤNG
-                      </NavLink>
+                      <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
                     </li>
                     <li className={styles.header__fixx}>
-                      <NavLink
-                        to="/dinh-huong-nghe-nghiep"
-                        
-                      >
+                      <NavLink to="/dinh-huong-nghe-nghiep">
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
                     <li className={styles.header__fixx}>
-                      <NavLink to="/dao-tao" >
-                        ĐÀO TẠO
-                      </NavLink>
+                      <NavLink to="/dao-tao">ĐÀO TẠO</NavLink>
                     </li>
                     <li className={styles.header__fixx}>
-                      <NavLink to="/tro-giup" >
-                        TRỢ GIÚP
-                      </NavLink>
+                      <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
                     </li>
                   </ul>
                 </div>
                 <div
-                  className="navbar-toggler"
+                  className={`${styles.header2Nav} navbar-toggler`}
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarsExample01"
@@ -105,15 +75,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <div className="">
-            <div className={styles.Header3_name}>
-              <p className={styles.header3_p}>
-                TUYỂN DỤNG NHÂN SỰ KINH DOANH TOÀN QUỐC TẠI CÁC KÊNH GT, MT ,
-                HIỆU THUỐC , CHÀO THẦU ... LÊN TỚI{" "}
-                <a className={styles.header3_a}>500</a> NGƯỜI{" "}
-              </p>
-            </div>
-          </div>
+          <img src={banner} />
         </div>
       </div>
     </>

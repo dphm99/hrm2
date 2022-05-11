@@ -30,7 +30,7 @@ import formatNumber from "../extensions/formatNumber";
 const jobCategory = [
   {
     img: kinhdoanh,
-    short: "office",
+    short: "kinhdoanh",
   },
   {
     img: marketing,
