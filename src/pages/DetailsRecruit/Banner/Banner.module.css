@@ -48,7 +48,7 @@
 }
 
 .detailsFlex ul li {
-  padding-top: 7px!important;
+  padding-top: 15px!important;
 }
 
 .detailsBtn  {
@@ -235,7 +235,7 @@
 }
 
 .detailsRecruiIcon {
-  margin-top: 0px;
+  margin-top: 12px;
   width: 50px;
   height: 60px;
   color: #fff;
@@ -274,7 +274,7 @@
   border: 1px solid #fff;
   background-color: #fff;
   text-align: center;
-  padding: 6px 47px;
+  padding: 6px 44px;
 }
 
 .detailsApplynow {
@@ -296,6 +296,7 @@
 .detailsMap {
   margin-top: 42px;
   margin-left: 15px;
+  margin-bottom: 25px;
 }
 
 .detailsMap h5 {
@@ -521,13 +522,13 @@
   }
 }
 
-p {
+/* p {
   margin-bottom: 1rem !important;
 }
 
 ul {
   padding: 0.2rem !important;
-}
+} */
 /* ul li {
   padding: 0.2rem!important;
 } */
