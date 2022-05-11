@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Career2.module.css";
-import seongon from "../../assets/img/icon-svg/seongon-2.jpg"
+import seongon from "../../assets/img/icon-svg/banner4.jpg"
+// import seongon2 from "../../assets/img/icon-svg/banner5.jpg"
 
 const Career2 = () => {
   return (
