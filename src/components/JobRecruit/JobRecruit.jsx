@@ -31,7 +31,6 @@ const jobCategory = [
   {
     img: kinhdoanh,
     short: "office",
-
   },
   {
     img: marketing,
@@ -62,8 +61,6 @@ const jobCategory = [
     short: "south",
   },
 ];
-
-
 
 function JobRecruits() {
   const data = useContext(RecruitContext);
@@ -105,7 +102,10 @@ function JobRecruits() {
     });
 
   return (
-    <div className={`container ${styles.customContainer}`} style={{ marginTop: "12rem" }}>
+    <div
+      className={`container ${styles.customContainer}`}
+      style={{ marginTop: "12rem" }}
+    >
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>
         <div
@@ -132,7 +132,9 @@ function JobRecruits() {
             <FmdGoodIcon className={styles.searchIcon}></FmdGoodIcon>
           </div>
         </div>
-        <div className={`${styles.head_col} col-sm-6 col-md-4 ${styles.wrapCheckbox}`}>
+        <div
+          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.wrapCheckbox}`}
+        >
           <div className={`${styles.containCheckbox} `}>
             <input type="checkbox" className={styles.head_checkbox} />
             <div className={`${styles.head__address} overflow-hidden`}>
@@ -182,6 +184,7 @@ function JobRecruits() {
                 {data &&
                   data.data.map((job, index) => (
                     <JobItem
+                      id={job.id}
                       key={index}
                       index={index}
                       name={job.name.name}
@@ -243,6 +246,7 @@ function JobRecruits() {
   );
 }
 function JobItem({
+  id,
   name,
   address,
   salary,
@@ -276,24 +280,28 @@ function JobItem({
               {index + 1}. {name}{" "}
             </h5>
             <p className={`${styles.text_job} `}>
-              Số lượng {number} người <span className={styles.spaceCount}>|</span> Nơi làm việc: {address}
+              Số lượng {number} người{" "}
+              <span className={styles.spaceCount}>|</span> Nơi làm việc:{" "}
+              {address}
             </p>
             <p className={`${styles.text_job} ${styles.text_price}`}>
               <AttachMoneyIcon
                 className={`${styles.money_icon} rounded-circle`}
               ></AttachMoneyIcon>{" "}
-              {salary == "ltt" ? `Lương thỏa thuận` : `${formatNumber(
-                salary.split(" - ")[0].slice(0, -4),
-                0,
-                ",",
-                "."
-              )} -
+              {salary == "ltt"
+                ? `Lương thỏa thuận`
+                : `${formatNumber(
+                    salary.split(" - ")[0].slice(0, -4),
+                    0,
+                    ",",
+                    "."
+                  )} -
                            ${formatNumber(
-                salary.split(" - ")[1].slice(0, -4),
-                0,
-                ",",
-                "."
-              )}
+                             salary.split(" - ")[1].slice(0, -4),
+                             0,
+                             ",",
+                             "."
+                           )}
                             
                             ++VNĐ`}
             </p>
@@ -303,7 +311,9 @@ function JobItem({
           <div
             className={`d-flex justify-content-between align-items-center ${styles.foot_text}`}
           >
-            <p className={`${styles.text_job} ${styles.text_jobStart}`}>Ngày đăng tuyển {formatDate(start, "-", "/")}</p>
+            <p className={`${styles.text_job} ${styles.text_jobStart}`}>
+              Ngày đăng tuyển {formatDate(start, "-", "/")}
+            </p>
 
             <p className={`${styles.text_job} ${styles.text_jobEnd}`}>
               <span className={styles.foot_space}> | </span>
@@ -314,7 +324,7 @@ function JobItem({
                 className={styles.apply_job}
                 to={{
                   pathname: `/tuyen-dung/${toSlug(name)}`,
-                  search: `#${index}`,
+                  search: `#${index}#${id}`,
                 }}
               >
                 Ứng tuyển ngay
@@ -337,21 +347,23 @@ function Category({ department, address }) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={styles.accordi_title}>Việc làm theo phòng ban</Typography>
+          <Typography className={styles.accordi_title}>
+            Việc làm theo phòng ban
+          </Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <Typography className={styles.ul_listFilterbot}>
             {department.map((depar, index) => (
-              <li
-                key={index}
-                className={styles.filter_item}
-
-              >
+              <li key={index} className={styles.filter_item}>
                 <a
                   onClick={(e) => setJob(index)}
                   href="#"
-                  className={job === index ? `${styles.filter_text} ${styles.ftActive}`
-                    : `${styles.filter_text}`}>
+                  className={
+                    job === index
+                      ? `${styles.filter_text} ${styles.ftActive}`
+                      : `${styles.filter_text}`
+                  }
+                >
                   {depar}
                 </a>
               </li>
@@ -366,7 +378,9 @@ function Category({ department, address }) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={styles.accordi_title}>Việc làm theo vi trí địa lý</Typography>
+          <Typography className={styles.accordi_title}>
+            Việc làm theo vi trí địa lý
+          </Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <Typography className={styles.ul_listFilterbot}>
@@ -387,7 +401,9 @@ function Category({ department, address }) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={styles.accordi_title}>Việc làm theo chuyên môn</Typography>
+          <Typography className={styles.accordi_title}>
+            Việc làm theo chuyên môn
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.ul_listFilterbot}>
@@ -426,7 +442,9 @@ function Category({ department, address }) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={styles.accordi_title}>Việc làm theo thời gian</Typography>
+          <Typography className={styles.accordi_title}>
+            Việc làm theo thời gian
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.ul_listFilterbot}>
@@ -458,11 +476,11 @@ function Category({ department, address }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      
-        <div className={styles.joinJob}>
-          <h4 className={styles.joinText}>Ứng tuyển </h4>
-          <h4 className={styles.joinText}>theo chuyên môn</h4>
-        </div>
+
+      <div className={styles.joinJob}>
+        <h4 className={styles.joinText}>Ứng tuyển </h4>
+        <h4 className={styles.joinText}>theo chuyên môn</h4>
+      </div>
       <div className={styles.wrap_banner}>
         <img className={styles.banner_cate} src={banner1} alt="/" />
         <div className={styles.overlay}>
