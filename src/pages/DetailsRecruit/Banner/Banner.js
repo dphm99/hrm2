@@ -23,27 +23,27 @@ const Banner = () => {
     {
       href: "/",
       title: "Trang chủ",
-      isActive: false
+      isActive: false,
     },
 
     {
       href: "/vi-tri-tuyen-dung",
       title: "Vị trí tuyển dụng",
-      isActive: true
+      isActive: true,
     },
 
     {
       href: "/kinh-doanh",
       title: "kinh-doanh",
-      isActive: true
+      isActive: true,
     },
 
     {
       href: "/nhan-viên-kinh-doanh",
       title: "nhan-viên-kinh-doanh",
-      isActive: true
-    }
-  ]
+      isActive: true,
+    },
+  ];
   const bannerAPI = [
     {
       img: CV,
@@ -88,148 +88,143 @@ const Banner = () => {
         // console.log(city.data);
       });
   }, []);
- 
+
   return (
     <>
       <div className="container">
         <div className={styles.detailsRecuit}>
-          <Breadcrumbs
-            breadItem={breadcrumItem}
-          />
-          <h2>
-            NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)
-          </h2>
+          <Breadcrumbs breadItem={breadcrumItem} />
+          <h2>NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)</h2>
           <div className="row mb-2">
-            <div
-              className="col-md-4"
-            >
-              <div className={styles.Banner_sticky}
-              >{
-                  data[blogIndex] && (
-
-                    <div
-                      className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-
-                    >
-
-                      {console.log(data[blogIndex])}
-
-                      <div className="">
-                        <div className={styles.Banner_flex}>
-                          <ul>
-                            <li className={styles.Banner_li}> Nơi làm việc: </li>
-                            <h6 className={styles.Banner_h6}>
-                              {data[blogIndex].address.name}
-                            </h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Bộ phận: </li>
-                            <h6 className={styles.Banner_h6}>
-                              {data[blogIndex].department.name}
-                            </h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Cấp bậc: </li>
-                            <h6 className={styles.Banner_h6}>Nhân viên</h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Hình thức: </li>
-                            <h6 className={styles.Banner_h6}> Làm việc toàn thời gian </h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Bằng cấp: </li>
-                            <h6 className={styles.Banner_h6}>
-                              {data[blogIndex].degree.name}
-                            </h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Thu nhập: </li>
-                            <h6 className={styles.Banner_h6}>
-                              {data[blogIndex].salary}
-                            </h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Số lượng tuyển: </li>
-                            <h6 className={styles.Banner_h6}>101</h6>
-                          </ul>
-                          <ul className={styles.Banner_ul}>
-                            <li className={styles.Banner_li}> Hạn nộp hồ sơ: </li>
-                            <h6 className={styles.Banner_h6}>
-                              {data[blogIndex].deadline}
-                            </h6>
-                          </ul>
-                        </div>
+            <div className="col-md-4">
+              <div className={styles.detailsSticky}>
+                {data[blogIndex] && (
+                  <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div className="">
+                      <div className={styles.detailsFlex}>
+                        <ul>
+                          <li> Nơi làm việc: </li>
+                          <h6>
+                            {data[blogIndex].address.name}
+                          </h6>
+                        </ul>
+                        <ul>
+                          <li> Bộ phận: </li>
+                          <h6>
+                            {data[blogIndex].department.name}
+                          </h6>
+                        </ul>
+                        <ul>
+                          <li> Cấp bậc: </li>
+                          <h6>Nhân viên</h6>
+                        </ul>
+                        <ul>
+                          <li> Hình thức: </li>
+                          <h6>
+                            {" "}
+                            Làm việc toàn thời gian{" "}
+                          </h6>
+                        </ul>
+                        <ul>
+                          <li> Bằng cấp: </li>
+                          <h6>
+                            {data[blogIndex].degree.name}
+                          </h6>
+                        </ul>
+                        <ul>
+                          <li> Thu nhập: </li>
+                          <h6>
+                            {data[blogIndex].salary}
+                          </h6>
+                        </ul>
+                        <ul>
+                          <li>
+                            {" "}
+                            Số lượng tuyển:{" "}
+                          </li>
+                          <h6>101</h6>
+                        </ul>
+                        <ul>
+                          <li> Hạn nộp hồ sơ: </li>
+                          <h6>
+                            {data[blogIndex].deadline}
+                          </h6>
+                        </ul>
                       </div>
-                      <div className={styles.Banner_button}>
-                        <Link
-                          className={styles.BannerLink}
-                          to={{
-                            pathname: `/ung-tuyen/${toSlug(data[blogIndex].name.name)}`,
-                            search: `#${data[blogIndex].id}`,
-                          }}
+                    </div>
+                    <div className={styles.detailsBtn}>
+                      <Link
+                        className={styles.detailsLink}
+                        to={{
+                          pathname: `/ung-tuyen/${toSlug(
+                            data[blogIndex].name.name
+                          )}`,
+                          search: `#${data[blogIndex].id}`,
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className= "btn btn-danger"
                         >
-                          <button
-                            type="button"
-                            className={`${styles.Banner_button1} btn btn-danger`}
-                          >
-                            Ứng tuyển ngay
-                          </button>
-                        </Link>
-                      </div>
-                      <div className={styles.Banner_link}>
-                        <ContentCopyIcon
-                          style={{ fontSize: "20px", marginTop: "-8px" }}
-                        ></ContentCopyIcon>
-                        <a href="/" className={styles.Banner_copy}>Copy link</a>
-                        <div className={styles.Banner_Icon}>
-                          <div className={styles.Banner_fb}>
-                            <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
-                              <FacebookIcon size={28} />
-                            </FacebookShareButton>
-                          </div>
-                          <div className={styles.Banner_fb}>
-                            <img src={zalo} style={{ width: "30px" }} />
-                          </div>
-                          <div className={styles.Banner_fb}>
-                            <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
-                              <LinkedinIcon size={28} />
-                            </LinkedinShareButton>
-                          </div>
+                          Ứng tuyển ngay
+                        </button>
+                      </Link>
+                    </div>
+                    <div className={styles.detailsLink}>
+                      <ContentCopyIcon
+                        style={{ fontSize: "20px", marginTop: "-8px" }}
+                      ></ContentCopyIcon>
+                      <a href="/" className={styles.Banner_copy}>
+                        Copy link
+                      </a>
+                      <div className={styles.Banner_Icon}>
+                        <div className={styles.Banner_fb}>
+                          <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                            <FacebookIcon size={28} />
+                          </FacebookShareButton>
+                        </div>
+                        <div className={styles.Banner_fb}>
+                          <img src={zalo} style={{ width: "30px" }} />
+                        </div>
+                        <div className={styles.Banner_fb}>
+                          <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                            <LinkedinIcon size={28} />
+                          </LinkedinShareButton>
                         </div>
                       </div>
                     </div>
-                  )
-                }
+                  </div>
+                )}
               </div>
             </div>
             <div className={`${styles.detailsSidebar} col-md-8`}>
               <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <img src={demo} style={{ width: "100%" }} />
-                  <h4>Mô tả công việc</h4>
-                  <div>
-                    <ul>
-                      <p>
-                        - Tư vấn hỗ trợ khách hàng đến siêu thị Bách Hóa Xanh để
-                        mua sắn, trải nghiệm
-                      </p>
-                      <p>
-                        - Trưng bày, sắp xếp hàng hóa đẩm bảo quầy kệ gọn gàng,
-                        sạch sẽ.
-                      </p>
-                      <p>- Kiểm kê hàng hóa siêu thị.</p>
-                      <p>
-                        - Nhập hàng từ nhà cung cấp hoặc kho tổng (Cân, Nhập,
-                        Kiểm đếm)
-                      </p>
-                      <p>- Vệ sinh siêu thị (Lau dọn sàn,kính,quầy kệ)</p>
-                      <p>- Bừng bê/sắp xếp hàng, quản lý kho hàng gọn gàng</p>
-                      <p>
-                        - Là người nhân viên đa nhiệm, linh hoạt bạn có thể làm
-                        thêm cách vị trí công việc khác như Thu Ngân/Fresh, hoặc
-                        các công việc theo sự phân công của quản lý.
-                      </p>
-                    </ul>
-                  </div>
+                <h4>Mô tả công việc</h4>
+                <div>
+                  <ul>
+                    <p>
+                      - Tư vấn hỗ trợ khách hàng đến siêu thị Bách Hóa Xanh để
+                      mua sắn, trải nghiệm
+                    </p>
+                    <p>
+                      - Trưng bày, sắp xếp hàng hóa đẩm bảo quầy kệ gọn gàng,
+                      sạch sẽ.
+                    </p>
+                    <p>- Kiểm kê hàng hóa siêu thị.</p>
+                    <p>
+                      - Nhập hàng từ nhà cung cấp hoặc kho tổng (Cân, Nhập, Kiểm
+                      đếm)
+                    </p>
+                    <p>- Vệ sinh siêu thị (Lau dọn sàn,kính,quầy kệ)</p>
+                    <p>- Bừng bê/sắp xếp hàng, quản lý kho hàng gọn gàng</p>
+                    <p>
+                      - Là người nhân viên đa nhiệm, linh hoạt bạn có thể làm
+                      thêm cách vị trí công việc khác như Thu Ngân/Fresh, hoặc
+                      các công việc theo sự phân công của quản lý.
+                    </p>
+                  </ul>
+                </div>
                 <div>
                   <h5>Yêu cầu công việc</h5>
                   <div>
@@ -287,8 +282,14 @@ const Banner = () => {
 
                 <div className={styles.detailsSideBarCity}>
                   <h4>
-                    Địa điểm làm việc (<a href="/" style={{ color: "#bf202e", textDecoration: "none" }}>64</a> tỉnh
-                    thành)
+                    Địa điểm làm việc (
+                    <a
+                      href="/"
+                      style={{ color: "#bf202e", textDecoration: "none" }}
+                    >
+                      64
+                    </a>{" "}
+                    tỉnh thành)
                   </h4>
                   <div>
                     <select className={styles.detailsSelect}>
@@ -311,7 +312,11 @@ const Banner = () => {
                       <label
                         className="form-check-label"
                         htmlFor="flexCheckDefault"
-                        style={{ color:"#bf202e", marginTop: "5px", marginLeft:"12px"}}
+                        style={{
+                          color: "#bf202e",
+                          marginTop: "5px",
+                          marginLeft: "12px",
+                        }}
                       >
                         Xem địa điểm làm việc gần bạn nhất
                       </label>
@@ -327,7 +332,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft:"12px"}}
+                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tầng 2,Tòa nhà N03T5, khu Đoàn ngoại giao,p.Xuân
                           Tảo,q.Bắc Từ Liêm,Hà Nội, VN.
@@ -352,7 +357,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft:"12px"}}
+                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 25, Nguyễn Lương Bằng, phường Tân Phú, Quận 7,
                           TP.Hồ Chí Minh, VN.
@@ -373,12 +378,11 @@ const Banner = () => {
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
-                          
                         />
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft:"12px"}}
+                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tòa nhà AN06, Nguyễn Chí Thanh,p.Chùa Láng,q.Đống
                           Đa,Hà Nội,VN.
@@ -403,7 +407,7 @@ const Banner = () => {
                         <label
                           className="form-check-label"
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft:"12px"}}
+                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 1001, Bàng Đỏ,p.Phường Hoa Phượng Đỏ,tx.Kiến An,Hải
                           Phòng, VN.
@@ -426,9 +430,7 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsProcedure}>
-                  <h4>
-                    QUY TRÌNH TUYỂN DỤNG
-                  </h4>
+                  <h4>QUY TRÌNH TUYỂN DỤNG</h4>
                   <div className={styles.detailsRecruit}>
                     <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
@@ -446,8 +448,14 @@ const Banner = () => {
                               setCategory(e.short);
                             }}
                           >
-                            <img src={e.img} className={styles.detailsRecruiIcon} alt={e.title}/>
-                            <h1 className={styles.detailsRecruiBuoc}>{e.name}</h1>
+                            <img
+                              src={e.img}
+                              className={styles.detailsRecruiIcon}
+                              alt={e.title}
+                            />
+                            <h1 className={styles.detailsRecruiBuoc}>
+                              {e.name}
+                            </h1>
                             <span className={styles.detailsRecruiUpload}>
                               {e.title}
                             </span>
@@ -457,9 +465,7 @@ const Banner = () => {
                     </ul>
                   </div>
                   <div className={styles.detailsRecruiBtn}>
-                    <button>
-                      Xem chi tiết tại đây
-                    </button>
+                    <button>Xem chi tiết tại đây</button>
                   </div>
                 </div>
 
@@ -470,9 +476,7 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsMap}>
-                  <h5>
-                    Một số vị trí tương đương
-                  </h5>
+                  <h5>Một số vị trí tương đương</h5>
                   <ul>
                     <p>
                       - Chuyên viên hỗ trợ kinh doanh (kinh doanh) <a>tại</a>{" "}
