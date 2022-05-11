@@ -8,27 +8,30 @@ import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import CV from "../../../assets/img/Job-Icon-svg/CV.svg";
 import { RecruitContext } from "../../../components/contexts/ContextRecuit";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
-
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { toSlug } from "../../../components/extensions/toSlug";
 const Banner = () => {
   const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
   const { data } = useContext(RecruitContext);
+  const blogIndex = window.location.hash.split("#")[1];
+
   // console.log(data);
 
   const breadcrumItem = [
     {
-        href: "/",
-        title: "Trang chủ",
-        isActive: false
+      href: "/",
+      title: "Trang chủ",
+      isActive: false
     },
 
     {
-        href: "/vi-tri-tuyen-dung",
-        title: "Vị trí tuyển dụng",
-        isActive: true
+      href: "/vi-tri-tuyen-dung",
+      title: "Vị trí tuyển dụng",
+      isActive: true
     },
-    
+
     {
       href: "/kinh-doanh",
       title: "kinh-doanh",
@@ -39,8 +42,8 @@ const Banner = () => {
       href: "/nhan-vien-kinh-doanh",
       title: "nhan-vien-kinh-doanh",
       isActive: true
-  }
-]
+    }
+  ]
   const bannerAPI = [
     {
       img: CV,
@@ -76,7 +79,7 @@ const Banner = () => {
 
   const postAPI =
     "https://api-nextcrm.nextcrm.vn/api/public/provinces?search[parent_id]=0";
-    
+
   useEffect(() => {
     fetch(postAPI)
       .then((result) => result.json())
@@ -85,7 +88,7 @@ const Banner = () => {
         // console.log(city.data);
       });
   }, []);
-
+ 
   return (
     <>
       <div className="container">
@@ -101,81 +104,102 @@ const Banner = () => {
               className="col-md-4"
             >
               <div className={styles.Banner_sticky}
-              >
-                <div
-                  className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+              >{
+                  data[blogIndex] && (
 
-                >
-                  <div className="">
-                    <div className={styles.Banner_flex}>
-                      <ul>
-                        <li className={styles.Banner_li}> Nơi làm việc: </li>
-                        <h6 className={styles.Banner_h6}>
-                          Hà Nội, TP.HCM và 64 tỉnh thành khác
-                        </h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Bộ phận: </li>
-                        <h6 className={styles.Banner_h6}>Phòng kinh doanh</h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Cấp bậc: </li>
-                        <h6 className={styles.Banner_h6}>Nhân viên</h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Hình thức: </li>
-                        <h6 className={styles.Banner_h6}>
-                          Làm việc toàn thời gian
-                        </h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Bằng cấp: </li>
-                        <h6 className={styles.Banner_h6}>Không yêu cầu</h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Thu nhập: </li>
-                        <h6 className={styles.Banner_h6}>8-15.000.00 ++ VNĐ</h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Số lượng tuyển: </li>
-                        <h6 className={styles.Banner_h6}>101</h6>
-                      </ul>
-                      <ul className={styles.Banner_ul}>
-                        <li className={styles.Banner_li}> Hạn nộp hồ sơ: </li>
-                        <h6 className={styles.Banner_h6}>27/04/2030</h6>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className={styles.Banner_button}>
-                    <button
-                      type="button"
-                      className={`${styles.Banner_button1} btn btn-danger`}
+                    <div
+                      className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+
                     >
-                      Ứng tuyển ngay
-                    </button>
-                  </div>
-                  <div className={styles.Banner_link}>
-                    <ContentCopyIcon
-                      style={{ fontSize: "20px", marginTop: "-8px" }}
-                    ></ContentCopyIcon>
-                    <a href="/" className={styles.Banner_copy}>Copy link</a>
-                    <div className={styles.Banner_Icon}>
-                      <div className={styles.Banner_fb}>
-                        <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
-                          <FacebookIcon size={28} />
-                        </FacebookShareButton>
+
+                      {console.log(data[blogIndex])}
+
+                      <div className="">
+                        <div className={styles.Banner_flex}>
+                          <ul>
+                            <li className={styles.Banner_li}> Nơi làm việc: </li>
+                            <h6 className={styles.Banner_h6}>
+                              {data[blogIndex].address.name}
+                            </h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Bộ phận: </li>
+                            <h6 className={styles.Banner_h6}>
+                              {data[blogIndex].department.name}
+                            </h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Cấp bậc: </li>
+                            <h6 className={styles.Banner_h6}>Nhân viên</h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Hình thức: </li>
+                            <h6 className={styles.Banner_h6}> Làm việc toàn thời gian </h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Bằng cấp: </li>
+                            <h6 className={styles.Banner_h6}>
+                              {data[blogIndex].degree.name}
+                            </h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Thu nhập: </li>
+                            <h6 className={styles.Banner_h6}>
+                              {data[blogIndex].salary}
+                            </h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Số lượng tuyển: </li>
+                            <h6 className={styles.Banner_h6}>101</h6>
+                          </ul>
+                          <ul className={styles.Banner_ul}>
+                            <li className={styles.Banner_li}> Hạn nộp hồ sơ: </li>
+                            <h6 className={styles.Banner_h6}>
+                              {data[blogIndex].deadline}
+                            </h6>
+                          </ul>
+                        </div>
                       </div>
-                      <div className={styles.Banner_fb}>
-                        <img src={zalo} style={{ width: "30px" }} />
+                      <div className={styles.Banner_button}>
+                        <Link
+                          className={styles.BannerLink}
+                          to={{
+                            pathname: `/ung-tuyen/${toSlug(data[blogIndex].name.name)}`,
+                            search: `#${data[blogIndex].id}`,
+                          }}
+                        >
+                          <button
+                            type="button"
+                            className={`${styles.Banner_button1} btn btn-danger`}
+                          >
+                            Ứng tuyển ngay
+                          </button>
+                        </Link>
                       </div>
-                      <div className={styles.Banner_fb}>
-                        <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
-                          <LinkedinIcon size={28} />
-                        </LinkedinShareButton>
+                      <div className={styles.Banner_link}>
+                        <ContentCopyIcon
+                          style={{ fontSize: "20px", marginTop: "-8px" }}
+                        ></ContentCopyIcon>
+                        <a href="/" className={styles.Banner_copy}>Copy link</a>
+                        <div className={styles.Banner_Icon}>
+                          <div className={styles.Banner_fb}>
+                            <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                              <FacebookIcon size={28} />
+                            </FacebookShareButton>
+                          </div>
+                          <div className={styles.Banner_fb}>
+                            <img src={zalo} style={{ width: "30px" }} />
+                          </div>
+                          <div className={styles.Banner_fb}>
+                            <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                              <LinkedinIcon size={28} />
+                            </LinkedinShareButton>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  )
+                }
               </div>
             </div>
             <div className={`${styles.Banner_md7} col-md-7`}>
@@ -423,7 +447,7 @@ const Banner = () => {
                               setCategory(e.short);
                             }}
                           >
-                            <img src={e.img} className={styles.Banner__icon} alt={e.title}/>
+                            <img src={e.img} className={styles.Banner__icon} alt={e.title} />
                             <div className={styles.Banner__buoc}>{e.name}</div>
                             <div className={styles.Banner__upload}>
                               {e.title}

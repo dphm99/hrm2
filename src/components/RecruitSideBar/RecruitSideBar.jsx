@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import styles from "../RecuritBlog/RecruitBlog.module.css";
+import styles from "../RecruitSideBar/RecruitSideBar.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
+import { toSlug } from "../extensions/toSlug";
+import { Link } from "react-router-dom";
 const RecruitBlog = () => {
   const { data } = useContext(RecruitContext);
-  console.log(data);
   return (
     <>
       <div
@@ -31,23 +32,28 @@ const RecruitBlog = () => {
                   }}
                 >
                   <p className={`${styles.jobName} my-0 col-8`}>
-                    {e.industry ? e.industry : "Chuyên viên Marketing"}
+                    {e.name.name}
                   </p>
-                  <p className={`${styles.deadLine}  col-4`}>{e.deadline}</p>
+                  <p className={`${styles.deadLine}  col-4`}>
+                    {e.deadline
+                    .split('-')
+                    .reverse()
+                    .join('/')}
+                    </p>
                 </div>
 
                 <div className={`row d-flex`}>
                   <p className={`${styles.address}  col-8`}>{e.address.name}</p>
-                  <h5
-                    className={`col-4`}
-                    style={{
-                      fontWeight: 600,
-                      position: `relative`,
-                      cursor: `pointer`,
-                      fontSize: `13px`,
-                      color: `rgb(177, 0, 0)`,
+                  <Link
+                    key={index}
+                    to={{
+                      pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
+                      search: `#${e.id}`,
                     }}
-                  >ỨNG TUYỂN</h5>
+                    className={`col-4 ${styles.link}`}
+
+                  >ỨNG TUYỂN
+                  </Link>
                 </div>
               </div>
             );

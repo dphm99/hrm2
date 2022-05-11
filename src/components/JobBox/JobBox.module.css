@@ -52,6 +52,7 @@
 }
 .JobList {
   margin-right: 0;
+  text-decoration: none;
 }
 
 .jobListItem {

@@ -2,12 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
-import RecruitBlog from "../../../components/RecuritBlog/RecruitBlog";
+import RecruitSideBar from "../../../components/RecruitSideBar/RecruitSideBar";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { toSlug } from "../../../components/extensions/toSlug";
-import Pagination from "../../../components/extensions/Pagination/Pagination";
 
-let PageSize = 3;
 
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
@@ -150,7 +148,7 @@ export default function BlogContent() {
           </div>
         </div>
         <div className={`${styles.BlogCol4} col-4`}>
-          <RecruitBlog />
+          <RecruitSideBar />
         </div>
       </div>
 

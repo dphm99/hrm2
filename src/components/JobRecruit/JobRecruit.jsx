@@ -24,6 +24,7 @@ import banner1 from "../../assets/img/Vacancies/banner2.png";
 import Pagination from "../extensions/Pagination/Pagination";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
+
 const jobCategory = [
   {
     img: kinhdoanh,
@@ -60,19 +61,19 @@ const jobCategory = [
 ];
 function JobRecruits() {
   const data = useContext(RecruitContext);
-//   const [dataSliced, setdataSliced] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   let PageSize = 10;
-//   useEffect(() => {
-//     if (data) {
-//       const firstPageIndex = (currentPage - 1) * PageSize;
-//       const lastPageIndex = firstPageIndex + PageSize;
-//       setdataSliced(data.slice(firstPageIndex, lastPageIndex));
-//     }
-//     const firstPageIndex = (currentPage - 1) * PageSize;
-//     const lastPageIndex = firstPageIndex + PageSize;
-//     return data.slice(firstPageIndex, lastPageIndex);
-//   }, [data, currentPage]);
+  //   const [dataSliced, setdataSliced] = useState([]);
+  //   const [currentPage, setCurrentPage] = useState(1);
+  //   let PageSize = 10;
+  //   useEffect(() => {
+  //     if (data) {
+  //       const firstPageIndex = (currentPage - 1) * PageSize;
+  //       const lastPageIndex = firstPageIndex + PageSize;
+  //       setdataSliced(data.slice(firstPageIndex, lastPageIndex));
+  //     }
+  //     const firstPageIndex = (currentPage - 1) * PageSize;
+  //     const lastPageIndex = firstPageIndex + PageSize;
+  //     return data.slice(firstPageIndex, lastPageIndex);
+  //   }, [data, currentPage]);
   const breadcrumItem = [
     {
       href: "/",
@@ -184,7 +185,7 @@ function JobRecruits() {
                     />
                   ))}
               </div>
-                {/* <Pagination
+              {/* <Pagination
                     className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={data.length}
@@ -293,8 +294,8 @@ function JobItem({
                 search: `#${index}`,
               }}
             >
-            Ứng tuyển ngay
-            </Link>          
+              Ứng tuyển ngay
+            </Link>
           </div>
         </div>
       </div>
@@ -426,11 +427,11 @@ function Category({ department, address }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-
-      <div className={styles.joinJob}>
-        <h4 className={styles.joinText}>Ứng tuyển </h4>
-        <h4 className={styles.joinText}>theo chuyên môn</h4>
-      </div>
+      
+        <div className={styles.joinJob}>
+          <h4 className={styles.joinText}>Ứng tuyển </h4>
+          <h4 className={styles.joinText}>theo chuyên môn</h4>
+        </div>
       <div className={styles.wrap_banner}>
         <img className={styles.banner_cate} src={banner1} alt="/" />
         <div className={styles.overlay}>

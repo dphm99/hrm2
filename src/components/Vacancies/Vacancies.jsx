@@ -9,8 +9,8 @@ import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
 import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
 import { RecruitContext } from "../contexts/ContextRecuit";
-
-
+import { toSlug } from "../extensions/toSlug";
+import { Link } from "react-router-dom";
 function Vancancies() {
   const [active, setActive] = useState(false);
   const { data } = useContext(RecruitContext);
@@ -60,8 +60,12 @@ function Vancancies() {
             data
               .filter((e) => e.status === true)
               .map((vancancies, index) => (
-                <div
+                <Link
                   key={index}
+                  to={{
+                    pathname: `/ung-tuyen/${toSlug(vancancies.name.name)}`,
+                    search: `#${vancancies.id}`
+                  }}
                   className={
                     active
                       ? `${styles.containerItem} ${styles.active} col-sm-6 col-md-6 col-lg-4`
@@ -118,7 +122,7 @@ function Vancancies() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
         </div>
         <div className={styles.overlay}>

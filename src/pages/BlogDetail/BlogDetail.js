@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import { BlogContext } from "../../components/contexts/ContextBlog";
 import Header2 from "../../components/Header/Header2";
-import RecruitBlog from "../../components/RecuritBlog/RecruitBlog";
+import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
 function BlogDetail() {
   const blogIndex = window.location.hash.split("#")[1];
   const blogId = window.location.hash.split("#")[2];
@@ -55,7 +55,7 @@ function BlogDetail() {
                 className={`${styles.content} col-xl-8 col-lg-8`}
               ></div>
               <div className={`${styles.recruit} col-xl-4 col-lg-4`}>
-                <RecruitBlog className={`${styles.RecruitBlog}`} />
+                <RecruitSideBar className={`${styles.RecruitSideBar}`} />
               </div>
             </div>
           </>
