@@ -91,17 +91,24 @@ export default function SimpleAccordion() {
   ];
   return (
     <div className={styles.accordion}
-      style={{margin:`0 100px`}}
+      style={{ margin: `0 100px` }}
     >
       {data.map((ele, index) => {
         return (
           <Accordion key={index} TransitionProps={{ unmountOnExit: false }}>
             <Accordion key={index} >
+
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: "#f47d20" }} />}
+                className={`${styles.caption} `}
               >
-                <h5 className="ms-3">{ele.q}</h5>
+                <h5
+                  className={`ms-3`}
+                >
+                  {ele.q}
+                  </h5>
               </AccordionSummary>
+
               <AccordionDetails>
                 {ele.a.map((e, i) => {
                   return (
