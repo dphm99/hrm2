@@ -21,8 +21,9 @@
   margin-bottom: 45px!important;
 }
 .navItem {
-  background-color: #bf202e;
-  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ddd;
   width: 350px;
   min-height: 70px;
   font-weight: 600;
@@ -31,7 +32,11 @@
   align-items: center;
   justify-content: center;
 }
-
+.navItem.active{
+  background-color: #bf202e;
+  color: #fff;
+  border: none;
+}
 .accordion .MuiPaper-root {
   background-color: red !important;
 }
