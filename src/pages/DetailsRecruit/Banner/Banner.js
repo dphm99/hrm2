@@ -139,7 +139,7 @@ const Banner = () => {
                     </div>
                     <div className={styles.detailsBtn}>
                       <Link
-                        className={styles.detailsLink}
+                        className={styles.BannerLink}
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
                             data[jobIndex].name.name
@@ -147,28 +147,28 @@ const Banner = () => {
                           search: `#${jobIndex}#${data[jobIndex].id}`,
                         }}
                       >
-                        <button type="button" className="btn btn-danger">
+                        <button className="btn">
                           Ứng tuyển ngay
                         </button>
                       </Link>
                     </div>
                     <div className={styles.detailsLink}>
                       <ContentCopyIcon
-                        style={{ fontSize: "20px", marginTop: "-8px" }}
+                        style={{ fontSize: "14px", marginTop: "-2px" }}
                       ></ContentCopyIcon>
-                      <a href="/" className={styles.Banner_copy}>
+                      <a href="#">
                         Copy link
                       </a>
-                      <div className={styles.Banner_Icon}>
-                        <div className={styles.Banner_fb}>
+                      <div className={styles.detailsIcon}>
+                        <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
                             <FacebookIcon size={28} />
                           </FacebookShareButton>
                         </div>
-                        <div className={styles.Banner_fb}>
+                        <div className={styles.detailsfb}>
                           <img src={zalo} style={{ width: "30px" }} />
                         </div>
-                        <div className={styles.Banner_fb}>
+                        <div className={styles.detailsfb}>
                           <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
                             <LinkedinIcon size={28} />
                           </LinkedinShareButton>
@@ -180,7 +180,7 @@ const Banner = () => {
               </div>
             </div>
             <div className={`${styles.detailsSidebar} col-md-8`}>
-              <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <img src={demo} style={{ width: "100%" }} />
                 <h4>Mô tả công việc</h4>
                 <div>
@@ -247,7 +247,7 @@ const Banner = () => {
 
                     <div className={`${styles.detailscheck} form-check`}>
                       <input
-                        className="form-check-input"
+                        className={`${styles.detailsInput} form-check-input`}
                         type="checkbox"
                         defaultValue
                         id="flexCheckDefault"
@@ -257,17 +257,19 @@ const Banner = () => {
                         htmlFor="flexCheckDefault"
                         style={{
                           color: "#bf202e",
-                          marginTop: "5px",
                           marginLeft: "12px",
+                          fontSize: "16px",
+                          fontWeight: "600",
+                          marginTop: "6px"
                         }}
                       >
                         Xem địa điểm làm việc gần bạn nhất
                       </label>
                     </div>
-                    <div>
+                    <div className={styles.detailsFormcheck}>
                       <div className={`${styles.detailscheck} form-check`}>
                         <input
-                          className="form-check-input"
+                          className={`${styles.detailsRadio} form-check-input`}
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
@@ -284,6 +286,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
+                              fontWeight: "700"
                             }}
                           >
                             Bản đồ.
@@ -292,7 +295,7 @@ const Banner = () => {
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
                         <input
-                          className="form-check-input"
+                          className={`${styles.detailsRadio} form-check-input`}
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
@@ -309,6 +312,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
+                              fontWeight: "700"
                             }}
                           >
                             Bản đồ.
@@ -317,7 +321,7 @@ const Banner = () => {
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
                         <input
-                          className="form-check-input"
+                          className={`${styles.detailsRadio} form-check-input`}
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
@@ -334,6 +338,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
+                              fontWeight: "700"
                             }}
                           >
                             Bản đồ.
@@ -342,7 +347,7 @@ const Banner = () => {
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
                         <input
-                          className="form-check-input"
+                          className={`${styles.detailsRadio} form-check-input`}
                           type="radio"
                           name="flexRadioDefault"
                           id="flexRadioDefault1"
@@ -359,6 +364,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
+                              fontWeight: "700"
                             }}
                           >
                             Bản đồ.

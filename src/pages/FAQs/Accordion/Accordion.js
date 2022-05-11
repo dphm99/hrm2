@@ -3,7 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import styles from "./FAQ.module.css";
+import styles from "./Accordion.module.css";
 import AddIcon from "@mui/icons-material/Add";
 
 export default function SimpleAccordion() {
@@ -90,7 +90,9 @@ export default function SimpleAccordion() {
     },
   ];
   return (
-    <div className={styles.accordion}>
+    <div className={styles.accordion}
+      style={{margin:`0 100px`}}
+    >
       {data.map((ele, index) => {
         return (
           <Accordion key={index} TransitionProps={{ unmountOnExit: false }}>

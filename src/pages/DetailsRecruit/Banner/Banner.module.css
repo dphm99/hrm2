@@ -47,6 +47,10 @@
   margin-top: -10px;
 }
 
+.detailsFlex ul li {
+  padding-top: 7px!important;
+}
+
 .detailsBtn  {
   text-align: center;
   margin-top: 16px;
@@ -65,7 +69,7 @@
 }
 
 .detailsLink {
-  margin-left: 29px;
+  margin-left: 43px;
   margin-bottom: 36px;
   cursor: pointer;
 }
@@ -74,6 +78,7 @@
   border-bottom: 1px solid;
   text-decoration: none;
   color: black;
+  font-size: 14px;
 }
 
 .detailsIcon {
@@ -114,7 +119,7 @@
 }
 
 .detailsSelect {
-  width: 38%;
+  width: 30%;
   margin-left: 15px;
   height: 52px;
   margin-bottom: 20px;
@@ -125,7 +130,7 @@
 }
 
 .detailscheck {
-  margin-top: 25px;
+  margin-top: -3px;
   margin-left: 15px;
   margin-bottom: 14px;
 }
@@ -134,9 +139,11 @@
   text-align: center;
   margin-bottom: 89px;
   margin-top: -5px;
+  font-weight: 800;
 }
 
 .detailsButton button {
+  font-size: 19px;
   display: block;
   margin: 0 auto;
   font-weight: 600;
@@ -147,7 +154,7 @@
   padding: 7px 58px;
 }
 
-.detailsButton:hover {
+.detailsButton button:hover {
   background-color: rgb(245, 238, 238);
 }
 
@@ -165,6 +172,7 @@
   text-align: center;
   margin-top: 37px;
   margin-bottom: 44px;
+  font-size: 24px;
 }
 
 .detailsRecruit {
@@ -240,7 +248,7 @@
   color: #fff;
   z-index: 1;
   opacity: 1;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .detailsRecruiUpload {
@@ -258,6 +266,7 @@
 }
 
 .detailsRecruiBtn button {
+  font-size: 19px;
   display: block;
   margin: 0 auto;
   font-weight: 600;
@@ -293,12 +302,6 @@
   font-style: italic;
 }
 
-ul li {
-  padding-top: 10px !important;
-}
-p {
-  margin-bottom: 15px !important;
-}
 
 .detailsMap p {
   color: black;
@@ -332,6 +335,21 @@ p {
   font-weight: 700;
 }
 
+.detailsInput {
+  width: 30px;
+  height: 30px;
+}
+
+.detailsRadio {
+  width: 19px;
+  height: 19px;
+  margin-left: -15px !important;
+}
+
+.detailsFormcheck {
+  margin-top: 29px;
+}
+ 
 @media only screen and (max-width: 768px) {
   .detailsRecuit h2 {
     font-size: 13px;

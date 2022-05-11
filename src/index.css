@@ -106,7 +106,6 @@ body {
 ol,
 ul {
   list-style: none;
-  margin-bottom: 0 !important;
 }
 blockquote,
 q {
@@ -138,12 +137,7 @@ code {
 *{
   font-family: 'Quicksand', sans-serif!important;
 }
-ul {
-  padding: 0 !important;
-}
-ul li {
-  padding: 0 !important;
-}
+
 /* ====================================================== RENGULAR ====================================================== */
 html {
   scroll-behavior: smooth;
@@ -173,7 +167,4 @@ html::-webkit-scrollbar-thumb:hover {
 .MuiTabs-indicator {
   background-color: var(--primary) !important;
 }
-/* -------------------------mobile--------------------- */
-p {
-  margin-bottom: 0 !important;
-}
+
