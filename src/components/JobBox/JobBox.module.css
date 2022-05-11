@@ -61,10 +61,10 @@
   margin: 0;
   min-height: 168px;
 }
+
 .jobListTitle {
   margin: 12px 0;
   max-width: 100%;
-  /* white-space: nowrap; */
   text-overflow: ellipsis !important;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -75,6 +75,11 @@
   padding: 0 50px;
   font-size: 16px;
   color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
