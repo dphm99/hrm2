@@ -9,7 +9,7 @@ function RecruitProvider({ children }) {
       .then((result) => result.json())
       .then((data) => {
         setData(data.data);
-        // console.log(data.data);
+        // console.log(data);
       });
   }, []);
 
