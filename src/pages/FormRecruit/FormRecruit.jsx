@@ -1,45 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./FormRecruit.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import axios from "axios";
+import FormData from "form-data"
+import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
 function FormRecruit() {
+  const data = useContext(RecruitContext);
+
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
   const [cv, setCv] = useState([]);
   const onChange = (e) => {
-    console.log("attachment", e.target.files[0]);
+    // console.log("attachment", e.target.files[0]);
     setCv([e.target.files[0]]);
-    console.log(cv);
+    // console.log(cv);
   };
 
-  const bodyFormData = new FormData();
-  bodyFormData.append("attachment", cv);
-  bodyFormData.append("name", name);
-  bodyFormData.append("phone", phone);
-  bodyFormData.append("email", email);
-  bodyFormData.append("job_id", 1843);
-  bodyFormData.append("job_name", "Chuyên viên IT Help Desk");
-
   const handleLogin = () => {
-    axios
-      .post(
-        "http://test.diligo.vn:15000api/v1/recruitment/apply",
-        bodyFormData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
+    const bodyFormData = new FormData();
+    const cvv = document.querySelector("#file").files[0];
+    console.log(cvv);
+    bodyFormData.append("user", "2");
+    bodyFormData.append("job_id", 2038);
+    bodyFormData.append("job_name", "Chuyên viên mua hàng bao bì, NL, POSM");
+    bodyFormData.append("name", name);
+    bodyFormData.append("phone", phone);
+    bodyFormData.append("email", email);
+    bodyFormData.append("cv", cvv);
+    console.log(bodyFormData);
+    axios({
+      method: "POST",
+      url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
+      data: bodyFormData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
       .then((response) => {
-        console.log(response);
+        alert(response, "Ban da ung tuyen thanh cong");
       })
       .catch((error) => {
-        console.log(error.message);
+        alert(error.message);
       });
   };
 
@@ -56,22 +59,29 @@ function FormRecruit() {
       isActive: true,
     },
   ];
+  const blogIndex = window.location.hash.split("#")[1];
+
   return (
     <>
       <Header2 />
-      <div className="container" style={{ margin: "12rem auto" }}>
+      <div className="container" style={{ margin: "286px auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
           <h4 className={styles.jobTitle}>
-            Nhân viên kinh doanh (Nhãn hàng Lipzo)
+            {data.data[0] && data.data.find((e) => e.id == blogIndex).name.name}
+          </h4>
+          <h4 className={styles.jobTitle}>
+            {blogIndex}
           </h4>
           <div className={styles.formRecruit}>
-            <form>
+            <form encType="multipart/form-data">
               <div className={styles.inputName}>
                 <label htmlFor="inputName" className={styles.inputLabel}>
                   Họ và tên đầy đủ
                 </label>
+                <input type="hidden" value="2102" id="job_id" />
+                <input type="hidden" value="Chuyên viên abc" id="job_name" />
                 <input
                   type="text"
                   id="inputName"

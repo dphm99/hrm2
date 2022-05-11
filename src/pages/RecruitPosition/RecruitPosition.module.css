@@ -1,0 +1,79 @@
+.FormPosition input:not([type="radio"]) {
+  margin-top: 20px;
+  padding: 6px;
+}
+.FormPosition label:not(.labelRadio) {
+  margin-top: 32px;
+  font-weight: bold;
+}
+
+.inputRadioItem .inputRadioButton:after {
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  position: relative;
+  background-color: white;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+.inputRadioItem .inputRadioButton:checked:after {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    position: relative;
+    background-color: #bf202e;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.inputRadio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.inputRadio .inputRadioSide {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.inputRadio .inputRadioSide .inputRadioItem {
+  width: 50%;
+}
+.inputRadio .inputRadioSide .inputRadioItem p input {
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
+}
+.inputRadio .inputRadioSide .inputRadioItem p {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputGroupLine div {
+  width: 48%;
+}
+.inputGroupAddress .inputGroupLine {
+  margin-bottom: 1rem;
+}
+.inputGroupAddress p {
+  margin: 32px 0 0 !important;
+}
+
+.inputAddressTitle {
+  font-weight: bold;
+}
