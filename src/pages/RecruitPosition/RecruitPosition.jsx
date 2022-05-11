@@ -55,7 +55,7 @@ function RecruitPosition() {
   };
 
   const handleReset = () => {
-    setActiveStep(0); 
+    setActiveStep(0);
   };
 
   const { register, handleSubmit, formState, getValues } = useForm({
@@ -132,75 +132,84 @@ function RecruitPosition() {
                         <form className={`${styles.FormPosition}`}>
                           <div className={`${styles.inputRadio}`}>
                             <div className={`${styles.inputRadioSide}`}>
-                              <div className={`${styles.inputRadioItem}`}>
-                                <p>
-                                  <input
-                                    type="radio"
-                                    id="sex"
-                                    name="radio-sex"
-                                    checked
-                                    className={styles.inputRadioButton}
-                                  />
-                                  <label
-                                    className={styles.labelRadio}
-                                    for="sex"
-                                  >
-                                    Nam
-                                  </label>
-                                </p>
+                              <div className={`${styles.inputRadioItemTitle}`}>
+                                Giới tính
                               </div>
-                              <div className={`${styles.inputRadioItem}`}>
-                                <p>
-                                  <input
-                                    type="radio"
-                                    id="sex"
-                                    name="radio-sex"
-                                    checked
-                                    className={styles.inputRadioButton}
-                                  />
-                                  <label
-                                    className={styles.labelRadio}
-                                    for="sex"
-                                  >
-                                    Nữ
-                                  </label>
-                                </p>
+                              <div className={`${styles.inputRadioItems}`}>
+                                <div className={`${styles.inputRadioItem}`}>
+                                  <p>
+                                    <input
+                                      type="radio"
+                                      id="sex"
+                                      name="radio-sex"
+                                      checked
+                                      className={styles.inputRadioButton}
+                                    />
+                                    <label
+                                      className={styles.labelRadio}
+                                      for="sex"
+                                    >
+                                      Nam
+                                    </label>
+                                  </p>
+                                </div>
+                                <div className={`${styles.inputRadioItem}`}>
+                                  <p>
+                                    <input
+                                      type="radio"
+                                      id="sex"
+                                      name="radio-sex"
+                                      className={styles.inputRadioButton}
+                                    />
+                                    <label
+                                      className={styles.labelRadio}
+                                      for="sex"
+                                    >
+                                      Nữ
+                                    </label>
+                                  </p>
+                                </div>
                               </div>
                             </div>
                             <div className={`${styles.inputRadioSide}`}>
-                              <div className={`${styles.inputRadioItem}`}>
-                                <p>
-                                  <input
-                                    type="radio"
-                                    id="sex"
-                                    name="radio-relation"
-                                    checked
-                                    className={styles.inputRadioButton}
-                                  />
-                                  <label
-                                    className={styles.labelRadio}
-                                    for="sex"
-                                  >
-                                    Độc thân
-                                  </label>
-                                </p>
+                              <div className={`${styles.inputRadioItemTitle}`}>
+                                Tình trạng
                               </div>
-                              <div className={`${styles.inputRadioItem}`}>
-                                <p>
-                                  <input
-                                    type="radio"
-                                    id="sex"
-                                    name="radio-relation"
-                                    checked
-                                    className={styles.inputRadioButton}
-                                  />
-                                  <label
-                                    className={styles.labelRadio}
-                                    for="sex"
-                                  >
-                                    Kết hôn
-                                  </label>
-                                </p>
+                              <div className={`${styles.inputRadioItems}`}>
+                                <div className={`${styles.inputRadioItem}`}>
+                                  <p>
+                                    <input
+                                      type="radio"
+                                      id="alone"
+                                      name="radio-alone"
+                                      checked
+                                      className={styles.inputRadioButton}
+                                    />
+                                    <label
+                                      className={styles.labelRadio}
+                                      for="alone"
+                                    >
+                                      Độc thân
+                                    </label>
+                                  </p>
+                                </div>
+                                <div className={`${styles.inputRadioItem}`}>
+                                  <p>
+                                    <input
+                                      type="radio"
+                                      id="married"
+                                      name="radio-married"
+                                      className={styles.inputRadioButton}
+                                    />
+                                    <label
+                                      className={styles.labelRadio}
+                                      style={{fontSize: "15px"}}
+                                      for="married"
+                                    >
+                                      Đã kết hôn
+                                    </label>
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </div>
