@@ -59,12 +59,13 @@
   background-color: #bf202e;
   padding: 0 !important ;
   margin: 0;
-  min-height: 168px;
+  min-height: 192px;
 }
 .jobListTitle {
   margin: 12px 0;
   max-width: 100%;
   /* white-space: nowrap; */
+  height: 40px;
   text-overflow: ellipsis !important;
   display: -webkit-box;
   -webkit-line-clamp: 1;
