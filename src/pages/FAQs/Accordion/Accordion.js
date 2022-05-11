@@ -5,8 +5,18 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styles from "./Accordion.module.css";
 import AddIcon from "@mui/icons-material/Add";
-
+import RemoveIcon from '@mui/icons-material/Remove';
 export default function SimpleAccordion() {
+  const [changeIcon, setChangeIcon] = React.useState("")
+  const [toggle, setToggle] = React.useState(false)
+  function expandContent() {
+    // document.querySelector(`.${styles.before}::before`).style.content = "none"
+    console.log("Sssssssssssssss")
+  }
+  function change(i) {
+    setToggle(!toggle)
+    setChangeIcon(i)
+  }
   const data = [
     {
       q: "Ứng tuyển",
@@ -91,18 +101,28 @@ export default function SimpleAccordion() {
   ];
   return (
     <div className={styles.accordion}
-      style={{margin:`0 100px`}}
+      style={{ margin: `0 100px` }}
     >
       {data.map((ele, index) => {
         return (
           <Accordion key={index} TransitionProps={{ unmountOnExit: false }}>
             <Accordion key={index} >
+
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: "#f47d20" }} />}
+                className={`${styles.caption} caption1 `}
+              // onClick={expandContent()}
               >
-                <h5 className="ms-3">{ele.q}</h5>
+                <h5
+                  className={`ms-3`}
+                >
+                  {ele.q}
+                </h5>
               </AccordionSummary>
-              <AccordionDetails>
+
+              <AccordionDetails
+                className={`${styles.detail}`}
+              >
                 {ele.a.map((e, i) => {
                   return (
                     <Accordion
@@ -110,25 +130,43 @@ export default function SimpleAccordion() {
                       sx={{ willChange: "auto", scrollBehavior: "smooth" }}
                     >
                       <AccordionSummary
-                        expandIcon={
-                          <ExpandMoreIcon sx={{ color: "#f47d20" }} />
-                        }
+                        expandIcon={<ExpandMoreIcon sx={{ color: "#f47d20" }} />}
+                        onClick={() => { change(i) }}
+                        style={{
+                          height: `70px`,
+                          borderBottom: `1px solid #ddd`,
+                        }}
                       >
-                        <h6
-                          className="ms-2 d-flex"
-                          style={{ fontSize: "15px" }}
-                        >
-                          <AddIcon
+                        {i === changeIcon && toggle ?
+                          <RemoveIcon
                             sx={{
-                              color: "#f47d20",
+                              color: `#bf202e`,
                               fontSize: "15px",
                               margin: "0 8px 7px 0",
+                              marginRight: `15px`
                             }}
+
                           />
+                          :
+                          <AddIcon
+                            sx={{
+                              color: `#bf202e`,
+                              fontSize: "15px",
+                              margin: "0 8px 7px 0",
+                              marginRight: `15px`
+                            }}
+
+                          />}
+                        <h6
+                          className="d-flex"
+                          style={{ fontSize: "15px" }}
+                        >
+
                           {e.title}
                         </h6>
                       </AccordionSummary>
                       <AccordionDetails>
+
                         <p>{e.content}</p>
                       </AccordionDetails>
                     </Accordion>

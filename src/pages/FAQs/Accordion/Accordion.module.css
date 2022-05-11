@@ -1,0 +1,15 @@
+.caption::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    background-color: #bf202e;
+    border-radius: 10px 0 0 10px;
+}
+
+.caption {
+    height: 70px;
+}
+.detail p {
+    padding: 25px 0 25px 30px;
+}

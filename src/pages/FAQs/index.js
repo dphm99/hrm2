@@ -56,57 +56,13 @@ function Index() {
 
         }}>"Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
         <div className={`${styles.nav}`}>
-          <div className={`${styles.navItem}`}>
-            <p>
-              Câu hỏi thường gặp
-            </p>
+          <div className={`${styles.navItem} ${styles.active} `}>
+            Câu hỏi thường gặp
           </div>
           <div className={`${styles.navItem}`}>
-            <p>
-              Trò chuyện với chúng tôi
-            </p>
+            Trò chuyện với chúng tôi
           </div>
         </div>
-        {/* <div
-        className={`w-100 d-flex justify-content-center align-items-center ${styles.cardBanner} cardBanner`}
-      > */}
-        {/* <Card
-          title="Những câu hỏi thường gặp"
-          icon={
-            <svg
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-              stroke="#f47d20"
-              strokeWidth={2}
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="css-i6dzq1"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          }
-        />
-        <Card
-          title="Chat với chúng tôi"
-          icon={
-            <svg
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-              stroke="#f47d20"
-              strokeWidth={2}
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="css-i6dzq1"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          }
-        /> */}
-        {/* </div> */}
 
         <div
           className={`container ${width} `}
