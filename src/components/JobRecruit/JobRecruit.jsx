@@ -29,10 +29,6 @@ import formatNumber from "../extensions/formatNumber";
 
 const jobCategory = [
   {
-    img: kinhdoanh,
-    short: "kinhdoanh",
-  },
-  {
     img: marketing,
     short: "marketing",
   },
@@ -263,7 +259,7 @@ function JobItem({
 }) {
   const [active, setActive] = useState(false);
   
-    const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
+    // const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
 
   return (
@@ -280,7 +276,7 @@ function JobItem({
         <div className={`${styles.head_item} d-flex align-items-center`}>
           <div className={styles.warpIcon_job}>
 
-            <img className={styles.icon_job} src={imgs ||jobCategory[0].img}    alt="/" />
+            {/* <img className={styles.icon_job} src={imgs || jobCategory[0].img}    alt="/" /> */}
 
           </div>
           <div className="overflow-hidden">

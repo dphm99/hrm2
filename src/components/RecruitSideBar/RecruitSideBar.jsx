@@ -48,7 +48,7 @@ const RecruitBlog = () => {
                     key={index}
                     to={{
                       pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
-                      search: `#${e.id}`,
+                      search: `#${index}#${e.id}`,
                     }}
                     className={`col-4 ${styles.link}`}
 
