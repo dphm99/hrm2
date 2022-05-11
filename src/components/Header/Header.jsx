@@ -66,7 +66,7 @@ function Header() {
                   <NavLink
                     className="navbar-item"
                     activeClassName="is-active"
-                    to="/vi-tri-tuyen-dung"
+                    to="/tuyen-dung"
                   >
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
