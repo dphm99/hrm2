@@ -21,8 +21,8 @@
 
 .detailsFlex h6 {
   display: flex;
-  margin-left: 140px;
-  margin-top: -18px;
+  margin-left: 98px;
+  margin-top: -19px;
   color: black;
   font-size: 14px;
   font-weight: 800;
@@ -34,7 +34,7 @@
 }
 
 .detailsFlex li {
-  margin-left: 20px;
+  margin-left: -16px;
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,8 +58,10 @@
 
 .detailsBtn button:hover {
   background-color: #ae1825;
+  color: #fff;
 }
 .detailsBtn button {
+  color: #fff;
   width: 76%;
   font-size: 19px;
   margin-bottom: 20px;
@@ -69,9 +71,12 @@
 }
 
 .detailsLink {
-  margin-left: 43px;
-  margin-bottom: 36px;
-  cursor: pointer;
+    width: 43%;
+    text-align: center;
+    position: relative;
+    /* margin-left: 43px; */
+    margin-bottom: 36px;
+    cursor: pointer;
 }
 
 .detailsLink a {
@@ -83,8 +88,8 @@
 
 .detailsIcon {
   display: flex;
-  width: 117px;
-  margin-left: 167px;
+  position: absolute;
+  margin-left: 212px;
   margin-top: -26px;
 }
 
@@ -96,26 +101,51 @@
   font-size: 19px;
   margin-top: 40px;
   margin-left: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .detailsSidebar ul {
-  margin-left: 10px;
+  margin-left: -31px;
   margin-top: -7px;
 }
 
-.detailsSidebar p {
-  margin-top: -9px;
-  font-size: 16px;
+.detailsjobIndex p {
+  margin: 9px 16px !important;
+  font-size: 16px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.detailsjobName {
+  margin: 9px 16px !important;
+  font-size: 16px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .detailsSidebar h5 {
   font-size: 19px;
-  margin-top: 5px;
+  margin-top: -18px;
   margin-left: 15px;
   margin-bottom: 15px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .detailsSelect {
@@ -133,6 +163,20 @@
   margin-top: -3px;
   margin-left: 15px;
   margin-bottom: 14px;
+}
+
+.detailsLabel {
+  position: absolute;
+  color: #bf202e;
+  margin-left: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .detailsButton {
@@ -235,7 +279,7 @@
 }
 
 .detailsRecruiIcon {
-  margin-top: 12px;
+  margin-top: -8px;
   width: 50px;
   height: 60px;
   color: #fff;
@@ -256,7 +300,7 @@
     text-align: center;
     margin-bottom: 100px;
     color: #fff;
-    width: 75%;
+    width: 90%; 
 }
 
 .detailsRecruiBtn {
@@ -291,6 +335,7 @@
   justify-content: center;
   font-size: 25px;
   margin-top: 12px;
+  font-weight: 700;
 }
 
 .detailsMap {
@@ -301,6 +346,7 @@
 
 .detailsMap h5 {
   font-style: italic;
+  margin-left: 2px;
 }
 
 
@@ -330,10 +376,15 @@
 
 .detailsSideBarCity h4 {
   font-size: 19px;
-  margin-top: 34px;
+  margin-top: 67px;
   margin-left: 15px;
   margin-bottom: 23px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .detailsInput {
@@ -349,6 +400,25 @@
 
 .detailsFormcheck {
   margin-top: 29px;
+}
+
+.detailsMap a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.detailsDecoration {
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.detailsMap a:hover {
+  color: #ae1825;
+}
+
+.activelocation {
+  color: #ae1825;
 }
  
 @media only screen and (max-width: 768px) {
