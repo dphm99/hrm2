@@ -16,49 +16,49 @@ function JobBox() {
   const { data } = useContext(RecruitContext);
 
   const [active, setActive] = useState(0);
-  const [category, setCategory] = useState("office");
+  const [category, setCategory] = useState("kinhdoanh");
   const jobCategory = [
     {
       img: kinhdoanh,
       name: "Kinh doanh",
       quantity: "100 việc làm",
-      short: "office",
+      short: "kinhdoanh",
     },
     {
       img: marketing,
       name: "Marketing",
       quantity: "100 việc làm",
-      short: "office",
+      short: "marketing",
     },
     {
       img: nhasanxuat,
       name: "Sản xuất",
       quantity: "100 việc làm",
-      short: "factory",
+      short: "nhasanxuat",
     },
     {
       img: taichinh,
       name: "Tài chính",
       quantity: "100 việc làm",
-      short: "office",
+      short: "taichinh",
     },
     {
       img: nhansu,
       name: "Nhân sự",
       quantity: "100 việc làm",
-      short: "office",
+      short: "nhansu",
     },
     {
       img: congnghe,
       name: "Công nghệ",
       quantity: "100 việc làm",
-      short: "office",
+      short: "congnghe",
     },
     {
       img: nhaphanphoi,
       name: "Nhà phân phối",
       quantity: "100 việc làm",
-      short: "inventory",
+      short: "nhaphanphoi",
     },
   ];
 
@@ -105,7 +105,7 @@ function JobBox() {
                       key={index}
                       to={{
                         pathname: `/ung-tuyen/${toSlug(value.name.name)}`,
-                        search: `#${value.id}`,
+                        search: `#${index}#${value.id}`,
                       }}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
                     >

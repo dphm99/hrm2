@@ -1,0 +1,31 @@
+.accordion {
+    margin: 0 100px;
+}
+.caption::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    background-color: #bf202e;
+    border-radius: 10px 0 0 10px;
+}
+
+.caption {
+    height: 70px;
+}
+.detail p {
+    padding: 25px 30px 25px 30px;
+}
+
+
+
+/* -------------------------tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+    .accordion {
+        margin: 0;
+    }
+    .detail p {
+        padding: 10px;
+        margin: 0;
+    }
+}

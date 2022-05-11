@@ -25,7 +25,7 @@ function Index() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
-        setWidth("w-80");
+        setWidth("w-100");
       } else {
         setWidth("")
       }
@@ -42,83 +42,30 @@ function Index() {
       <Header2 />
       <Breadcrumbs
         breadItem={breadcrumItem}
-
       />
-      <div className="container">
+      <div className="container-md">
 
-        <p style={{
-          fontSize: `32px `,
-          textAlign: `center`,
-          fontWeight: `700`,
-          marginBottom: `90px`,
-          marginTop: `80px`
+        <p className={`${styles.greeting}`}
 
-
-        }}>"Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
+        >
+          "Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
         <div className={`${styles.nav}`}>
-          <div className={`${styles.navItem}`}>
-            <p>
-              Câu hỏi thường gặp
-            </p>
+          <div className={`${styles.navItem} ${styles.active} `}>
+            Câu hỏi thường gặp
           </div>
           <div className={`${styles.navItem}`}>
-            <p>
-              Trò chuyện với chúng tôi
-            </p>
+            Trò chuyện với chúng tôi
           </div>
         </div>
-        {/* <div
-        className={`w-100 d-flex justify-content-center align-items-center ${styles.cardBanner} cardBanner`}
-      > */}
-        {/* <Card
-          title="Những câu hỏi thường gặp"
-          icon={
-            <svg
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-              stroke="#f47d20"
-              strokeWidth={2}
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="css-i6dzq1"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          }
-        />
-        <Card
-          title="Chat với chúng tôi"
-          icon={
-            <svg
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-              stroke="#f47d20"
-              strokeWidth={2}
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="css-i6dzq1"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          }
-        /> */}
-        {/* </div> */}
 
         <div
-          className={`container ${width} `}
+          className={`container-md ${width} `}
           style={{ marginTop: "35px" }}>
-          <h2
-            style={{
-              marginBottom: `45px`,
-              textAlign: `center`,
-              fontWeight: `700`,
-            }}>
+          <p
+            className={`${styles.title}`}
+          >
             Câu hỏi các ứng viên thường hay thắc mắc
-          </h2>
+          </p>
           <Accordition />
         </div>
       </div>

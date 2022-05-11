@@ -1,13 +1,15 @@
 .Slider {
+  position: relative;
   .slick-dots {
     position: absolute;
     bottom: 0;
     li {
       button {
-        padding: 10px;
         border-radius: 50%;
         border: 1px solid #fff;
         margin: -16px 0px;
+        width: 15px;
+        height: 15px;
       }
       button:before {
           color: transparent;
