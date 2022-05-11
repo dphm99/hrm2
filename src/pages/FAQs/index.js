@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./FAQ.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
-import Accordition from "./QuestionDemo";
-import Card from "./Card";
+import Accordition from "./Accordion/Accordion";
+// import Card from "./Card";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import "./custom.scss";
 
@@ -27,7 +27,7 @@ function Index() {
       if (window.innerWidth < 1024) {
         setWidth("w-80");
       } else {
-        setWidth("w-50");
+        setWidth("")
       }
     };
     window.addEventListener("load", handleResize);
@@ -40,11 +40,37 @@ function Index() {
   return (
     <div className={`${styles.FAQ} FAQs`}>
       <Header2 />
-      <Breadcrumbs breadItem={breadcrumItem} />
-      <div
+      <Breadcrumbs
+        breadItem={breadcrumItem}
+
+      />
+      <div className="container">
+
+        <p style={{
+          fontSize: `32px `,
+          textAlign: `center`,
+          fontWeight: `700`,
+          marginBottom: `90px`,
+          marginTop: `80px`
+
+
+        }}>"Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
+        <div className={`${styles.nav}`}>
+          <div className={`${styles.navItem}`}>
+            <p>
+              Câu hỏi thường gặp
+            </p>
+          </div>
+          <div className={`${styles.navItem}`}>
+            <p>
+              Trò chuyện với chúng tôi
+            </p>
+          </div>
+        </div>
+        {/* <div
         className={`w-100 d-flex justify-content-center align-items-center ${styles.cardBanner} cardBanner`}
-      >
-        <Card
+      > */}
+        {/* <Card
           title="Những câu hỏi thường gặp"
           icon={
             <svg
@@ -79,14 +105,22 @@ function Index() {
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
           }
-        />
-      </div>
+        /> */}
+        {/* </div> */}
 
-      <div className={`container FAQaccordition ${width} `} style={{ marginTop: "35px" }}>
-        <h3 className="text-center title">
-          Hãy xem chúng tôi có thể giúp gì cho bạn
-        </h3>
-        <Accordition />
+        <div
+          className={`container ${width} `}
+          style={{ marginTop: "35px" }}>
+          <h2
+            style={{
+              marginBottom: `45px`,
+              textAlign: `center`,
+              fontWeight: `700`,
+            }}>
+            Câu hỏi các ứng viên thường hay thắc mắc
+          </h2>
+          <Accordition />
+        </div>
       </div>
       <Footer />
     </div>
