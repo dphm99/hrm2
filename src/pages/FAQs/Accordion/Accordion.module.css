@@ -1,3 +1,6 @@
+.accordion {
+    margin: 0 100px;
+}
 .caption::before {
     content: "";
     display: inline-block;
@@ -11,5 +14,18 @@
     height: 70px;
 }
 .detail p {
-    padding: 25px 0 25px 30px;
+    padding: 25px 30px 25px 30px;
+}
+
+
+
+/* -------------------------tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+    .accordion {
+        margin: 0;
+    }
+    .detail p {
+        padding: 10px;
+        margin: 0;
+    }
 }

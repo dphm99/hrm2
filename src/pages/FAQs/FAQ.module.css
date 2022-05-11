@@ -1,27 +1,22 @@
-/* .cardBanner {
-  margin-top: 1rem;
-  gap: 45px;
-}
-.cardBox {
-  min-width: 230px;
-  background: #fff;
-  gap: 10px;
-  border-radius: 15px;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 0px 8px;
-} */
-
 .FAQ {
-  margin-top:  280px;
+  margin-top: 280px;
+}
+.greeting {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 90px;
+  margin-top: 80px;
 }
 .nav {
   display: flex;
   justify-content: center;
-  transform: translateX(-10px);
-  margin-bottom: 45px!important;
+  transform: translateX(10px);
+  margin-bottom: 45px !important;
 }
 .navItem {
   cursor: pointer;
+  text-align: center;
   border-radius: 5px;
   border: 1px solid #ddd;
   width: 350px;
@@ -32,10 +27,16 @@
   align-items: center;
   justify-content: center;
 }
-.navItem.active{
+.navItem.active {
   background-color: #bf202e;
   color: #fff;
   border: none;
+}
+.title {
+  margin-bottom: 45px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
 }
 .accordion .MuiPaper-root {
   background-color: red !important;
@@ -43,17 +44,45 @@
 
 /* -------------------------mobile--------------------- */
 @media only screen and (max-width: 739px) {
-  .cardBanner {
-    display: none !important;
-  }
   .FAQ {
-    margin: 13rem 0 0;
+    margin-top: 220px;
+  }
+  .title {
+    font-size: 25px;
+  }
+  .nav,
+  .greeting {
+    display: none;
   }
 }
 
 /* -------------------------tablets--------------------- */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
   .FAQ {
-    margin: 13rem 0 0;
+    margin-top: 240px;
   }
+  .greeting {
+    font-size: 30px;
+    margin-bottom: 60px;
+    margin-top: 35px;
+  }
+  .nav {
+    transform: translateX(15px);
+  }
+}
+
+/* -------------------------small mobile--------------------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (min-width: 481px) and (max-width: 739px) {
+}
+
+/* -------------------------tablets--------------------- */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
 }

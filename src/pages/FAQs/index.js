@@ -25,7 +25,7 @@ function Index() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
-        setWidth("w-80");
+        setWidth("w-100");
       } else {
         setWidth("")
       }
@@ -42,19 +42,13 @@ function Index() {
       <Header2 />
       <Breadcrumbs
         breadItem={breadcrumItem}
-
       />
-      <div className="container">
+      <div className="container-md">
 
-        <p style={{
-          fontSize: `32px `,
-          textAlign: `center`,
-          fontWeight: `700`,
-          marginBottom: `90px`,
-          marginTop: `80px`
+        <p className={`${styles.greeting}`}
 
-
-        }}>"Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
+        >
+          "Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
         <div className={`${styles.nav}`}>
           <div className={`${styles.navItem} ${styles.active} `}>
             Câu hỏi thường gặp
@@ -65,16 +59,13 @@ function Index() {
         </div>
 
         <div
-          className={`container ${width} `}
+          className={`container-md ${width} `}
           style={{ marginTop: "35px" }}>
-          <h2
-            style={{
-              marginBottom: `45px`,
-              textAlign: `center`,
-              fontWeight: `700`,
-            }}>
+          <p
+            className={`${styles.title}`}
+          >
             Câu hỏi các ứng viên thường hay thắc mắc
-          </h2>
+          </p>
           <Accordition />
         </div>
       </div>
