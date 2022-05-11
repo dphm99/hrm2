@@ -37,6 +37,10 @@ const jobCategory = [
     short: "marketing",
   },
   {
+    img: kinhdoanh,
+    short: "kinhdoanh",
+  },
+  {
     img: nhasanxuat,
     short: "factory",
   },
@@ -104,12 +108,12 @@ function JobRecruits() {
   return (
     <div
       className={`container ${styles.customContainer}`}
-      style={{ marginTop: "12rem" }}
+      style={{ marginTop: "18rem" }}
     >
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>
         <div
-          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.head_input_search} `}
+          className={`${styles.head_col}  ${styles.head_input_search} `}
         >
           <input
             className={`${styles.head_input}`}
@@ -121,7 +125,7 @@ function JobRecruits() {
           </div>
         </div>
         <div
-          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.head_input_location} `}
+          className={`${styles.head_col}  ${styles.head_input_location} `}
         >
           <input
             className={`${styles.head_input} ${styles.head_checkAddress}`}
@@ -133,7 +137,7 @@ function JobRecruits() {
           </div>
         </div>
         <div
-          className={`${styles.head_col} col-sm-6 col-md-4 ${styles.wrapCheckbox}`}
+          className={`${styles.head_col}  ${styles.wrapCheckbox} `}
         >
           <div className={`${styles.containCheckbox} `}>
             <input type="checkbox" className={styles.head_checkbox} />
@@ -147,14 +151,14 @@ function JobRecruits() {
         </div>
       </div>
       <div className={styles.wrap_all}>
-        <div className="row">
-          <div className={`${styles.wrap_border} col-lg-4 col-md-4`}>
+        <div className={`${styles.customRow} row`}>
+          <div className={`${styles.wrap_border} col-lg-4 col-md-12`}>
             <Category
               department={uniqueArray(department)}
               address={uniqueArray(address)}
             />
           </div>
-          <div className={`${styles.col_wrap} col-lg-8 col-md-8`}>
+          <div className={`${styles.col_wrap} col-lg-8 col-md-12`}>
             <div className={`${styles.wrapListJob}`}>
               <div className={styles.head_listJob}>
                 <div
@@ -258,8 +262,10 @@ function JobItem({
   lenght,
 }) {
   const [active, setActive] = useState(false);
+  
+    const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
-  // const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
+
   return (
     <>
       <div
@@ -273,7 +279,9 @@ function JobItem({
       >
         <div className={`${styles.head_item} d-flex align-items-center`}>
           <div className={styles.warpIcon_job}>
-            {/* <img className={styles.icon_job} src={imgs} alt="/" /> */}
+
+            <img className={styles.icon_job} src={imgs ||jobCategory[0].img}    alt="/" />
+
           </div>
           <div className="overflow-hidden">
             <h5 className={styles.title_job}>
