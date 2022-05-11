@@ -1,0 +1,50 @@
+.SearchBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translateY(100%) translateX(-50%);
+  color: #fff;
+}
+.SearchBox input,
+.SearchBox select {
+  height: 48px;
+  width: 100%;
+  border: none;
+  padding-left: 60px;
+  outline: none;
+}
+
+.InputBox,
+.SelectWrapper {
+  width: 40%;
+}
+.InputBox svg,
+.SelectWrapper svg {
+  width: 40px;
+  height: 40px;
+}
+.SearchBox input {
+  border-radius: 4px 0 0 4px;
+}
+.SearchBox button {
+  height: 48px;
+  width: 20%;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.SearchWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0,.3);
+  border-radius: 4px;
+  height: 72px;
+  padding: 8px 12px;
+}
