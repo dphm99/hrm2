@@ -69,24 +69,28 @@ function JobBox() {
       </div>
       <div className={styles.jobCategory}>
         <ul className={styles.jobCategoryGroup}>
-          {jobCategory.map((e, index) => (
-            <li
-              key={index}
-              className={
-                active === index
-                  ? `${styles.jobCategoryItem} ${styles.active}`
-                  : `${styles.jobCategoryItem}`
-              }
-              onClick={() => {
-                setActive(index);
-                setCategory(e.short);
-              }}
-            >
-              <img src={e.img} alt="" className={styles.jobCategoryImg} />
-              <div className={styles.jobCategoryName}>{e.name}</div>
-              <div className={styles.jobCategoryQuantity}>{e.quantity}</div>
-            </li>
-          ))}
+          {data &&
+            jobCategory.map((e, index) => (
+              <li
+                key={index}
+                className={
+                  active === index
+                    ? `${styles.jobCategoryItem} ${styles.active}`
+                    : `${styles.jobCategoryItem}`
+                }
+                onClick={() => {
+                  setActive(index);
+                  setCategory(e.short);
+                }}
+              >
+                <img src={e.img} alt="" className={styles.jobCategoryImg} />
+                <div className={styles.jobCategoryName}>{e.name}</div>
+                <div className={styles.jobCategoryQuantity}>
+                  {data.filter((ele) => ele.category === e.short).length} việc
+                  làm
+                </div>
+              </li>
+            ))}
         </ul>
       </div>
       <div className={styles.jobListItem}>
@@ -104,15 +108,13 @@ function JobBox() {
                         search: `#${value.id}`,
                       }}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
-
                     >
-                      <div className={`${styles.jobListTitle}`} >
+                      <div className={`${styles.jobListTitle}`}>
                         <h5 style={{ display: `flex` }}>
                           <ArrowRightIcon />
                           {value.name.name} ({value.number} vị trí)
                         </h5>
                       </div>
-
                     </Link>
                   );
                 }

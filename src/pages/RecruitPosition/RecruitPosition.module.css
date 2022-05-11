@@ -36,22 +36,43 @@
   align-items: center;
 }
 .inputRadio .inputRadioSide {
+  margin-top: 40px;
   width: 50%;
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
 }
-.inputRadio .inputRadioSide .inputRadioItem {
+.inputRadio .inputRadioSide .inputRadioItems{
+  margin-top: 20px;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  min-height: 40px;
+
+}
+.inputRadio .inputRadioItem {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
 }
-.inputRadio .inputRadioSide .inputRadioItem p input {
+
+
+.inputRadio .inputRadioItem p input {
   margin-right: 16px;
   width: 24px;
   height: 24px;
 }
-.inputRadio .inputRadioSide .inputRadioItem p {
+.inputRadio .inputRadioItem p {
   display: flex;
   align-items: center;
+}
+.inputRadio .inputRadioSide .inputRadioItemTitle {
+  font-weight: bold;
+  width: 100%;
+
 }
 
 .input {

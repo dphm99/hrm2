@@ -15,9 +15,12 @@ const Banner = () => {
   const [active, setactive] = useState(0);
   const [category, setCategory] = useState("office");
   const { data } = useContext(RecruitContext);
-  const blogIndex = window.location.hash.split("#")[1];
+  const jobIndex = window.location.hash.split("#")[1];
+  const jobId = window.location.hash.split("#")[2];
+  console.log(jobId);
 
-  // console.log(data);
+  // const jobData = data[jobIndex].jobId
+  // console.log(jobData);
 
   const breadcrumItem = [
     {
@@ -27,15 +30,9 @@ const Banner = () => {
     },
 
     {
-      href: "/vi-tri-tuyen-dung",
+      href: "/tuyen-dung",
       title: "Vị trí tuyển dụng",
-      isActive: true,
-    },
-
-    {
-      href: "/kinh-doanh",
-      title: "kinh-doanh",
-      isActive: true,
+      isActive: false,
     },
 
     {
@@ -94,61 +91,49 @@ const Banner = () => {
       <div className="container">
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
-          <h2>NHÂN VIÊN KINH DOANH (NHÃN HÀNG LIPZO)</h2>
+          <h2>{data[jobIndex] && data[jobIndex].name.name}</h2>
           <div className="row mb-2">
             <div className="col-md-4">
               <div className={styles.detailsSticky}>
-                {data[blogIndex] && (
-                  <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
+                {data[jobIndex] && (
+                  <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div className="">
                       <div className={styles.detailsFlex}>
                         <ul>
                           <li> Nơi làm việc: </li>
-                          <h6>
-                            {data[blogIndex].address.name}
-                          </h6>
+                          <h6>{data[jobIndex].address.name}</h6>
                         </ul>
                         <ul>
                           <li> Bộ phận: </li>
-                          <h6>
-                            {data[blogIndex].department.name}
-                          </h6>
+                          <h6>{data[jobIndex].department.name}</h6>
                         </ul>
                         <ul>
                           <li> Cấp bậc: </li>
-                          <h6>Nhân viên</h6>
+                          <h6>{data[jobIndex].industry}</h6>
                         </ul>
                         <ul>
                           <li> Hình thức: </li>
-                          <h6>
-                            {" "}
-                            Làm việc toàn thời gian{" "}
-                          </h6>
+                          <h6> Làm việc toàn thời gian </h6>
                         </ul>
                         <ul>
                           <li> Bằng cấp: </li>
-                          <h6>
-                            {data[blogIndex].degree.name}
-                          </h6>
+                          <h6>{data[jobIndex].degree.name}</h6>
                         </ul>
                         <ul>
                           <li> Thu nhập: </li>
                           <h6>
-                            {data[blogIndex].salary}
+                            {data[jobIndex].salary == "ltt"
+                              ? "Lương thỏa thuận"
+                              : data[jobIndex].salary}
                           </h6>
                         </ul>
                         <ul>
-                          <li>
-                            {" "}
-                            Số lượng tuyển:{" "}
-                          </li>
+                          <li> Số lượng tuyển: </li>
                           <h6>101</h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
-                          <h6>
-                            {data[blogIndex].deadline}
-                          </h6>
+                          <h6>{data[jobIndex].deadline}</h6>
                         </ul>
                       </div>
                     </div>
@@ -157,15 +142,12 @@ const Banner = () => {
                         className={styles.BannerLink}
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
-                            data[blogIndex].name.name
+                            data[jobIndex].name.name
                           )}`,
-                          search: `#${data[blogIndex].id}`,
+                          search: `#${jobIndex}#${data[jobIndex].id}`,
                         }}
                       >
-                        <button
-                          type="button"
-                          className={`${styles.Banner_button1} btn btn-danger`}
-                        >
+                        <button className="btn">
                           Ứng tuyển ngay
                         </button>
                       </Link>
@@ -203,44 +185,22 @@ const Banner = () => {
                 <h4>Mô tả công việc</h4>
                 <div>
                   <ul>
-                    <p>
-                      - Tư vấn hỗ trợ khách hàng đến siêu thị Bách Hóa Xanh để
-                      mua sắn, trải nghiệm
-                    </p>
-                    <p>
-                      - Trưng bày, sắp xếp hàng hóa đẩm bảo quầy kệ gọn gàng,
-                      sạch sẽ.
-                    </p>
-                    <p>- Kiểm kê hàng hóa siêu thị.</p>
-                    <p>
-                      - Nhập hàng từ nhà cung cấp hoặc kho tổng (Cân, Nhập, Kiểm
-                      đếm)
-                    </p>
-                    <p>- Vệ sinh siêu thị (Lau dọn sàn,kính,quầy kệ)</p>
-                    <p>- Bừng bê/sắp xếp hàng, quản lý kho hàng gọn gàng</p>
-                    <p>
-                      - Là người nhân viên đa nhiệm, linh hoạt bạn có thể làm
-                      thêm cách vị trí công việc khác như Thu Ngân/Fresh, hoặc
-                      các công việc theo sự phân công của quản lý.
-                    </p>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data[jobIndex] && data[jobIndex].description,
+                      }}
+                    ></div>
                   </ul>
                 </div>
                 <div>
                   <h5>Yêu cầu công việc</h5>
                   <div>
                     <ul>
-                      <p>- Nam/nữ từ 18-40 tuổi</p>
-                      <p>- Thân thiện, nhiệt tình, muốn gắn bó lâu dài</p>
-                      <p>- Có sức khỏe tốt, tháo vác, có trách nhiệm.</p>
-                      <p>
-                        - Có điện thoại smartphone để làm việc, chủ động phương
-                        tiện di chuyển (xe máy)
-                      </p>
-                      <p>
-                        - Sẵn sàng làm đa nhiệm: Đi bán hàng ngoài thị trường -
-                        Hỗ trợ vận chuyển - Làm báo cáo
-                      </p>
-                      <p>- Làm fulltime 8tiếng/ ngày (theo giờ hành chính)</p>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: data[jobIndex] && data[jobIndex].require,
+                        }}
+                      ></div>
                     </ul>
                   </div>
                 </div>
@@ -249,33 +209,13 @@ const Banner = () => {
                   <h5>Chính sách & Phúc lợi</h5>
                   <div>
                     <ul>
-                      <p>
-                        - Thu nhập trung bình từ 7-10 triệu trở lên theo hiệu
-                        quả làm việc và giờ công làm việc
-                      </p>
-                      <p>
-                        - Thưởng trong tháng và cuối năm hấp dẫn (Thưởng tết
-                        tương đương 3 tháng thu nhập, số liệu 3 năm gần nhất
-                      </p>
-                      <p>
-                        - Có cơ hội thăng tiến lên Quản lý rõ ràng-làm chủ siêu
-                        thị.
-                      </p>
-                      <p>- Công việc bố trí làm việc thuận tiền gần nhà</p>
-                      <p>
-                        - Có sự hướng dẫn, đạo tạo phát triển kỹ năng/chuyên môn
-                        liên tục
-                      </p>
-                      <p>
-                        - Ký hợp đồng lao động, công việc chính Thức lâu dài -
-                        ỔN định
-                      </p>
-                      <p>- Môi trường làm việc thân thiện, hỗ trợ đồng đội</p>
-                      <p>
-                        - Phúc lợi đầy đủ : Tham gia BHYT , BHXH, Đi du lịch
-                        Teambuilding, 12 ngày phép/ năm, nghĩ thai sản, ốm đau
-                        ...
-                      </p>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            data[jobIndex] &&
+                            data[jobIndex].welfare.map((ele) => ele.name),
+                        }}
+                      ></div>
                     </ul>
                   </div>
                 </div>
@@ -292,8 +232,11 @@ const Banner = () => {
                     tỉnh thành)
                   </h4>
                   <div>
-                    <select className={styles.detailsSelect}>
-                      <option selected disabled>
+                    <select
+                      className={styles.detailsSelect}
+                      defaultValue={"disabled"}
+                    >
+                      <option disabled value="disabled">
                         Toàn quốc
                       </option>
                       {city &&
