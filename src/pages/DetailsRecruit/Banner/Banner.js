@@ -13,7 +13,7 @@ import { toSlug } from "../../../components/extensions/toSlug";
 const Banner = () => {
   const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
-  const [activelocation,setActivelocation] = useState(0)
+  const [activelocation, setActivelocation] = useState(0);
   const { data } = useContext(RecruitContext);
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
@@ -36,8 +36,8 @@ const Banner = () => {
     },
 
     {
-      href: "/nhan-viên-kinh-doanh",
-      title: "nhan-viên-kinh-doanh",
+      href: "/nhân-viên-kinh-doanh",
+      title: "nhân-viên-kinh-doanh",
       isActive: true,
     },
   ];
@@ -86,6 +86,14 @@ const Banner = () => {
       });
   }, []);
 
+  //Scroll-to-button
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   return (
     <>
       <div className="container">
@@ -93,7 +101,7 @@ const Banner = () => {
           <Breadcrumbs breadItem={breadcrumItem} />
           <h2>{data[jobIndex] && data[jobIndex].name.name}</h2>
           <div className="row mb-2">
-            <div className="col-md-4">
+            <div className={`${styles.detailsCol4} col-md-4`}>
               <div className={styles.detailsSticky}>
                 {data[jobIndex] && (
                   <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
@@ -151,10 +159,12 @@ const Banner = () => {
                       </Link>
                     </div>
                     <div className={`${styles.detailsLink}`}>
-                      <ContentCopyIcon
-                        style={{ fontSize: "14px", marginTop: "-2px" }}
-                      ></ContentCopyIcon>
-                      <a href="#">Copy link</a>
+                      <div>
+                        <ContentCopyIcon
+                          style={{ fontSize: "14px", marginTop: "-2px" }}
+                        ></ContentCopyIcon>
+                        <a href="#">Copy link</a>
+                      </div>
                       <div className={styles.detailsIcon}>
                         <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
@@ -238,9 +248,9 @@ const Banner = () => {
                       <option disabled value="disabled">
                         Toàn quốc
                       </option>
-                      {city &&
-                        city.map((e, index) => (
-                          <option key={index}>{e.name}</option>
+                      {data &&
+                        data.map((e, index) => (
+                          <option key={index}>{e.address.name}</option>
                         ))}
                     </select>
 
@@ -267,9 +277,8 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tầng 2,Tòa nhà N03T5, khu Đoàn ngoại giao,p.Xuân
                           Tảo,q.Bắc Từ Liêm,Hà Nội, VN.
@@ -293,9 +302,8 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 25, Nguyễn Lương Bằng, phường Tân Phú, Quận 7,
                           TP.Hồ Chí Minh, VN.
@@ -319,9 +327,8 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tòa nhà AN06, Nguyễn Chí Thanh,p.Chùa Láng,q.Đống
                           Đa,Hà Nội,VN.
@@ -345,9 +352,8 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 1001, Bàng Đỏ,p.Phường Hoa Phượng Đỏ,tx.Kiến An,Hải
                           Phòng, VN.
@@ -386,6 +392,7 @@ const Banner = () => {
                             }
                             onClick={() => {
                               setactive(index);
+
                               // setCategory(e.short);
                             }}
                           >
@@ -425,23 +432,27 @@ const Banner = () => {
                         <>
                           <ul>
                             <Link
-                            key={index}
+                              key={index}
                               to={{
                                 pathname: `/tuyen-dung/${toSlug(
                                   value.name.name
                                 )}`,
-                                search: `#${index}#${value.id}`,
+                                search: `#${index + 1}#${value.id}`,
                               }}
                               className={
-                                activelocation === index 
-                                ? `${styles.location} ${styles.activelocation}` 
-                                : `${styles.location}`
+                                active === index
+                                  ? `${styles.location} ${styles.active}`
+                                  : `${styles.location}`
                               }
                               onClick={() => {
-                                setActivelocation(index);
+                                setactive(index);
+                                scrollToTop();
                               }}
                             >
-                             - {value.name.name} tại <small className={styles.detailsDecoration}>{value.address.name}</small>
+                              - {value.name.name} tại{" "}
+                              <small className={styles.detailsDecoration}>
+                                {value.address.name}
+                              </small>
                             </Link>
                           </ul>
                         </>

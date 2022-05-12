@@ -6,9 +6,8 @@ import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [active, setactive] = useState(0);
-
-  const [category, setCategory] = useState("office");
+  const [index, setIndex] = useState(0);
+  // console.log(document.querySelector(".headerFixx a").innerHTML);
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -19,7 +18,7 @@ const Header2 = () => {
                 className={
                   toggleMenu
                     ? `${styles.header} ${styles.active} row`
-                    : `${styles.header} ${styles.active} row`
+                    : `${styles.header} row`
                 }
               >
                 <a href="/" className={`${styles.headerLogo} col-3`}>
@@ -28,30 +27,54 @@ const Header2 = () => {
                 <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
                   <ul
                     className={
-                      active == '0'
+                      toggleMenu
                         ? `${styles.headerMenu} ${styles.active} col-9`
                         : `${styles.headerMenu} col-9`
                     }
-
                     onClick={() => {
-                      setactive(0);
+                      setToggleMenu(toggleMenu);
                     }}
                   >
-                    <li className={`${styles.header__fixx} `}>
+                    <li
+                      className={0 === index ? `${styles.active}` : ``}
+                      onClick={() => {
+                        setIndex(0);
+                      }}
+                    >
                       <NavLink to="/">TRANG CHỦ</NavLink>
                     </li>
-                    <li className={styles.header__fixx}>
+                    <li
+                      className={1 === index ? `${styles.active}` : ``}
+                      onClick={() => {
+                        setIndex(1);
+                      }}
+                    >
                       <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
                     </li>
-                    <li className={styles.header__fixx}>
+                    <li
+                      className={2 === index ? `${styles.active}` : ``}
+                      onClick={() => {
+                        setIndex(2);
+                      }}
+                    >
                       <NavLink to="/dinh-huong-nghe-nghiep">
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
-                    <li className={styles.header__fixx}>
+                    <li
+                      className={3 === index ? `${styles.active}` : ``}
+                      onClick={() => {
+                        setIndex(3);
+                      }}
+                    >
                       <NavLink to="/dao-tao">ĐÀO TẠO</NavLink>
                     </li>
-                    <li className={styles.header__fixx}>
+                    <li
+                      className={4 === index ? `${styles.active}` : ``}
+                      onClick={() => {
+                        setIndex(4);
+                      }}
+                    >
                       <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
                     </li>
                   </ul>

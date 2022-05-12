@@ -141,6 +141,7 @@ code {
 /* ====================================================== RENGULAR ====================================================== */
 html {
   scroll-behavior: smooth;
+  
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
