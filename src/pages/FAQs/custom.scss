@@ -17,14 +17,12 @@
   .MuiPaper-root .MuiAccordion-root:before {
     display: none;
   }
-  .MuiAccordionSummary-root {
+  .MuiAccordionSummary-root.caption1 {
     padding: 0 !important;
-    border-radius: 10px;
+    border-radius: 10px  ;
   }
-  
-  .MuiAccordion-region {
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
-  }
+
+
 
   .MuiAccordion-region .MuiAccordionDetails-root {
     padding: 0;
