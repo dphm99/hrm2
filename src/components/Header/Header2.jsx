@@ -6,8 +6,36 @@ import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
   const [index, setIndex] = useState(0);
-  // console.log(document.querySelector(".headerFixx a").innerHTML);
+
+  const [active, setactive] = useState(0);
+
+  const [category, setCategory] = useState("office");
+
+  const Menu = [
+    {
+      title: "TRANG CHỦ",
+      short: "office",
+    },
+    {
+      title: "VỊ TRÍ TUYỂN DỤNG",
+      short: "office",
+    },
+    {
+      title: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
+      short: "office",
+    },
+    {
+      title: "ĐAÒ TẠO",
+      short: "office",
+    },
+    {
+      title: "TRỢ GIÚP",
+      short: "office",
+    },
+  ]
+
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -51,13 +79,16 @@ const Header2 = () => {
                     >
                       <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
                     </li>
+
                     <li
                       className={2 === index ? `${styles.active}` : ``}
                       onClick={() => {
                         setIndex(2);
                       }}
                     >
+
                       <NavLink to="/dinh-huong-nghe-nghiep">
+
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>

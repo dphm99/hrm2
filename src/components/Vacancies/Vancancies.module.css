@@ -85,6 +85,14 @@
   text-align: center;
   padding: 8px 47px;
 }
+.vancanciesBtn a {
+  color: #000;
+  text-decoration: none;
+}
+.vancanciesBtn a:hover{
+  color: #000;
+  text-decoration: none;
+}
 .overlay {
   position: relative;
   padding: 12px 0;

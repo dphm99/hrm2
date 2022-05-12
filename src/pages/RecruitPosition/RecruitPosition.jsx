@@ -181,7 +181,7 @@ function RecruitPosition() {
                                     <input
                                       type="radio"
                                       id="alone"
-                                      name="radio-alone"
+                                      name="radio-relation"
                                       checked
                                       className={styles.inputRadioButton}
                                     />
@@ -198,7 +198,7 @@ function RecruitPosition() {
                                     <input
                                       type="radio"
                                       id="married"
-                                      name="radio-married"
+                                      name="radio-relation"
                                       className={styles.inputRadioButton}
                                     />
                                     <label
