@@ -21,22 +21,7 @@ function Index() {
       isActive: true,
     },
   ];
-  const [width, setWidth] = useState("w-50");
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1024) {
-        setWidth("w-100");
-      } else {
-        setWidth("")
-      }
-    };
-    window.addEventListener("load", handleResize);
-    window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <div className={`${styles.FAQ} FAQs`}>
       <Header2 />
@@ -59,7 +44,7 @@ function Index() {
         </div>
 
         <div
-          className={`container-md ${width} `}
+          className={`container-md `}
           style={{ marginTop: "35px" }}>
           <p
             className={`${styles.title}`}

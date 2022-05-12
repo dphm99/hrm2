@@ -94,11 +94,49 @@
 }
 
 /* -------------------------mobile--------------------- */
-@media only screen and (min-width: 481px) and (max-width: 739px) {
+@media only screen and (max-width: 739px) {
+  .jobCategoryGroup{
+    gap: 0 20px;
+  }
+  .jobCategory {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .jobCategoryItem {
+    width: 300px;
+    height: 250px;
+    
+  }
+  .jobCategoryImg {
+    width: 150px;
+    height: unset;
+    object-fit: contain;
+    padding: 0 20px;
+  }
 }
 
 /* -------------------------tablets--------------------- */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .jobCategoryGroup{
+    gap: 0 20px;
+  }
+  .jobCategory {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .jobCategoryItem {
+    width: 300px;
+    height: 250px;
+    
+  }
+  .jobCategoryImg {
+    width: 180px;
+    height: unset;
+    object-fit: contain;
+    padding: 0 20px;
+  }
 }
 
 /* -------------------------PC--------------------- */

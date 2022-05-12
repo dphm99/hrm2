@@ -192,6 +192,9 @@
   padding: 24px 0;
   cursor: pointer;
 }
+.joinJob a{
+  text-decoration: none;
+}
 .joinText {
   text-align: center;
   color: #fff;
