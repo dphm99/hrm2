@@ -29,7 +29,7 @@ function Category({ category, address, industry }) {
               <li key={index} className={styles.filter_item}>
                 <a
                   onClick={(e) => setJob(index)}
-                  href="#"
+                  href={`#${depar}`}
                   className={
                     job === index
                       ? `${styles.filter_text} ${styles.ftActive}`
@@ -58,7 +58,7 @@ function Category({ category, address, industry }) {
           <Typography className={styles.ul_listFilterbot}>
             {address.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
-                <a href="/" className={styles.filter_text}>
+                <a href={`?city=${depar}`} className={styles.filter_text}>
                   {depar}
                 </a>
               </li>
