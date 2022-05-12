@@ -59,7 +59,7 @@ function Search() {
               onChange={(event) => changeCity(event.target.value)}
               value={currentCity}
             >
-              <option disabled value="disabled">
+              <option  default value="">
                 Tìm việc theo vị trí
               </option>
               {city &&

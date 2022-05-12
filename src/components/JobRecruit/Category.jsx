@@ -6,6 +6,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
+import { jobCategory } from "./JobRecruit";
 
 function Category({ category, address, industry }) {
   const [job, setJob] = useState(0);
@@ -28,14 +29,14 @@ function Category({ category, address, industry }) {
               <li key={index} className={styles.filter_item}>
                 <a
                   onClick={(e) => setJob(index)}
-                  href="#"
+                  href={`#${depar}`}
                   className={
                     job === index
                       ? `${styles.filter_text} ${styles.ftActive}`
                       : `${styles.filter_text}`
                   }
                 >
-                  {depar}
+                  {jobCategory.find((ele) => ele.short === depar).name}
                 </a>
               </li>
             ))}
@@ -57,7 +58,7 @@ function Category({ category, address, industry }) {
           <Typography className={styles.ul_listFilterbot}>
             {address.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
-                <a href="/" className={styles.filter_text}>
+                <a href={`?city=${depar}`} className={styles.filter_text}>
                   {depar}
                 </a>
               </li>

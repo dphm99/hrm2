@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./RecruitPosition.scss";
@@ -58,7 +58,7 @@ function RecruitPosition() {
     setActiveStep(0);
   };
 
-  const { register, handleSubmit, formState, getValues } = useForm({
+  const { getValues } = useForm({
     mode: "onChange",
   });
 

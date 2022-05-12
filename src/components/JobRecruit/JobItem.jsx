@@ -69,6 +69,7 @@ function JobItem({
   }) {
     const [active, setActive] = useState(false);
     const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
+    
     return (
       <>
         <div

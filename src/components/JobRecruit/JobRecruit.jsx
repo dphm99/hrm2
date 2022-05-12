@@ -1,78 +1,88 @@
 import { useState, useContext, useEffect, useRef } from "react";
 import styles from "./JobRecruit.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
-import JobItem from "./JobItem"
-import Category from "./Category"
+import JobItem from "./JobItem";
+import Category from "./Category";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import uniqueArray from "../extensions/uniqueArray";
 import SearchIcon from "@mui/icons-material/Search";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
 import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
 import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
 import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
-import banner1 from "../../assets/img/Vacancies/banner2.png";
 import Pagination from "../extensions/Pagination/Pagination";
-import { Link} from "react-router-dom";
-import { toSlug } from "../extensions/toSlug";
-import { formatDate } from "../extensions/formatDate";
-import formatNumber from "../extensions/formatNumber";
-import { searchData } from "../extensions/searchData";
+import { useLocation } from "react-router-dom";
 
-const jobCategory = [
+export const jobCategory = [
   {
     img: marketing,
     short: "marketing",
+    name: "Marketing",
   },
   {
     img: kinhdoanh,
     short: "kinhdoanh",
+    name: "Kinh Doanh",
   },
   {
     img: nhasanxuat,
     short: "nhasanxuat",
+    name: "Nhà sản xuất",
   },
   {
     img: taichinh,
     short: "taichinh",
+    name: "Tài Chính",
   },
   {
     img: nhansu,
     short: "nhansu",
+    name: "Nhân Sự",
   },
   {
     img: congnghe,
     short: "congnghe",
+    name: "Công Nghệ",
   },
   {
     img: nhaphanphoi,
     short: "nhaphanphoi",
+    name: "Nhà phân phối",
   },
 ];
 
 function JobRecruits() {
   const { keySearch, setKeySearch, data, targetSearch } =
     useContext(RecruitContext);
-    console.log(data);
+  console.log(data);
 
+  const [position, setPosition] = useState("");
+  const jobIndex = window.location.hash.split("#")[1];
+  const search = useLocation().search;
+  const jobName = new URLSearchParams(search).get("q");
+  const jobLocation = new URLSearchParams(search).get("city");
+  const jobMajor = new URLSearchParams(search).get("major");
 
-  const [sort, setSort] = useState([])
+  const [sort, setSort] = useState([]);
   useEffect(() => {
     if (sort.length === 0) {
-      setSort(data)
+      setSort(data);
     }
-  })
+    if (jobName) {
+      setKeySearch(jobName);
+    }
+    if (jobLocation) {
+      setPosition(jobLocation);
+    }
+    // return () => {
+    //   setPosition("");
+    //   setKeySearch("");
+    // };
+  }, [position, keySearch]);
 
   // console.log(sort)
   //   const [dataSliced, setdataSliced] = useState([]);
@@ -105,7 +115,7 @@ function JobRecruits() {
   const category = [];
   const address = [];
   const industry = [];
-  
+
   data &&
     data.forEach((job) => {
       category.push(job.category);
@@ -113,20 +123,19 @@ function JobRecruits() {
       industry.push(job.industry);
     });
 
-  const handlSort = (value) => {
+  const handlSort = (value, key) => {
     switch (value) {
-      case 'status':
-        const sorts = sort?.filter((job) => job.status === true)
-        const statusFalse = sort?.filter((job) => job.status === "")
-        const newStatus = [...sorts, ...statusFalse]
-        setSort(prev => newStatus)
+      case "status":
+        const sorts = sort?.filter((job) => job.status === true);
+        const statusFalse = sort?.filter((job) => job.status === "");
+        const newStatus = [...sorts, ...statusFalse];
+        setSort((prev) => newStatus);
         break;
 
       default:
         break;
     }
-
-  }
+  };
   return (
     <div
       className={`container ${styles.customContainer}`}
@@ -141,20 +150,7 @@ function JobRecruits() {
             value={keySearch}
             onChange={(e) => setKeySearch(e.target.value)}
           />
-          {data.length > 0 &&
-            searchData(data, targetSearch, keySearch).length === 0 && (
-              <p
-                className={"mt-2 ms-2 position-absolute"}
-                style={{
-                  bottom: "-40px",
-                  color: "red",
-                  fontSize: ".9rem",
-                  fontWeight: "500",
-                }}
-              >
-                <i>*Không tìm thấy công việc</i>
-              </p>
-            )}
+
           <div className={styles.input_icon}>
             <p className={styles.sudoSearch}></p>
             <SearchIcon className={styles.searchIcon}></SearchIcon>
@@ -164,6 +160,8 @@ function JobRecruits() {
           <input
             className={`${styles.head_input} ${styles.head_checkAddress}`}
             placeholder="Địa điểm làm việc"
+            value={position}
+            onChange={(e) => setPosition(e.target.value)}
           />
           <div className={styles.input_icon}>
             <p className={`${styles.sudoLocation}`}></p>
@@ -199,11 +197,32 @@ function JobRecruits() {
                 >
                   <p className={styles.listJob_count}>
                     Tìm thấy{" "}
-
                     <span className={styles.higlight_text}>
-                      {data.length}
+                      {
+                        data
+                          .filter((e) =>
+                            !jobIndex ? e : e.category === jobIndex
+                          )
+                          .filter((ele) =>
+                            jobLocation
+                              ? ele.address.name
+                                  .toString()
+                                  .toLowerCase()
+                                  .indexOf(
+                                    position.toString().toLowerCase()
+                                  ) !== -1
+                              : ele
+                          )
+                          .filter(
+                            (ele) =>
+                              ele.name.name
+                                .toString()
+                                .toLowerCase()
+                                .indexOf(keySearch.toString().toLowerCase()) !==
+                              -1
+                          ).length
+                      }
                     </span>{" "}
-
                     việc làm
                   </p>
                   <div
@@ -211,23 +230,34 @@ function JobRecruits() {
                   >
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
                     <select
-                      onChange={e => handlSort(e.target.value)}
-                      className={styles.priority}>
+                      onChange={(e) => handlSort(e.target.value)}
+                      className={styles.priority}
+                    >
                       <option value="">Xếp theo </option>
-                      <option
-
-                        value="status">Độ ưu tiên
-                      </option>
-                      <option value="">Xếp theo </option>
-                      <option value="">Xếp theo </option>
+                      <option value="status">Độ ưu tiên</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div className={styles.listJob_item}>
-                {data &&
-                  sort?.map((job, index) => (
-
+                {data
+                  .filter((e) => (!jobIndex ? e : e.category === jobIndex))
+                  .filter((ele) =>
+                    jobLocation
+                      ? ele.address.name
+                          .toString()
+                          .toLowerCase()
+                          .indexOf(position.toString().toLowerCase()) !== -1
+                      : ele
+                  )
+                  .filter(
+                    (ele) =>
+                      ele.name.name
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(keySearch.toString().toLowerCase()) !== -1
+                  )
+                  .map((job, index) => (
                     <JobItem
                       id={job.id}
                       key={index}
@@ -290,7 +320,5 @@ function JobRecruits() {
     </div>
   );
 }
-
-
 
 export default JobRecruits;
