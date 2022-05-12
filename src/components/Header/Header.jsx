@@ -54,36 +54,23 @@ function Header() {
                 }
               >
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/#"
-                  >
+                  <NavLink className="navbar-item" to="/#">
                     TRANG CHỦ
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/tuyen-dung"
-                  >
+                  <NavLink className="navbar-item" to="/tuyen-dung">
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/dinh-huong-nghe-nghiep"
-                  >
+                  <NavLink className="navbar-item" to="/dinh-huong-nghe-nghiep">
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
                 <li>
                   <a
                     className="navbar-item"
-                    activeClassName="is-active"
                     href="http://daotao.diligo.vn"
                     target="_blank"
                   >
@@ -91,11 +78,7 @@ function Header() {
                   </a>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/tro-giup"
-                  >
+                  <NavLink className="navbar-item" to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
                 </li>

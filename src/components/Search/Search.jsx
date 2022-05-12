@@ -6,6 +6,10 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 function Search() {
   const [userInput, setUserInput] = useState("");
   const [city, setCity] = useState([]);
+  const [currentCity, setCurrentCity] = useState("");
+  const changeCity = (city) => {
+    setCurrentCity(city);
+  };
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
@@ -47,12 +51,28 @@ function Search() {
             <LocationOnIcon
               style={{ position: "absolute", color: "#ccc", margin: "4px" }}
             />
-            <select className="selectpicker" id="cities" defaultValue={"disabled"}>
+            <select
+              name="city"
+              className="selectpicker"
+              id="cities"
+              defaultValue={"disabled"}
+              onChange={(event) => changeCity(event.target.value)}
+              value={currentCity}
+            >
               <option disabled value="disabled">
                 Tìm việc theo vị trí
               </option>
               {city &&
-                city.map((e, index) => <option key={index} value={e.name}>{e.name}</option>)}
+                city.map((e, index) => (
+                  <option
+                    key={index}
+                    value={e.name
+                      .replace("Tỉnh ", "")
+                      .replace("Thành phố ", "")}
+                  >
+                    {e.name.replace("Tỉnh ", "").replace("Thành phố ", "")}
+                  </option>
+                ))}
             </select>
           </div>
           <button type="submit">Tìm kiếm</button>
