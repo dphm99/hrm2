@@ -9,26 +9,26 @@ const Header2 = () => {
 
   const [category, setCategory] = useState("office");
   const Menu = [
-      {
-        title: "TRANG CHỦ",
-        short: "office",
-      },
-      {
-        title: "VỊ TRÍ TUYỂN DỤNG",
-        short: "office",
-      },
-      {
-        title: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
-        short: "office",
-      },
-      {
-        title: "ĐAÒ TẠO",
-        short: "office",
-      },
-      {
-        title: "TRỢ GIÚP",
-        short: "office",
-      },
+    {
+      title: "TRANG CHỦ",
+      short: "office",
+    },
+    {
+      title: "VỊ TRÍ TUYỂN DỤNG",
+      short: "office",
+    },
+    {
+      title: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
+      short: "office",
+    },
+    {
+      title: "ĐAÒ TẠO",
+      short: "office",
+    },
+    {
+      title: "TRỢ GIÚP",
+      short: "office",
+    },
   ]
   return (
     <>
@@ -69,7 +69,7 @@ const Header2 = () => {
                     <li className={styles.header__fixx}>
                       <NavLink
                         to="/dinh-huong-nghe-nghiep"
-                        
+
                       >
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>

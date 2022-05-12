@@ -1,6 +1,9 @@
 .accordion {
     margin: 0 100px;
 }
+.captionWrapper {
+    margin-top: 25px;
+}
 .caption::before {
     content: "";
     display: inline-block;
@@ -12,12 +15,14 @@
 
 .caption {
     height: 70px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px 0 0 10px;
 }
 .detail p {
-    padding: 25px 30px 25px 30px;
+    padding: 25px 45px 25px 45px;
+    border-bottom: 1px solid #ddd;
+    margin: 0 !important;
 }
-
-
 
 /* -------------------------tablets--------------------- */
 @media only screen and (max-width: 1023px) {
