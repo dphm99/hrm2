@@ -7,7 +7,7 @@ import ListIcon from "@mui/icons-material/List";
 // import liIcon from "../../assets/svg/NavLinkedin.svg";
 // import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
-import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import {NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -73,6 +73,7 @@ function Header() {
                     className="navbar-item"
                     href="http://daotao.diligo.vn"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     ĐÀO TẠO
                   </a>

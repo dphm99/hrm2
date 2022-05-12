@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./JobBox.module.css";
 import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
@@ -117,6 +117,9 @@ function JobBox() {
                       </div>
                     </Link>
                   );
+                }
+                else {
+                  return false;
                 }
               })}
         </div>

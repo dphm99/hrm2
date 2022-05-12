@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+// import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./RecruitPosition.scss";
 import styles from "./RecruitPosition.module.css";
@@ -14,8 +14,8 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { useForm } from "react-hook-form";
-import { RecruitContext } from "../../components/contexts/ContextRecuit";
+// import { useForm } from "react-hook-form";
+// import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
 const steps = [
   {
@@ -58,9 +58,9 @@ function RecruitPosition() {
     setActiveStep(0);
   };
 
-  const { getValues } = useForm({
-    mode: "onChange",
-  });
+  // const { getValues } = useForm({
+  //   mode: "onChange",
+  // });
 
   const breadcrumItem = [
     {
@@ -81,29 +81,24 @@ function RecruitPosition() {
     },
   ];
 
-  const onSubmit = (data) => {
-    const formData = new FormData();
-    formData.append("attachment", data.file[0]);
-    console.log(formData);
+  // const onSubmit = (data) => {
+  //   const formData = new FormData();
+  //   formData.append("attachment", data.file[0]);
+  //   console.log(formData);
 
-    const values = getValues();
-    console.log(values["attachment"][0]);
+  //   const values = getValues();
+  //   console.log(values["attachment"][0]);
 
-    handleNext();
-    const output = JSON.stringify(values);
-    console.log(output);
+  //   handleNext();
+  //   const output = JSON.stringify(values);
+  //   console.log(output);
 
-    // props.history.push('/')
-  };
-  const { data } = React.useContext(RecruitContext);
+  //   // props.history.push('/')
+  // };
+  // const { data } = React.useContext(RecruitContext);
 
-  const id = useLocation().search.replace("?", "");
-  const currentData = data.find((val) => val.id === +id);
-  let title;
-  if (currentData) {
-    title = currentData.name.name;
-  }
-
+  // const id = useLocation().search.replace("?", "");
+  // const currentData = data.find((val) => val.id === +id); 
   return (
     <>
       <Header2 />

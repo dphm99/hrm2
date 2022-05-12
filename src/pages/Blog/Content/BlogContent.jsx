@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitSideBar from "../../../components/RecruitSideBar/RecruitSideBar";
@@ -77,7 +77,7 @@ export default function BlogContent() {
         <div className={`${styles.BlogCol6} col-8`}>
           {data &&
             data.map((e, index) => {
-              if (index <= moreBlogs)
+              if (index <= moreBlogs) {
                 return (
                   <div key={index}>
                     <Link
@@ -130,7 +130,10 @@ export default function BlogContent() {
                     </Link>
                     <div className="pb-1 mb-4 fst-italic border-bottom"></div>
                   </div>
-                );
+                );}
+                else {
+                  return false;
+                }
             })}
           <div className="d-flex">
             <button

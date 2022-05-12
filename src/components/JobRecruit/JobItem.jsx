@@ -4,16 +4,13 @@ import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
 import formatNumber from "../extensions/formatNumber";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg"; 
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
 import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
 import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
-import Pagination from "../extensions/Pagination/Pagination";
+import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg"; 
 import styles from "./JobRecruit.module.css";
 
 const jobCategory = [
@@ -98,7 +95,7 @@ function JobItem({
                 <AttachMoneyIcon
                   className={`${styles.money_icon} rounded-circle`}
                 ></AttachMoneyIcon>{" "}
-                {salary == "ltt"
+                {salary ===  "ltt"
                   ? `Lương thỏa thuận`
                   : `${formatNumber(
                     salary.split(" - ")[0].slice(0, -4),

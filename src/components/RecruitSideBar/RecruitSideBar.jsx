@@ -63,6 +63,9 @@ const RecruitBlog = () => {
               </div>
             );
           }
+          else {
+            return false;
+          }
         })}
       </div>
     </>

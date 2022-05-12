@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import styles from "../Banner/Banner.module.css";
+import styles from "../Banner/Banner.module.css"; 
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
 
 export const scrollToTop = () => {
-  window.scrollTo({
+  window.scrollTo({ 
     top: 0,
   });
 };
@@ -25,11 +25,11 @@ const Banner = () => {
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
 
-  // const jobData = data.find(ele => ele.id == jobId).jobId
+  // const jobData = data.find(ele => ele.id ===  jobId).jobId
   // console.log(jobData);
   const currentCategory =
-    data.find((ele) => ele.id == jobId) &&
-    data.find((ele) => ele.id == jobId).category;
+    data.find((ele) => ele.id ===  jobId) &&
+    data.find((ele) => ele.id ===  jobId).category;
 
   const breadcrumItem = [
     {
@@ -47,8 +47,8 @@ const Banner = () => {
     {
       href: "/nhan-viên-kinh-doanh",
       title:
-        data.find((ele) => ele.id == jobId) &&
-        `${data.find((ele) => ele.id == jobId).name.name}`,
+        data.find((ele) => ele.id ===  jobId) &&
+        `${data.find((ele) => ele.id ===  jobId).name.name}`,
 
       isActive: true,
     },
@@ -94,9 +94,9 @@ const Banner = () => {
       .then((result) => result.json())
       .then((city) => {
         setCity(city.data);
-        // console.log(city.data);
       });
   }, []);
+  console.log(city);
 
   return (
     <>
@@ -104,27 +104,27 @@ const Banner = () => {
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
           <h2>
-            {data.find((ele) => ele.id == jobId) &&
-              `${data.find((ele) => ele.id == jobId).name.name}`}
+            {data.find((ele) => ele.id ===  jobId) &&
+              `${data.find((ele) => ele.id ===  jobId).name.name}`}
           </h2>
           <div className="row mb-2">
             <div className={`${styles.detailsCol4} col-md-4`}>
               <div className={styles.detailsSticky}>
-                {data.find((ele) => ele.id == jobId) && (
+                {data.find((ele) => ele.id ===  jobId) && (
                   <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
                     <div className="">
                       <div className={styles.detailsFlex}>
                         <ul>
                           <li> Nơi làm việc: </li>
                           <h6>
-                            {data.find((ele) => ele.id == jobId).address.name}
+                            {data.find((ele) => ele.id ===  jobId).address.name}
                           </h6>
                         </ul>
                         <ul>
                           <li> Bộ phận: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id == jobId).department
+                              data.find((ele) => ele.id ===  jobId).department
                                 .name
                             }
                           </h6>
@@ -132,7 +132,7 @@ const Banner = () => {
                         <ul>
                           <li> Cấp bậc: </li>
                           <h6>
-                            {data.find((ele) => ele.id == jobId).industry}
+                            {data.find((ele) => ele.id ===  jobId).industry}
                           </h6>
                         </ul>
                         <ul>
@@ -142,15 +142,15 @@ const Banner = () => {
                         <ul>
                           <li> Bằng cấp: </li>
                           <h6>
-                            {data.find((ele) => ele.id == jobId).degree.name}
+                            {data.find((ele) => ele.id ===  jobId).degree.name}
                           </h6>
                         </ul>
                         <ul>
                           <li> Thu nhập: </li>
                           <h6>
-                            {data.find((ele) => ele.id == jobId).salary == "ltt"
+                            {data.find((ele) => ele.id ===  jobId).salary ===  "ltt"
                               ? "Lương thỏa thuận"
-                              : data.find((ele) => ele.id == jobId).salary}
+                              : data.find((ele) => ele.id ===  jobId).salary}
                           </h6>
                         </ul>
                         <ul>
@@ -160,7 +160,7 @@ const Banner = () => {
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
                           <h6>
-                            {data.find((ele) => ele.id == jobId).deadline}
+                            {data.find((ele) => ele.id ===  jobId).deadline}
                           </h6>
                         </ul>
                       </div>
@@ -170,10 +170,10 @@ const Banner = () => {
                         className={styles.BannerLink}
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
-                            data.find((ele) => ele.id == jobId).name.name
+                            data.find((ele) => ele.id ===  jobId).name.name
                           )}`,
                           search: `#${jobIndex}#${
-                            data.find((ele) => ele.id == jobId).id
+                            data.find((ele) => ele.id ===  jobId).id
                           }`,
                         }}
                       >
@@ -185,7 +185,7 @@ const Banner = () => {
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
-                        <a href="#">Copy link</a>
+                        <Link to='/'>Copy link</Link>
                       </div>
                       <div className={styles.detailsIcon}>
                         <div className={styles.detailsfb}>
@@ -194,7 +194,7 @@ const Banner = () => {
                           </FacebookShareButton>
                         </div>
                         <div className={styles.detailsfb}>
-                          <img src={zalo} style={{ width: "30px" }} />
+                          <img src={zalo} style={{ width: "30px" }} alt='/'/>
                         </div>
                         <div className={styles.detailsfb}>
                           <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
@@ -209,15 +209,15 @@ const Banner = () => {
             </div>
             <div className={`${styles.detailsSidebar} col-md-8`}>
               <div className="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <img src={demo} style={{ width: "100%" }} />
+                <img src={demo} style={{ width: "100%" }}  alt='/'/>
                 <h4>Mô tả công việc</h4>
                 <div>
                   <ul>
                     <div
                       dangerouslySetInnerHTML={{
                         __html:
-                          data.find((ele) => ele.id == jobId) &&
-                          data.find((ele) => ele.id == jobId).description,
+                          data.find((ele) => ele.id ===  jobId) &&
+                          data.find((ele) => ele.id ===  jobId).description,
                       }}
                       className={styles.detailsjobIndex}
                     ></div>
@@ -230,8 +230,8 @@ const Banner = () => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html:
-                            data.find((ele) => ele.id == jobId) &&
-                            data.find((ele) => ele.id == jobId).require,
+                            data.find((ele) => ele.id ===  jobId) &&
+                            data.find((ele) => ele.id ===  jobId).require,
                         }}
                         className={styles.detailsjobIndex}
                       ></div>
@@ -246,9 +246,9 @@ const Banner = () => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html:
-                            data.find((ele) => ele.id == jobId) &&
+                            data.find((ele) => ele.id === jobId) &&
                             data
-                              .find((ele) => ele.id == jobId)
+                              .find((ele) => ele.id === jobId)
                               .welfare.map((ele) => ele.name),
                         }}
                         className={styles.detailsjobName}
@@ -469,7 +469,7 @@ const Banner = () => {
 
                 <div className={styles.detailsApplynow}>
                   <div className={styles.detailsApply}>
-                    <a>GỬI CV, ỨNG TUYỂN NGAY</a>
+                    <Link to='/'>GỬI CV, ỨNG TUYỂN NGAY</Link>
                   </div>
                 </div>
 
@@ -513,7 +513,7 @@ const Banner = () => {
                       })}
                 </div>
                 <div className={styles.detailsImage}>
-                  <img src={demo} />
+                  <img src={demo} alt='/'/>
                 </div>
               </div>
             </div>

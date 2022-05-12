@@ -26,8 +26,8 @@ function BlogDetail() {
     {
       href: "/",
       title: 
-      data.find((ele) => ele.id == blogId) &&
-      `${data.find((ele) => ele.id == blogId).title}`,
+      data.find((ele) => ele.id ===  blogId) &&
+      `${data.find((ele) => ele.id ===  blogId).title}`,
       isActive: true,
     },
   ];

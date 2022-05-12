@@ -12,9 +12,8 @@ import { RecruitContext } from "../contexts/ContextRecuit";
 import { toSlug } from "../extensions/toSlug";
 import { Link } from "react-router-dom";
 function Vancancies() {
-  const [active, setActive] = useState(false);
-  const { data } = useContext(RecruitContext);
-  const [category, setCategory] = useState("office");
+  const [active] = useState(false);
+  const { data } = useContext(RecruitContext); 
 
   const jobCategory = [
     {
@@ -45,13 +44,7 @@ function Vancancies() {
       img: nhaphanphoi,
       short: "nhaphanphoi",
     },
-  ];
-
-
-  const handleOnclick = () => {
-    // document.querySelector(".vancancieBtn")
-  };
-
+  ]; 
   return (
     <div className={styles.Vancancies}>
       <div className="container">
@@ -86,6 +79,9 @@ function Vancancies() {
                               alt={vancancies.vancanies}
                             />
                           );
+                        }
+                        else {
+                          return false;
                         }
                       })}
                     </div>

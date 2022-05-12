@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "./Career.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -113,7 +113,7 @@ function Career() {
           </Slider>
         </div>
         <div className={styles.Career__banner}>
-          <img src={longBanner} />
+          <img src={longBanner} alt='/'/>
         </div>
       </div>
     </>

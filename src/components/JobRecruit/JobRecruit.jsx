@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useRef } from "react";
+import { useState, useContext, useEffect } from "react";
 import styles from "./JobRecruit.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
 import JobItem from "./JobItem";
@@ -13,8 +13,7 @@ import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
 import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
-import Pagination from "../extensions/Pagination/Pagination";
+import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg"; 
 import { useLocation } from "react-router-dom";
 
 export const jobCategory = [
@@ -56,7 +55,7 @@ export const jobCategory = [
 ];
 
 function JobRecruits() {
-  const { keySearch, setKeySearch, data, targetSearch } =
+  const { keySearch, setKeySearch, data } =
     useContext(RecruitContext);
   console.log(data);
 
@@ -64,8 +63,7 @@ function JobRecruits() {
   const jobIndex = window.location.hash.split("#")[1];
   const search = useLocation().search;
   const jobName = new URLSearchParams(search).get("q");
-  const jobLocation = new URLSearchParams(search).get("city");
-  const jobMajor = new URLSearchParams(search).get("major");
+  const jobLocation = new URLSearchParams(search).get("city"); 
 
   const [sort, setSort] = useState([]);
   useEffect(() => {
@@ -82,6 +80,7 @@ function JobRecruits() {
     //   setPosition("");
     //   setKeySearch("");
     // };
+    //eslint-disable-next-line
   }, [position, keySearch]);
 
   // console.log(sort)

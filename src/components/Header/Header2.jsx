@@ -2,39 +2,14 @@ import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
-import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0); 
 
-  const [active, setactive] = useState(0);
-
-  const [category, setCategory] = useState("office");
-
-  const Menu = [
-    {
-      title: "TRANG CHỦ",
-      short: "office",
-    },
-    {
-      title: "VỊ TRÍ TUYỂN DỤNG",
-      short: "office",
-    },
-    {
-      title: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
-      short: "office",
-    },
-    {
-      title: "ĐAÒ TẠO",
-      short: "office",
-    },
-    {
-      title: "TRỢ GIÚP",
-      short: "office",
-    },
-  ]
+   
 
   return (
     <>
@@ -129,7 +104,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} />
+          <img src={banner} alt='/'/>
         </div>
       </div>
     </>
