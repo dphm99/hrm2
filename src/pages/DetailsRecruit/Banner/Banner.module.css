@@ -591,3 +591,11 @@
     margin-top: -28px;
   }
 }
+
+.detailsFormcheck .detailscheck a {
+  text-decoration: none;
+}
+
+.detailsFormcheck .detailscheck a:hover {
+  text-decoration: underline rgb(185, 9, 9);
+}
