@@ -1,71 +1,34 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import styles from "./JobRecruit.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
+import JobItem from "./JobItem"
+import Category from "./Category"
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import uniqueArray from "../extensions/uniqueArray";
 import SearchIcon from "@mui/icons-material/Search";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
-import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
-import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
-import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
-import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
-import banner1 from "../../assets/img/Vacancies/banner2.png";
-import Pagination from "../extensions/Pagination/Pagination";
-import { Link } from "react-router-dom";
-import { toSlug } from "../extensions/toSlug";
-import { formatDate } from "../extensions/formatDate";
-import formatNumber from "../extensions/formatNumber";
 
-const jobCategory = [
-  {
-    img: marketing,
-    short: "marketing",
-  },
-  {
-    img: kinhdoanh,
-    short: "kinhdoanh",
-  },
-  {
-    img: nhasanxuat,
-    short: "factory",
-  },
-  {
-    img: taichinh,
-    short: "taichinh",
-  },
-  {
-    img: nhansu,
-    short: "nhansu",
-  },
-  {
-    img: congnghe,
-    short: "it",
-  },
-  {
-    img: nhaphanphoi,
-    short: "inventory",
-  },
-  {
-    img: nhaphanphoi,
-    short: "south",
-  },
-];
+
+
+
 
 function JobRecruits() {
-  const data = useContext(RecruitContext);
-  console.log(data);
+  const { data } = useContext(RecruitContext);
+  // data?.forEach(a => {
+  //   if (a.status === true) {
+  //     // console.log(a)
+  //   }
+  // })
+  console.log(data)
 
+  const [sort, setSort] = useState([])
+  useEffect(() => {
+    if (sort.length === 0) {
+      setSort(data)
+    }
+  })
+
+  // console.log(sort)
   //   const [dataSliced, setdataSliced] = useState([]);
   //   const [currentPage, setCurrentPage] = useState(1);
   //   let PageSize = 10;
@@ -96,10 +59,25 @@ function JobRecruits() {
   const department = [];
   const address = [];
   data &&
-    data.data.forEach((job) => {
+    data.forEach((job) => {
       department.push(job.department.name);
       address.push(job.address.name);
     });
+  const handlSort = (value) => {
+    switch (value) {
+      case 'status':
+        const sorts = sort?.filter((job) => job.status === true)
+        const statusFalse = sort?.filter((job) => job.status === "")
+        const newStatus = [...sorts, ...statusFalse]
+        setSort(prev => newStatus)
+        break;
+
+      default:
+        break;
+    }
+
+  }
+
 
   return (
     <div
@@ -163,7 +141,7 @@ function JobRecruits() {
                   <p className={styles.listJob_count}>
                     Tìm thấy{" "}
                     <span className={styles.higlight_text}>
-                      {data.data.length}
+                      {data.length}
                     </span>{" "}
                     việc làm
                   </p>
@@ -171,9 +149,14 @@ function JobRecruits() {
                     className={`${styles.wrap_selectSort} d-flex align-items-center`}
                   >
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
-                    <select className={styles.priority}>
-                      <option value="">Độ ưu tiên</option>
+                    <select
+                      onChange={e => handlSort(e.target.value)}
+                      className={styles.priority}>
                       <option value="">Xếp theo </option>
+                      <option
+
+                        value="status">Độ ưu tiên
+                      </option>
                       <option value="">Xếp theo </option>
                       <option value="">Xếp theo </option>
                     </select>
@@ -182,7 +165,7 @@ function JobRecruits() {
               </div>
               <div className={styles.listJob_item}>
                 {data &&
-                  data.data.map((job, index) => (
+                  sort?.map((job, index) => (
                     <JobItem
                       id={job.id}
                       key={index}
@@ -198,7 +181,7 @@ function JobRecruits() {
                   ))}
               </div>
               {/* <Pagination
-                    className="pagination-bar"
+                      className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={data.length}
                     pageSize={10}
@@ -245,256 +228,6 @@ function JobRecruits() {
     </div>
   );
 }
-function JobItem({
-  id,
-  name,
-  address,
-  salary,
-  start,
-  end,
-  index,
-  number,
-  cate,
-  lenght,
-}) {
-  const [active, setActive] = useState(false);
-  
-    // const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
 
-  return (
-    <>
-      <div
-        className={
-          active
-            ? `${styles.warpItem} ${styles.active_item}`
-            : `${styles.warpItem}`
-        }
-        onMouseOut={(e) => setActive(false)}
-        onMouseOver={(e) => setActive(true)}
-      >
-        <div className={`${styles.head_item} d-flex align-items-center`}>
-          <div className={styles.warpIcon_job}>
-
-            {/* <img className={styles.icon_job} src={imgs || jobCategory[0].img}    alt="/" /> */}
-
-          </div>
-          <div className="overflow-hidden">
-            <h5 className={styles.title_job}>
-              {index + 1}. {name}{" "}
-            </h5>
-            <p className={`${styles.text_job} `}>
-              Số lượng {number} người{" "}
-              <span className={styles.spaceCount}>|</span> Nơi làm việc:{" "}
-              {address}
-            </p>
-            <p className={`${styles.text_job} ${styles.text_price}`}>
-              <AttachMoneyIcon
-                className={`${styles.money_icon} rounded-circle`}
-              ></AttachMoneyIcon>{" "}
-              {salary == "ltt"
-                ? `Lương thỏa thuận`
-                : `${formatNumber(
-                    salary.split(" - ")[0].slice(0, -4),
-                    0,
-                    ",",
-                    "."
-                  )} -
-                           ${formatNumber(
-                             salary.split(" - ")[1].slice(0, -4),
-                             0,
-                             ",",
-                             "."
-                           )}
-                            
-                            ++VNĐ`}
-            </p>
-          </div>
-        </div>
-        <div className={styles.foot_item}>
-          <div
-            className={`d-flex justify-content-between align-items-center ${styles.foot_text}`}
-          >
-            <p className={`${styles.text_job} ${styles.text_jobStart}`}>
-              Ngày đăng tuyển {formatDate(start, "-", "/")}
-            </p>
-
-            <p className={`${styles.text_job} ${styles.text_jobEnd}`}>
-              <span className={styles.foot_space}> | </span>
-              Ngày hết hạn {formatDate(end, "-", "/")}
-            </p>
-            <div className={`${styles.containApply}`}>
-              <Link
-                className={styles.apply_job}
-                to={{
-                  pathname: `/tuyen-dung/${toSlug(name)}`,
-                  search: `#${index}#${id}`,
-                }}
-              >
-                Ứng tuyển ngay
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-function Category({ department, address }) {
-  const [job, setJob] = useState(0);
-  return (
-    <div className={`${styles.wrapCategory}`}>
-      <Accordion>
-        <AccordionSummary
-          className={styles.ul_listFilter}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={styles.accordi_title}>
-            Việc làm theo phòng ban
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails className={styles.accordionDetails}>
-          <Typography className={styles.ul_listFilterbot}>
-            {department.map((depar, index) => (
-              <li key={index} className={styles.filter_item}>
-                <a
-                  onClick={(e) => setJob(index)}
-                  href="#"
-                  className={
-                    job === index
-                      ? `${styles.filter_text} ${styles.ftActive}`
-                      : `${styles.filter_text}`
-                  }
-                >
-                  {depar}
-                </a>
-              </li>
-            ))}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          className={styles.ul_listFilter}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography className={styles.accordi_title}>
-            Việc làm theo vi trí địa lý
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails className={styles.accordionDetails}>
-          <Typography className={styles.ul_listFilterbot}>
-            {address.map((depar, index) => (
-              <li key={index} className={styles.filter_item}>
-                <a href="/" className={styles.filter_text}>
-                  {depar}
-                </a>
-              </li>
-            ))}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          className={styles.ul_listFilter}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography className={styles.accordi_title}>
-            Việc làm theo chuyên môn
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className={styles.ul_listFilterbot}>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          className={styles.ul_listFilter}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography className={styles.accordi_title}>
-            Việc làm theo thời gian
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className={styles.ul_listFilterbot}>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <div className={styles.joinJob}>
-        <h4 className={styles.joinText}>Ứng tuyển </h4>
-        <h4 className={styles.joinText}>theo chuyên môn</h4>
-      </div>
-      <div className={styles.wrap_banner}>
-        <img className={styles.banner_cate} src={banner1} alt="/" />
-        <div className={styles.overlay}>
-          <div className={styles.overlay_center}>
-            <h5>Banner tuyển TTS</h5>
-            <h5> (Demo)</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 export default JobRecruits;
