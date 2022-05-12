@@ -31,7 +31,7 @@ function Footer() {
                       Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân
                       Tảo, quận Bắc Từ Liêm, Hà Nội, VN
                     </p>
-                    <a href="" className={styles.map_link}>
+                    <a href="https://www.google.com/maps/place/Chung+c%C6%B0+N03-T5+Ngo%E1%BA%A1i+Giao+%C4%90o%C3%A0n/@21.0645021,105.797158,17z/data=!3m1!4b1!4m5!3m4!1s0x3135aad954cd6a6f:0x119a90b9e06b1a16!8m2!3d21.0644971!4d105.7993467" className={styles.map_link}>
                       Xem bản đồ
                     </a>
                   </div>
@@ -44,7 +44,7 @@ function Footer() {
                       Số 25 Nguyễn Lương Bằng, Tân Phú, Quận 7, Tp.Hồ Chí Minh,
                       VN
                     </p>
-                    <a href="" className={styles.map_link}>
+                    <a href="https://www.google.com/maps/place/25+Nguy%E1%BB%85n+L%C6%B0%C6%A1ng+B%E1%BA%B1ng,+T%C3%A2n+Ph%C3%BA,+Qu%E1%BA%ADn+7,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+700000,+Vi%E1%BB%87t+Nam/@10.7218891,106.7241584,17z/data=!3m1!4b1!4m5!3m4!1s0x3175255fd2403787:0xed13dfbffbfd344a!8m2!3d10.7218838!4d106.7263471" className={styles.map_link}>
                       Xem bản đồ
                     </a>
                   </div>
@@ -59,7 +59,7 @@ function Footer() {
                       Lô CB-27.1 KCN Thuận Thành II, An Bình, Thuận Thành, Bắc
                       Ninh
                     </p>
-                    <a href="" className={styles.map_link}>
+                    <a href="https://www.google.com/maps/place/Diligo+Holdings+-+Factory+Thu%E1%BA%ADn+Th%C3%A0nh+II/@21.0600978,106.1087758,17z/data=!3m1!4b1!4m5!3m4!1s0x3135a1d45e03df0f:0x4f2ede03cf1b9c30!8m2!3d21.0600928!4d106.1109645" className={styles.map_link}>
                       Xem bản đồ
                     </a>
                   </div>

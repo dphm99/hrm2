@@ -18,10 +18,14 @@
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px 0 0 10px;
 }
+.detail {
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+}
 .detail p {
-    padding: 25px 45px 25px 45px;
+    padding: 25px 45px 25px 45px !important;
     border-bottom: 1px solid #ddd;
-    margin: 0 !important;
+    margin: 0;
+    background-color: #f6f6f6;
 }
 
 /* -------------------------tablets--------------------- */

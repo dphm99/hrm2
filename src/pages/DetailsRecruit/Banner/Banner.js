@@ -10,6 +10,7 @@ import { RecruitContext } from "../../../components/contexts/ContextRecuit";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
+
 const Banner = () => {
   const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
@@ -38,10 +39,12 @@ const Banner = () => {
     },
 
     {
+
       href: "/nhan-viên-kinh-doanh",
       title:
         data.find((ele) => ele.id == jobId) &&
         `${data.find((ele) => ele.id == jobId).name.name}`,
+
       isActive: true,
     },
   ];
@@ -90,6 +93,15 @@ const Banner = () => {
       });
   }, []);
 
+
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
+
   return (
     <>
       <div className="container">
@@ -100,7 +112,7 @@ const Banner = () => {
               `${data.find((ele) => ele.id == jobId).name.name}`}
           </h2>
           <div className="row mb-2">
-            <div className="col-md-4">
+            <div className={`${styles.detailsCol4} col-md-4`}>
               <div className={styles.detailsSticky}>
                 {data.find((ele) => ele.id == jobId) && (
                   <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
@@ -173,10 +185,12 @@ const Banner = () => {
                       </Link>
                     </div>
                     <div className={`${styles.detailsLink}`}>
-                      <ContentCopyIcon
-                        style={{ fontSize: "14px", marginTop: "-2px" }}
-                      ></ContentCopyIcon>
-                      <a href="#">Copy link</a>
+                      <div>
+                        <ContentCopyIcon
+                          style={{ fontSize: "14px", marginTop: "-2px" }}
+                        ></ContentCopyIcon>
+                        <a href="#">Copy link</a>
+                      </div>
                       <div className={styles.detailsIcon}>
                         <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
@@ -266,9 +280,9 @@ const Banner = () => {
                       <option disabled value="disabled">
                         Toàn quốc
                       </option>
-                      {city &&
-                        city.map((e, index) => (
-                          <option key={index}>{e.name}</option>
+                      {data &&
+                        data.map((e, index) => (
+                          <option key={index}>{e.address.name}</option>
                         ))}
                     </select>
 
@@ -295,22 +309,23 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tầng 2,Tòa nhà N03T5, khu Đoàn ngoại giao,p.Xuân
                           Tảo,q.Bắc Từ Liêm,Hà Nội, VN.
                           <br />
-                          <h6
-                            style={{
-                              color: "rgb(185, 9, 9)",
-                              fontStyle: "italic",
-                              fontWeight: "700",
-                            }}
-                          >
-                            Bản đồ.
-                          </h6>
+                          <a target="blank" href="https://www.google.com/maps/place/Chung+c%C6%B0+N03-T5+Ngo%E1%BA%A1i+Giao+%C4%90o%C3%A0n/@21.0645021,105.797158,17z/data=!3m1!4b1!4m5!3m4!1s0x3135aad954cd6a6f:0x119a90b9e06b1a16!8m2!3d21.0644971!4d105.7993467">
+                            <h6
+                              style={{
+                                color: "rgb(185, 9, 9)",
+                                fontStyle: "italic",
+                                fontWeight: "700",
+                              }}
+                            >
+                              Bản đồ.
+                            </h6>
+                          </a>
                         </label>
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
@@ -321,22 +336,23 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 25, Nguyễn Lương Bằng, phường Tân Phú, Quận 7,
                           TP.Hồ Chí Minh, VN.
                           <br />
-                          <h6
-                            style={{
-                              color: "rgb(185, 9, 9)",
-                              fontStyle: "italic",
-                              fontWeight: "700",
-                            }}
-                          >
-                            Bản đồ.
-                          </h6>
+                          <a target="blank" href="https://www.google.com/maps/place/25+Nguy%E1%BB%85n+L%C6%B0%C6%A1ng+B%E1%BA%B1ng,+T%C3%A2n+Ph%C3%BA,+Qu%E1%BA%ADn+7,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+700000,+Vi%E1%BB%87t+Nam/@10.7218891,106.7241584,17z/data=!3m1!4b1!4m5!3m4!1s0x3175255fd2403787:0xed13dfbffbfd344a!8m2!3d10.7218838!4d106.7263471">
+                            <h6
+                              style={{
+                                color: "rgb(185, 9, 9)",
+                                fontStyle: "italic",
+                                fontWeight: "700",
+                              }}
+                            >
+                              Bản đồ.
+                            </h6>
+                          </a>
                         </label>
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
@@ -347,22 +363,23 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Tòa nhà AN06, Nguyễn Chí Thanh,p.Chùa Láng,q.Đống
                           Đa,Hà Nội,VN.
                           <br />
-                          <h6
-                            style={{
-                              color: "rgb(185, 9, 9)",
-                              fontStyle: "italic",
-                              fontWeight: "700",
-                            }}
-                          >
-                            Bản đồ.
-                          </h6>
+                          <a target="blank" href="https://www.google.com/maps/search/T%C3%B2a+nh%C3%A0+AN06,+Nguy%E1%BB%85n+Ch%C3%AD+Thanh,+Ch%C3%B9a+L%C3%A1ng,+%C4%90%E1%BB%91ng+%C4%90a,+H%C3%A0+N%E1%BB%99i/@21.0203785,105.8023134,16z/data=!3m1!4b1?hl=vi">
+                            <h6
+                              style={{
+                                color: "rgb(185, 9, 9)",
+                                fontStyle: "italic",
+                                fontWeight: "700",
+                              }}
+                            >
+                              Bản đồ.
+                            </h6>
+                          </a>
                         </label>
                       </div>
                       <div className={`${styles.detailscheck} form-check`}>
@@ -373,24 +390,27 @@ const Banner = () => {
                           id="flexRadioDefault1"
                         />
                         <label
-                          className="form-check-label"
+                          className={`${styles.detailsLabelcheck} form-check-label`}
                           htmlFor="flexRadioDefault1"
-                          style={{ marginTop: "-6px", marginLeft: "12px" }}
                         >
                           Số 1001, Bàng Đỏ,p.Phường Hoa Phượng Đỏ,tx.Kiến An,Hải
                           Phòng, VN.
                           <br />
-                          <h6
-                            style={{
-                              color: "rgb(185, 9, 9)",
-                              fontStyle: "italic",
-                              fontWeight: "700",
-                            }}
-                          >
-                            Bản đồ.
-                          </h6>
+                          <a target="blank" href="https://www.google.com/maps/search/S%E1%BB%91+1001,+B%C3%A0ng+%C4%90%E1%BB%8F,+Ph%C6%B0%E1%BB%9Dng+Hoa+Ph%C6%B0%E1%BB%A3ng+%C4%90%E1%BB%8F,+Ki%E1%BA%BFn+An,+H%E1%BA%A3i+Ph%C3%B2ng,+VN./@20.8240037,106.6071066,12z/data=!3m1!4b1">
+                            {/* <button onClick={handleClick} type="button" /> */}
+                            <h6
+                              style={{
+                                color: "rgb(185, 9, 9)",
+                                fontStyle: "italic",
+                                fontWeight: "700",
+                              }}
+                            >
+                              Bản đồ.
+                            </h6>
+                          </a>
                         </label>
                       </div>
+
                     </div>
                     <div className={styles.detailsButton}>
                       <button>Xem thêm</button>
@@ -414,6 +434,7 @@ const Banner = () => {
                             }
                             onClick={() => {
                               setactive(index);
+
                               // setCategory(e.short);
                             }}
                           >
@@ -446,6 +467,8 @@ const Banner = () => {
 
                 <div className={styles.detailsMap}>
                   <h5>Một số vị trí tương đương</h5>
+
+
                   {data &&
                     data
                       .filter((e) => e.category === currentCategory)
@@ -480,6 +503,8 @@ const Banner = () => {
                           </>
                         );
                       })}
+
+
                 </div>
                 <div className={styles.detailsImage}>
                   <img src={demo} />
