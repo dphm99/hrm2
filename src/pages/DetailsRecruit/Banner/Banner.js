@@ -13,14 +13,16 @@ import { toSlug } from "../../../components/extensions/toSlug";
 const Banner = () => {
   const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
-  const [activelocation,setActivelocation] = useState(0)
+  const [activelocation, setActivelocation] = useState(0);
   const { data } = useContext(RecruitContext);
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
-  console.log(data);
 
-  // const jobData = data[jobIndex].jobId
+  // const jobData = data.find(ele => ele.id == jobId).jobId
   // console.log(jobData);
+  const currentCategory =
+    data.find((ele) => ele.id == jobId) &&
+    data.find((ele) => ele.id == jobId).category;
 
   const breadcrumItem = [
     {
@@ -37,7 +39,9 @@ const Banner = () => {
 
     {
       href: "/nhan-viên-kinh-doanh",
-      title: data.find(ele => ele.id == jobId) && `${data.find(ele => ele.id == jobId).name.name}`,
+      title:
+        data.find((ele) => ele.id == jobId) &&
+        `${data.find((ele) => ele.id == jobId).name.name}`,
       isActive: true,
     },
   ];
@@ -91,25 +95,37 @@ const Banner = () => {
       <div className="container">
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
-          <h2>{data.find(ele => ele.id == jobId) && `${data.find(ele => ele.id == jobId).name.name}`}</h2>
+          <h2>
+            {data.find((ele) => ele.id == jobId) &&
+              `${data.find((ele) => ele.id == jobId).name.name}`}
+          </h2>
           <div className="row mb-2">
             <div className="col-md-4">
               <div className={styles.detailsSticky}>
-                {data[jobIndex] && (
+                {data.find((ele) => ele.id == jobId) && (
                   <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
                     <div className="">
                       <div className={styles.detailsFlex}>
                         <ul>
                           <li> Nơi làm việc: </li>
-                          <h6>{data[jobIndex].address.name}</h6>
+                          <h6>
+                            {data.find((ele) => ele.id == jobId).address.name}
+                          </h6>
                         </ul>
                         <ul>
                           <li> Bộ phận: </li>
-                          <h6>{data[jobIndex].department.name}</h6>
+                          <h6>
+                            {
+                              data.find((ele) => ele.id == jobId).department
+                                .name
+                            }
+                          </h6>
                         </ul>
                         <ul>
                           <li> Cấp bậc: </li>
-                          <h6>{data[jobIndex].industry}</h6>
+                          <h6>
+                            {data.find((ele) => ele.id == jobId).industry}
+                          </h6>
                         </ul>
                         <ul>
                           <li> Hình thức: </li>
@@ -117,14 +133,16 @@ const Banner = () => {
                         </ul>
                         <ul>
                           <li> Bằng cấp: </li>
-                          <h6>{data[jobIndex].degree.name}</h6>
+                          <h6>
+                            {data.find((ele) => ele.id == jobId).degree.name}
+                          </h6>
                         </ul>
                         <ul>
                           <li> Thu nhập: </li>
                           <h6>
-                            {data[jobIndex].salary == "ltt"
+                            {data.find((ele) => ele.id == jobId).salary == "ltt"
                               ? "Lương thỏa thuận"
-                              : data[jobIndex].salary}
+                              : data.find((ele) => ele.id == jobId).salary}
                           </h6>
                         </ul>
                         <ul>
@@ -133,7 +151,9 @@ const Banner = () => {
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
-                          <h6>{data[jobIndex].deadline}</h6>
+                          <h6>
+                            {data.find((ele) => ele.id == jobId).deadline}
+                          </h6>
                         </ul>
                       </div>
                     </div>
@@ -142,9 +162,11 @@ const Banner = () => {
                         className={styles.BannerLink}
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
-                            data[jobIndex].name.name
+                            data.find((ele) => ele.id == jobId).name.name
                           )}`,
-                          search: `#${jobIndex}#${data[jobIndex].id}`,
+                          search: `#${jobIndex}#${
+                            data.find((ele) => ele.id == jobId).id
+                          }`,
                         }}
                       >
                         <button className="btn">Ứng tuyển ngay</button>
@@ -183,7 +205,9 @@ const Banner = () => {
                   <ul>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: data[jobIndex] && data[jobIndex].description,
+                        __html:
+                          data.find((ele) => ele.id == jobId) &&
+                          data.find((ele) => ele.id == jobId).description,
                       }}
                       className={styles.detailsjobIndex}
                     ></div>
@@ -195,7 +219,9 @@ const Banner = () => {
                     <ul>
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: data[jobIndex] && data[jobIndex].require,
+                          __html:
+                            data.find((ele) => ele.id == jobId) &&
+                            data.find((ele) => ele.id == jobId).require,
                         }}
                         className={styles.detailsjobIndex}
                       ></div>
@@ -210,8 +236,10 @@ const Banner = () => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html:
-                            data[jobIndex] &&
-                            data[jobIndex].welfare.map((ele) => ele.name),
+                            data.find((ele) => ele.id == jobId) &&
+                            data
+                              .find((ele) => ele.id == jobId)
+                              .welfare.map((ele) => ele.name),
                         }}
                         className={styles.detailsjobName}
                       ></div>
@@ -418,35 +446,40 @@ const Banner = () => {
 
                 <div className={styles.detailsMap}>
                   <h5>Một số vị trí tương đương</h5>
-                  {data
-                    .filter((e) => e.category === "kinhdoanh")
-                    .map((value, index) => {
-                      return (
-                        <>
-                          <ul>
-                            <Link
-                            key={index}
-                              to={{
-                                pathname: `/tuyen-dung/${toSlug(
-                                  value.name.name
-                                )}`,
-                                search: `#${index}#${value.id}`,
-                              }}
-                              className={
-                                activelocation === index 
-                                ? `${styles.location} ${styles.activelocation}` 
-                                : `${styles.location}`
-                              }
-                              onClick={() => {
-                                setActivelocation(index);
-                              }}
-                            >
-                             - {value.name.name} tại <small className={styles.detailsDecoration}>{value.address.name}</small>
-                            </Link>
-                          </ul>
-                        </>
-                      );
-                    })}
+                  {data &&
+                    data
+                      .filter((e) => e.category === currentCategory)
+
+                      .map((value, index) => {
+                        return (
+                          <>
+                            <ul>
+                              <Link
+                                key={index}
+                                to={{
+                                  pathname: `/tuyen-dung/${toSlug(
+                                    value.name.name
+                                  )}`,
+                                  search: `#${index}#${value.id}`,
+                                }}
+                                className={
+                                  activelocation === index
+                                    ? `${styles.location} ${styles.activelocation}`
+                                    : `${styles.location}`
+                                }
+                                onClick={() => {
+                                  setActivelocation(index);
+                                }}
+                              >
+                                - {value.name.name} tại{" "}
+                                <small className={styles.detailsDecoration}>
+                                  {value.address.name}
+                                </small>
+                              </Link>
+                            </ul>
+                          </>
+                        );
+                      })}
                 </div>
                 <div className={styles.detailsImage}>
                   <img src={demo} />

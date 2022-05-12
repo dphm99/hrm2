@@ -10,7 +10,6 @@ import "./Career.scss";
 import longBanner from "../../assets/img/banner7.jpg";
 // import imgCV from "../../assets/img/icon-svg/banner6.jpg";
 
-
 function Career() {
   const { data } = useContext(BlogContext);
   // console.log(data);
@@ -95,6 +94,7 @@ function Career() {
               data.map((e, index) => {
                 return (
                   <Link
+                    key={index}
                     to={{
                       pathname: `/dinh-huong-nghe-nghiep/${toSlug(e.title)}`,
                       search: `#${index}#${e.id}`,
@@ -113,7 +113,7 @@ function Career() {
           </Slider>
         </div>
         <div className={styles.Career__banner}>
-          <img  src={longBanner} />
+          <img src={longBanner} />
         </div>
       </div>
     </>
