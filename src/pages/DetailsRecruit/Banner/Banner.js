@@ -13,11 +13,11 @@ import { toSlug } from "../../../components/extensions/toSlug";
 const Banner = () => {
   const [city, setCity] = useState([]);
   const [active, setactive] = useState(0);
-  const [category, setCategory] = useState("office");
+  const [activelocation,setActivelocation] = useState(0)
   const { data } = useContext(RecruitContext);
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
-  console.log(jobId);
+  console.log(data);
 
   // const jobData = data[jobIndex].jobId
   // console.log(jobData);
@@ -96,7 +96,7 @@ const Banner = () => {
             <div className="col-md-4">
               <div className={styles.detailsSticky}>
                 {data[jobIndex] && (
-                  <div className="row g-0 border overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
                     <div className="">
                       <div className={styles.detailsFlex}>
                         <ul>
@@ -147,18 +147,14 @@ const Banner = () => {
                           search: `#${jobIndex}#${data[jobIndex].id}`,
                         }}
                       >
-                        <button className="btn">
-                          Ứng tuyển ngay
-                        </button>
+                        <button className="btn">Ứng tuyển ngay</button>
                       </Link>
                     </div>
-                    <div className={styles.detailsLink}>
+                    <div className={`${styles.detailsLink}`}>
                       <ContentCopyIcon
                         style={{ fontSize: "14px", marginTop: "-2px" }}
                       ></ContentCopyIcon>
-                      <a href="#">
-                        Copy link
-                      </a>
+                      <a href="#">Copy link</a>
                       <div className={styles.detailsIcon}>
                         <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
@@ -189,6 +185,7 @@ const Banner = () => {
                       dangerouslySetInnerHTML={{
                         __html: data[jobIndex] && data[jobIndex].description,
                       }}
+                      className={styles.detailsjobIndex}
                     ></div>
                   </ul>
                 </div>
@@ -200,6 +197,7 @@ const Banner = () => {
                         dangerouslySetInnerHTML={{
                           __html: data[jobIndex] && data[jobIndex].require,
                         }}
+                        className={styles.detailsjobIndex}
                       ></div>
                     </ul>
                   </div>
@@ -215,6 +213,7 @@ const Banner = () => {
                             data[jobIndex] &&
                             data[jobIndex].welfare.map((ele) => ele.name),
                         }}
+                        className={styles.detailsjobName}
                       ></div>
                     </ul>
                   </div>
@@ -253,15 +252,8 @@ const Banner = () => {
                         id="flexCheckDefault"
                       />
                       <label
-                        className="form-check-label"
+                        className={`${styles.detailsLabel}`}
                         htmlFor="flexCheckDefault"
-                        style={{
-                          color: "#bf202e",
-                          marginLeft: "12px",
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          marginTop: "6px"
-                        }}
                       >
                         Xem địa điểm làm việc gần bạn nhất
                       </label>
@@ -286,7 +278,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
-                              fontWeight: "700"
+                              fontWeight: "700",
                             }}
                           >
                             Bản đồ.
@@ -312,7 +304,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
-                              fontWeight: "700"
+                              fontWeight: "700",
                             }}
                           >
                             Bản đồ.
@@ -338,7 +330,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
-                              fontWeight: "700"
+                              fontWeight: "700",
                             }}
                           >
                             Bản đồ.
@@ -364,7 +356,7 @@ const Banner = () => {
                             style={{
                               color: "rgb(185, 9, 9)",
                               fontStyle: "italic",
-                              fontWeight: "700"
+                              fontWeight: "700",
                             }}
                           >
                             Bản đồ.
@@ -394,7 +386,7 @@ const Banner = () => {
                             }
                             onClick={() => {
                               setactive(index);
-                              setCategory(e.short);
+                              // setCategory(e.short);
                             }}
                           >
                             <img
@@ -426,20 +418,35 @@ const Banner = () => {
 
                 <div className={styles.detailsMap}>
                   <h5>Một số vị trí tương đương</h5>
-                  <ul>
-                    <p>
-                      - Chuyên viên hỗ trợ kinh doanh (kinh doanh) <a>tại</a>{" "}
-                      <a className={styles.detailsText}>Hà Nội</a>
-                    </p>
-                    <p>
-                      - Quản lý sàn TMĐT (Marketing) <a>tại</a>{" "}
-                      <a className={styles.detailsText}>TP.Hồ Chí Minh</a>
-                    </p>
-                    <p>
-                      - Giám sát khu vực (kinh doanh) <a>tại</a>{" "}
-                      <a className={styles.detailsText}>Hải Dương</a>
-                    </p>
-                  </ul>
+                  {data
+                    .filter((e) => e.category === "kinhdoanh")
+                    .map((value, index) => {
+                      return (
+                        <>
+                          <ul>
+                            <Link
+                            key={index}
+                              to={{
+                                pathname: `/tuyen-dung/${toSlug(
+                                  value.name.name
+                                )}`,
+                                search: `#${index}#${value.id}`,
+                              }}
+                              className={
+                                activelocation === index 
+                                ? `${styles.location} ${styles.activelocation}` 
+                                : `${styles.location}`
+                              }
+                              onClick={() => {
+                                setActivelocation(index);
+                              }}
+                            >
+                             - {value.name.name} tại <small className={styles.detailsDecoration}>{value.address.name}</small>
+                            </Link>
+                          </ul>
+                        </>
+                      );
+                    })}
                 </div>
                 <div className={styles.detailsImage}>
                   <img src={demo} />

@@ -115,9 +115,9 @@
 .wrapCategory {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 160px;
-  border: 1px solid #ccc;
+  top: 200px;
   width: 97.5%;
+  border-right: 1px solid #a5a6a7;
 }
 
 .wrapListJob {
@@ -206,13 +206,17 @@
 .ul_listFilter div{
   height: 35px;
   margin: 13px 0 !important;
-
+  overflow: hidden;
 }
 .ul_listFilter p{
   font-weight: 900;
   color:#000 !important;
   font-size: 20px !important;
   margin-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 .accordi_title{
   /* height: 70px; */
@@ -223,6 +227,7 @@
   position: absolute;
   top: 54%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -374,7 +379,7 @@ flex:1;
 }
 
 .wrap_all {
-  border: 1px solid #707070;
+  border: 1px solid #a5a6a7;
   margin-bottom: 12px;
 }
 .banner_foot {
@@ -414,11 +419,65 @@ flex:1;
     max-width:920px ;
   } 
 }*/
+@media(max-width:1320px){
+ 
+  .customContainer{
+    max-width:1140px
+  }
+  .head_col{
+    width: 33.33333%;
+    padding: 0 12px !important;
+  }
+  .head_checkbox{
+    margin-right: 24px;
+  }
+  .head_recruit{
+    height: auto;
+    margin:42px -12px !important;
+  }
+  .head_input_location{
+    margin-left: 0;
+  }
+  .wrapCategory{
+    width: 100%;
+    
+  }
+  .searchIcon {
+    left: 22px;
+  
+  }
+  .sudoLocation,.sudoSearch{
+    left:64px;
+  }
+  .head_input{
+    padding-left: 70px;
+  }
+  .wrapListJob{
+    margin-left: 0;
+  }
+}
+@media (max-width:1200px){
+  .customContainer{
+    max-width:970px ;
+  }
 
+  .head_recruit{
+    margin:42px -12px !important;
+  }
+ 
+  
+}
 @media (max-width: 992px) {
   .customContainer{
     max-width:720px ;
   }
+  .customRow{
+    --bs-gutter-x: 0;
+  }
+  .overlay{
+    right: 0;
+  }
+  
   .foot_space {
     display: none;
   }
@@ -434,14 +493,20 @@ flex:1;
   .head_checkbox {
     width: 30px;
   }
+  .head_col{
+    width: 50% ;
+  }
 }
 @media (max-width: 768px) {
-  .col_wrap {
+ 
+  .customContainer{
     padding-left: 12px !important;
-  }
-  .wrap_border {
     padding-right: 12px !important;
   }
+  .head_col{
+    width: 100%;
+  }
+ 
 }
 @media (max-width: 576px) {
   .sortJob_sm {
@@ -449,5 +514,9 @@ flex:1;
   }
   .wrap_selectSort {
     margin: 12px 0 12px 12px;
+  }
+  .sortJob_sm{
+    height: auto;
+    margin: 12px 0;
   }
 }

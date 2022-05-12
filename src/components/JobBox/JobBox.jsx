@@ -105,7 +105,7 @@ function JobBox() {
                       key={index}
                       to={{
                         pathname: `/ung-tuyen/${toSlug(value.name.name)}`,
-                        search: `#${value.id}`,
+                        search: `#${index}#${value.id}`,
                       }}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
                     >
