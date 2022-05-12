@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
 import formatNumber from "../extensions/formatNumber";
+import { searchData } from "../extensions/searchData";
 
 const jobCategory = [
   {
@@ -38,7 +39,7 @@ const jobCategory = [
   },
   {
     img: nhasanxuat,
-    short: "factory",
+    short: "nhasanxuat",
   },
   {
     img: taichinh,
@@ -50,21 +51,18 @@ const jobCategory = [
   },
   {
     img: congnghe,
-    short: "it",
+    short: "congnghe",
   },
   {
     img: nhaphanphoi,
-    short: "inventory",
-  },
-  {
-    img: nhaphanphoi,
-    short: "south",
+    short: "nhaphanphoi",
   },
 ];
 
 function JobRecruits() {
-  const data = useContext(RecruitContext);
-  console.log(data);
+  const { keySearch, setKeySearch, data, targetSearch } =
+    useContext(RecruitContext);
+  console.log(keySearch);
 
   //   const [dataSliced, setdataSliced] = useState([]);
   //   const [currentPage, setCurrentPage] = useState(1);
@@ -96,11 +94,11 @@ function JobRecruits() {
   const department = [];
   const address = [];
   data &&
-    data.data.forEach((job) => {
+    data.forEach((job) => {
       department.push(job.department.name);
       address.push(job.address.name);
     });
-
+  console.log(data);
   return (
     <div
       className={`container ${styles.customContainer}`}
@@ -108,21 +106,33 @@ function JobRecruits() {
     >
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>
-        <div
-          className={`${styles.head_col}  ${styles.head_input_search} `}
-        >
+        <div className={`${styles.head_col}  ${styles.head_input_search} `}>
           <input
             className={`${styles.head_input}`}
             placeholder="Bạn đang tìm việc gì?"
+            value={keySearch}
+            onChange={(e) => setKeySearch(e.target.value)}
           />
+          {data.length > 0 &&
+            searchData(data, targetSearch, keySearch).length === 0 && (
+              <p
+                className={"mt-2 ms-2 position-absolute"}
+                style={{
+                  bottom: "-40px",
+                  color: "red",
+                  fontSize: ".9rem",
+                  fontWeight: "500",
+                }}
+              >
+                <i>*Không tìm thấy công việc</i>
+              </p>
+            )}
           <div className={styles.input_icon}>
             <p className={styles.sudoSearch}></p>
             <SearchIcon className={styles.searchIcon}></SearchIcon>
           </div>
         </div>
-        <div
-          className={`${styles.head_col}  ${styles.head_input_location} `}
-        >
+        <div className={`${styles.head_col}  ${styles.head_input_location} `}>
           <input
             className={`${styles.head_input} ${styles.head_checkAddress}`}
             placeholder="Địa điểm làm việc"
@@ -132,9 +142,7 @@ function JobRecruits() {
             <FmdGoodIcon className={styles.searchIcon}></FmdGoodIcon>
           </div>
         </div>
-        <div
-          className={`${styles.head_col}  ${styles.wrapCheckbox} `}
-        >
+        <div className={`${styles.head_col}  ${styles.wrapCheckbox} `}>
           <div className={`${styles.containCheckbox} `}>
             <input type="checkbox" className={styles.head_checkbox} />
             <div className={`${styles.head__address} overflow-hidden`}>
@@ -162,9 +170,7 @@ function JobRecruits() {
                 >
                   <p className={styles.listJob_count}>
                     Tìm thấy{" "}
-                    <span className={styles.higlight_text}>
-                      {data.data.length}
-                    </span>{" "}
+                    <span className={styles.higlight_text}>{data.length}</span>{" "}
                     việc làm
                   </p>
                   <div
@@ -181,8 +187,9 @@ function JobRecruits() {
                 </div>
               </div>
               <div className={styles.listJob_item}>
+                {console.log(searchData(data, targetSearch, keySearch))}
                 {data &&
-                  data.data.map((job, index) => (
+                  data.map((job, index) => (
                     <JobItem
                       id={job.id}
                       key={index}
@@ -258,9 +265,8 @@ function JobItem({
   lenght,
 }) {
   const [active, setActive] = useState(false);
-  
-    // const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
+  const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
   return (
     <>
@@ -275,9 +281,11 @@ function JobItem({
       >
         <div className={`${styles.head_item} d-flex align-items-center`}>
           <div className={styles.warpIcon_job}>
-
-            {/* <img className={styles.icon_job} src={imgs || jobCategory[0].img}    alt="/" /> */}
-
+            <img
+              className={styles.icon_job}
+              src={imgs || jobCategory[0].img}
+              alt="/"
+            />
           </div>
           <div className="overflow-hidden">
             <h5 className={styles.title_job}>
@@ -481,9 +489,11 @@ function Category({ department, address }) {
         </AccordionDetails>
       </Accordion>
 
-      <div className={styles.joinJob}>
-        <h4 className={styles.joinText}>Ứng tuyển </h4>
-        <h4 className={styles.joinText}>theo chuyên môn</h4>
+      <div to="/ung-tuyen-nang-luc" className={styles.joinJob}>
+        <Link to="/ung-tuyen-nang-luc">
+          <h4 className={styles.joinText}>Ứng tuyển </h4>
+          <h4 className={styles.joinText}>theo chuyên môn</h4>
+        </Link>
       </div>
       <div className={styles.wrap_banner}>
         <img className={styles.banner_cate} src={banner1} alt="/" />

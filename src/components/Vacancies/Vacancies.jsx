@@ -19,7 +19,7 @@ function Vancancies() {
   const jobCategory = [
     {
       img: kinhdoanh,
-      short: "office",
+      short: "kinhdoanh",
     },
     {
       img: marketing,
@@ -27,7 +27,7 @@ function Vancancies() {
     },
     {
       img: nhasanxuat,
-      short: "factory",
+      short: "nhasanxuat",
     },
     {
       img: taichinh,
@@ -39,11 +39,11 @@ function Vancancies() {
     },
     {
       img: congnghe,
-      short: "it",
+      short: "congnghe",
     },
     {
       img: nhaphanphoi,
-      short: "inventory",
+      short: "nhaphanphoi",
     },
   ];
 
@@ -64,8 +64,8 @@ function Vancancies() {
                 <Link
                   key={index}
                   to={{
-                    pathname: `/ung-tuyen/${toSlug(vancancies.name.name)}`,
-                    search: `#${vancancies.id}`
+                    pathname: `/tuyen-dung/${toSlug(vancancies.name.name)}`,
+                    search: `#${index}#${vancancies.id}`
                   }}
                   className={
                     active
@@ -128,7 +128,7 @@ function Vancancies() {
         </div>
         <div className={styles.overlay}>
           <button  className={styles.vancanciesBtn}>
-            Xem thêm
+            <Link to="/tuyen-dung">Xem thêm</Link>
           </button>
         </div>
       </div>

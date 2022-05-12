@@ -81,13 +81,14 @@ function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
+                  <a
                     className="navbar-item"
                     activeClassName="is-active"
-                    to={{pathname: "daotao.diligo.vn" }}
+                    href="http://daotao.diligo.vn"
+                    target="_blank"
                   >
                     ĐÀO TẠO
-                  </NavLink>
+                  </a>
                 </li>
                 <li>
                   <NavLink
