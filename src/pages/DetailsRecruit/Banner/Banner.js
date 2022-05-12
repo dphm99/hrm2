@@ -37,7 +37,7 @@ const Banner = () => {
 
     {
       href: "/nhan-viên-kinh-doanh",
-      title: "nhan-viên-kinh-doanh",
+      title: data.find(ele => ele.id == jobId) && `${data.find(ele => ele.id == jobId).name.name}`,
       isActive: true,
     },
   ];
@@ -91,7 +91,7 @@ const Banner = () => {
       <div className="container">
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
-          <h2>{data[jobIndex] && data[jobIndex].name.name}</h2>
+          <h2>{data.find(ele => ele.id == jobId) && `${data.find(ele => ele.id == jobId).name.name}`}</h2>
           <div className="row mb-2">
             <div className="col-md-4">
               <div className={styles.detailsSticky}>

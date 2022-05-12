@@ -31,9 +31,14 @@ const RecruitBlog = () => {
                     fontSize: `18px`,
                   }}
                 >
-                  <p className={`${styles.jobName} my-0 col-8`}>
+                  <Link 
+                  to={{
+                    pathname: `/tuyen-dung/${toSlug(e.name.name)}`,
+                      search: `#${index}#${e.id}`,
+                  }}
+                  className={`${styles.jobName} my-0 col-8`}>
                     {e.name.name}
-                  </p>
+                  </Link>
                   <p className={`${styles.deadLine}  col-4`}>
                     {e.deadline
                     .split('-')
