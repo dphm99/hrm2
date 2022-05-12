@@ -1,6 +1,8 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import styles from "./JobRecruit.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
+import JobItem from "./JobItem"
+import Category from "./Category"
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import uniqueArray from "../extensions/uniqueArray";
 import SearchIcon from "@mui/icons-material/Search";
@@ -64,6 +66,15 @@ function JobRecruits() {
     useContext(RecruitContext);
   console.log(keySearch);
 
+
+  const [sort, setSort] = useState([])
+  useEffect(() => {
+    if (sort.length === 0) {
+      setSort(data)
+    }
+  })
+
+  // console.log(sort)
   //   const [dataSliced, setdataSliced] = useState([]);
   //   const [currentPage, setCurrentPage] = useState(1);
   //   let PageSize = 10;
@@ -98,7 +109,21 @@ function JobRecruits() {
       department.push(job.department.name);
       address.push(job.address.name);
     });
-  console.log(data);
+
+  const handlSort = (value) => {
+    switch (value) {
+      case 'status':
+        const sorts = sort?.filter((job) => job.status === true)
+        const statusFalse = sort?.filter((job) => job.status === "")
+        const newStatus = [...sorts, ...statusFalse]
+        setSort(prev => newStatus)
+        break;
+
+      default:
+        break;
+    }
+
+  }
   return (
     <div
       className={`container ${styles.customContainer}`}
@@ -170,16 +195,25 @@ function JobRecruits() {
                 >
                   <p className={styles.listJob_count}>
                     Tìm thấy{" "}
-                    <span className={styles.higlight_text}>{data.length}</span>{" "}
+
+                    <span className={styles.higlight_text}>
+                      {data.length}
+                    </span>{" "}
+
                     việc làm
                   </p>
                   <div
                     className={`${styles.wrap_selectSort} d-flex align-items-center`}
                   >
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
-                    <select className={styles.priority}>
-                      <option value="">Độ ưu tiên</option>
+                    <select
+                      onChange={e => handlSort(e.target.value)}
+                      className={styles.priority}>
                       <option value="">Xếp theo </option>
+                      <option
+
+                        value="status">Độ ưu tiên
+                      </option>
                       <option value="">Xếp theo </option>
                       <option value="">Xếp theo </option>
                     </select>
@@ -189,7 +223,8 @@ function JobRecruits() {
               <div className={styles.listJob_item}>
                 {console.log(searchData(data, targetSearch, keySearch))}
                 {data &&
-                  data.map((job, index) => (
+                  sort?.map((job, index) => (
+
                     <JobItem
                       id={job.id}
                       key={index}
@@ -205,7 +240,7 @@ function JobRecruits() {
                   ))}
               </div>
               {/* <Pagination
-                    className="pagination-bar"
+                      className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={data.length}
                     pageSize={10}
@@ -252,6 +287,7 @@ function JobRecruits() {
     </div>
   );
 }
+
 function JobItem({
   id,
   name,
@@ -265,6 +301,7 @@ function JobItem({
   lenght,
 }) {
   const [active, setActive] = useState(false);
+
 
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
@@ -507,4 +544,5 @@ function Category({ department, address }) {
     </div>
   );
 }
+
 export default JobRecruits;
