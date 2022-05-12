@@ -12,7 +12,6 @@ function FormRecruit() {
 
   const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
- 
 
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
@@ -25,7 +24,7 @@ function FormRecruit() {
     console.log(cvv);
     bodyFormData.append("user", "2");
     bodyFormData.append("job_id", jobId);
-    bodyFormData.append("job_name", data[Index] && data[Index].name.name)
+    bodyFormData.append("job_name", data[Index] && data[Index].name.name);
     bodyFormData.append("name", name);
     bodyFormData.append("phone", phone);
     bodyFormData.append("email", email);
@@ -76,7 +75,7 @@ function FormRecruit() {
                   Họ và tên đầy đủ
                 </label>
                 <input type="hidden" value={jobId} id="job_id" />
-                <input type="hidden" value={jobId} id="job_name" />
+                {/* <input type="hidden" value={jobId} id="job_name" /> */}
                 <input
                   type="text"
                   id="inputName"
@@ -120,6 +119,18 @@ function FormRecruit() {
                   id="file"
                   className={styles.inputFile}
                   name="file"
+                  required
+                />
+              </div>
+              <div className={styles.inputUrl}>
+                <label htmlFor="inputUrl" className={styles.inputLabel}>
+                  Link Facebook | LinkedIn | Youtube cá nhân
+                </label>
+                <input
+                  type="text"
+                  id="inputField"
+                  className={styles.inputField}
+                  name="url"
                   required
                 />
               </div>
