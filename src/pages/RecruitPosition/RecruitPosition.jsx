@@ -55,7 +55,10 @@ function RecruitPosition() {
   // const { getValues } = useForm({
   //   mode: "onChange",
   // });
-
+const [checkList,setCheckList] = React.useState({
+      gender:"male",
+      status:"singel"
+})
   const breadcrumItem = [
     {
       href: "/",
@@ -125,13 +128,18 @@ function RecruitPosition() {
                                 Giới tính
                               </div>
                               <div className={`${styles.inputRadioItems}`}>
-                                <div className={`${styles.inputRadioItem}`}>
+                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
+                                  {...checkList,
+                                    gender:'male'
+                                  }
+                                )}>
                                   <p>
                                     <input
                                       type="radio"
                                       id="sex"
                                       name="radio-sex"
-                                      checked
+                                      value="male"
+                                      checked={checkList.gender === "male" ? true : false}
                                       className={styles.inputRadioButton}
                                     />
                                     <label
@@ -142,12 +150,17 @@ function RecruitPosition() {
                                     </label>
                                   </p>
                                 </div>
-                                <div className={`${styles.inputRadioItem}`}>
+                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
+                                  {...checkList,
+                                    gender:'female'
+                                  }
+                                )}>
                                   <p>
                                     <input
                                       type="radio"
                                       id="sex"
                                       name="radio-sex"
+                                      value={checkList.gender === "female" ? true : false}
                                       className={styles.inputRadioButton}
                                     />
                                     <label
@@ -165,13 +178,18 @@ function RecruitPosition() {
                                 Tình trạng
                               </div>
                               <div className={`${styles.inputRadioItems}`}>
-                                <div className={`${styles.inputRadioItem}`}>
+                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
+                                  {...checkList,
+                                    status:'singel'
+                                  }
+                                )}>
                                   <p>
                                     <input
                                       type="radio"
                                       id="alone"
                                       name="radio-relation"
-                                      checked
+                                      value="alone"
+                                      checked={checkList.status === "singel" ? true : false}
                                       className={styles.inputRadioButton}
                                     />
                                     <label
@@ -182,12 +200,18 @@ function RecruitPosition() {
                                     </label>
                                   </p>
                                 </div>
-                                <div className={`${styles.inputRadioItem}`}>
+                                <div className={`${styles.inputRadioItem}`}  onClick={() => setCheckList(
+                                  {...checkList,
+                                    status:'married'
+                                  }
+                                )}>
                                   <p>
                                     <input
                                       type="radio"
                                       id="married"
                                       name="radio-relation"
+                                      value={checkList.status === "married" ? true : false}
+
                                       className={styles.inputRadioButton}
                                     />
                                     <label
