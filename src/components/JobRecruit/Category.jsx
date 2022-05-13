@@ -26,7 +26,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <Typography className={styles.ul_listFilterbot}>
+          <Typography className={styles.ul_listFilterbot} >
             {category.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
                 <a
