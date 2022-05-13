@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
 import { jobCategory } from "./JobRecruit";
+import responsive from "./ResponsiteJobItem.module.css";
 
 function Category({ category, address, industry }) {
   const [job, setJob] = useState(0);
