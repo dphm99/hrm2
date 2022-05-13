@@ -2,10 +2,10 @@ import React from 'react'
 import styles from "./FormResearch.module.css"
 function FormResearch() {
     return (
-        <div className="container">
+        <div className={` ${styles.containALl}`}>
             <div style={{ textAlign: "center" }} className={styles.Recruit}>
                 <div className={styles.formRecruit}>
-                    <form encType="multipart/form-data" style={{ marginTop: "18rem" }}>
+                    <form encType="multipart/form-data" style={{ marginTop: "10rem" }}>
                     <h2 className={styles.title}>Tra cứu kết quả ứng tuyển</h2>
                     <p className={styles.text}>Anh / Chị vui lòng nhập cả 2 thông tin sau đây</p>
                         <div className={styles.inputName}>
