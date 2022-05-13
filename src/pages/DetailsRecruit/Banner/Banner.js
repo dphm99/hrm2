@@ -485,7 +485,7 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsProcedure}>
-                  <h4>QUY TRÌNH TUYỂN DỤNG</h4>
+                  <h4 style={{lineHeight:1.7}}>QUY TRÌNH TUYỂN DỤNG</h4>
                   <div className={styles.detailsRecruit}>
                     <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
