@@ -99,22 +99,19 @@ function JobItem({
               <AttachMoneyIcon
                 className={`${styles.money_icon} rounded-circle`}
               ></AttachMoneyIcon>{" "}
-              {/* {salary && salary ===  "ltt"
-                  ? `Lương thỏa thuận`
-                  : `${formatNumber(
+              {salary && salary[0] === "ltt"
+                ? `Lương thỏa thuận`
+                : `${formatNumber(
                     salary.split(" - ")[0].slice(0, -4),
                     0,
                     ",",
                     "."
-                  )} -
-                             ${formatNumber(
+                  )} - ${formatNumber(
                     salary.split(" - ")[1].slice(0, -4),
                     0,
                     ",",
                     "."
-                  )}
-                                            
-                              VNĐ`} */}
+                  )} ${(salary.split(" - ")[1].slice(-4))}`}
             </p>
           </div>
         </div>
