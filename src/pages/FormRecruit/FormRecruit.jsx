@@ -5,7 +5,9 @@ import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import axios from "axios";
 import FormData from "form-data";
-import { RecruitContext } from "../../components/contexts/ContextRecuit"; 
+import { RecruitContext } from "../../components/contexts/ContextRecuit";
+import filesCV from '../../assets/files/CV Diligo Holdings.doc'
+
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
 
@@ -159,7 +161,6 @@ function FormRecruit() {
                   id="inputField"
                   className={styles.inputField}
                   name="url"
-                  required
                 />
               </div>
               <button
@@ -170,11 +171,13 @@ function FormRecruit() {
                 Gửi CV
               </button>
               <div>
-                Không có CV, <a href="/">Tải ngay</a>
+                Không có CV, <a href={filesCV} download>Tải ngay</a>
               </div>
-              <button className={styles.noCV}>
-                Tải CV tiêu chuẩn của Diligo
-              </button>
+              {/* <div className={styles.noCV}>
+                <a href={filesCV}  download>
+                  Tải CV tiêu chuẩn của Diligo
+                </a>
+              </div> */}
               <div className={styles.desc}>
                 <ul>
                   Lưu ý khi đăng CV

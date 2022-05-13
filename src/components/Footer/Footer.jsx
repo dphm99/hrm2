@@ -121,11 +121,11 @@ function Footer() {
                   <ul className={styles.ul_Element}>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="/ung-tuyen">Kiểm tra kết quả ứng tuyển</Link>
+                      <Link to="/tra-cuu">Kiểm tra kết quả ứng tuyển</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="/tuyen-dung">Tìm việc gần bạn</Link>
+                      <Link to="/tim-viec-gan-ban">Tìm việc gần bạn</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
