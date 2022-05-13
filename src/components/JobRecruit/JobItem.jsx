@@ -95,7 +95,7 @@ function JobItem({
                 <AttachMoneyIcon
                   className={`${styles.money_icon} rounded-circle`}
                 ></AttachMoneyIcon>{" "}
-                {salary ===  "ltt"
+                {/* {salary ===  "ltt"
                   ? `Lương thỏa thuận`
                   : `${formatNumber(
                     salary.split(" - ")[0].slice(0, -4),
@@ -108,9 +108,9 @@ function JobItem({
                     0,
                     ",",
                     "."
-                  )}
-                              
-                              ++VNĐ`}
+                  )} */}
+{/*                               
+                              ++VNĐ`} */}
               </p>
             </div>
           </div>

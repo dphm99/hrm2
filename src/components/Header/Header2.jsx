@@ -104,7 +104,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} alt='/'/>
+          <img src={banner} alt='/' className={`w-100`}/>
         </div>
       </div>
     </>

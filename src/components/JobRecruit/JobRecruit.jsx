@@ -81,7 +81,7 @@ function JobRecruits() {
     //   setKeySearch("");
     // };
     //eslint-disable-next-line
-  }, [position, keySearch]);
+  }, []);
 
   // console.log(sort)
   //   const [dataSliced, setdataSliced] = useState([]);
