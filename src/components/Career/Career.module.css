@@ -133,6 +133,8 @@
 .link:hover {
   color: #000;
 }
+
+
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 1023px) {
   .Career__card {

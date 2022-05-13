@@ -25,6 +25,20 @@ const Banner = () => {
   const { data } = useContext(RecruitContext);
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
+  const currentURL = window.location.href
+
+  const [copySuccess, setCopySuccess] = useState("");
+
+  // your function to copy here
+
+  const copyToClipBoard = async (copyMe) => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess("Đã lưu");
+    } catch (err) {
+      setCopySuccess("Đã xảy ra lỗi");
+    }
+  };
 
   const currentCategory =
     data.find((ele) => ele.id === Number(jobId)) &&
@@ -93,7 +107,7 @@ const Banner = () => {
       .then((city) => {
         setCity(city.data);
       });
-  }, []);
+  }, [city]);
 
   return (
     <>
@@ -185,7 +199,11 @@ const Banner = () => {
                         </ul>
                         <ul>
                           <li> Số lượng tuyển: </li>
-                          <h6>101</h6>
+                          <h6>
+                            {data.find((ele) => ele.id === Number(jobId)) &&
+                              data.find((ele) => ele.id === Number(jobId))
+                                .number}
+                          </h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
@@ -219,7 +237,8 @@ const Banner = () => {
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
-                        <Link to="/">Copy link</Link>
+                        <button onClick={() => copyToClipBoard(currentURL)}>Copy link</button>
+                        {copySuccess}
                       </div>
                       <div className={styles.detailsIcon}>
                         <div className={styles.detailsfb}>
@@ -480,13 +499,14 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsProcedure}>
-                  <h4>QUY TRÌNH TUYỂN DỤNG</h4>
+                  <h4 style={{ lineHeight: 1.7 }}>QUY TRÌNH TUYỂN DỤNG</h4>
                   <div className={styles.detailsRecruit}>
                     <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
                         // console.log(e.img);
                         return (
-                          <li
+                          <Link
+                            to="/quy-trinh-tuyen-dung"
                             key={index}
                             className={
                               active === index
@@ -495,7 +515,6 @@ const Banner = () => {
                             }
                             onClick={() => {
                               setactive(index);
-                              scrollToTop();
 
                               // setCategory(e.short);
                             }}
@@ -511,13 +530,17 @@ const Banner = () => {
                             <span className={styles.detailsRecruiUpload}>
                               {e.title}
                             </span>
-                          </li>
+                          </Link>
                         );
                       })}
                     </ul>
                   </div>
                   <div className={styles.detailsRecruiBtn}>
-                    <button>Xem chi tiết tại đây</button>
+                    <button>
+                      <Link to="/quy-trinh-tuyen-dung">
+                        Xem chi tiết tại đây
+                      </Link>
+                    </button>
                   </div>
                 </div>
 
