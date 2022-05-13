@@ -15,7 +15,14 @@
   text-transform: uppercase;
   margin: 46px 0;
 }
-
+.jobCategoryItem:hover{
+  background-color: #bf202e;
+  color: #fff;
+}
+.jobCategoryItem:hover >.jobCategoryImg{
+  filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(183deg)
+  brightness(92%) contrast(111%);
+}
 .jobCategoryItem {
   width: 170px;
   height: 200px;
@@ -25,6 +32,7 @@
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  transition:0.3s ease;
 }
 .jobCategoryItem.active {
   background-color: #bf202e;
