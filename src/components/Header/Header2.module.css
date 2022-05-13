@@ -58,7 +58,7 @@
   text-decoration: underline;
 }
 
-.headerMenu li a {
+.headerMenu a {
   color: #fff;
   font-weight: bold;
   font-size: 19px;
@@ -94,6 +94,35 @@
   margin: auto;
   padding: 10px;
 }
+
+
+.formInputMb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formInputMb button {
+  height: 48px;
+  width: 30vw;
+  border: none;
+  outline: none;
+  background-color: #bf202e;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.formInputMb .inputMb {
+  height: 48px;
+
+  width: 70vw;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+
 
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 768px) {
@@ -140,6 +169,8 @@
     display: block;
   }
 
+
+
   .headerMenu {
     display: none;
   }
@@ -158,13 +189,14 @@
   .active.headerMenu li a {
     display: inline-block;
     margin: 12px 0 12px 0;
+    color: #000;
   }
 
   .active.headerMenu {
     text-decoration: underline;
   }
 
-  .active.headerMenu li {
+  .active.headerMenu NavLink {
     margin-top: -22px !important;
     border-bottom: 1px solid #e1e1e1;
     width: 720px;
@@ -220,7 +252,8 @@
   }
 
   .headerMenu li a {
-    color: blue;
+    color: #000;
+
   }
 
   .header__fixx {

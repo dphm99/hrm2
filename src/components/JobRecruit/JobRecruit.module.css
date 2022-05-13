@@ -21,6 +21,14 @@
   font-size: 20px;
 }
 
+.JobLink_item{
+  text-decoration: none;
+  color: #000;
+}
+.JobLink_item:hover{
+  color: #000;
+}
+
 .sudoLocation {
   position: absolute;
   top: 51%;
@@ -102,8 +110,6 @@
   font-style: italic;
   padding-right: 1px;
   font-weight: 500;
-}
-.head__address {
 }
 .wrapCategory {
   padding-right: 0;
@@ -215,6 +221,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
 }
 
 .overlay_center {
@@ -225,6 +232,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 
 /* component ItemJob */
 .warpItem {
