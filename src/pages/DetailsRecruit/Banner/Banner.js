@@ -185,7 +185,12 @@ const Banner = () => {
                         </ul>
                         <ul>
                           <li> Số lượng tuyển: </li>
-                          <h6>101</h6>
+                          <h6>
+                            { data.find((ele) => ele.id === Number(jobId)) &&
+                              data.find((ele) => ele.id === Number(jobId))
+                                .number
+                            }
+                          </h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
