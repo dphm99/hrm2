@@ -1,11 +1,11 @@
 .jobName {
   text-decoration: none;
-  color:#000;
+  color: #000;
   font-weight: 900;
   font-size: 15px;
 }
-.jobName:hover{
-  color:rgb(177, 0, 0);
+.jobName:hover {
+  color: rgb(177, 0, 0);
 }
 .deadLine {
   font-size: 15px;
@@ -21,13 +21,19 @@
   cursor: pointer;
   font-size: 13px;
   color: rgb(177, 0, 0);
-  
 }
 
 .block {
   min-height: 86px;
 }
 
+/* -------------------------mobile & tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+  .link,
+  .deadLine {
+    text-align: center;
+  }
+}
 /* -------------------------mobile--------------------- */
 @media only screen and (max-width: 739px) {
   .Block__Normal_PP {

@@ -100,12 +100,12 @@ const Banner = () => {
       <div className="container">
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
-          <h2>
+          <h2 className={styles.title}>
             {data.find((ele) => ele.id === Number(jobId)) &&
               `${data.find((ele) => ele.id === Number(jobId)).name.name}`}
           </h2>
           <div className="row mb-2">
-            <div className={`${styles.detailsCol4} col-md-4`}>
+            <div className={`${styles.detailsCol4} col-lg-4`}>
               <div className={styles.detailsSticky}>
                 {data.find((ele) => ele.id === Number(jobId)) && (
                   <div className="row g-0 overflow-hidden flex-md-row mb-4 Regular shadow h-md-250 position-relative">
@@ -158,35 +158,35 @@ const Banner = () => {
                               .salary[0] === "ltt"
                               ? "Lương thỏa thuận"
                               : formatNumber(
-                                  data
-                                    .find((ele) => ele.id === Number(jobId))
-                                    .salary.split(" - ")[0]
-                                    .slice(0, -4),
-                                  0,
-                                  ",",
-                                  "."
-                                ) +
-                                " - " +
-                                formatNumber(
-                                  data
-                                    .find((ele) => ele.id === Number(jobId))
-                                    .salary.split(" - ")[1]
-                                    .slice(0, -4),
-                                  0,
-                                  ",",
-                                  "."
-                                ) +
-                                " " +
+                                data
+                                  .find((ele) => ele.id === Number(jobId))
+                                  .salary.split(" - ")[0]
+                                  .slice(0, -4),
+                                0,
+                                ",",
+                                "."
+                              ) +
+                              " - " +
+                              formatNumber(
                                 data
                                   .find((ele) => ele.id === Number(jobId))
                                   .salary.split(" - ")[1]
-                                  .slice(-4)}
+                                  .slice(0, -4),
+                                0,
+                                ",",
+                                "."
+                              ) +
+                              " " +
+                              data
+                                .find((ele) => ele.id === Number(jobId))
+                                .salary.split(" - ")[1]
+                                .slice(-4)}
                           </h6>
                         </ul>
                         <ul>
                           <li> Số lượng tuyển: </li>
                           <h6>
-                            { data.find((ele) => ele.id === Number(jobId)) &&
+                            {data.find((ele) => ele.id === Number(jobId)) &&
                               data.find((ele) => ele.id === Number(jobId))
                                 .number
                             }
@@ -211,22 +211,21 @@ const Banner = () => {
                             data.find((ele) => ele.id === Number(jobId)).name
                               .name
                           )}`,
-                          search: `#${jobIndex}#${
-                            data.find((ele) => ele.id === Number(jobId)).id
-                          }`,
+                          search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)).id
+                            }`,
                         }}
                       >
                         <button className="btn">Ứng tuyển ngay</button>
                       </Link>
                     </div>
-                    <div className={`${styles.detailsLink}`}>
-                      <div>
+                    <div className={`${styles.detailsLink} row-md`}>
+                      <div className={` col-md-6`}>
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
                         <Link to="/">Copy link</Link>
                       </div>
-                      <div className={styles.detailsIcon}>
+                      <div className={`${styles.detailsIcon} col-md-6`}>
                         <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
                             <FacebookIcon size={28} />
@@ -246,7 +245,7 @@ const Banner = () => {
                 )}
               </div>
             </div>
-            <div className={`${styles.detailsSidebar} col-md-8`}>
+            <div className={`${styles.detailsSidebar} col-lg-8`}>
               <div className="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <img src={demo} style={{ width: "100%" }} alt="/" />
                 <h4>Mô tả công việc</h4>
@@ -279,7 +278,7 @@ const Banner = () => {
                     </ul>
                   </div>
                 </div>
-                {}
+                { }
                 <div className={styles.welfare}>
                   <h5>Chính sách & Phúc lợi</h5>
                   {data.find((ele) => ele.id === Number(jobId)) ? (
@@ -485,7 +484,7 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsProcedure}>
-                  <h4 style={{lineHeight:1.7}}>QUY TRÌNH TUYỂN DỤNG</h4>
+                  <h4 style={{ lineHeight: 1.7 }}>QUY TRÌNH TUYỂN DỤNG</h4>
                   <div className={styles.detailsRecruit}>
                     <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
@@ -532,13 +531,12 @@ const Banner = () => {
                       to={{
                         pathname: `/ung-tuyen/${toSlug(
                           data.find((ele) => ele.id === Number(jobId)) &&
-                            data.find((ele) => ele.id === Number(jobId)).name
-                              .name
+                          data.find((ele) => ele.id === Number(jobId)).name
+                            .name
                         )}`,
-                        search: `#${jobIndex}#${
-                          data.find((ele) => ele.id === Number(jobId)) &&
+                        search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)) &&
                           data.find((ele) => ele.id === Number(jobId)).id
-                        }`,
+                          }`,
                       }}
                     >
                       GỬI CV, ỨNG TUYỂN NGAY
