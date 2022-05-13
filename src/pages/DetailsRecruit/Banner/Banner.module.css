@@ -117,12 +117,7 @@
 
 .detailsjobIndex p {
   margin: 9px 16px !important;
-  font-size: 16px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  font-size: 16px !important; 
 }
 
 .detailsjobName {
