@@ -284,7 +284,7 @@
 }
 
 .detailsRecruiIcon {
-  margin-top: -8px;
+  margin-top: 10px;
   width: 50px;
   height: 60px;
   color: #fff;
@@ -428,7 +428,6 @@
 .activelocation {
   color: #ae1825;
 }
-
 
 @media only screen and (max-width: 768px) {
   .detailsRecuit h2 {
@@ -611,7 +610,6 @@
   margin-bottom: 10px;
 }
 
-
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
   .detailsSticky {
@@ -619,4 +617,3 @@
     top: 0;
   }
 }
-
