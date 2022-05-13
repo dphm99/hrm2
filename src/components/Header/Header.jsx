@@ -7,7 +7,7 @@ import ListIcon from "@mui/icons-material/List";
 // import liIcon from "../../assets/svg/NavLinkedin.svg";
 // import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
-import {NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -82,6 +82,17 @@ function Header() {
                   <NavLink className="navbar-item" to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
+                </li>
+                <li className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}>
+                  <form action="/tuyen-dung/" className={styles.formInputMb}>
+                    <input
+                      type="text"
+                      className={styles.inputMb}
+                      placeholder="Tìm kiếm"
+                      name="q"
+                    />
+                    <button type="submit">Tìm kiếm</button>
+                  </form>
                 </li>
               </ul>
               <ListIcon

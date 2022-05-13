@@ -47,9 +47,47 @@
   border-radius: 4px;
   height: 72px;
   padding: 8px 12px;
+  font-size: 1rem;
 }
 
 .SelectWrapper select option {
   padding: 0;
   height: 32px;
+}
+/* -------------------------mobile & tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+  .jobListTitle {
+    margin-bottom: 0px;
+  }
+}
+/* -------------------------small mobile--------------------- */
+@media only screen and (max-width: 480px) {
+  .jobCategoryGroup {
+    gap: 0 20px;
+  }
+  .jobCategory {
+    width: 100%;
+    overflow: scroll;
+  }
+  .jobCategoryImg {
+    width: 100px;
+    height: unset;
+    object-fit: contain;
+    padding: 0 20px;
+  }
+  .jobCategoryName{
+    padding: 0 10px
+  }
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (min-width: 480px) and (max-width: 739px) {
+
+}
+
+/* -------------------------tablets--------------------- */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
 }

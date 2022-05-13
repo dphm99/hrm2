@@ -28,7 +28,7 @@ function Search() {
   }, []);
 
   return (
-    <div className={`container ${styles.SearchBox}`}>
+    <div className={`container d-none d-md-block ${styles.SearchBox}`}>
       <h3>Bạn đang tìm công việc gì?</h3>
       <form action="/tuyen-dung/">
         <div className={styles.SearchWrapper}>

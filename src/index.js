@@ -15,6 +15,7 @@ import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import RecruitPosition from "./pages/RecruitPosition/RecruitPosition";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import Index from "./pages/FAQs/index";
+import ScrollToTop from "./components/extensions/scrollToTop"
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -41,6 +42,7 @@ ReactDOM.render(
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
+        <ScrollToTop />
       </BlogProvider>
     </RecruitProvider>
   </BrowserRouter>,

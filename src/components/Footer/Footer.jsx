@@ -31,9 +31,9 @@ function Footer() {
                       Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân
                       Tảo, quận Bắc Từ Liêm, Hà Nội, VN
                     </p>
-                    <Link to="https://www.google.com/maps/place/Chung+c%C6%B0+N03-T5+Ngo%E1%BA%A1i+Giao+%C4%90o%C3%A0n/@21.0645021,105.797158,17z/data=!3m1!4b1!4m5!3m4!1s0x3135aad954cd6a6f:0x119a90b9e06b1a16!8m2!3d21.0644971!4d105.7993467" className={styles.map_link}>
+                    <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Chung+c%C6%B0+N03-T5+Ngo%E1%BA%A1i+Giao+%C4%90o%C3%A0n/@21.0645021,105.797158,17z/data=!3m1!4b1!4m5!3m4!1s0x3135aad954cd6a6f:0x119a90b9e06b1a16!8m2!3d21.0644971!4d105.7993467" className={styles.map_link}>
                       Xem bản đồ
-                    </Link>
+                    </a>
                   </div>
                 </li>
                 <li className={`d-flex`}>
@@ -44,9 +44,9 @@ function Footer() {
                       Số 25 Nguyễn Lương Bằng, Tân Phú, Quận 7, Tp.Hồ Chí Minh,
                       VN
                     </p>
-                    <Link to="https://www.google.com/maps/place/25+Nguy%E1%BB%85n+L%C6%B0%C6%A1ng+B%E1%BA%B1ng,+T%C3%A2n+Ph%C3%BA,+Qu%E1%BA%ADn+7,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+700000,+Vi%E1%BB%87t+Nam/@10.7218891,106.7241584,17z/data=!3m1!4b1!4m5!3m4!1s0x3175255fd2403787:0xed13dfbffbfd344a!8m2!3d10.7218838!4d106.7263471" className={styles.map_link}>
+                    <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/25+Nguy%E1%BB%85n+L%C6%B0%C6%A1ng+B%E1%BA%B1ng,+T%C3%A2n+Ph%C3%BA,+Qu%E1%BA%ADn+7,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+700000,+Vi%E1%BB%87t+Nam/@10.7218891,106.7241584,17z/data=!3m1!4b1!4m5!3m4!1s0x3175255fd2403787:0xed13dfbffbfd344a!8m2!3d10.7218838!4d106.7263471" className={styles.map_link}>
                       Xem bản đồ
-                    </Link>
+                    </a>
                   </div>
                 </li>
                 <li className={`d-flex`}>
@@ -59,9 +59,9 @@ function Footer() {
                       Lô CB-27.1 KCN Thuận Thành II, An Bình, Thuận Thành, Bắc
                       Ninh
                     </p>
-                    <Link to="https://www.google.com/maps/place/Diligo+Holdings+-+Factory+Thu%E1%BA%ADn+Th%C3%A0nh+II/@21.0600978,106.1087758,17z/data=!3m1!4b1!4m5!3m4!1s0x3135a1d45e03df0f:0x4f2ede03cf1b9c30!8m2!3d21.0600928!4d106.1109645" className={styles.map_link}>
+                    <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Diligo+Holdings+-+Factory+Thu%E1%BA%ADn+Th%C3%A0nh+II/@21.0600978,106.1087758,17z/data=!3m1!4b1!4m5!3m4!1s0x3135a1d45e03df0f:0x4f2ede03cf1b9c30!8m2!3d21.0600928!4d106.1109645" className={styles.map_link}>
                       Xem bản đồ
-                    </Link>
+                    </a>
                   </div>
                 </li>
               </ul>
@@ -70,7 +70,7 @@ function Footer() {
 
           <div className="col-lg-8">
             <div className="row ">
-              <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
+              <div className={`${styles.listItem} col-lg-4 col-md-6 col-sm-6 `}>
                 <div className={styles.footerTitle}>
                   <h4 className={styles.title_heading}>VỀ CÔNG TY</h4>
                 </div>
@@ -96,20 +96,20 @@ function Footer() {
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="">Diligo.vn</Link>
+                      <Link to={{ pathname: "http://diligo.vn" }} target="_blank">Diligo.vn</Link>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="">Lipzo.com</Link>
+                      <Link to={{ pathname: "http://lipzo.com" }}>Lipzo.com</Link>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="">Nivahealthcare.com</Link>
+                      <Link to={{ pathname: "http://Nivahealthcare.com" }}>Nivahealthcare.com</Link>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className={`${styles.listItem} col-lg-4 col-md-4 col-sm-6 `}>
+              <div className={`${styles.listItem} col-lg-4 col-md-6 col-sm-6 `}>
                 <div className={styles.footerTitle}>
                   <h4 className={styles.title_heading}>HỖ TRỢ</h4>
                 </div>
@@ -151,7 +151,7 @@ function Footer() {
                   <h4 className={styles.title_heading}>FANPAGE TUYỂN DỤNG</h4>
                 </div>
                 <div className={styles.footerContent}>
-                  {/* <iframe
+                  <iframe
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftuyendungdiligo&tabs=timeline&width=220&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=719322076103425"
                     width="220"
                     height="400"
@@ -166,7 +166,7 @@ function Footer() {
                     data-show-facepile="false"
                     allowFullScreen={true}
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  ></iframe> */}
+                  ></iframe>
                 </div>
               </div>
 
