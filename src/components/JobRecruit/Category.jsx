@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
 import { jobCategory } from "./JobRecruit";
+import { Link } from 'react-router-dom'
+
 
 function Category({ category, address, industry }) {
   const [job, setJob] = useState(0);
@@ -79,13 +81,16 @@ function Category({ category, address, industry }) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.ul_listFilterbot}>
-            {industry.map((ele, index) => (
-              <li className={styles.filter_item} key={index}>
-                <a href="/" className={styles.filter_text}>
-                  {ele}
-                </a>
-              </li>
-            ))}
+            {industry.map(
+              (ele, index) =>
+                ele && (
+                  <li className={styles.filter_item} key={index}>
+                    <a href={`?major=${ele}`} className={styles.filter_text}>
+                      {ele}
+                    </a>
+                  </li>
+                )
+            )}
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -132,8 +137,10 @@ function Category({ category, address, industry }) {
       </Accordion>
 
       <div className={styles.joinJob}>
-        <h4 className={styles.joinText}>Ứng tuyển </h4>
-        <h4 className={styles.joinText}>theo chuyên môn</h4>
+        <Link to="/ung-tuyen-nang-luc">
+          <h4 className={styles.joinText}>Ứng tuyển </h4>
+          <h4 className={styles.joinText}>theo chuyên môn</h4>
+        </Link>
       </div>
       <div className={styles.wrap_banner}>
         <img className={styles.banner_cate} src={banner1} alt="/" />

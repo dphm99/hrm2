@@ -5,13 +5,12 @@
   scroll-behavior: smooth;
 }
 
-
 .detailsRecuit h2 {
   margin-top: 65px;
   margin-bottom: 78px;
   font-size: 30px;
 }
-.detailsSticky{
+.detailsSticky {
   position: -webkit-sticky;
   position: sticky;
   top: 12rem;
@@ -50,10 +49,10 @@
 }
 
 .detailsFlex ul li {
-  padding-top: 15px!important;
+  padding-top: 15px !important;
 }
 
-.detailsBtn  {
+.detailsBtn {
   text-align: center;
   margin-top: 16px;
 }
@@ -73,13 +72,13 @@
 }
 
 .detailsLink {
-    display: flex;
-    width: 88%;
-    justify-content: space-between;
-    margin-bottom: 36px;
-    cursor: pointer;
-    text-align: center;
-    padding-left: 45px;
+  display: flex;
+  width: 88%;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  cursor: pointer;
+  text-align: center;
+  padding-left: 45px;
 }
 
 .detailsLink a {
@@ -97,6 +96,15 @@
   margin-left: 10px;
 }
 
+.chip {
+  min-width: 100px;
+  padding: 0px 6px;
+  border-radius: 16px;
+  margin-right: 10px;
+  background: red;
+  width: fit-content;
+  color: white;
+}
 .detailsSidebar h4 {
   font-size: 19px;
   margin-top: 40px;
@@ -118,9 +126,6 @@
 .detailsjobIndex p {
   margin: 9px 16px !important;
   font-size: 16px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
@@ -249,9 +254,9 @@
 
 .detailsRecruitLI {
   margin-right: 9px;
-    width: 143px;
-    margin-left: 9px;
-    height: 200px;
+  width: 143px;
+  margin-left: 9px;
+  height: 200px;
   background-color: rgba(248, 247, 247, 0.5);
   display: flex;
   justify-content: space-between;
@@ -304,11 +309,11 @@
 }
 
 .detailsRecruiUpload {
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 100px;
-    color: #fff;
-    width: 90%; 
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #fff;
+  width: 90%;
 }
 
 .detailsRecruiBtn {
@@ -345,6 +350,9 @@
   margin-top: 12px;
   font-weight: 700;
 }
+.detailsApply a {
+  color: #fff;
+}
 
 .detailsMap {
   margin-top: 42px;
@@ -356,7 +364,6 @@
   font-style: italic;
   margin-left: 2px;
 }
-
 
 .detailsMap p {
   color: black;
@@ -428,7 +435,7 @@
 .activelocation {
   color: #ae1825;
 }
- 
+
 @media only screen and (max-width: 767px) {
   .detailsRecuit h2 {
     margin-bottom: 25px;
@@ -539,15 +546,14 @@
     margin-left: 0px;
     margin-top: 100px;
   }
-   
+
   .detailsSidebar {
     width: 100%;
   }
 
   .detailsLink {
     padding-left: 82px;
-  } 
-  
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1224px) {

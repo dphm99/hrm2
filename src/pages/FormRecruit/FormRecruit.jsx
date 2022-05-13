@@ -24,7 +24,8 @@ function FormRecruit() {
     console.log(cvv);
     bodyFormData.append("user", "2");
     bodyFormData.append("job_id", jobId);
-    bodyFormData.append("job_name", data[Index] && data[Index].name.name);
+    bodyFormData.append("job_name", data.find((ele) => ele.id === Number(jobId)) &&
+    data.find((ele) => ele.id === Number(jobId)).name.name);
     bodyFormData.append("name", name);
     bodyFormData.append("phone", phone);
     bodyFormData.append("email", email);

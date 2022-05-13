@@ -20,6 +20,14 @@
   font-size: 20px;
 }
 
+.JobLink_item{
+  text-decoration: none;
+  color: #000;
+}
+.JobLink_item:hover{
+  color: #000;
+}
+
 .sudoLocation {
   position: absolute;
   top: 51%;
@@ -106,9 +114,7 @@
   padding-right: 1px;
   font-weight: 500;
 }
-.head__address{
- 
-}
+
 .wrapCategory {
   padding-right: 0;
 }
@@ -221,11 +227,7 @@
   text-overflow: ellipsis;
 
 }
-.accordi_title{
-  /* height: 70px; */
-}
-.listJob_item {
-}
+
 .overlay_center {
   position: absolute;
   top: 54%;
@@ -237,8 +239,7 @@
 /* .warpItem:hover{
     cursor: pointer;
 } */
-.head_item {
-}
+
 
 /* component ItemJob */
 .warpItem {
