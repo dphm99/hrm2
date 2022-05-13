@@ -42,7 +42,7 @@ rootElement.render(
             <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
             <Route path="/tro-giup" component={Index} />
             <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
-            <Route path="/thong-tin-phong-van" component={Research} />
+            <Route path="/tra-cuu" component={Research} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
