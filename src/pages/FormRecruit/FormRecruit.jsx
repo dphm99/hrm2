@@ -82,7 +82,7 @@ function FormRecruit() {
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
           <h4 className={styles.jobTitle}>
-            {data[Index] && `"${data[Index].name.name}"`}
+            { data.find((ele) => ele.id === Number(jobId)) && `"${data.find((ele) => ele.id === Number(jobId)).name.name}"`}
           </h4>
           <div className={styles.formRecruit}>
             <form encType="multipart/form-data">
