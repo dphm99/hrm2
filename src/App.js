@@ -4,7 +4,6 @@ import Footer from "./components/Footer/Footer";
 import JobBox from "./components/JobBox/JobBox";
 import Career from "./components/Career/Career";
 import Sliders from "./components/Slider/Slider";
-
 import Vancancies from "./components/Vacancies/Vacancies"
 import Career2 from "./components/Career2/Career";
 import CareerVideo from "./components/CareerVideo/CareerVideo";

@@ -13,8 +13,9 @@ import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
 import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
 import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg"; 
-import { useLocation } from "react-router-dom";
+import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import { useLocation, Link } from "react-router-dom";
+import { toSlug } from "../extensions/toSlug";
 
 export const jobCategory = [
   {
@@ -55,15 +56,14 @@ export const jobCategory = [
 ];
 
 function JobRecruits() {
-  const { keySearch, setKeySearch, data } =
-    useContext(RecruitContext);
-  console.log(data);
+  const { keySearch, setKeySearch, data } = useContext(RecruitContext);
 
   const [position, setPosition] = useState("");
   const jobIndex = window.location.hash.split("#")[1];
   const search = useLocation().search;
   const jobName = new URLSearchParams(search).get("q");
-  const jobLocation = new URLSearchParams(search).get("city"); 
+  const jobLocation = new URLSearchParams(search).get("city");
+  const major = new URLSearchParams(search).get("major");
 
   const [sort, setSort] = useState([]);
   useEffect(() => {
@@ -201,6 +201,7 @@ function JobRecruits() {
                           .filter((e) =>
                             !jobIndex ? e : e.category === jobIndex
                           )
+                          .filter((e) => (!major ? e : e.industry === major))
                           .filter((ele) =>
                             jobLocation
                               ? ele.address.name
@@ -240,6 +241,7 @@ function JobRecruits() {
               <div className={styles.listJob_item}>
                 {data
                   .filter((e) => (!jobIndex ? e : e.category === jobIndex))
+                  .filter((e) => (!major ? e : e.industry === major))
                   .filter((ele) =>
                     jobLocation
                       ? ele.address.name
@@ -256,18 +258,25 @@ function JobRecruits() {
                         .indexOf(keySearch.toString().toLowerCase()) !== -1
                   )
                   .map((job, index) => (
-                    <JobItem
-                      id={job.id}
-                      key={index}
-                      index={index}
-                      name={job.name.name}
-                      address={job.address.name}
-                      salary={job.salary}
-                      start={job.start}
-                      end={job.deadline}
-                      number={job.number}
-                      cate={job.category}
-                    />
+                    <Link className={styles.JobLink_item}
+                      to={{
+                        pathname: `/tuyen-dung/${toSlug(job.name.name)}`,
+                        search: `#${index}#${job.id}`,
+                      }}
+                    >
+                      <JobItem
+                        id={job.id}
+                        key={index}
+                        index={index}
+                        name={job.name.name}
+                        address={job.address.name}
+                        salary={job.salary}
+                        start={job.start}
+                        end={job.deadline}
+                        number={job.number}
+                        cate={job.category}
+                      />
+                    </Link>
                   ))}
               </div>
               {/* <Pagination

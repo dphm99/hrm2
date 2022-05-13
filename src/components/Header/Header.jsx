@@ -7,7 +7,7 @@ import ListIcon from "@mui/icons-material/List";
 // import liIcon from "../../assets/svg/NavLinkedin.svg";
 // import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
-import {NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -42,7 +42,7 @@ function Header() {
                 : `${styles.header}  ${styles.active}  d-flex`
             }
           >
-            <Link to="/#" className={`${styles.headerLogo} col-lg-3`}>
+            <Link to="/" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
             </Link>
             <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
@@ -54,7 +54,7 @@ function Header() {
                 }
               >
                 <li>
-                  <NavLink className="navbar-item" to="/#">
+                  <NavLink className="navbar-item" to="/">
                     TRANG CHỦ
                   </NavLink>
                 </li>
@@ -82,6 +82,17 @@ function Header() {
                   <NavLink className="navbar-item" to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
+                </li>
+                <li className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}>
+                  <form action="/tuyen-dung/" className={styles.formInputMb}>
+                    <input
+                      type="text"
+                      className={styles.inputMb}
+                      placeholder="Tìm kiếm"
+                      name="q"
+                    />
+                    <button type="submit">Tìm kiếm</button>
+                  </form>
                 </li>
               </ul>
               <ListIcon

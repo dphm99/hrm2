@@ -54,7 +54,7 @@ function Vancancies() {
             data
               .filter((e) => e.status === true)
               .map((vancancies, index) => (
-                <Link
+                index < 9 && (<Link
                   key={index}
                   to={{
                     pathname: `/tuyen-dung/${toSlug(vancancies.name.name)}`,
@@ -119,7 +119,7 @@ function Vancancies() {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </Link>)
               ))}
         </div>
         <div className={styles.overlay}>
