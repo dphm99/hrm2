@@ -138,7 +138,7 @@ export default function BlogContent() {
                 else {
                   return false;
                 }
-           }) ) : <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
+           }) : <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
          {(data &&
             data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) &&  <div className="d-flex">
 
