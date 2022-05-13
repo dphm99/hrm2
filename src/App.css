@@ -85,7 +85,4 @@
 .MuiFilledInput-root {
   background-color:transparent !important;
 } 
-.MuiModal-root {
-  position: absolute !important;
-  z-index: 998 !important;
-}
+ 

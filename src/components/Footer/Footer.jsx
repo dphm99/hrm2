@@ -113,7 +113,7 @@ function Footer() {
                   </ul>
                 </div>
               </div>
-              <div className={`${styles.listItem} col-lg-4 col-md-6 col-sm-6 `}>
+              <div className={`${styles.listItem} col-lg-4 col-md-6 col-sm-6 `}> 
                 <div className={styles.footerTitle}>
                   <h4 className={styles.title_heading}>HỖ TRỢ</h4>
                 </div>

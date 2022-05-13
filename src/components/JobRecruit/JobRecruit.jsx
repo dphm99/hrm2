@@ -79,8 +79,7 @@ const [check,setCheck] =useState(false)
     //   setKeySearch("");
     // };
     //eslint-disable-next-line
-  }, []);
-
+  }, []); 
   // console.log(sort)
   //   const [dataSliced, setdataSliced] = useState([]);
   //   const [currentPage, setCurrentPage] = useState(1);
@@ -204,15 +203,12 @@ const [check,setCheck] =useState(false)
                             !jobIndex ? e : e.category === jobIndex
                           )
                           .filter((e) => (!major ? e : e.industry === major))
-                          .filter((ele) =>
-                            jobLocation
-                              ? ele.address.name
+                          .filter((ele) =>  ele.address.name
                                 .toString()
                                 .toLowerCase()
                                 .indexOf(
                                   position.toString().toLowerCase()
-                                ) !== -1
-                              : ele
+                                ) !== -1 
                           )
                           .filter(
                             (ele) =>
@@ -259,12 +255,10 @@ const [check,setCheck] =useState(false)
                   .filter((e) => (!jobIndex ? e : e.category === jobIndex))
                   .filter((e) => (!major ? e : e.industry === major))
                   .filter((ele) =>
-                    jobLocation
-                      ? ele.address.name
+                    ele.address.name
                         .toString()
                         .toLowerCase()
-                        .indexOf(position.toString().toLowerCase()) !== -1
-                      : ele
+                        .indexOf(position.toString().toLowerCase()) !== -1 
                   )
                   .filter(
                     (ele) =>

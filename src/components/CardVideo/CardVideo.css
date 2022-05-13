@@ -1,0 +1,78 @@
+.crs_grid {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color:#242525; 
+}
+.bordered {
+    color:#242525;
+}
+.darkmode .bordered {
+    color: #fff;
+}
+.crs_grid_thumb {
+    position: relative;
+    padding: 10px; 
+    background: #ffffff;
+    min-height: 150px;
+}
+.crs_grid_thumb .crs_detail_link {
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+}
+.crs_video_ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #03b97c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.crs_locked_ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #ff9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.crs_grid_caption {
+    padding: 0px 10px 20px;
+    position: relative;
+    display: block;
+    background-color: #f6f6f6;
+}
+p.crs_title_link {
+    margin-top: 10px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 900;
+}
