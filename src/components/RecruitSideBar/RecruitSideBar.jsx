@@ -11,7 +11,7 @@ const RecruitBlog = () => {
         className={`${styles.main}card mb-4`}
         style={{
           position: `sticky`,
-          top: `11rem`,
+          top: `7rem`,
           border: ` 1px solid #ddd`,
         }}
       >

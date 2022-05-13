@@ -37,7 +37,6 @@
   width: 10px;
   height: 52px;
   border-right: 1px solid #b6b7b8;
-  z-index: 10;
 }
 .containCheckbox {
   display: flex;
@@ -55,7 +54,6 @@
   width: 10px;
   height: 52px;
   border-right: 1px solid #b6b7b8;
-  z-index: 10;
 }
 .head_checkAddress {
   flex: 1;
@@ -416,12 +414,12 @@
 
 @media (max-width: 2560px) {
   .customContainer {
-    margin-top: 19rem;
+    margin-top: 2rem;
   }
 
   .wrapCategory {
     position: sticky;
-    top: 230px;
+    top: 100px;
   }
 
   .apply_job {

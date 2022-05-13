@@ -11,27 +11,10 @@ import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
-
+  const [index, setIndex] = useState(0);
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.topHeader}>
-        {/* <ul className={styles.icon}>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-        </ul> */}
       </div>
       <div className={styles.headerBox}>
         <div className="container">
@@ -53,32 +36,54 @@ function Header() {
                     : ` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`
                 }
               >
-                <li>
+                <li
+                className={0 === index ? `${styles.activeIndex}` : ``}
+                onClick={() => {
+                  setIndex(0);
+                }}
+                >
                   <NavLink className="navbar-item" to="/">
                     TRANG CHỦ
                   </NavLink>
                 </li>
-                <li>
+                <li 
+                className={1 === index ? `${styles.active}` : ``}
+                onClick={() => {
+                  setIndex(1);
+                }}>
                   <NavLink className="navbar-item" to="/tuyen-dung">
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
                 </li>
-                <li>
+                <li
+                className={2 === index ? `${styles.active}` : ``}
+                onClick={() => {
+                  setIndex(2);
+                }}
+                >
                   <NavLink className="navbar-item" to="/dinh-huong-nghe-nghiep">
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
-                <li>
-                  <a
+                <li 
+                className={3 === index ? `${styles.active}` : ``}
+                onClick={() => {
+                  setIndex(3);
+                }}
+                >
+                  <NavLink
                     className="navbar-item"
-                    href="http://daotao.diligo.vn"
-                    target="_blank"
-                    rel="noreferrer"
+                    to="/dao-tao"
                   >
                     ĐÀO TẠO
-                  </a>
+                  </NavLink>
                 </li>
-                <li>
+                <li
+                className={4 === index ? `${styles.active}` : ``}
+                onClick={() => {
+                  setIndex(4);
+                }}
+                >
                   <NavLink className="navbar-item" to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>

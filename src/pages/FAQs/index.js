@@ -23,8 +23,10 @@ function Index() {
   ];
 
   return (
+    <>
+    <Header2 />
     <div className={`${styles.FAQ} FAQs`}>
-      <Header2 />
+      
       <Breadcrumbs
         breadItem={breadcrumItem}
       />
@@ -55,7 +57,7 @@ function Index() {
         </div>
       </div>
       <Footer />
-    </div>
+    </div></>
   );
 }
 

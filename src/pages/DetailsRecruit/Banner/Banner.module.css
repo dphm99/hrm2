@@ -1,7 +1,7 @@
 .detailsRecuit {
   width: 90%;
   margin-left: 55px;
-  margin-top: 200px;
+  margin-top: 40px;
 }
 
 .detailsRecuit h2 {
@@ -12,7 +12,7 @@
 .detailsSticky{
   position: -webkit-sticky;
   position: sticky;
-  top: 12rem;
+  top: 6rem;
 }
 
 .detailsFlex {
