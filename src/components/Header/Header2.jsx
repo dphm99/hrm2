@@ -38,51 +38,37 @@ const Header2 = () => {
                       setToggleMenu(toggleMenu);
                     }}
                   >
-                    <li
+                    <NavLink
                       className={0 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(0);
-                      }}
+                      to="/"
                     >
-                      <NavLink to="/">TRANG CHỦ</NavLink>
-                    </li>
-                    <li
+                      TRANG CHỦ
+                    </NavLink>
+                    <NavLink
                       className={1 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(1);
-                      }}
+                      to="/tuyen-dung"
                     >
-                      <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
-                    </li>
+                      VỊ TRÍ TUYỂN DỤNG
+                    </NavLink>
 
-                    <li
+                    <NavLink
                       className={2 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(2);
-                      }}
+                      to="/dinh-huong-nghe-nghiep"
                     >
-
-                      <NavLink to="/dinh-huong-nghe-nghiep">
-
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
-                      </NavLink>
-                    </li>
-                    <li
+                    </NavLink>
+                    <NavLink
                       className={3 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(3);
-                      }}
+                      to="/dao-tao"
                     >
-                      <NavLink to="/dao-tao">ĐÀO TẠO</NavLink>
-                    </li>
-                    <li
+                      ĐÀO TẠO
+                    </NavLink>
+                    <NavLink
                       className={4 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(4);
-                      }}
+                      to="/tro-giup"
                     >
-                      <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
-                    </li>
+                      TRỢ GIÚP
+                    </NavLink>
                   </ul>
                 </div>
                 <div

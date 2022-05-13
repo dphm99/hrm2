@@ -42,7 +42,7 @@ function Header() {
                 : `${styles.header}  ${styles.active}  d-flex`
             }
           >
-            <Link to="/#" className={`${styles.headerLogo} col-lg-3`}>
+            <Link to="/" className={`${styles.headerLogo} col-lg-3`}>
               <img src={logo} alt="" className={styles.logoImg} />
             </Link>
             <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
@@ -54,7 +54,7 @@ function Header() {
                 }
               >
                 <li>
-                  <NavLink className="navbar-item" to="/#">
+                  <NavLink className="navbar-item" to="/">
                     TRANG CHỦ
                   </NavLink>
                 </li>

@@ -78,7 +78,7 @@ function Footer() {
                   <ul className={styles.ul_Element}>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="/vi-tri-tuyen-dung">Vị trí tuyển dụng</Link>
+                      <Link to="/tuyen-dung">Vị trí tuyển dụng</Link>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
