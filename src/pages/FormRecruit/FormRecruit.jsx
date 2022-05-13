@@ -1,4 +1,4 @@
-import React, { useState, useContext,useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import styles from "./FormRecruit.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import axios from "axios";
 import FormData from "form-data";
 import { RecruitContext } from "../../components/contexts/ContextRecuit";
-import filesCV from '../../assets/files/CV Diligo Holdings.doc'
+import filesCV from "../../assets/files/CV Diligo Holdings.doc";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
@@ -19,19 +19,16 @@ function FormRecruit() {
   const [email, setEmail] = useState();
   console.log(data);
 
+  const inputFileRef = useRef(null);
 
-  const inputFileRef = useRef( null );
-
-  const onFileChange = ( e ) => {
+  const onFileChange = (e) => {
     /*Selected files data can be collected here.*/
-    console.log( e.target.files );
-  }
+    console.log(e.target.files);
+  };
   const onBtnClick = () => {
     /*Collecting node-element and performing click*/
     inputFileRef.current.click();
-  }
-
-
+  };
 
   const handleLogin = () => {
     const bodyFormData = new FormData();
@@ -39,8 +36,11 @@ function FormRecruit() {
     console.log(cvv);
     bodyFormData.append("user", "2");
     bodyFormData.append("job_id", jobId);
-    bodyFormData.append("job_name", data.find((ele) => ele.id === Number(jobId)) &&
-    data.find((ele) => ele.id === Number(jobId)).name.name);
+    bodyFormData.append(
+      "job_name",
+      data.find((ele) => ele.id === Number(jobId)) &&
+        data.find((ele) => ele.id === Number(jobId)).name.name
+    );
     bodyFormData.append("name", name);
     bodyFormData.append("phone", phone);
     bodyFormData.append("email", email);
@@ -82,7 +82,8 @@ function FormRecruit() {
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
           <h4 className={styles.jobTitle}>
-            { data.find((ele) => ele.id === Number(jobId)) && `"${data.find((ele) => ele.id === Number(jobId)).name.name}"`}
+            {data.find((ele) => ele.id === Number(jobId)) &&
+              `"${data.find((ele) => ele.id === Number(jobId)).name.name}"`}
           </h4>
           <div className={styles.formRecruit}>
             <form encType="multipart/form-data">
@@ -138,19 +139,19 @@ function FormRecruit() {
                   required
                 /> */}
                 <input
-        type="file"
-        id="file"
-        ref={inputFileRef}
-        onChange={onFileChange}
-        name="file"
-        style={{display:"none"}}
-      /> 
-                <button 
-                onClick={onBtnClick}
-                className={`${styles.buttonSubmit} ${styles.active}`}
-              >
-                Tải lên CV của bạn
-              </button>
+                  type="file"
+                  id="file"
+                  ref={inputFileRef}
+                  onChange={onFileChange}
+                  name="file"
+                  style={{ display: "none" }}
+                />
+                <button
+                  onClick={onBtnClick}
+                  className={`${styles.buttonSubmit} ${styles.active}`}
+                >
+                  Tải lên CV của bạn
+                </button>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -171,7 +172,10 @@ function FormRecruit() {
                 Gửi CV
               </button>
               <div>
-                Không có CV, <a href={filesCV} download>Tải ngay</a>
+                Không có CV,{" "}
+                <a href={filesCV} download>
+                  Tải ngay
+                </a>
               </div>
               {/* <div className={styles.noCV}>
                 <a href={filesCV}  download>
