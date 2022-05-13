@@ -2,21 +2,16 @@ import React, { useState, useEffect } from "react";
 import styles from "./Search.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
-
-
-
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import Select from '@mui/material/Select'; 
 
 
 function Search() {
 
   const [age, setAge] = React.useState('');
 
-  const handleChangeLocations = (event) => {
+  const handleChangeLocations = (event) => { 
     setAge(event.target.value);
   };
 
@@ -69,15 +64,17 @@ function Search() {
             />
             <FormControl variant="filled" sx={{ m: 1, minWidth: 120,maxHeight: 100 }}>
         {/* <InputLabel id="demo-simple-select-filled-label">Tìm việc theo vị trí</InputLabel> */}
+        {age ==='' && <h4 style={{color:"rgb(0, 0, 0,0.4)",fontSize:"16px",position:'absolute',top:'15px'}}>Tìm việc theo vị trí</h4>}
+        
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
           value={age}
           onChange={handleChangeLocations}
-          
+          name="city"
         > 
         {city.map((ele, index)=> {
-          return <MenuItem key={index} value={10}>{ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}</MenuItem>
+          return <MenuItem key={index} value={ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}>{ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}</MenuItem>
         })} 
         </Select>
       </FormControl>

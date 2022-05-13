@@ -49,8 +49,8 @@
 .MuiFilledInput-root::before {
   border:none !important;
 }
-.MuiSelect-root:after {
-  border-color: '#c03b47' !important ;
+.MuiInputBase-colorPrimary:after { 
+  border-bottom:none !important;
 }
 .Mui-focused {
   background-color: transparent !important;
@@ -59,8 +59,29 @@
   color:"#c03b47" !important;
 }
 .MuiFilledInput-input {
-  margin-top: 15px;
+  display: flex !important;
+  align-items: center !important;
 }
 .MuiSelect-iconFilled {
-  top:5px;
+  top:5px !important;
 }
+.MuiMenu-list {
+  max-height: 300px !important;
+}
+.MuiPaper-root::-webkit-scrollbar {
+  width: 10px;
+}
+.MuiPaper-root::-webkit-scrollbar-track {
+  background: #ddd;
+}
+.MuiPaper-root::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 30px;
+}
+.MuiPaper-root::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-light);
+  border-radius: 30px;
+}
+.MuiFilledInput-root {
+  background-color:transparent !important;
+} 

@@ -112,26 +112,6 @@ function Category({ category, address, industry }) {
                 kinh doanh
               </a>
             </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
           </Typography>
         </AccordionDetails>
       </Accordion>
