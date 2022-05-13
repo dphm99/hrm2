@@ -110,13 +110,18 @@
 }
 
 .noCV {
-  margin-top: 16px;
+  margin-top: 32px;
   width: 100%;
   border: none;
   outline: none;
   padding: 16px 0;
   background-color: #b7b7b7;
   font-weight: bold;
+}
+
+.noCV a{
+  text-decoration: none;
+  color: black;
 }
 
 .inputUrl{
