@@ -11,7 +11,7 @@ import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
 import formatNumber from "../../../components/extensions/formatNumber";
-import {formatDate} from "../../../components/extensions/formatDate"
+import { formatDate } from "../../../components/extensions/formatDate"
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -130,8 +130,11 @@ const Banner = () => {
                           <li> Nơi làm việc: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id === Number(jobId))
-                                .address.name
+                              data.find((ele) => ele.id === Number(jobId)).address.name
+                                ?
+                                data.find((ele) => ele.id === Number(jobId)).address.name
+                                :
+                                "Đang cập nhật"
                             }
                           </h6>
                         </ul>
@@ -139,8 +142,12 @@ const Banner = () => {
                           <li> Bộ phận: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id === Number(jobId))
-                                .department.name
+                              data.find((ele) => ele.id === Number(jobId)).department.name
+                                ?
+                                data.find((ele) => ele.id === Number(jobId)).department.name
+                                :
+                                "Đang cập nhật"
+
                             }
                           </h6>
                         </ul>
@@ -148,8 +155,12 @@ const Banner = () => {
                           <li> Cấp bậc: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id === Number(jobId))
-                                .industry
+                              data.find((ele) => ele.id === Number(jobId)).industry
+                                ?
+                                data.find((ele) => ele.id === Number(jobId)).industry
+                                :
+                                "Đang cập nhật"
+
                             }
                           </h6>
                         </ul>
@@ -161,8 +172,12 @@ const Banner = () => {
                           <li> Bằng cấp: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id === Number(jobId))
-                                .degree.name
+                              data.find((ele) => ele.id === Number(jobId)).degree.name
+                                ?
+                                data.find((ele) => ele.id === Number(jobId)).degree.name
+                                :
+                                "Đang cập nhật"
+
                             }
                           </h6>
                         </ul>
@@ -202,17 +217,25 @@ const Banner = () => {
                           <li> Số lượng tuyển: </li>
                           <h6>
                             {data.find((ele) => ele.id === Number(jobId)) &&
-                              data.find((ele) => ele.id === Number(jobId))
-                                .number}
+                              (data.find((ele) => ele.id === Number(jobId)).number
+                                ?
+                                data.find((ele) => ele.id === Number(jobId)).number
+                                :
+                                "Đang cập nhật"
+
+                              )}
                           </h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
                           <h6>
                             {
-                              formatDate(data.find((ele) => ele.id === Number(jobId))
-                              .deadline,"-","/")
-                              
+                              formatDate(data.find((ele) => ele.id === Number(jobId)).deadline, "-", "/")
+                                ?
+                                formatDate(data.find((ele) => ele.id === Number(jobId)).deadline, "-", "/")
+                                :
+                                "Đang cập nhật"
+
                             }
                           </h6>
                         </ul>
@@ -234,14 +257,14 @@ const Banner = () => {
                       </Link>
                     </div>
                     <div className={`${styles.detailsLink} row-md`}>
-                      <div className={` col-md-6`}>
+                      <div className={``}>
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
                         <button onClick={() => copyToClipBoard(currentURL)}>Copy link</button>
                         {copySuccess}
                       </div>
-                      <div className={`${styles.detailsIcon} col-md-6`}>
+                      <div className={`${styles.detailsIcon} `}>
                         <div className={styles.detailsfb}>
                           <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
                             <FacebookIcon size={28} />
