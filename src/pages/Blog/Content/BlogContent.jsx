@@ -5,12 +5,11 @@ import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitSideBar from "../../../components/RecruitSideBar/RecruitSideBar";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { toSlug } from "../../../components/extensions/toSlug";
-
+import nodata from '../../../assets/img/nodata.jpg'
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
-  const [active, setactive] = useState(0);
-  const [moreBlogs, setMoreBlogs] = useState(4);
-
+  const [active, setActive] = useState("Mới nhất"); 
+const [moreBlogs,setMoreBlogs] = useState(4);
   const breadcrumItem = [
     {
       href: "/",
@@ -27,23 +26,23 @@ export default function BlogContent() {
 
   const New = [
     {
-      title: "MỚI NHẤT",
+      title: "Mới nhất",
       short: "office",
     },
     {
-      title: "KINH NGHIỆM TUYỂN DỤNG",
+      title: "Kinh nghiệm tuyển dụng",
       short: "office",
     },
     {
-      title: "BẢN TIN TUYỂN DỤNG",
+      title: "Bản tin tuyển dụng",
       short: "office",
     },
     {
-      title: "VĂN HÓA DILIGO",
+      title: "Văn hoá Diligo",
       short: "office",
     },
     {
-      title: "VIDEO",
+      title: "Video",
       short: "office",
     },
   ];
@@ -59,12 +58,12 @@ export default function BlogContent() {
               <div
                 key={index}
                 className={
-                  active === index
+                  active === e.title
                     ? `${styles.nav} ${styles.active}`
                     : `${styles.nav}`
                 }
                 onClick={() => {
-                  setactive(index);
+                  setActive(e.title);
                 }}
               >
                 <strong>{e.title}</strong>
@@ -75,8 +74,9 @@ export default function BlogContent() {
 
       <div className="row mb-2">
         <div className={`${styles.BlogCol6} col-8`}>
-          {data &&
-            data.map((e, index) => {
+          {(data &&
+            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) ? 
+            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).map((e, index) => {
               if (index <= moreBlogs) {
                 return (
                   <div key={index}>
@@ -130,11 +130,12 @@ export default function BlogContent() {
                     </Link>
                     <div className="pb-1 mb-4 fst-italic border-bottom"></div>
                   </div>
-                );}
+                );
+              }
                 else {
                   return false;
                 }
-            })}
+           } ): <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
           <div className="d-flex">
             <button
               className={`${styles.showMore}`}
