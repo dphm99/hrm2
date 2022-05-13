@@ -1,7 +1,7 @@
 .main {
   max-width: 1180px;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 260px;
 }
 
 .BlogCol {
@@ -15,12 +15,15 @@
 
 .nav {
   width: 223px;
-  height: 61px;
+  min-height: 61px;
   background-color: #f6f6f6;
   cursor: pointer;
   border: 1px solid rgb(206, 205, 205);
   text-align: center;
-  line-height: 61px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-transform: uppercase;
 }
 
@@ -158,15 +161,25 @@ ul li {
   border-radius: 3px;
 }
 
-/* ------------------------- tablets & mobile--------------------- */
-@media only screen and (max-width: 768px) {
-  
+/* -------------------------mobile & tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+  .wrapNav {
+    display: -webkit-box;
+    overflow: scroll;
+    padding-bottom: 10px;
+    gap: 0 10px;
+  }
+  .Block_img img{
+    object-fit: contain;
+  }
+  .content {
+    margin-bottom: 30px;
+  }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-  
-}
-
-@media only screen and (min-width: 993px) and (max-width: 1100px) {
-  
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .nav {
+    width: 190px;
+  }
 }
