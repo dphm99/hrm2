@@ -258,11 +258,12 @@ function JobRecruits() {
                         .indexOf(keySearch.toString().toLowerCase()) !== -1
                   )
                   .map((job, index) => (
-                    <Link className={styles.JobLink_item}
+                    (<Link className={styles.JobLink_item}
                       to={{
                         pathname: `/tuyen-dung/${toSlug(job.name.name)}`,
                         search: `#${index}#${job.id}`,
                       }}
+                      key={index}
                     >
                       <JobItem
                         id={job.id}
@@ -276,7 +277,7 @@ function JobRecruits() {
                         number={job.number}
                         cate={job.category}
                       />
-                    </Link>
+                    </Link>)
                   ))}
               </div>
               {/* <Pagination
