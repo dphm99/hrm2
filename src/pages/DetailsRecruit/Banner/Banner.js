@@ -185,7 +185,12 @@ const Banner = () => {
                         </ul>
                         <ul>
                           <li> Số lượng tuyển: </li>
-                          <h6>101</h6>
+                          <h6>
+                            { data.find((ele) => ele.id === Number(jobId)) &&
+                              data.find((ele) => ele.id === Number(jobId))
+                                .number
+                            }
+                          </h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
@@ -480,7 +485,7 @@ const Banner = () => {
                 </div>
 
                 <div className={styles.detailsProcedure}>
-                  <h4>QUY TRÌNH TUYỂN DỤNG</h4>
+                  <h4 style={{lineHeight:1.7}}>QUY TRÌNH TUYỂN DỤNG</h4>
                   <div className={styles.detailsRecruit}>
                     <ul className={styles.detailsRecruitUL}>
                       {bannerAPI.map((e, index) => {
