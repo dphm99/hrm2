@@ -60,7 +60,7 @@ const Banner = () => {
     {
       img: CV,
       name: "Bước 2",
-      title: "Sàn lọc hồ sơ",
+      title: "Sàng lọc hồ sơ",
       short: "office",
     },
     {

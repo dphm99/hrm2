@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
-import { NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0); 
+
+   
 
   return (
     <>
@@ -59,7 +61,9 @@ const Header2 = () => {
                         setIndex(2);
                       }}
                     >
+
                       <NavLink to="/dinh-huong-nghe-nghiep">
+
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
@@ -69,13 +73,7 @@ const Header2 = () => {
                         setIndex(3);
                       }}
                     >
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="http://daotao.diligo.vn"
-                      >
-                        ĐÀO TẠO
-                      </a>
+                      <NavLink to="/dao-tao">ĐÀO TẠO</NavLink>
                     </li>
                     <li
                       className={4 === index ? `${styles.active}` : ``}
@@ -84,19 +82,6 @@ const Header2 = () => {
                       }}
                     >
                       <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
-                    </li>
-                    <li
-                      className={`d-block d-lg-none d-sm-block ${styles.active}`}
-                    >
-                      <form action="/tuyen-dung/" className={styles.formInputMb}>
-                        <input
-                          type="text"
-                          className={styles.inputMb}
-                          placeholder="Tìm kiếm"
-                          name="q"
-                        />
-                        <button type="submit">Tìm kiếm</button>
-                      </form>
                     </li>
                   </ul>
                 </div>
@@ -119,7 +104,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} alt="/" className={`w-100`} />
+          <img src={banner} alt='/' className={`w-100`}/>
         </div>
       </div>
     </>

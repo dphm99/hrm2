@@ -2,7 +2,6 @@
   width: 90%;
   margin-left: 55px;
   margin-top: 280px;
-  scroll-behavior: smooth;
 }
 
 .detailsRecuit h2 {
@@ -10,7 +9,7 @@
   margin-bottom: 78px;
   font-size: 30px;
 }
-.detailsSticky {
+.detailsSticky{
   position: -webkit-sticky;
   position: sticky;
   top: 12rem;
@@ -49,10 +48,10 @@
 }
 
 .detailsFlex ul li {
-  padding-top: 15px !important;
+  padding-top: 15px!important;
 }
 
-.detailsBtn {
+.detailsBtn  {
   text-align: center;
   margin-top: 16px;
 }
@@ -72,13 +71,12 @@
 }
 
 .detailsLink {
-  display: flex;
-  width: 88%;
-  justify-content: space-between;
-  margin-bottom: 36px;
-  cursor: pointer;
-  text-align: center;
-  padding-left: 45px;
+    width: 43%;
+    text-align: center;
+    position: relative;
+    /* margin-left: 43px; */
+    margin-bottom: 36px;
+    cursor: pointer;
 }
 
 .detailsLink a {
@@ -90,21 +88,15 @@
 
 .detailsIcon {
   display: flex;
+  position: absolute;
+  margin-left: 212px;
+  margin-top: -26px;
 }
 
 .detailsfb {
   margin-left: 10px;
 }
 
-.chip {
-  min-width: 100px;
-  padding: 0px 6px;
-  border-radius: 16px;
-  margin-right: 10px;
-  background: red;
-  width: fit-content;
-  color: white;
-}
 .detailsSidebar h4 {
   font-size: 19px;
   margin-top: 40px;
@@ -126,6 +118,9 @@
 .detailsjobIndex p {
   margin: 9px 16px !important;
   font-size: 16px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
@@ -140,12 +135,9 @@
   -webkit-box-orient: vertical;
 }
 
-.active {
-  color: #ae1825 !important;
-}
-
 .detailsSidebar h5 {
   font-size: 19px;
+  margin-top: -18px;
   margin-left: 15px;
   margin-bottom: 15px;
   font-weight: 700;
@@ -171,11 +163,6 @@
   margin-top: -3px;
   margin-left: 15px;
   margin-bottom: 14px;
-}
-
-.detailsLabelcheck {
-  margin-top: -6px;
-  margin-left: 12px;
 }
 
 .detailsLabel {
@@ -254,9 +241,9 @@
 
 .detailsRecruitLI {
   margin-right: 9px;
-  width: 143px;
-  margin-left: 9px;
-  height: 200px;
+    width: 143px;
+    margin-left: 9px;
+    height: 200px;
   background-color: rgba(248, 247, 247, 0.5);
   display: flex;
   justify-content: space-between;
@@ -309,11 +296,11 @@
 }
 
 .detailsRecruiUpload {
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 100px;
-  color: #fff;
-  width: 90%;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 100px;
+    color: #fff;
+    width: 90%; 
 }
 
 .detailsRecruiBtn {
@@ -350,9 +337,6 @@
   margin-top: 12px;
   font-weight: 700;
 }
-.detailsApply a {
-  color: #fff;
-}
 
 .detailsMap {
   margin-top: 42px;
@@ -364,6 +348,7 @@
   font-style: italic;
   margin-left: 2px;
 }
+
 
 .detailsMap p {
   color: black;
@@ -435,18 +420,26 @@
 .activelocation {
   color: #ae1825;
 }
-
-@media only screen and (max-width: 767px) {
+ 
+@media only screen and (max-width: 768px) {
   .detailsRecuit h2 {
+    font-size: 13px;
+    margin-top: 185px;
     margin-bottom: 25px;
-    margin-left: 8px;
-    font-size: 19px;
   }
 
   .detailsRecuit {
     width: 100%;
     margin-left: 0px;
-    margin-top: 140px;
+    margin-top: 100px;
+  }
+
+  .detailsIcon {
+    margin-left: 0px;
+    display: flex;
+    width: 163px;
+    margin-top: -6px;
+    float: right;
   }
 
   .detailsRecruitUL {
@@ -459,20 +452,16 @@
 
   .detailsRecruitLI {
     margin-right: 9px;
-    width: 103%;
+    width: 96%;
+    margin-left: 9px;
     height: 54px;
     background-color: rgba(248, 247, 247, 0.5);
-    align-items: initial;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
     margin-bottom: 6px;
-  }
-
-  .detailsLabelcheck {
-    margin-top: -38px;
-    margin-left: 17px;
-  }
-
-  .detailsFormcheck {
-    margin-top: 45px;
   }
 
   .detailsProcedure h4 {
@@ -488,71 +477,99 @@
   .detailsRecruiBtn button {
     text-align: center;
     margin-bottom: 0px;
-    margin-top: -17px;
-    font-size: 13px;
+    margin-top: 0px;
   }
 
   .detailsRecruiIcon {
-    margin-top: -12px;
-    width: 37px;
+    margin-top: -11px;
+    margin-left: -240px;
+    width: 34px;
     height: 60px;
   }
 
   .detailsRecruiBuoc {
     margin-top: -40px;
-    text-align: center;
-  }
-
-  .detailsRecruiUpload {
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 100px;
-    color: #fff;
-    width: 100%;
-  }
-
-  .detailsSidebar ul {
-    margin-left: -31px;
-    margin-top: -8px;
   }
 
   .detailsApply {
     font-size: 15px;
     margin-top: 18px;
   }
-
-  .detailsSelect {
-    width: 93%;
-    margin-left: 15px;
-    height: 52px;
-    margin-bottom: 20px;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  /* .detailsRecuit h2 {
+  .detailsRecuit h2 {
     font-size: 13px;
     margin-top: 185px;
     margin-bottom: 25px;
-  } */
-
-  .detailsCol4 {
-    width: 100%;
-    margin-bottom: 50px;
   }
 
   .detailsRecuit {
-    width: 100%;
-    margin-left: 0px;
+    width: 132%;
+    margin-left: -71px;
     margin-top: 100px;
   }
 
-  .detailsSidebar {
-    width: 100%;
+  .detailsIcon {
+    margin-left: 0px;
+    display: flex;
+    width: 163px;
+    margin-top: -6px;
+    float: right;
   }
 
-  .detailsLink {
-    padding-left: 82px;
+  .detailsRecruitUL {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .detailsRecruitLI {
+    margin-right: 9px;
+    width: 96%;
+    margin-left: 9px;
+    height: 54px;
+    background-color: rgba(248, 247, 247, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 6px;
+  }
+
+  .detailsProcedure h4 {
+    font-size: 15px;
+    margin-top: 13px;
+  }
+
+  .detailsRecruiBtn {
+    font-size: 10px;
+    padding: 4px 23px;
+  }
+
+  .Banner__btoon5 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  .detailsRecruiBtn button {
+    margin-top: -11px;
+    margin-left: -270px;
+    width: 34px;
+    height: 60px;
+  }
+
+  .detailsRecruiBuoc {
+    margin-top: -40px;
+  }
+
+  .detailsApply {
+    font-size: 15px;
+    margin-top: 18px;
   }
 }
 
@@ -565,6 +582,13 @@
 
   .detailsRecuit h2 {
     margin-bottom: 30px;
+  }
+
+  .detailsIcon {
+    display: flex;
+    width: 117px;
+    margin-left: 170px;
+    margin-top: -28px;
   }
 }
 
