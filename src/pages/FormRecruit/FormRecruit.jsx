@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useRef } from "react";
 import styles from "./FormRecruit.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
@@ -18,6 +18,20 @@ function FormRecruit() {
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
   console.log(data);
+
+
+  const inputFileRef = useRef( null );
+
+  const onFileChange = ( e ) => {
+    /*Selected files data can be collected here.*/
+    console.log( e.target.files );
+  }
+  const onBtnClick = () => {
+    /*Collecting node-element and performing click*/
+    inputFileRef.current.click();
+  }
+
+
 
   const handleLogin = () => {
     const bodyFormData = new FormData();
@@ -116,13 +130,27 @@ function FormRecruit() {
                 </div>
               </div>
               <div className={styles.inputFile}>
-                <input
+                {/* <input
                   type="file"
                   id="file"
                   className={styles.inputFile}
                   name="file"
                   required
-                />
+                /> */}
+                <input
+        type="file"
+        id="file"
+        ref={inputFileRef}
+        onChange={onFileChange}
+        name="file"
+        style={{display:"none"}}
+      /> 
+                <button 
+                onClick={onBtnClick}
+                className={`${styles.buttonSubmit} ${styles.active}`}
+              >
+                Tải lên CV của bạn
+              </button>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
