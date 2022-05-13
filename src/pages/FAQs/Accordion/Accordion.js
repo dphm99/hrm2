@@ -43,7 +43,7 @@ export default function SimpleAccordion() {
           title:
             "Làm cách nào để ứng tuyển việc làm tại tập đoàn Diligo Holdings ?",
           id: 2,
-          content: `Để ứng tuyển/ đăng ký các công việc tại tập đoàn Thế Giới Di Động, bạn truy cập website và chọn công việc mong muốn làm việc, sau đó bấm nút ứng tuyển`,
+          content: `Để ứng tuyển/ đăng ký các công việc tại tập đoàn Diligo Holdings, bạn truy cập website và chọn công việc mong muốn làm việc, sau đó bấm nút ứng tuyển`,
         },
         {
           title:
@@ -89,7 +89,7 @@ export default function SimpleAccordion() {
           title:
             "Làm cách nào để ứng tuyển việc làm tại tập đoàn Diligo Holdings ?",
           id: 8,
-          content: `Để ứng tuyển/ đăng ký các công việc tại tập đoàn Thế Giới Di Động, bạn truy cập website và chọn công việc mong muốn làm việc, sau đó bấm nút ứng tuyển`,
+          content: `Để ứng tuyển/ đăng ký các công việc tại tập đoàn Diligo Holdings, bạn truy cập website và chọn công việc mong muốn làm việc, sau đó bấm nút ứng tuyển`,
         },
         {
           title:
