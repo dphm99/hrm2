@@ -124,6 +124,7 @@
     align-items: center;
     display: inline-block;
     right: -3px;
+    cursor: pointer;
 }
 /* .head_checkbox:checked::before{ 
   content:"";

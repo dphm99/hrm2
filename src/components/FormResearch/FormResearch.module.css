@@ -1,0 +1,58 @@
+.inputName {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 12px auto;
+  }
+  .buttonSubmit {
+    margin: 16px auto;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 16px 0;
+    background-color: #b7b7b7;
+  }
+  .formRecruit {
+    margin: 90px auto 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .inputField {
+    width: 100%;
+    margin-top: 16px;
+  }
+  .Recruit input {
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: transparent;
+  
+    outline: none;
+    padding: 7px;
+  }
+  .Recruit input[type="file"] {
+    margin-top: 30px;
+  }
+  .Recruit label {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  .Recruit form {
+    width: 490px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+    padding: 40px;
+    box-shadow: rgb(155 168 165 / 20%) 0px 4px 21px;
+    border: none;
+    border-radius:4px;
+  }
+  .title{
+      text-align: center
+  }
+  .containALl{
+      background-image: url("https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg") ;
+      background-repeat: no-repeat;
+      margin-bottom: -48px;
+      padding-bottom: 40px;
+  }

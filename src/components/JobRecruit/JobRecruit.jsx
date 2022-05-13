@@ -160,10 +160,10 @@ const [check,setCheck] =useState(false)
           </div>
         </div>
         <div className={`${styles.head_col}  ${styles.wrapCheckbox} `}>
-          <div className={`${styles.containCheckbox} `}>
-            <div 
-            onClick={()=>setCheck(!check)}
-            className={styles.wrap_Checkbox}>
+          <div
+           onClick={()=>setCheck(!check)}
+          className={`${styles.containCheckbox} `}>
+            <div   className={styles.wrap_Checkbox}>
               <div className={styles.head_checkbox}>
 
               </div>
