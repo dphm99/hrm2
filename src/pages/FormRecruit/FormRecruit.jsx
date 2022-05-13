@@ -145,11 +145,11 @@ function FormRecruit() {
               <div>
                 Không có CV, <a href={filesCV} download>Tải ngay</a>
               </div>
-              <div className={styles.noCV}>
+              {/* <div className={styles.noCV}>
                 <a href={filesCV}  download>
                   Tải CV tiêu chuẩn của Diligo
                 </a>
-              </div>
+              </div> */}
               <div className={styles.desc}>
                 <ul>
                   Lưu ý khi đăng CV

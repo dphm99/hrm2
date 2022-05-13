@@ -12,11 +12,11 @@
 .detailsSticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 12rem;
+  top: 13rem;
 }
 
 .detailsFlex {
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .detailsFlex h6 {

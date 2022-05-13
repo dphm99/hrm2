@@ -67,7 +67,7 @@
   margin: 12px 0;
   max-width: 100%;
   /* white-space: nowrap; */
-  height: 40px;
+  height: 45px;
   text-overflow: ellipsis !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
