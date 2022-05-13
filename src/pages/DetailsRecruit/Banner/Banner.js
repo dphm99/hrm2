@@ -10,6 +10,7 @@ import { RecruitContext } from "../../../components/contexts/ContextRecuit";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
+import formatNumber from "../../../components/extensions/formatNumber";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -154,10 +155,32 @@ const Banner = () => {
                           <li> Thu nhập: </li>
                           <h6>
                             {data.find((ele) => ele.id === Number(jobId))
-                              .salary === "ltt"
+                              .salary[0] === "ltt"
                               ? "Lương thỏa thuận"
-                              : data.find((ele) => ele.id === Number(jobId))
-                                  .salary}
+                              : formatNumber(
+                                  data
+                                    .find((ele) => ele.id === Number(jobId))
+                                    .salary.split(" - ")[0]
+                                    .slice(0, -4),
+                                  0,
+                                  ",",
+                                  "."
+                                ) +
+                                " - " +
+                                formatNumber(
+                                  data
+                                    .find((ele) => ele.id === Number(jobId))
+                                    .salary.split(" - ")[1]
+                                    .slice(0, -4),
+                                  0,
+                                  ",",
+                                  "."
+                                ) +
+                                " " +
+                                data
+                                  .find((ele) => ele.id === Number(jobId))
+                                  .salary.split(" - ")[1]
+                                  .slice(-4)}
                           </h6>
                         </ul>
                         <ul>
