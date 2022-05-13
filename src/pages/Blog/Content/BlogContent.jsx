@@ -75,7 +75,8 @@ const [moreBlogs,setMoreBlogs] = useState(4);
       <div className="row mb-2">
         <div className={`${styles.BlogCol6} col-8`}>
           {(data &&
-            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) ? 
+            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) ? (
+              
             data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).map((e, index) => {
               if (index <= moreBlogs) {
                 return (
@@ -135,15 +136,16 @@ const [moreBlogs,setMoreBlogs] = useState(4);
                 else {
                   return false;
                 }
-           } ): <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
-          <div className="d-flex">
+           }) ) : <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
+         {(data &&
+            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) &&  <div className="d-flex">
             <button
               className={`${styles.showMore}`}
               onClick={() => setMoreBlogs(moreBlogs * 2)}
             >
               Xem thêm
             </button>
-          </div>
+          </div>}
         </div>
         <div className={`${styles.BlogCol4} col-4`}>
           <RecruitSideBar />

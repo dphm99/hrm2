@@ -3,7 +3,23 @@ import styles from "./Search.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
+
+
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+
 function Search() {
+
+  const [age, setAge] = React.useState('');
+
+  const handleChangeLocations = (event) => {
+    setAge(event.target.value);
+  };
+
   const [userInput, setUserInput] = useState("");
   const [city, setCity] = useState([]);
   const [currentCity, setCurrentCity] = useState("");
@@ -46,12 +62,26 @@ function Search() {
           </div>
           <div
             className={styles.SelectWrapper}
-            style={{ position: "relative" }}
+            style={{ position: "relative",height: "48px",backgroundColor: "#fff"}}
           >
             <LocationOnIcon
               style={{ position: "absolute", color: "#ccc", margin: "4px" }}
             />
-            <select
+            <FormControl variant="filled" sx={{ m: 1, minWidth: 120,maxHeight: 100 }}>
+        {/* <InputLabel id="demo-simple-select-filled-label">Tìm việc theo vị trí</InputLabel> */}
+        <Select
+          labelId="demo-simple-select-filled-label"
+          id="demo-simple-select-filled"
+          value={age}
+          onChange={handleChangeLocations}
+          
+        > 
+        {city.map((ele, index)=> {
+          return <MenuItem key={index} value={10}>{ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}</MenuItem>
+        })} 
+        </Select>
+      </FormControl>
+            {/* <select
               name="city"
               className="selectpicker"
               id="cities"
@@ -73,7 +103,8 @@ function Search() {
                     {e.name.replace("Tỉnh ", "").replace("Thành phố ", "")}
                   </option>
                 ))}
-            </select>
+            </select> */}
+            
           </div>
           <button type="submit">Tìm kiếm</button>
         </div>

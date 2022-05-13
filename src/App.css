@@ -37,3 +37,30 @@
     transform: rotate(360deg);
   }
 }
+.MuiSelect-select {
+  padding:0 !important;
+  height:48px !important;
+  background-color: transparent !important; 
+}
+.MuiFormControl-root {
+  margin: 0 0 0 45px !important;
+  width: calc(100% - 45px) !important;
+}
+.MuiFilledInput-root::before {
+  border:none !important;
+}
+.MuiSelect-root:after {
+  border-color: '#c03b47' !important ;
+}
+.Mui-focused {
+  background-color: transparent !important;
+}
+.MuiInputLabel-root {
+  color:"#c03b47" !important;
+}
+.MuiFilledInput-input {
+  margin-top: 15px;
+}
+.MuiSelect-iconFilled {
+  top:5px;
+}
