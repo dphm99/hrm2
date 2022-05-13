@@ -138,7 +138,6 @@ function JobRecruits() {
   return (
     <div
       className={`container ${styles.customContainer}`}
-      style={{ marginTop: "18rem" }}
     >
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>

@@ -159,47 +159,13 @@ ul li {
 
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 768px) {
-  .Banner {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .BannerCol {
-    width: 100%;
-    margin-top: -43px;
-  }
-
-  .BlogTop {
-    margin-top: 80px !important;
-  }
+  
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-  .Banner {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .BlogCol6 {
-    width: 100%;
-  }
-
-  .BlogCol4 {
-    width: 100%;
-  }
-
-  .BannerCol {
-    width: 100%;
-    margin-top: -43px;
-  }
-
-  .BlogTop {
-    margin-top: 80px !important;
-  }
+  
 }
 
 @media only screen and (min-width: 993px) and (max-width: 1100px) {
-  .BannerActive {
-    width: 100%;
-  }
+  
 }
