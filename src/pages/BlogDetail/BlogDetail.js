@@ -7,9 +7,8 @@ import Header2 from "../../components/Header/Header2";
 import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
 function BlogDetail() {
   const blogIndex = window.location.hash.split("#")[1];
-  const blogId = window.location.hash.split("#")[2];
+  // const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
-  console.log(data);
   const breadcrumItem = [
     {
       href: "/",
@@ -25,9 +24,7 @@ function BlogDetail() {
 
     {
       href: "/",
-      title: 
-      data.find((ele) => ele.id ===  blogId) &&
-      `${data.find((ele) => ele.id ===  blogId).title}`,
+      title: data[blogIndex] && data[blogIndex].title,
       isActive: true,
     },
   ];

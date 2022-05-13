@@ -9,7 +9,7 @@
   margin-bottom: 55px;
   font-size: 30px;
 }
-.detailsSticky{
+.detailsSticky {
   position: -webkit-sticky;
   position: sticky;
   top: 12rem;
@@ -48,10 +48,10 @@
 }
 
 .detailsFlex ul li {
-  padding-top: 15px!important;
+  padding-top: 15px !important;
 }
 
-.detailsBtn  {
+.detailsBtn {
   text-align: center;
   margin-top: 16px;
 }
@@ -71,12 +71,12 @@
 }
 
 .detailsLink {
-    width: 43%;
-    text-align: center;
-    position: relative;
-    /* margin-left: 43px; */
-    margin-bottom: 36px;
-    cursor: pointer;
+  width: 43%;
+  text-align: center;
+  position: relative;
+  /* margin-left: 43px; */
+  margin-bottom: 36px;
+  cursor: pointer;
 }
 
 .detailsLink a {
@@ -84,6 +84,15 @@
   text-decoration: none;
   color: black;
   font-size: 14px;
+}
+.detailsLink button {
+  border-bottom: 1px solid;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
 }
 
 .detailsIcon {
@@ -117,7 +126,7 @@
 
 .detailsjobIndex p {
   margin: 9px 16px !important;
-  font-size: 16px !important; 
+  font-size: 16px !important;
 }
 
 .detailsjobName {
@@ -239,15 +248,16 @@
 
 .detailsRecruitLI {
   margin-right: 9px;
-    width: 143px;
-    margin-left: 9px;
-    height: 200px;
+  width: 143px;
+  margin-left: 9px;
+  height: 200px;
   background-color: rgba(248, 247, 247, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  text-decoration: none;
   /* opacity: 0.3; */
 }
 
@@ -294,11 +304,11 @@
 }
 
 .detailsRecruiUpload {
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 100px;
-    color: #fff;
-    width: 90%; 
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #fff;
+  width: 90%;
 }
 
 .detailsRecruiBtn {
@@ -306,7 +316,10 @@
   margin-bottom: 40px;
   margin-top: 40px;
 }
-
+.detailsRecruiBtn button a {
+  text-decoration: none;
+  color: #ae1825;
+}
 .detailsRecruiBtn button {
   font-size: 19px;
   display: block;
@@ -336,7 +349,7 @@
   font-weight: 700;
 }
 .detailsApply a {
-  color:#fff
+  color: #fff;
 }
 
 .detailsMap {
@@ -349,7 +362,6 @@
   font-style: italic;
   margin-left: 2px;
 }
-
 
 .detailsMap p {
   color: black;
@@ -371,7 +383,7 @@
 }
 
 .detailsImage img {
-  width: 100%; 
+  width: 100%;
 }
 
 .detailsSideBarCity h4 {
@@ -420,7 +432,7 @@
 .activelocation {
   color: #ae1825;
 }
- 
+
 @media only screen and (max-width: 768px) {
   .detailsRecuit h2 {
     font-size: 13px;

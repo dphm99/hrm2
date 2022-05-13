@@ -88,7 +88,7 @@ function Footer() {
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="/tro-giup">Đào tạo</Link>
+                      <a href="http://daotao.diligo.vn" target="_blank" rel="noreferrer">Đào tạo</a>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
@@ -96,15 +96,15 @@ function Footer() {
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://diligo.vn" }} target="_blank">Diligo.vn</Link>
+                      <a href="http://diligo.vn" target="_blank" rel="noreferrer">Diligo.vn</a>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://lipzo.com" }}>Lipzo.com</Link>
+                      <a href="http://lipzo.com" target="_blank" rel="noreferrer">Lipzo.com</a>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://Nivahealthcare.com" }}>Nivahealthcare.com</Link>
+                      <a href="http://nivahealthcare.com" target="_blank" rel="noreferrer">Nivahealthcare.com</a>
                     </li>
                   </ul>
                 </div>
@@ -125,11 +125,11 @@ function Footer() {
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Câu hỏi thường gặp</Link>
+                      <Link to="tro-giup">Câu hỏi thường gặp</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Quy trình tuyển dụng</Link>
+                      <Link to="/quy-trinh-tuyen-dung">Quy trình tuyển dụng</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
