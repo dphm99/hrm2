@@ -1,6 +1,6 @@
 .Vancancies {
   background-color: #eeeeee;
-  padding: 16px 0 0 0;
+  padding: 16px 0 14px 0;
 
 }
 .vancancieImage {
@@ -11,6 +11,7 @@
 .title {
   margin-bottom: 44px;
   text-transform: uppercase;
+  margin-top: 44px;
 }
 
 .vancanciesGroup {

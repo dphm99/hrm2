@@ -11,6 +11,7 @@ import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
 import formatNumber from "../../../components/extensions/formatNumber";
+import {formatDate} from "../../../components/extensions/formatDate"
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -191,8 +192,9 @@ const Banner = () => {
                           <li> Hạn nộp hồ sơ: </li>
                           <h6>
                             {
-                              data.find((ele) => ele.id === Number(jobId))
-                                .deadline
+                              formatDate(data.find((ele) => ele.id === Number(jobId))
+                              .deadline,"-","/")
+                              
                             }
                           </h6>
                         </ul>

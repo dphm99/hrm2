@@ -82,6 +82,7 @@ function JobBox() {
                   setActive(index);
                   setCategory(e.short);
                 }}
+                
               >
                 <img src={e.img} alt="" className={styles.jobCategoryImg} />
                 <div className={styles.jobCategoryName}>{e.name}</div>
