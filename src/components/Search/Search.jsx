@@ -17,10 +17,7 @@ function Search() {
 
   const [userInput, setUserInput] = useState("");
   const [city, setCity] = useState([]);
-  const [currentCity, setCurrentCity] = useState("");
-  const changeCity = (city) => {
-    setCurrentCity(city);
-  };
+
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
