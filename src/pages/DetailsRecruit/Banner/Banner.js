@@ -266,7 +266,7 @@ const Banner = () => {
                       </div>
                       <div className={`${styles.detailsIcon} `}>
                         <div className={styles.detailsfb}>
-                          <FacebookShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                          <FacebookShareButton url={currentURL}>
                             <FacebookIcon size={28} />
                           </FacebookShareButton>
                         </div>
@@ -274,7 +274,7 @@ const Banner = () => {
                           <img src={zalo} style={{ width: "30px" }} alt="/" />
                         </div>
                         <div className={styles.detailsfb}>
-                          <LinkedinShareButton url="https://www.google.com.vn/search?tbm=isch&q=%E1%BA%A3nh+%C4%91%E1%BA%B9p#imgrc=GvS0Qa0LySjLlM">
+                          <LinkedinShareButton url={currentURL}>
                             <LinkedinIcon size={28} />
                           </LinkedinShareButton>
                         </div>

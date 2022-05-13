@@ -103,7 +103,7 @@ function Footer() {
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
                       
-                      <Link to={{ pathname: "http://diligo.vn/post/45" }}>Lipzo.com</Link>
+                      <a href="http://lipzo.com" target="_blank" rel="noreferrer">Lipzo.com</a>
 
                     </li>
                     <li className="d-flex align-items-center">
@@ -139,15 +139,15 @@ function Footer() {
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="///">Dành cho nhân viên cũ</Link>
+                      <Link to="/danh-cho-nhan-vien-cu">Dành cho nhân viên cũ</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="///">Nhà phân phối sắp khai trương</Link>
+                      <Link to="/nha-phan-phoi-sap-khai-truong">Nhà phân phối sắp khai trương</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="///">Siêu thị sắp khai trương</Link>
+                      <Link to="/sieu-thi-sap-khai-truong">Siêu thị sắp khai trương</Link>
                     </li>
                   </ul>
                 </div>
