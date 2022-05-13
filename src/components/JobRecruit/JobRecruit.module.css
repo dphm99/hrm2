@@ -115,7 +115,7 @@
 .wrapCategory {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 200px;
+  top: 180px;
   width: 97.5%;
   border-right: 1px solid #a5a6a7;
 }
@@ -192,6 +192,9 @@
   padding: 24px 0;
   cursor: pointer;
 }
+.joinJob a{
+  text-decoration: none;
+}
 .joinText {
   text-align: center;
   color: #fff;
@@ -239,7 +242,7 @@
 
 /* component ItemJob */
 .warpItem {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f4f4f4;
 }
 .warpIcon_job {
   width: 117px;
@@ -271,6 +274,7 @@ flex:1;
   margin: 0 6px 0 18px;
 }
 .title_job{
+  margin-top: 20px;
   font-weight: 800;
 }
 
@@ -279,6 +283,7 @@ flex:1;
 }
 .text_price{
   margin-top:4px !important;
+  margin-bottom: 17px !important;
 }
 .col_wrap {
   padding-left: 12px;
@@ -509,6 +514,25 @@ flex:1;
  
 }
 @media (max-width: 576px) {
+  .job_address{
+display: block;
+  }
+  .job_quantity{
+display: block;
+  }
+  .spaceCount{
+    display: none;
+  }
+  .foot_text{
+   display: block !important;    
+  }
+  .foot_item{
+    height:auto;
+  }
+  .containApply{
+    width: 100% !important;
+    margin-bottom: 12px;
+  }
   .sortJob_sm {
     flex-wrap: wrap;
   }

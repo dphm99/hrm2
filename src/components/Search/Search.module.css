@@ -32,7 +32,7 @@
   width: 20%;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: #c03b47;
   color: #fff;
   border-radius: 0 4px 4px 0;
   font-weight: bold;
@@ -47,4 +47,9 @@
   border-radius: 4px;
   height: 72px;
   padding: 8px 12px;
+}
+
+.SelectWrapper select option {
+  padding: 0;
+  height: 32px;
 }

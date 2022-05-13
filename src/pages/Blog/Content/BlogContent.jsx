@@ -1,16 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./BlogContent.module.css";
 import { BlogContext } from "../../../components/contexts/ContextBlog";
 import RecruitSideBar from "../../../components/RecruitSideBar/RecruitSideBar";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { toSlug } from "../../../components/extensions/toSlug";
 
-
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
   const [active, setactive] = useState(0);
-  const [moreBlogs, setMoreBlogs] = useState(4)
+  const [moreBlogs, setMoreBlogs] = useState(4);
 
   const breadcrumItem = [
     {
@@ -50,50 +49,47 @@ export default function BlogContent() {
   ];
 
   return (
-
     <div className={`${styles.main}`}>
       <Breadcrumbs breadItem={breadcrumItem} />
 
       <div className={`${styles.wrapNav}`}>
-        {New && New.map((e, index) => {
-          return (
-            <div
-              className={
-                active === index
-                  ? `${styles.nav} ${styles.active}`
-                  : `${styles.nav}`
-              }
-              onClick={() => {
-                setactive(index);
-              }}
-
-            >
-              <strong>{e.title}</strong>
-            </div>
-
-          );
-        })}
-
+        {New &&
+          New.map((e, index) => {
+            return (
+              <div
+                key={index}
+                className={
+                  active === index
+                    ? `${styles.nav} ${styles.active}`
+                    : `${styles.nav}`
+                }
+                onClick={() => {
+                  setactive(index);
+                }}
+              >
+                <strong>{e.title}</strong>
+              </div>
+            );
+          })}
       </div>
 
       <div className="row mb-2">
         <div className={`${styles.BlogCol6} col-8`}>
           {data &&
             data.map((e, index) => {
-              if (index <= moreBlogs)
+              if (index <= moreBlogs) {
                 return (
-                  <>
+                  <div key={index}>
                     <Link
-                      key={index}
                       className={styles.BannerLink}
                       to={{
-                        pathname: `/blog-chi-tiet/${toSlug(e.title)}`,
-                        search: `#${e.id}`,
+                        pathname: `/dinh-huong-nghe-nghiep/${toSlug(e.title)}`,
+                        search: `#${index}#${e.id}`,
                       }}
                     >
                       <div className="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
                         <div
-                          className={`${styles.Block_img} col-auto d-lg-block col-4`}
+                          className={`${styles.Block_img} d-lg-block col-4`}
                         >
                           <img
                             className="bd-placeholder-img"
@@ -103,13 +99,10 @@ export default function BlogContent() {
                           ></img>
                         </div>
                         <div
-                          className={`${styles.BannerBlockflex} col d-flex flex-column position-static`}
+                          className={`${styles.BannerBlockflex} col-8 d-flex flex-column position-static`}
                         >
                           <h6 className={`${styles.Block_H6} mb-2`}>
-                            <strong>
-
-                              {e.title}
-                            </strong>
+                            <strong>{e.title}</strong>
                           </h6>
                           <p
                             className={`${styles.Block_P} mb-auto`}
@@ -118,7 +111,7 @@ export default function BlogContent() {
                             }}
                           ></p>
                           <div className={styles.Block__link}>
-                            <Link
+                            <p
                               to={{
                                 pathname: `/dinh-huong-nghe-nghiep/${toSlug(
                                   e.title
@@ -128,7 +121,7 @@ export default function BlogContent() {
                               className={`${styles.Block_A} stretched-link`}
                             >
                               {e.tag_ids.name}
-                            </Link>
+                            </p>
 
                             <p style={{ color: `#000` }}>- 2.500 lượt xem</p>
                           </div>
@@ -136,24 +129,26 @@ export default function BlogContent() {
                       </div>
                     </Link>
                     <div className="pb-1 mb-4 fst-italic border-bottom"></div>
-                  </>
-                );
+                  </div>
+                );}
+                else {
+                  return false;
+                }
             })}
-          <div className='d-flex'>
-            <button 
-            className={`${styles.showMore}`}
-              onClick={()=>setMoreBlogs(moreBlogs*2)}
+          <div className="d-flex">
+            <button
+              className={`${styles.showMore}`}
+              onClick={() => setMoreBlogs(moreBlogs * 2)}
             >
-              Xem thêm</button>
+              Xem thêm
+            </button>
           </div>
         </div>
         <div className={`${styles.BlogCol4} col-4`}>
           <RecruitSideBar />
         </div>
       </div>
-
     </div>
-
   );
 }
 

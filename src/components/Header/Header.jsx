@@ -7,7 +7,7 @@ import ListIcon from "@mui/icons-material/List";
 // import liIcon from "../../assets/svg/NavLinkedin.svg";
 // import yoIcon from "../../assets/svg/YoutubeMini Icon.svg";
 // import zaIcon from "../../assets/svg/ZaloMini Icon.svg";
-import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import {NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -54,47 +54,32 @@ function Header() {
                 }
               >
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/#"
-                  >
+                  <NavLink className="navbar-item" to="/#">
                     TRANG CHỦ
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/tuyen-dung"
-                  >
+                  <NavLink className="navbar-item" to="/tuyen-dung">
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/dinh-huong-nghe-nghiep"
-                  >
+                  <NavLink className="navbar-item" to="/dinh-huong-nghe-nghiep">
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
+                  <a
                     className="navbar-item"
-                    activeClassName="is-active"
-                    to={{pathname: "daotao.diligo.vn" }}
+                    href="http://daotao.diligo.vn"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     ĐÀO TẠO
-                  </NavLink>
+                  </a>
                 </li>
                 <li>
-                  <NavLink
-                    className="navbar-item"
-                    activeClassName="is-active"
-                    to="/tro-giup"
-                  >
+                  <NavLink className="navbar-item" to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
                 </li>

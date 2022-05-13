@@ -9,7 +9,7 @@ function BlogDetail() {
   const blogIndex = window.location.hash.split("#")[1];
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
-  console.log(data[blogIndex]);
+  console.log(data);
   const breadcrumItem = [
     {
       href: "/",
@@ -25,7 +25,9 @@ function BlogDetail() {
 
     {
       href: "/",
-      title: "Quy trình tuyển dụng",
+      title: 
+      data.find((ele) => ele.id ===  blogId) &&
+      `${data.find((ele) => ele.id ===  blogId).title}`,
       isActive: true,
     },
   ];

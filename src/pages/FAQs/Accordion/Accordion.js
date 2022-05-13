@@ -118,13 +118,12 @@ export default function SimpleAccordion() {
     >
       {data.map((ele, index) => {
         return (
-          <Accordion key={index} TransitionProps={{ unmountOnExit: false }}>
+          <Accordion key={index}className={`${styles.captionWrapper}  `} TransitionProps={{ unmountOnExit: false }}>
             <Accordion key={index} >
 
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: "#f47d20" }} />}
                 className={`${styles.caption} caption1 `}
-              // onClick={expandContent()}
               >
                 <h5
                   className={`ms-3`}
@@ -145,8 +144,11 @@ export default function SimpleAccordion() {
                       <AccordionSummary
                         onClick={() => { change(e.id) }}
                         style={{
-                          height: `70px`,
+                          minHeight: `70px`,
                           borderBottom: `1px solid #ddd`,
+                          marginLeft: `15px`,
+                          marginRight: `15px`,
+
                         }}
                       >
                         {changeIcon.includes(e.id) ?

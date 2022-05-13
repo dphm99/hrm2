@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
-import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [index, setIndex] = useState(0);
-  // console.log(document.querySelector(".headerFixx a").innerHTML);
+
+  const [index, setIndex] = useState(0); 
+
+   
+
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -51,13 +54,16 @@ const Header2 = () => {
                     >
                       <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
                     </li>
+
                     <li
                       className={2 === index ? `${styles.active}` : ``}
                       onClick={() => {
                         setIndex(2);
                       }}
                     >
+
                       <NavLink to="/dinh-huong-nghe-nghiep">
+
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
@@ -98,7 +104,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} />
+          <img src={banner} alt='/'/>
         </div>
       </div>
     </>

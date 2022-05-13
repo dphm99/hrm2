@@ -2,7 +2,7 @@
   .MuiPaper-root,
   .MuiAccordion-root {
     border-radius: 10px !important;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
   .MuiAccordion-root {
     box-shadow: 0px 2px 1px -1px rgb(255 255 255 / 20%);
@@ -10,32 +10,36 @@
       background-color: transparent;
     }
   }
-
   .MuiPaper-root:before {
     background-color: transparent;
   }
 
-  .MuiPaper-root {
-    margin: 1rem 0 0 !important;
-  }
-  .MuiAccordion-root:before {
+  .MuiPaper-root .MuiAccordion-root:before {
     display: none;
   }
-  .MuiAccordionSummary-root {
+  .MuiAccordionSummary-root.caption1 {
     padding: 0 !important;
-    border-radius: 10px;
+    border-radius: 10px  ;
   }
 
+
+
+  .MuiAccordion-region .MuiAccordionDetails-root {
+    padding: 0;
+  }
   .MuiAccordionSummary-root.Mui-expanded.caption1 {
     background-color: #bf202e;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     color: white;
   }
-  .MuiAccordionSummary-expandIconWrapper svg {
-    margin-left: 8px;
-    color: #bf202e;
+  .MuiAccordionSummary-root.caption1 svg {
+    margin-right: 15px;
   }
   .MuiAccordionSummary-root.Mui-expanded.caption1 svg {
     color: white;
+    margin-left: 15px;
+  }
+  .MuiAccordionSummary-content .Mui-expanded {
+    padding-left: 110px;
   }
 }

@@ -12,14 +12,13 @@ import { RecruitContext } from "../contexts/ContextRecuit";
 import { toSlug } from "../extensions/toSlug";
 import { Link } from "react-router-dom";
 function Vancancies() {
-  const [active, setActive] = useState(false);
-  const { data } = useContext(RecruitContext);
-  const [category, setCategory] = useState("office");
+  const [active] = useState(false);
+  const { data } = useContext(RecruitContext); 
 
   const jobCategory = [
     {
       img: kinhdoanh,
-      short: "office",
+      short: "kinhdoanh",
     },
     {
       img: marketing,
@@ -27,7 +26,7 @@ function Vancancies() {
     },
     {
       img: nhasanxuat,
-      short: "factory",
+      short: "nhasanxuat",
     },
     {
       img: taichinh,
@@ -39,19 +38,13 @@ function Vancancies() {
     },
     {
       img: congnghe,
-      short: "it",
+      short: "congnghe",
     },
     {
       img: nhaphanphoi,
-      short: "inventory",
+      short: "nhaphanphoi",
     },
-  ];
-
-
-  const handleOnclick = () => {
-    // document.querySelector(".vancancieBtn")
-  };
-
+  ]; 
   return (
     <div className={styles.Vancancies}>
       <div className="container">
@@ -64,8 +57,8 @@ function Vancancies() {
                 <Link
                   key={index}
                   to={{
-                    pathname: `/ung-tuyen/${toSlug(vancancies.name.name)}`,
-                    search: `#${vancancies.id}`
+                    pathname: `/tuyen-dung/${toSlug(vancancies.name.name)}`,
+                    search: `#${index}#${vancancies.id}`
                   }}
                   className={
                     active
@@ -86,6 +79,9 @@ function Vancancies() {
                               alt={vancancies.vancanies}
                             />
                           );
+                        }
+                        else {
+                          return false;
                         }
                       })}
                     </div>
@@ -128,7 +124,7 @@ function Vancancies() {
         </div>
         <div className={styles.overlay}>
           <button  className={styles.vancanciesBtn}>
-            Xem thêm
+            <Link to="/tuyen-dung">Xem thêm</Link>
           </button>
         </div>
       </div>

@@ -10,26 +10,37 @@
   width: 100%;
   top: 0;
 }
-
-img {
+ 
+.Slider img {
   width: 100%;
   display: table-cell;
   vertical-align: middle;
   object-fit: cover;
 }
+
+.banner > img {
+  margin-top: 100px;
+}
+
 /* -------------------------small mobile--------------------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     
 }
 
 /* -------------------------mobile--------------------- */
-@media only screen and (min-width: 481px) and (max-width: 739px) {
-
+@media only screen and (max-width: 739px) {
+  .banner img {
+    object-fit: contain;
+    height: unset!important;
+  }
 }
 
 /* -------------------------tablets--------------------- */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
-
+  .banner img {
+    object-fit: contain;
+    height: unset!important;
+  }
 }
 
 /* -------------------------PC--------------------- */

@@ -1,6 +1,11 @@
 .jobName {
+  text-decoration: none;
+  color:#000;
   font-weight: 900;
   font-size: 15px;
+}
+.jobName:hover{
+  color:rgb(177, 0, 0);
 }
 .deadLine {
   font-size: 15px;

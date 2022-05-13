@@ -1,11 +1,12 @@
-import React, { useState, useEffect, createContext } from "react";
-const RecruitContext = createContext("");
+import React, { useState, useEffect, createContext } from 'react';
+const RecruitContext = createContext('');
 function RecruitProvider({ children }) {
+  const [category, setCategory] = useState('');
+  const [keySearch, setKeySearch] = useState('');
+  const [targetSearch] = useState(['category']);
   const [data, setData] = useState([]);
-  const [category, setCategory] = useState("");
-  const [keySearch, setKeySearch] = useState("");
   useEffect(() => {
-    fetch("http://test.diligo.vn:15000/api/v1/recruitment")
+    fetch('http://test.diligo.vn:15000/api/v1/recruitment')
       .then((result) => result.json())
       .then((data) => {
         setData(data.data);
@@ -18,6 +19,7 @@ function RecruitProvider({ children }) {
     setCategory,
     keySearch,
     setKeySearch,
+    targetSearch,
   };
 
   return (

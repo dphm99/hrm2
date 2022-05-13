@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./JobBox.module.css";
 import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
 import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
@@ -104,7 +104,7 @@ function JobBox() {
                     <Link
                       key={index}
                       to={{
-                        pathname: `/ung-tuyen/${toSlug(value.name.name)}`,
+                        pathname: `/tuyen-dung/${toSlug(value.name.name)}`,
                         search: `#${index}#${value.id}`,
                       }}
                       className={`${styles.JobList} col-lg-4 col-md-6 col-sm-12`}
@@ -117,6 +117,9 @@ function JobBox() {
                       </div>
                     </Link>
                   );
+                }
+                else {
+                  return false;
                 }
               })}
         </div>
