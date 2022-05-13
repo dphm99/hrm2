@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
 import { jobCategory } from "./JobRecruit";
-import responsive from "./ResponsiteJobItem.module.css";
 import { Link } from 'react-router-dom'
 
 
@@ -108,26 +107,6 @@ function Category({ category, address, industry }) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.ul_listFilterbot}>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
             <li className={styles.filter_item}>
               <a href="/" className={styles.filter_text}>
                 kinh doanh

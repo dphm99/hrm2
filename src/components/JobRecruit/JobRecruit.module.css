@@ -95,12 +95,66 @@
   margin: 0;
 }
 .head_checkbox {
+  position: relative;
   /* box-shadow:1px 1px 3px rgba(144, 144, 144, 0.4); */
-  border-radius: 0px !important;
-  margin-right: -10px;
-  width: 84px;
+  border-radius: 2px;
+  width: 31px;
   height: 31px;
+  background-color: #ffffff;
+  border:2px solid #b3b3b3;
+  box-shadow:0px 0px 3px rgb(144 144 144 / 32%);
+  cursor: pointer;
 }
+.checkboxActive{
+  background-color: #bf202e;
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.checkboxActive::before{
+      content: "\002714";
+    z-index: 4;
+    position: relative;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    align-items: center;
+    display: inline-block;
+    right: -3px;
+}
+/* .head_checkbox:checked::before{ 
+  content:"";
+  position: absolute;
+  height: 31px;
+  width: 31px;
+  left: 50%;
+  transform:translateX(-50%);
+  background-color: #35e07d;
+  box-shadow: inset 0px 0px 0px 3px #ffffff;
+  z-index: 3;
+} */
+.wrap_Checkbox{
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+
+}
+
+/* .head_checkbox:checked+.overlayCheck::after{
+  content: "\002714";
+  position: absolute;
+  display: flex;
+  justify-content:center;
+  height: 30px;
+  width: 30px;
+  left: 50%;
+  transform: translateX(-84%);
+  z-index: 4;
+} */
+
 .head_text {
   white-space: nowrap;
   overflow: hidden;
@@ -413,8 +467,12 @@
 .sortJob_sm {
   height: 60px;
 }
-
-
+.head__address{
+  user-select: none;
+}
+.head__address:hover{
+  cursor: pointer;
+}
 /* Responsive */
 
 @media (max-width: 2560px) {
@@ -456,7 +514,15 @@
   .customContainer {
     max-width: 1140px;
   }
-  
+  .checkboxActive{
+    background-color: #bf202e;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-99%,-49%);
+  }
   .head_col {
     width: 33.33333%;
     padding: 0 12px !important;
@@ -488,7 +554,10 @@
     margin-left: 0;
   }
 }
-
+.clickSort{
+  padding: 0 12px;
+  cursor: pointer;
+}
 
 @media (max-width: 1200px) {
   .customContainer {
@@ -517,7 +586,9 @@
 
   .head__address {
     margin-left: -20px;
+    user-select: none;
   }
+  
 
   .foot_text {
     height: 100%;

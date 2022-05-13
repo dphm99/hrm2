@@ -75,8 +75,10 @@ export default function BlogContent() {
       <div className="row mb-2">
         <div className={`${styles.content} col-lg-8`}>
           {(data &&
+
             data.filter((ele) => ele.tag_ids.name === (active === "Mới nhất" ? ele.tag_ids.name : active)).length > 0) ?
             data.filter((ele) => ele.tag_ids.name === (active === "Mới nhất" ? ele.tag_ids.name : active)).map((e, index) => {
+
               if (index <= moreBlogs) {
                 return (
                   <div key={index}>
@@ -132,18 +134,21 @@ export default function BlogContent() {
                   </div>
                 );
               }
-              else {
-                return false;
-              }
-            }) : <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/' /></div>}
-          <div className="d-flex">
+
+                else {
+                  return false;
+                }
+           }) ) : <div className="d-flex justify-content-center align-items-center mb-5"><img src={nodata} alt='/'/></div>}
+         {(data &&
+            data.filter((ele) => ele.tag_ids.name === (active==="Mới nhất" ? ele.tag_ids.name :active)).length > 0) &&  <div className="d-flex">
+
             <button
               className={`${styles.showMore}`}
               onClick={() => setMoreBlogs(moreBlogs * 2)}
             >
               Xem thêm
             </button>
-          </div>
+          </div>}
         </div>
         <div className={`${styles.recruitSideBar} col-lg-4`}>
           <RecruitSideBar />

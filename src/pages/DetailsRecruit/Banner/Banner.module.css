@@ -12,11 +12,11 @@
 .detailsSticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 12rem;
+  top: 13rem;
 }
 
 .detailsFlex {
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .detailsFlex h6 {
@@ -85,6 +85,15 @@
   color: black;
   font-size: 14px;
 }
+.detailsLink button {
+  border-bottom: 1px solid;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
 
 .detailsIcon {
   display: flex;
@@ -118,11 +127,6 @@
 .detailsjobIndex p {
   margin: 9px 16px !important;
   font-size: 16px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 
 .detailsjobName {
@@ -253,6 +257,7 @@
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  text-decoration: none;
   /* opacity: 0.3; */
 }
 
@@ -307,7 +312,10 @@
   margin-bottom: 40px;
   margin-top: 40px;
 }
-
+.detailsRecruiBtn button a {
+  text-decoration: none;
+  color: #ae1825;
+}
 .detailsRecruiBtn button {
   font-size: 19px;
   display: block;
@@ -421,7 +429,13 @@
   color: #ae1825;
 }
 
+
 @media only screen and (max-width: 768px) {
+  .detailsRecuit h2 {
+    font-size: 13px;
+    margin-top: 185px;
+    margin-bottom: 25px;
+  }
   .detailsRecuit {
     width: 100%;
     margin-left: 0px;
@@ -597,6 +611,7 @@
   margin-bottom: 10px;
 }
 
+
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
   .detailsSticky {
@@ -604,3 +619,4 @@
     top: 0;
   }
 }
+

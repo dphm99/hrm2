@@ -88,7 +88,9 @@ function Footer() {
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to="/tro-giup">Đào tạo</Link>
+
+                      <a href="http://daotao.diligo.vn" target="_blank" rel="noreferrer">Đào tạo</a>
+
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
@@ -96,15 +98,17 @@ function Footer() {
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://diligo.vn" }} target="_blank">Diligo.vn</Link>
+                      <a href="http://diligo.vn" target="_blank" rel="noreferrer">Diligo.vn</a>
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://lipzo.com" }}>Lipzo.com</Link>
+                      
+                      <Link to={{ pathname: "http://diligo.vn/post/45" }}>Lipzo.com</Link>
+
                     </li>
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
-                      <Link to={{ pathname: "http://Nivahealthcare.com" }}>Nivahealthcare.com</Link>
+                      <a href="http://nivahealthcare.com" target="_blank" rel="noreferrer">Nivahealthcare.com</a>
                     </li>
                   </ul>
                 </div>
@@ -117,31 +121,33 @@ function Footer() {
                   <ul className={styles.ul_Element}>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Kiểm tra kết quả ứng tuyển</Link>
+                      <Link to="/tra-cuu">Kiểm tra kết quả ứng tuyển</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Tìm việc gần bạn</Link>
+                      <Link to="/tim-viec-gan-ban">Tìm việc gần bạn</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Câu hỏi thường gặp</Link>
+
+                      <Link to="/tro-giup">Câu hỏi thường gặp</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Quy trình tuyển dụng</Link>
+                      <Link to="/tuyen-dung/chuyen-vien-lap-trinh-odoo?#2#2015">Quy trình tuyển dụng</Link>
+
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Dành cho nhân viên cũ</Link>
+                      <Link to="///">Dành cho nhân viên cũ</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Nhà phân phối sắp khai trương</Link>
+                      <Link to="///">Nhà phân phối sắp khai trương</Link>
                     </li>
                     <li className="d-flex ">
                       <ArrowRightIcon />
-                      <Link to="">Siêu thị sắp khai trương</Link>
+                      <Link to="///">Siêu thị sắp khai trương</Link>
                     </li>
                   </ul>
                 </div>

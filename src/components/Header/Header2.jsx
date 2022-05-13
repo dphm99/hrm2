@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const [index, setIndex] = useState(0); 
-
-   
+  const [index, setIndex] = useState(0);
 
   return (
     <>
@@ -61,9 +59,7 @@ const Header2 = () => {
                         setIndex(2);
                       }}
                     >
-
                       <NavLink to="/dinh-huong-nghe-nghiep">
-
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
@@ -73,7 +69,13 @@ const Header2 = () => {
                         setIndex(3);
                       }}
                     >
-                      <NavLink to="/dao-tao">ĐÀO TẠO</NavLink>
+                      <a
+                        href="http://daotao.diligo.vn"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        ĐÀO TẠO
+                      </a>
                     </li>
                     <li
                       className={4 === index ? `${styles.active}` : ``}
@@ -104,7 +106,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} alt='/' className={`w-100`}/>
+          <img src={banner} alt="/" className={`w-100`} />
         </div>
       </div>
     </>
