@@ -17,10 +17,10 @@ function FormRecruit() {
   const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
 
-  const [name, setName] = useState();
-  const [phone, setPhone] = useState();
-  const [email, setEmail] = useState();
-  const [fileName, setFileName] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [fileName, setFileName] = useState("");
   console.log(data);
 
   const inputFileRef = useRef(null);
@@ -55,26 +55,43 @@ function FormRecruit() {
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
     // console.log(bodyFormData);
-    if(name !== "" && phone !== "" && email !== "" && cvv!==undefined) {
-
-    axios({
-      method: "POST",
-      url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
-      data: bodyFormData,
-      headers: { "Content-Type": "multipart/form-data" },
-    })
-      .then((response) => {
-        // alert(response, "Ban da ung tuyen thanh cong");
-        setTimeout(function () {
-          history.push("/ung-tuyen-thanh-cong");
-        }, 1000);
+    if (name !== "" && phone !== "" && email !== "" && cvv !== undefined) {
+      axios({
+        method: "POST",
+        url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
+        data: bodyFormData,
+        headers: { "Content-Type": "multipart/form-data" },
       })
-      .catch((error) => {
-        // alert(error.message);
-        setTimeout(function () {
-          history.push("/ung-tuyen-thanh-cong");
-        }, 1000);
-      });
+        .then((response) => {
+          // alert(response, "Ban da ung tuyen thanh cong");
+          setTimeout(function () {
+            if (
+              name !== "" &&
+              phone !== "" &&
+              email !== "" &&
+              fileName !== "" 
+            ) {
+              history.push("/ung-tuyen-thanh-cong");
+            } else {
+              alert("Vui lòng nhập lại");
+            }
+          }, 1000);
+        })
+        .catch((error) => {
+          // alert(error.message);
+          setTimeout(function () {
+            if (
+              name !== "" &&
+              phone !== "" &&
+              email !== "" &&
+              fileName !== "" 
+            ) {
+              history.push("/ung-tuyen-thanh-cong");
+            } else {
+              alert("Vui lòng nhập lại");
+            }
+          }, 1000);
+        });
     }
   };
 
@@ -175,15 +192,15 @@ function FormRecruit() {
                   name="file"
                   accept="image/*,video/*,.pdf,.doc, .docx"
                   style={{ display: "none" }}
-                /> 
+                />
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
-                  style={{cursor:"pointer"}}
+                  style={{ cursor: "pointer" }}
                 >
                   Tải lên CV của bạn
                 </div>
-                {fileName }
+                {fileName}
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -196,14 +213,24 @@ function FormRecruit() {
                   name="url"
                 />
               </div>
-              <div
-                // type="submit"
-                onClick={() => handleLogin()}
-                className={`${styles.buttonSubmit} ${styles.active}`}
-                style={{cursor:"pointer"}}
-              >
-                Gửi CV
-              </div>
+              {name !== "" && phone !== "" && email !== "" && fileName !== ""? (
+                <div
+                  // type="submit"
+                  onClick={() => handleLogin()}
+                  className={`${styles.buttonSubmit} ${styles.active}`}
+                  style={{ cursor: "pointer" }}
+                >
+                  Gửi CV
+                </div>
+              ) : (
+                <div
+                  // type="submit"
+                  className={`${styles.buttonSubmit} ${styles.active}`}
+                  style={{ cursor: "pointer", backgroundColor: "#d7cfcf" }}
+                >
+                  Gửi CV
+                </div>
+              )}
               <div>
                 Không có CV,{" "}
                 <a href={filesCV} download>
