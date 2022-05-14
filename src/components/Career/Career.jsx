@@ -12,8 +12,6 @@ import longBanner from "../../assets/img/banner3.jpg";
 
 function Career() {
   const { data } = useContext(BlogContext);
-  // console.log(data);
-
   const settings = {
     autoplay: true,
     dots: false,

@@ -108,12 +108,10 @@ function FormRecruit() {
       isActive: true,
     },
   ];
-
-  let w = window.innerWidth;
-  const [header, setHeader] = useState(true);
+  const [header,setHeader] = useState(true)
   useEffect(() => {
-    if (w <= 768) {
-      setHeader(false);
+    if(window.innerWidth <= 768){
+      setHeader(false)
     } else {
       setHeader(true);
     }

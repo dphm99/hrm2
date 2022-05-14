@@ -78,30 +78,9 @@ function RecruitPosition() {
       isActive: true,
     },
   ];
-
-  // const onSubmit = (data) => {
-  //   const formData = new FormData();
-  //   formData.append("attachment", data.file[0]);
-  //   console.log(formData);
-
-  //   const values = getValues();
-  //   console.log(values["attachment"][0]);
-
-  //   handleNext();
-  //   const output = JSON.stringify(values);
-  //   console.log(output);
-
-  //   // props.history.push('/')
-  // };
-  // const { data } = React.useContext(RecruitContext);
-
-  // const id = useLocation().search.replace("?", "");
-  // const currentData = data.find((val) => val.id === +id); 
-
-  let w = window.innerWidth
-  const [header, setHeader] = useState(true)
+  const [header,setHeader] = useState(true)
   useEffect(() => {
-    if (w <= 768) {
+    if(window.innerWidth <= 768){
       setHeader(false)
     } else {
       setHeader(true)

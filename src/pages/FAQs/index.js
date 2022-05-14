@@ -22,11 +22,9 @@ function Index() {
       isActive: true,
     },
   ];
-
-  let w = window.innerWidth
   const [header,setHeader] = useState(true)
   useEffect(() => {
-    if(w <= 768){
+    if(window.innerWidth <= 768){
       setHeader(false)
     } else {
       setHeader(true)

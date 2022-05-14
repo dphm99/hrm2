@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./FormResearch.module.css"
 import Infomation from "./Infomation"
 function FormResearch() {
-    const [info,setInfo]=React.useState(false)
+    const [info]=React.useState(false)
     return (
         <div className={` ${styles.containALl}`}>
             <div className="container">

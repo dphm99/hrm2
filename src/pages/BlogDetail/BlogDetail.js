@@ -7,7 +7,6 @@ import Header2 from "../../components/Header/Header2";
 import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
 import Header from "../../components/Header/Header";
 function BlogDetail() {
-  const blogIndex = window.location.hash.split("#")[1];
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
   const breadcrumItem = [
@@ -31,11 +30,9 @@ function BlogDetail() {
       isActive: true,
     },
   ];
-
-  let w = window.innerWidth;
   const [header, setHeader] = useState(true);
   useEffect(() => {
-    if (w <= 768) {
+    if (window.innerWidth <= 768) {
       setHeader(false);
     } else {
       setHeader(true);
