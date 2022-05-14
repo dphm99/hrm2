@@ -1,6 +1,8 @@
 @import "~rsuite/dist/rsuite.min.css";
 .App {
   text-align: center;
+}
+body {
   overflow-x: hidden;
 }
 
@@ -38,12 +40,15 @@
     transform: rotate(360deg);
   }
 }
+
 .rs-picker-default:not(.rs-picker-disabled) .rs-btn-active, .rs-picker-default:not(.rs-picker-disabled) .rs-btn:focus, .rs-picker-default:not(.rs-picker-disabled) .rs-btn:hover, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle-active, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:focus, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:hover,.rs-picker-default .rs-picker-toggle {
   border: none !important;
+
 }
 .rs-picker-toggle-active, .rs-picker.rs-picker-focused { 
   box-shadow: none !important;
 }
+
 .rs-picker-toggle-wrapper .rs-picker-toggle.rs-btn {
   padding-right: 32px;
   margin-left: 45px;
@@ -54,12 +59,11 @@
   font-size:16px;
   position:absolute;
   top:15px;
+
 }
 .rs-picker-menu.rs-picker-check-menu, .rs-picker-menu.rs-picker-select-menu {
   z-index: 998;
 }
-
-
 
 .rs-picker-select-menu.rs-picker-select-menu-items::-webkit-scrollbar {
   width: 10px;
@@ -75,6 +79,7 @@
   background-color: var(--primary-light);
   border-radius: 30px;
 }
+
 .rs-picker-select-menu-item.rs-picker-select-menu-item-focus, .rs-picker-select-menu-item:focus, .rs-picker-select-menu-item:hover {
   background-color: #c03b47;
   color:#fff;
@@ -89,3 +94,4 @@
 a:active, a:focus, a:hover {
   text-decoration: none !important;
 }
+

@@ -9,10 +9,10 @@
   .MuiSvgIcon-root.Mui-completed {
     color: #bf202e;
   }
-  .MuiStepIcon-root.Mui-active{
+  .MuiStepIcon-root.Mui-active {
     color: #bf202e;
   }
-  .MuiStepIcon-root{
+  .MuiStepIcon-root {
     color: #a8a8a8;
   }
   .MuiButton-root.MuiButton-contained {
@@ -21,4 +21,21 @@
   .MuiButton-disabled {
     background-color: transparent;
   }
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (max-width: 739px) {
+  .RecruitPosition {
+    .MuiBox-root {
+      width: 100% ;
+    }
+  }
+}
+
+/* -------------------------tablets--------------------- */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
 }

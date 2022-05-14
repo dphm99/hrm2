@@ -24,28 +24,31 @@
     .Career2_img {
         justify-content: center;
     }
-    .Career2_img img {
+    /* .Career2_img img {
         width: 49vw;
-    }
+    } */
 }
 
 /* -------------------------mobile--------------------- */
 @media only screen and (max-width: 481px) and (max-width: 739px) {
-    .Career2_img img {
+    /* .Career2_img img {
         width: 49vw;
         object-fit: contain;
         float: left;
-    }
+    } */
 
     .Career2_img {
         width: 100% !important;
         height: unset;
+        padding: 0 12px;
     }
-
-    .Career2_box {
+    .Career2_banner {
+        margin-top: 40px;
+    }
+    /* .Career2_box {
         width: 50% !important;
         float: left;
-    }
+    } */
 }
 
 /* -------------------------tablets--------------------- */
