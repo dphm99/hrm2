@@ -44,7 +44,7 @@ export default function BlogContent() {
       short: "office",
     },
     {
-      title: "Văn hoá Diligo",
+      title: "Văn hóa Diligo",
       short: "office",
     },
     {
