@@ -46,7 +46,7 @@ function Search() {
           </div>
           <div
             className={styles.SelectWrapper}
-            style={{ position: "relative",height: "48px",backgroundColor: "#fff",position:'relative'}}
+            style={{ position: "relative",height: "48px",backgroundColor: "#fff"}}
           >
             <LocationOnIcon
               style={{ position: "absolute", color: "#ccc", margin: "4px" }}

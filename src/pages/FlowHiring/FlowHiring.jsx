@@ -6,11 +6,9 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 
 function FlowHiring() {
-
-  let w = window.innerWidth
   const [header,setHeader] = useState(true)
   useEffect(() => {
-    if(w <= 768){
+    if(window.innerWidth <= 768){
       setHeader(false)
     } else {
       setHeader(true)

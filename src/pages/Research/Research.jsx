@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
-import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import FormResearch from "../../components/FormResearch/FormResearch";
 import Header from "../../components/Header/Header";
 function Research() {
-  let w = window.innerWidth;
   const [header, setHeader] = useState(true);
   useEffect(() => {
-    if (w <= 768) {
+    if (window.innerWidth <= 768) {
       setHeader(false);
     } else {
       setHeader(true);

@@ -4,11 +4,9 @@ import Footer from "../../components/Footer/Footer";
 import JobRecruits from "../../components/JobRecruit/JobRecruit";
 import Header from "../../components/Header/Header";
 function JobRecruit() {
-
-  let w = window.innerWidth
   const [header,setHeader] = useState(true)
   useEffect(() => {
-    if(w <= 768){
+    if(window.innerWidth <= 768){
       setHeader(false)
     } else {
       setHeader(true)

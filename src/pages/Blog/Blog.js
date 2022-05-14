@@ -5,10 +5,9 @@ import Header2 from "../../components/Header/Header2";
 import BlogContent from "./Content/BlogContent";
 
 const Blog = () => {
-  let w = window.innerWidth;
   const [header, setHeader] = useState(true);
   useEffect(() => {
-    if (w <= 768) {
+    if (window.innerWidth <= 768) {
       setHeader(false);
     } else {
       setHeader(true);

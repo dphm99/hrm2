@@ -1,6 +1,5 @@
 import React from 'react'
 import './CardVideo.css'
-
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -85,7 +84,6 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
               <Fade in={true}>
                 <Box sx={style} textAlign="center">
                   <div className="position-relative">
-                    {/* <img className="position-absolute" src={IconCheck} alt='icon' style={{width:'75px',top: '-100%',left: '50%',transform: 'translate(-50%, -50%)'}}/> */}
                     <h4
                       className="text-center fw-bold my-0"
                       style={{ fontSize: "1.4rem", color: "#000" }}
@@ -108,15 +106,6 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
                     className="text-center d-flex justify-content-center"
                     style={{ gap: "20px" }}
                   >
-                    {/* <Button
-                      status="active"
-                      text="Thoát"
-                      onClick={() => setShowAlert(prev => ({
-                        ...prev,
-                        show:false,
-                      }))}
-                      width={"140px"}
-                    /> */}
                   </div>
                 </Box>
               </Fade>

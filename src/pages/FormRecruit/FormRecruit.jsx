@@ -11,8 +11,6 @@ import Header from "../../components/Header/Header";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
-
-  const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
 
   const [name, setName] = useState();
@@ -79,11 +77,9 @@ function FormRecruit() {
       isActive: true,
     },
   ];
-
-  let w = window.innerWidth
   const [header,setHeader] = useState(true)
   useEffect(() => {
-    if(w <= 768){
+    if(window.innerWidth <= 768){
       setHeader(false)
     } else {
       setHeader(true)

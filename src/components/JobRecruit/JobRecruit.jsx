@@ -74,26 +74,7 @@ const [check,setCheck] =useState(false)
     if (jobLocation) {
       setPosition(jobLocation);
     }
-    // return () => {
-    //   setPosition("");
-    //   setKeySearch("");
-    // };
-    //eslint-disable-next-line
   }, []); 
-  // console.log(sort)
-  //   const [dataSliced, setdataSliced] = useState([]);
-  //   const [currentPage, setCurrentPage] = useState(1);
-  //   let PageSize = 10;
-  //   useEffect(() => {
-  //     if (data) {
-  //       const firstPageIndex = (currentPage - 1) * PageSize;
-  //       const lastPageIndex = firstPageIndex + PageSize;
-  //       setdataSliced(data.slice(firstPageIndex, lastPageIndex));
-  //     }
-  //     const firstPageIndex = (currentPage - 1) * PageSize;
-  //     const lastPageIndex = firstPageIndex + PageSize;
-  //     return data.slice(firstPageIndex, lastPageIndex);
-  //   }, [data, currentPage]);
   Array.prototype.sortAlpha = function (sort) {
     return sort ? this.sort() : this.reverse()
   }
@@ -120,13 +101,6 @@ const [check,setCheck] =useState(false)
       address.push(job.address.name);
       industry.push(job.industry);
     });
-
-  // const handlSort = () => {
-  //   setSort("alpha")
-  //   if (sort === "alpha") {
-  //     setSort("reverse")
-  //   }
-  // };
   return (
     <div
       className={`container ${styles.customContainer}`}
@@ -290,34 +264,6 @@ const [check,setCheck] =useState(false)
                     </Link>)
                   ))}
               </div>
-              {/* <Pagination
-                      className="pagination-bar"
-                    currentPage={currentPage}
-                    totalCount={data.length}
-                    pageSize={10}
-                    onPageChange={(page) => setCurrentPage(page)}
-                /> */}
-
-              {/* <div
-                className={`${styles.pagination} d-flex align-items-center justify-content-center`}
-              >
-                <KeyboardArrowLeftIcon
-                  className={styles.btn_pagi}
-                ></KeyboardArrowLeftIcon>
-                <p className={`${styles.btn_pagi} ${styles.btn_pagiActive}`}>
-                  1
-                </p>
-                <p className={styles.btn_pagi}>2</p>
-                <p className={styles.btn_pagi}>3</p>
-                <p className={styles.btn_pagi}>4</p>
-                <p className={styles.btn_pagi}>5</p>
-                <p className={styles.btn_pagi}>...</p>
-                <p className={styles.btn_pagi}>29</p>
-                <p className={styles.btn_pagi}>30</p>
-                <ChevronRightIcon
-                  className={styles.btn_pagi}
-                ></ChevronRightIcon>
-              </div> */}
             </div>
           </div>
         </div>

@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./CareerVideo.module.css";
-import seongon2 from "../../assets/img/icon-svg/banner5.jpg";
-
 const CareerVideo = () => {
   return (
     <div>

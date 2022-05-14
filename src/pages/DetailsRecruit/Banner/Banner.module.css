@@ -617,3 +617,10 @@
     top: 0;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .detailsSticky {
+    position: relative;
+    top: 0;
+  }
+}

@@ -28,7 +28,7 @@ const Banner = () => {
   const jobId = window.location.hash.split("#")[2];
   const currentURL = window.location.href
 
-  const [copySuccess, setCopySuccess] = useState("");
+  const [copySuccess] = useState("");
   const [copied, setCopied] = useState(false);
 
   // your function to copy here
