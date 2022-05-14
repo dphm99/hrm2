@@ -17,7 +17,7 @@ function FormRecruit() {
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
-  console.log(data);
+  // console.log(data);
 
   const inputFileRef = useRef(null);
 
@@ -144,14 +144,14 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
-                  style={{ display: "none" }}
+                  // style={{ display: "none" }}
                 />
-                <button
+                <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
                 >
                   Tải lên CV của bạn
-                </button>
+                </div>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>

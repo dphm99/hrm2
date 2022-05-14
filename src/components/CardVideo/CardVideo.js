@@ -98,9 +98,9 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
                         height="300"
                         src={iframe}
                         title="YouTube video player"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                       ></iframe>
                     </div>
                   </div>
