@@ -37,7 +37,6 @@
   width: 10px;
   height: 52px;
   border-right: 1px solid #b6b7b8;
-  z-index: 10;
 }
 .containCheckbox {
   display: flex;
@@ -55,7 +54,6 @@
   width: 10px;
   height: 52px;
   border-right: 1px solid #b6b7b8;
-  z-index: 10;
 }
 .head_checkAddress {
   flex: 1;
@@ -173,14 +171,12 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 100px;
-  width: 97.5%;
-  border-right: 1px solid #a5a6a7;
+  width: 92%;
+  border: 1px solid #a5a6a7;
 }
 
 .wrapListJob {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
+  border: 1px solid #a5a6a7;
   margin-left: -12px;
 }
 
@@ -433,7 +429,6 @@
 }
 
 .wrap_all {
-  border: 1px solid #a5a6a7;
   margin-bottom: 12px;
 }
 .banner_foot {
@@ -478,14 +473,12 @@
 
 @media (max-width: 2560px) {
   .customContainer {
-    margin-top: 19rem;
+    margin-top: 2rem;
   }
 
   .wrapCategory {
     position: sticky;
-    top: 230px;
-    width: 97.5%;
-    border-right: 1px solid #a5a6a7;
+    top: 100px;
   }
 
   .apply_job {
@@ -496,7 +489,7 @@
 
 @media (max-width: 1440px) {
   .customContainer {
-    margin-top: 11rem;
+    margin-top: 2rem;
   }
 
   .wrapCategory {
@@ -572,7 +565,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .customContainer {
-    margin-top: 8rem;
+    margin-top: 0rem;
   }
 
   .wrapCategory {

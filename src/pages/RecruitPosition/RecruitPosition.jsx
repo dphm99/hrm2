@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./RecruitPosition.scss";
@@ -14,6 +14,7 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import Header from "../../components/Header/Header";
 // import { useForm } from "react-hook-form";
 // import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
@@ -96,9 +97,20 @@ const [checkList,setCheckList] = React.useState({
 
   // const id = useLocation().search.replace("?", "");
   // const currentData = data.find((val) => val.id === +id); 
+
+  let w = window.innerWidth
+  const [header,setHeader] = useState(true)
+  useEffect(() => {
+    if(w <= 768){
+      setHeader(false)
+    } else {
+      setHeader(true)
+    }
+  },[])
   return (
     <>
-      <Header2 />
+     {!header && <Header />}
+      {header && <Header2 />}
       <div className="container" style={{ margin: "286px auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div className={`RecruitPosition`}>
