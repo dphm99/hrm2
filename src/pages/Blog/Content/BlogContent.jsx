@@ -10,9 +10,9 @@ import CardVideo from "../../../components/CardVideo/CardVideo";
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
   const [showAlert, setShowAlert] = useState({
-    show:false,
-    name:"",
-    iframe:"",
+    show: false,
+    name: "",
+    iframe: "",
   });
   const [active, setActive] = useState("Mới nhất");
   const [moreBlogs, setMoreBlogs] = useState(4);
@@ -52,11 +52,11 @@ export default function BlogContent() {
       short: "office",
     },
   ];
-// console.log( 
-//    data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
-//      return e
-//    }})
-// )
+  // console.log( 
+  //    data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
+  //      return e
+  //    }})
+  // )
 
   return (
     <div className={`${styles.main}`}>
@@ -86,16 +86,20 @@ export default function BlogContent() {
       <div className="row mb-2">
         <div className={`${styles.content} col-lg-8`}>
           {data &&
-         data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
-          return e
-        }}).length > 0 ? (
-          data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
-            return e
-          }})
+            data.filter(e => {
+              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
+                return e
+              }
+            }).length > 0 ? (
+            data.filter(e => {
+              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
+                return e
+              }
+            })
               .map((e, index) => {
                 if (index <= moreBlogs) {
-                  return ( 
-                      active  !=="Video" ? <div key={index}>
+                  return (
+                    active !== "Video" ? <div key={index}>
                       <Link
                         className={styles.BannerLink}
                         to={{
@@ -105,9 +109,9 @@ export default function BlogContent() {
                           search: `#${index}#${e.id}`,
                         }}
                       >
-                        <div className="row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative">
+                        <div className= {`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}>
                           <div
-                            className={`${styles.Block_img} d-lg-block col-4`}
+                            className={`${styles.Block_img} d-lg-block col-md-4`}
                           >
                             <img
                               className="bd-placeholder-img"
@@ -117,7 +121,7 @@ export default function BlogContent() {
                             ></img>
                           </div>
                           <div
-                            className={`${styles.BannerBlockflex} col-8 d-flex flex-column position-static`}
+                            className={`${styles.BannerBlockflex} col-md-8 d-flex flex-column position-static`}
                           >
                             <h6 className={`${styles.Block_H6} mb-2`}>
                               <strong>{e.title}</strong>
@@ -148,23 +152,23 @@ export default function BlogContent() {
                       </Link>
                       <div className="pb-1 mb-4 fst-italic border-bottom"></div>
                     </div> : <CardVideo
-            title={e.title}
-            image={e.avatar}
-            content={e.content}
-            onClick={() => setShowAlert(
-              {
-              show:true,
-              name:e.title,
-              iframe:e.avatar,
-            }
-            )
-          }
-          onClose={  () => setShowAlert(prev => ({
-            ...prev,
-            show:false,
-          }))}
-          show={showAlert.show}
-          />
+                      title={e.title}
+                      image={e.avatar}
+                      content={e.content}
+                      onClick={() => setShowAlert(
+                        {
+                          show: true,
+                          name: e.title,
+                          iframe: e.avatar,
+                        }
+                      )
+                      }
+                      onClose={() => setShowAlert(prev => ({
+                        ...prev,
+                        show: false,
+                      }))}
+                      show={showAlert.show}
+                    />
                   );
                 } else {
                   return false;
@@ -176,9 +180,11 @@ export default function BlogContent() {
             </div>
           )}
           {data &&
-            data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
-              return e
-            }}).length > 0 && (
+            data.filter(e => {
+              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
+                return e
+              }
+            }).length > 0 && (
               <div className="d-flex">
                 <button
                   className={`${styles.showMore}`}
