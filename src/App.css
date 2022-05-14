@@ -1,3 +1,4 @@
+@import "~rsuite/dist/rsuite.min.css";
 .App {
   text-align: center;
 }
@@ -39,51 +40,58 @@ body {
     transform: rotate(360deg);
   }
 }
-.MuiSelect-select {
-  padding: 0 !important;
-  height: 48px !important;
-  background-color: transparent !important;
-}
-.MuiFormControl-root {
-  margin: 0 0 0 45px !important;
-  width: calc(100% - 45px) !important;
-}
-.MuiFilledInput-root::before {
+
+.rs-picker-default:not(.rs-picker-disabled) .rs-btn-active, .rs-picker-default:not(.rs-picker-disabled) .rs-btn:focus, .rs-picker-default:not(.rs-picker-disabled) .rs-btn:hover, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle-active, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:focus, .rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:hover,.rs-picker-default .rs-picker-toggle {
   border: none !important;
+
 }
-.MuiInputBase-colorPrimary:after {
-  border-bottom: none !important;
+.rs-picker-toggle-active, .rs-picker.rs-picker-focused { 
+  box-shadow: none !important;
 }
-.Mui-focused {
-  background-color: transparent !important;
+
+.rs-picker-toggle-wrapper .rs-picker-toggle.rs-btn {
+  padding-right: 32px;
+  margin-left: 45px;
+  height: 48px;
 }
-.MuiInputLabel-root {
-  color: "#c03b47" !important;
+.rs-picker-toggle .rs-picker-toggle-placeholder,.rs-picker-has-value .rs-btn .rs-picker-toggle-value, .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
+  color:rgb(0, 0, 0,0.4);
+  font-size:16px;
+  position:absolute;
+  top:15px;
+
 }
-.MuiFilledInput-input {
-  display: flex !important;
-  align-items: center !important;
+.rs-picker-menu.rs-picker-check-menu, .rs-picker-menu.rs-picker-select-menu {
+  z-index: 998;
 }
-.MuiSelect-iconFilled {
-  top: 5px !important;
-}
-.MuiMenu-list {
-  max-height: 300px !important;
-}
-.MuiPaper-root::-webkit-scrollbar {
+
+.rs-picker-select-menu.rs-picker-select-menu-items::-webkit-scrollbar {
   width: 10px;
 }
-.MuiPaper-root::-webkit-scrollbar-track {
+.rs-picker-select-menu.rs-picker-select-menu-items::-webkit-scrollbar-track {
   background: #ddd;
 }
-.MuiPaper-root::-webkit-scrollbar-thumb {
+.rs-picker-select-menu.rs-picker-select-menu-items::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 30px;
 }
-.MuiPaper-root::-webkit-scrollbar-thumb:hover {
+.rs-picker-select-menu.rs-picker-select-menu-items::-webkit-scrollbar-thumb:hover {
   background-color: var(--primary-light);
   border-radius: 30px;
 }
-.MuiFilledInput-root {
-  background-color: transparent !important;
+
+.rs-picker-select-menu-item.rs-picker-select-menu-item-focus, .rs-picker-select-menu-item:focus, .rs-picker-select-menu-item:hover {
+  background-color: #c03b47;
+  color:#fff;
+  transition: all 0.1s ease-in-out;
 }
+.rs-btn-close .rs-icon,.rs-picker-default .rs-picker-toggle.rs-btn .rs-picker-toggle-caret, .rs-picker-default .rs-picker-toggle.rs-btn .rs-picker-toggle-clean {
+  top: 4px;
+}
+.rs-btn-close .rs-icon{
+  display:none;
+}
+a:active, a:focus, a:hover {
+  text-decoration: none !important;
+}
+

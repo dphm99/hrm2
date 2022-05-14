@@ -2,21 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./Search.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select'; 
+import { SelectPicker } from "rsuite";
 
-
-function Search() {
-
-  const [age, setAge] = React.useState('');
-
-  const handleChangeLocations = (event) => { 
-    setAge(event.target.value);
-  };
+function Search() { 
+  const [age, setAge] = React.useState(''); 
 
   const [userInput, setUserInput] = useState("");
-  const [city, setCity] = useState([]);
+  const [city, setCity] = useState([]); 
 
 
   const handleChange = (e) => {
@@ -58,51 +50,31 @@ function Search() {
           >
             <LocationOnIcon
               style={{ position: "absolute", color: "#ccc", margin: "4px" }}
-            />
-            <FormControl variant="filled" sx={{ m: 1, minWidth: 120,maxHeight: 100 }}>
-        {/* <InputLabel id="demo-simple-select-filled-label">Tìm việc theo vị trí</InputLabel> */}
-        {age ==='' && <h4 style={{color:"rgb(0, 0, 0,0.4)",fontSize:"16px",position:'absolute',top:'15px'}}>Tìm việc theo vị trí</h4>}
-        
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChangeLocations}
-          name="city"
-        > 
-        {city.map((ele, index)=> {
-          return <MenuItem key={index} value={ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}>{ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}</MenuItem>
-        })} 
-        </Select>
-      </FormControl>
-            {/* <select
+            /> 
+            <input
+              type="text"
+              placeholder="Nhập tên công việc yêu thích?"
               name="city"
-              className="selectpicker"
-              id="cities"
-              defaultValue={"disabled"}
-              onChange={(event) => changeCity(event.target.value)}
-              value={currentCity}
-            >
-              <option  default value="">
-                Tìm việc theo vị trí
-              </option>
-              {city &&
-                city.map((e, index) => (
-                  <option
-                    key={index}
-                    value={e.name
-                      .replace("Tỉnh ", "")
-                      .replace("Thành phố ", "")}
-                  >
-                    {e.name.replace("Tỉnh ", "").replace("Thành phố ", "")}
-                  </option>
-                ))}
-            </select> */}
+              value={age} 
+              style={{display:'none'}}
+            />
+                  <SelectPicker
+                    onSelect={(e) => {
+                      setAge(e)
+                    }}  
+                    placeholder="Tìm kiếm vị trí"
+                    data={city.map((ele) => ({ label: ele.name.replace("Tỉnh ", "").replace("Thành phố ", ""), value: ele.name.replace("Tỉnh ", "").replace("Thành phố ", "") }))}
+                    menuStyle={{ height: "200px" }}
+                    searchable={false}
+                    block
+                  />
+         
             
           </div>
           <button type="submit">Tìm kiếm</button>
+
         </div>
-      </form>
+      </form> 
     </div>
   );
 }

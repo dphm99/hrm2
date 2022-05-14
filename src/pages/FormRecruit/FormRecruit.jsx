@@ -29,6 +29,11 @@ function FormRecruit() {
     /*Collecting node-element and performing click*/
     inputFileRef.current.click();
   };
+  // React.useEffect(() => {
+  //   if(name !== '' && phone !=="" && email!=="") {
+  //     handleLogin()
+  //   }
+  // },[])
 
   const handleLogin = () => {
     const bodyFormData = new FormData();
@@ -45,7 +50,7 @@ function FormRecruit() {
     bodyFormData.append("phone", phone);
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
-    console.log(bodyFormData);
+    // console.log(bodyFormData);
     axios({
       method: "POST",
       url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
@@ -144,14 +149,14 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
-                  style={{ display: "none" }}
+                  // style={{ display: "none" }}
                 />
-                <button
+                <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
                 >
                   Tải lên CV của bạn
-                </button>
+                </div>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -164,13 +169,13 @@ function FormRecruit() {
                   name="url"
                 />
               </div>
-              <button
-                type="submit"
-                onClick={handleLogin}
+              <div
+                // type="submit"
+                onClick={() => handleLogin()}
                 className={`${styles.buttonSubmit} ${styles.active}`}
               >
                 Gửi CV
-              </button>
+              </div>
               <div>
                 Không có CV,{" "}
                 <a href={filesCV} download>

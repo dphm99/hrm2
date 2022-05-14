@@ -15,9 +15,9 @@ const CareerVideo = () => {
                 height="300"
                   src="https://www.youtube.com/embed/3V0jdXteJdQ"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
             </div>
           </div>
@@ -29,9 +29,9 @@ const CareerVideo = () => {
                 height="300"
                   src="https://www.youtube.com/embed/BFc0lIgI2lw"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
             </div>
           </div>

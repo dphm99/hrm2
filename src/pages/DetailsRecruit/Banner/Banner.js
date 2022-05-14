@@ -154,7 +154,7 @@ const Banner = () => {
                           </h6>
                         </ul>
                         <ul>
-                          <li> Cấp bậc: </li>
+                          <li> Chuyên ngành: </li>
                           <h6>
                             {
                               data.find((ele) => ele.id === Number(jobId)).industry
