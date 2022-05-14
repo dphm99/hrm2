@@ -122,6 +122,10 @@
   .jobCategoryItem {
     height: 250px;
   }
+  body {
+    overflow-x: hidden;
+  }
+  
 }
 
 /* -------------------------mobile--------------------- */

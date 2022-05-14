@@ -2,9 +2,6 @@
 .App {
   text-align: center;
 }
-body {
-  overflow-x: hidden;
-}
 
 .App-logo {
   height: 40vmin;
@@ -62,6 +59,7 @@ body {
 
 }
 .rs-picker-menu.rs-picker-check-menu, .rs-picker-menu.rs-picker-select-menu {
+  min-width: 554.797px !important;
   z-index: 998;
 }
 

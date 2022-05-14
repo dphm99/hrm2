@@ -8,9 +8,11 @@ import FormData from "form-data";
 import { RecruitContext } from "../../components/contexts/ContextRecuit";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
 import Header from "../../components/Header/Header";
+import { useHistory } from "react-router-dom";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
+  const history = useHistory();
 
   const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
@@ -59,10 +61,16 @@ function FormRecruit() {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((response) => {
-        alert(response, "Ban da ung tuyen thanh cong");
+        // alert(response, "Ban da ung tuyen thanh cong");
+        setTimeout(function () {
+          history.push("/ung-tuyen-thanh-cong");
+        }, 1000);
       })
       .catch((error) => {
-        alert(error.message);
+        // alert(error.message);
+        setTimeout(function () {
+          history.push("/ung-tuyen-thanh-cong");
+        }, 1000);
       });
   };
 
@@ -80,21 +88,21 @@ function FormRecruit() {
     },
   ];
 
-  let w = window.innerWidth
-  const [header,setHeader] = useState(true)
+  let w = window.innerWidth;
+  const [header, setHeader] = useState(true);
   useEffect(() => {
-    if(w <= 768){
-      setHeader(false)
+    if (w <= 768) {
+      setHeader(false);
     } else {
-      setHeader(true)
+      setHeader(true);
     }
-  },[])
+  }, []);
 
   return (
     <>
       {!header && <Header />}
       {header && <Header2 />}
-      <div className="container" style={{ margin: "286px auto 90px" }}>
+      <div className="container" style={{ margin: "5rem auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
@@ -161,11 +169,12 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
-                  // style={{ display: "none" }}
+                  style={{ display: "none" }}
                 />
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
+                  style={{cursor:"pointer"}}
                 >
                   Tải lên CV của bạn
                 </div>
@@ -185,6 +194,7 @@ function FormRecruit() {
                 // type="submit"
                 onClick={() => handleLogin()}
                 className={`${styles.buttonSubmit} ${styles.active}`}
+                style={{cursor:"pointer"}}
               >
                 Gửi CV
               </div>
