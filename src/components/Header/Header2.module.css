@@ -422,10 +422,10 @@
     border-bottom: 1px solid #e1e1e1;
     width: 720px;
     margin: 0 auto;
-    padding-right: var(--bs-gutter-x, 0.75rem) !important;
-    padding-left: var(--bs-gutter-x, 0.75rem) !important;
     -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
     animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    padding-left: 10px;
+    transition: all 0.3s;
   }
 
   .Header2 {
@@ -448,7 +448,8 @@
   }
 
   .headerMenu li a {
-    font-size: 12px;
+    font-size: 19px;
+    font-weight: 500;
   }
 
   .active.headerMenu li a {

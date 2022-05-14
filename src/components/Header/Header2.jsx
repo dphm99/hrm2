@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
@@ -17,6 +17,8 @@ const Header2 = () => {
     }
   };
   window.addEventListener("scroll", changeBackground);
+
+
   return (
     <>
       <div
