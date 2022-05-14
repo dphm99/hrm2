@@ -56,10 +56,10 @@ function RecruitPosition() {
   // const { getValues } = useForm({
   //   mode: "onChange",
   // });
-const [checkList,setCheckList] = React.useState({
-      gender:"male",
-      status:"singel"
-})
+  const [checkList, setCheckList] = React.useState({
+    gender: "male",
+    status: "singel"
+  })
   const breadcrumItem = [
     {
       href: "/",
@@ -85,15 +85,15 @@ const [checkList,setCheckList] = React.useState({
     } else {
       setHeader(true)
     }
-  },[])
+  }, [])
   return (
     <>
-     {!header && <Header />}
+      {!header && <Header />}
       {header && <Header2 />}
-      <div className="container" style={{ margin: "286px auto 90px" }}>
+      <div className={`${styles.main} container`} style={{ margin: "90px auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div className={`RecruitPosition`}>
-          <Box sx={{ maxWidth: "40%" }}>
+          <Box sx={{ width: "40%" }}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
                 <Step key={step.label}>
@@ -113,15 +113,16 @@ const [checkList,setCheckList] = React.useState({
                     {index === 0 ? (
                       <>
                         <form className={`${styles.FormPosition}`}>
-                          <div className={`${styles.inputRadio}`}>
+                          <div className={`${styles.inputRadio} `}>
                             <div className={`${styles.inputRadioSide}`}>
                               <div className={`${styles.inputRadioItemTitle}`}>
                                 Giới tính
                               </div>
                               <div className={`${styles.inputRadioItems}`}>
                                 <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {...checkList,
-                                    gender:'male'
+                                  {
+                                    ...checkList,
+                                    gender: 'male'
                                   }
                                 )}>
                                   <p>
@@ -142,8 +143,9 @@ const [checkList,setCheckList] = React.useState({
                                   </p>
                                 </div>
                                 <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {...checkList,
-                                    gender:'female'
+                                  {
+                                    ...checkList,
+                                    gender: 'female'
                                   }
                                 )}>
                                   <p>
@@ -164,14 +166,15 @@ const [checkList,setCheckList] = React.useState({
                                 </div>
                               </div>
                             </div>
-                            <div className={`${styles.inputRadioSide}`}>
+                            <div className={`${styles.inputRadioSide} ` }>
                               <div className={`${styles.inputRadioItemTitle}`}>
                                 Tình trạng
                               </div>
                               <div className={`${styles.inputRadioItems}`}>
                                 <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {...checkList,
-                                    status:'singel'
+                                  {
+                                    ...checkList,
+                                    status: 'singel'
                                   }
                                 )}>
                                   <p>
@@ -191,9 +194,10 @@ const [checkList,setCheckList] = React.useState({
                                     </label>
                                   </p>
                                 </div>
-                                <div className={`${styles.inputRadioItem}`}  onClick={() => setCheckList(
-                                  {...checkList,
-                                    status:'married'
+                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
+                                  {
+                                    ...checkList,
+                                    status: 'married'
                                   }
                                 )}>
                                   <p>
@@ -207,7 +211,7 @@ const [checkList,setCheckList] = React.useState({
                                     />
                                     <label
                                       className={styles.labelRadio}
-                                      style={{fontSize: "15px"}}
+                                      style={{ fontSize: "15px" }}
                                       for="married"
                                     >
                                       Đã kết hôn

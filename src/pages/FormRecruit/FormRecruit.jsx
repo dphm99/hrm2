@@ -8,21 +8,26 @@ import FormData from "form-data";
 import { RecruitContext } from "../../components/contexts/ContextRecuit";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
 import Header from "../../components/Header/Header";
+import { useHistory } from "react-router-dom";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
+  const history = useHistory();
+
+  const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
 
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
+  const [fileName, setFileName] = useState('');
   console.log(data);
 
   const inputFileRef = useRef(null);
 
   const onFileChange = (e) => {
     /*Selected files data can be collected here.*/
-    console.log(e.target.files);
+    setFileName(e.target.files[0].name);
   };
   const onBtnClick = () => {
     /*Collecting node-element and performing click*/
@@ -37,7 +42,7 @@ function FormRecruit() {
   const handleLogin = () => {
     const bodyFormData = new FormData();
     const cvv = document.querySelector("#file").files[0];
-    console.log(cvv);
+    console.log(cvv.name);
     bodyFormData.append("user", "2");
     bodyFormData.append("job_id", jobId);
     bodyFormData.append(
@@ -50,6 +55,8 @@ function FormRecruit() {
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
     // console.log(bodyFormData);
+    if(name !== "" && phone !== "" && email !== "" && cvv!==undefined) {
+
     axios({
       method: "POST",
       url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
@@ -57,11 +64,18 @@ function FormRecruit() {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((response) => {
-        alert(response, "Ban da ung tuyen thanh cong");
+        // alert(response, "Ban da ung tuyen thanh cong");
+        setTimeout(function () {
+          history.push("/ung-tuyen-thanh-cong");
+        }, 1000);
       })
       .catch((error) => {
-        alert(error.message);
+        // alert(error.message);
+        setTimeout(function () {
+          history.push("/ung-tuyen-thanh-cong");
+        }, 1000);
       });
+    }
   };
 
   const breadcrumItem = [
@@ -82,15 +96,15 @@ function FormRecruit() {
     if(window.innerWidth <= 768){
       setHeader(false)
     } else {
-      setHeader(true)
+      setHeader(true);
     }
-  },[])
+  }, []);
 
   return (
     <>
       {!header && <Header />}
       {header && <Header2 />}
-      <div className="container" style={{ margin: "286px auto 90px" }}>
+      <div className="container" style={{ margin: "5rem auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
@@ -157,14 +171,17 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
-                  // style={{ display: "none" }}
-                />
+                  accept="image/*,video/*,.pdf,.doc, .docx"
+                  style={{ display: "none" }}
+                /> 
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
+                  style={{cursor:"pointer"}}
                 >
                   Tải lên CV của bạn
                 </div>
+                {fileName }
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -181,6 +198,7 @@ function FormRecruit() {
                 // type="submit"
                 onClick={() => handleLogin()}
                 className={`${styles.buttonSubmit} ${styles.active}`}
+                style={{cursor:"pointer"}}
               >
                 Gửi CV
               </div>

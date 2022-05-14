@@ -7,7 +7,8 @@ import { BlogContext } from "../contexts/ContextBlog";
 import { Link } from "react-router-dom";
 import { toSlug } from "../../components/extensions/toSlug";
 import "./Career.scss";
-import longBanner from "../../assets/img/banner7.jpg";
+import longBanner from "../../assets/img/banner3.jpg";
+// import imgCV from "../../assets/img/icon-svg/banner6.jpg";
 
 function Career() {
   const { data } = useContext(BlogContext);

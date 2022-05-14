@@ -18,6 +18,7 @@ import Index from "./pages/FAQs/index";
 import ScrollToTop from "./components/extensions/scrollToTop";
 import FlowHiring from "./pages/FlowHiring/FlowHiring";
 import Research from "../src/pages/Research/Research"
+import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess"
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -43,6 +44,7 @@ rootElement.render(
             <Route path="/tro-giup" component={Index} />
             <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
             <Route path="/tra-cuu" component={Research} />
+            <Route path="/ung-tuyen-thanh-cong" component={ApplySuccess} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>

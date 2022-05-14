@@ -70,9 +70,9 @@ const Header2 = () => {
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="/dao-tao" activeClassName={styles.selected}>
+                      <a style={{color:"#fff"}} href="http://daotao.diligo.vn" target="_blank" rel="noreferrer" activeClassName={styles.selected}>
                         ĐÀO TẠO
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
                       <NavLink to="/tro-giup" activeClassName={styles.selected}>

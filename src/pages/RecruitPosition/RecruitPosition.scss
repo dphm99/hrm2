@@ -24,18 +24,10 @@
 }
 
 /* -------------------------mobile--------------------- */
-@media only screen and (max-width: 739px) {
+@media only screen and (max-width: 1023px) {
   .RecruitPosition {
     .MuiBox-root {
-      width: 100% ;
+      width: 100%;
     }
   }
-}
-
-/* -------------------------tablets--------------------- */
-@media only screen and (min-width: 740px) and (max-width: 1023px) {
-}
-
-/* -------------------------PC--------------------- */
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
 }

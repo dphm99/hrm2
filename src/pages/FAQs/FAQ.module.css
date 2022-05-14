@@ -46,7 +46,7 @@
 /* -------------------------mobile--------------------- */
 @media only screen and (max-width: 739px) {
   .FAQ {
-    margin-top: 220px;
+    margin-top: 150px;
   }
   .title {
     font-size: 25px;
@@ -60,7 +60,7 @@
 /* -------------------------tablets--------------------- */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
   .FAQ {
-    margin-top: 240px;
+    margin-top: 160px;
   }
   .greeting {
     font-size: 30px;
@@ -71,22 +71,3 @@
     transform: translateX(15px);
   }
 }
-
-/* -------------------------small mobile--------------------- */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-}
-
-/* -------------------------mobile--------------------- */
-@media only screen and (min-width: 481px) and (max-width: 739px) {
-}
-
-/* -------------------------tablets--------------------- */
-@media only screen and (min-width: 740px) and (max-width: 1023px) {
-}
-
-/* -------------------------PC--------------------- */
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
-}
-
-
-
