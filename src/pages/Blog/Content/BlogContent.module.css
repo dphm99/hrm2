@@ -47,7 +47,9 @@
   /* filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
     brightness(92%); */
 }
-
+.Block_img {
+  background-color: #f6f6f6;
+}
 .Block_img img {
   width: 100%;
   border-radius: 3px;
@@ -55,7 +57,6 @@
 
 .Block_H6 {
   margin-top: 10px;
-  margin-left: -30px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -65,7 +66,6 @@
 }
 
 .Block_P {
-  margin-left: -30px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -81,7 +81,6 @@
 }
 
 .Block_A {
-  margin-left: -30px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -101,8 +100,8 @@
 }
 
 .BannerBlockflex {
-  padding-left: 42px;
   background-color: #f6f6f6;
+  padding: 10px;
 }
 
 .BlogPagination {
@@ -163,13 +162,16 @@ ul li {
 
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
+  .main {
+    margin-top: 160px;
+  }
   .wrapNav {
     display: -webkit-box;
     overflow: scroll;
     padding-bottom: 10px;
     gap: 0 10px;
   }
-  .Block_img img{
+  .Block_img img {
     object-fit: contain;
   }
   .content {
@@ -181,5 +183,12 @@ ul li {
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .nav {
     width: 190px;
+  }
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (max-width: 739px) {
+  .wrapper {
+    padding: 0 10px;
   }
 }
