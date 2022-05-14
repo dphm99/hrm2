@@ -20,13 +20,14 @@ function FormRecruit() {
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
+  const [fileName, setFileName] = useState('');
   console.log(data);
 
   const inputFileRef = useRef(null);
 
   const onFileChange = (e) => {
     /*Selected files data can be collected here.*/
-    console.log(e.target.files);
+    setFileName(e.target.files[0].name);
   };
   const onBtnClick = () => {
     /*Collecting node-element and performing click*/
@@ -41,7 +42,7 @@ function FormRecruit() {
   const handleLogin = () => {
     const bodyFormData = new FormData();
     const cvv = document.querySelector("#file").files[0];
-    console.log(cvv);
+    console.log(cvv.name);
     bodyFormData.append("user", "2");
     bodyFormData.append("job_id", jobId);
     bodyFormData.append(
@@ -54,6 +55,8 @@ function FormRecruit() {
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
     // console.log(bodyFormData);
+    if(name !== "" && phone !== "" && email !== "" && cvv!==undefined) {
+
     axios({
       method: "POST",
       url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
@@ -72,6 +75,7 @@ function FormRecruit() {
           history.push("/ung-tuyen-thanh-cong");
         }, 1000);
       });
+    }
   };
 
   const breadcrumItem = [
@@ -169,8 +173,9 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
+                  accept="image/*,video/*,.pdf,.doc, .docx"
                   style={{ display: "none" }}
-                />
+                /> 
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
@@ -178,6 +183,7 @@ function FormRecruit() {
                 >
                   Tải lên CV của bạn
                 </div>
+                {fileName }
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
