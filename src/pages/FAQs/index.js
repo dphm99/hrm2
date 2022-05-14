@@ -41,7 +41,7 @@ function Index() {
             Câu hỏi thường gặp
           </div>
           <div className={`${styles.navItem}`}>
-            Trò chuyện với chúng tôi
+            <a style={{textDecoration:"none", color:"#bf202e",fontWeight:"600"}} href="https://www.facebook.com/tuyendungdiligo">Trò chuyện với chúng tôi</a>
           </div>
         </div>
 

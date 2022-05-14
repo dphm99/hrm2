@@ -1,34 +1,31 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [navbar, setNavbar] = useState(true);
 
-  const [index, setIndex] = useState(0); 
-
-   const [navbar,setNavbar] = useState(true);
-
-   const changeBackground = () => {
-     if(window.screenY >= 0){
-       setNavbar(true);
-
-     }else {
-       setNavbar(false);
-     }
-    // console.log(window.screenY);
-   }
-   window.addEventListener('scroll', changeBackground)
+  const changeBackground = () => {
+    if (window.screenY >= 0) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
   return (
     <>
-      <div className= {
-        navbar
-       ? `${styles.headerWrapper} ${styles.activeNav}`
-       : `${styles.headerWrapper}`
-        }>
+      <div
+        className={
+          navbar
+            ? `${styles.headerWrapper} ${styles.activeNav}`
+            : `${styles.headerWrapper}`
+        }
+      >
         <div className={styles.Header2}>
           <div className={styles.headerBox}>
             <div className="container">
@@ -39,9 +36,9 @@ const Header2 = () => {
                     : `${styles.header} row`
                 }
               >
-                <a href="/" className={`${styles.headerLogo} col-3`}>
+                <Link to="/" className={`${styles.headerLogo} col-3`}>
                   <img src={logo} alt="" className={styles.logoImg} />
-                </a>
+                </Link>
                 <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
                   <ul
                     className={
@@ -49,59 +46,36 @@ const Header2 = () => {
                         ? `${styles.headerMenu} ${styles.active} col-9`
                         : `${styles.headerMenu} col-9`
                     }
-                    // onClick={() => {
-                    //   setToggleMenu(toggleMenu);
-                    // }}
                   >
-                    <li
-                    >
-                      <NavLink 
-                      to="/" 
-                      data-path=""
-                      className={styles.item__link} 
-                      >TRANG CHỦ</NavLink>
+                    <li>
+                      <NavLink to='/'>TRANG CHỦ</NavLink>
                     </li>
-                    <li
-                      // className={ 1 === index ? `${styles.active}` : ``}
-                      // onClick={() => {
-                      //   setIndex(1);
-                      // }}
-                    >
-                      <NavLink  
-                      data-path=""
-                      className={styles.item__link}
-                      activeClassName={styles.selected}
-                      to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
+                    <li>
+                      <NavLink
+                        activeClassName={styles.selected}
+                        to="/tuyen-dung"
+                      >
+                        VỊ TRÍ TUYỂN DỤNG
+                      </NavLink>
                     </li>
 
-                    <li
-                    >
-
-                      <NavLink  
-                      data-path=""
-                      className={styles.item__link} to="/dinh-huong-nghe-nghiep"
-                      activeClassName={styles.selected}>
-
+                    <li>
+                      <NavLink
+                        to="/dinh-huong-nghe-nghiep"
+                        activeClassName={styles.selected}
+                      >
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
-                    <li
-                    >
-                      <NavLink 
-                      data-path=""
-                      className={styles.item__link} to="/dao-tao" 
-                      activeClassName={styles.selected}>ĐÀO TẠO</NavLink>
+                    <li>
+                      <NavLink to="/dao-tao" activeClassName={styles.selected}>
+                        ĐÀO TẠO
+                      </NavLink>
                     </li>
-                    <li
-                      // className={4 === index ? `${styles.active}` : ``}
-                      
-                    >
-                      <NavLink 
-                      data-path=""
-                      className={styles.item__link} to="/tro-giup" 
-                      activeClassName="selected"
-                      >
-                        TRỢ GIÚP</NavLink>
+                    <li>
+                      <NavLink to="/tro-giup" activeClassName={styles.selected}>
+                        TRỢ GIÚP
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
@@ -124,7 +98,7 @@ const Header2 = () => {
           </div>
         </div>
         <div className={styles.Header3}>
-          <img src={banner} alt='/' className={`w-100`}/>
+          <img src={banner} alt="/" className={`w-100`} />
         </div>
       </div>
     </>

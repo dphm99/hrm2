@@ -21,7 +21,6 @@ function Career() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-
     responsive: [
       {
         breakpoint: 1024,
@@ -113,7 +112,7 @@ function Career() {
           </Slider>
         </div>
         <div className={styles.Career__banner}>
-          <img src={longBanner} alt='/'/>
+          <img src={longBanner} alt="/" />
         </div>
       </div>
     </>

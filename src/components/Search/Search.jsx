@@ -2,14 +2,22 @@ import React, { useState, useEffect } from "react";
 import styles from "./Search.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select'; 
+
 
 function Search() {
+
+  const [age, setAge] = React.useState('');
+
+  const handleChangeLocations = (event) => { 
+    setAge(event.target.value);
+  };
+
   const [userInput, setUserInput] = useState("");
   const [city, setCity] = useState([]);
-  const [currentCity, setCurrentCity] = useState("");
-  const changeCity = (city) => {
-    setCurrentCity(city);
-  };
+
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
@@ -46,12 +54,28 @@ function Search() {
           </div>
           <div
             className={styles.SelectWrapper}
-            style={{ position: "relative" }}
+            style={{ position: "relative",height: "48px",backgroundColor: "#fff",position:'relative'}}
           >
             <LocationOnIcon
               style={{ position: "absolute", color: "#ccc", margin: "4px" }}
             />
-            <select
+            <FormControl variant="filled" sx={{ m: 1, minWidth: 120,maxHeight: 100 }}>
+        {/* <InputLabel id="demo-simple-select-filled-label">Tìm việc theo vị trí</InputLabel> */}
+        {age ==='' && <h4 style={{color:"rgb(0, 0, 0,0.4)",fontSize:"16px",position:'absolute',top:'15px'}}>Tìm việc theo vị trí</h4>}
+        
+        <Select
+          labelId="demo-simple-select-filled-label"
+          id="demo-simple-select-filled"
+          value={age}
+          onChange={handleChangeLocations}
+          name="city"
+        > 
+        {city.map((ele, index)=> {
+          return <MenuItem key={index} value={ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}>{ele.name.replace("Tỉnh ", "").replace("Thành phố ", "")}</MenuItem>
+        })} 
+        </Select>
+      </FormControl>
+            {/* <select
               name="city"
               className="selectpicker"
               id="cities"
@@ -73,7 +97,8 @@ function Search() {
                     {e.name.replace("Tỉnh ", "").replace("Thành phố ", "")}
                   </option>
                 ))}
-            </select>
+            </select> */}
+            
           </div>
           <button type="submit">Tìm kiếm</button>
         </div>

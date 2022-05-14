@@ -345,6 +345,11 @@
     font-size: 15px;
   }
 
+  .Header3 img {
+    width: 100%;
+    margin-top: -70px;
+  }
+
   .logoImg {
     width: 10rem;
     padding-left: 39px;
@@ -386,6 +391,11 @@
     height: 80px;
     align-items: center;
   }
+
+  .Header3 img {
+    width: 100%;
+    margin-top: -17px;
+  }
 }
 
 @media screen and (min-width: 2560px) and (max-width: 2600px) {
@@ -401,25 +411,40 @@
 @media screen and (max-width: 425px) {
   .Header3 img {
     width: 100%;
-    margin-top: -5px;
+    margin-top: -85px;
+  }
+
+  ul li {
+    padding-top: 0px;
+  }
+
+  .active.headerMenu li {
+    border-bottom: 1px solid #e1e1e1;
+    width: 720px;
+    margin: 0 auto;
+    padding-right: var(--bs-gutter-x, 0.75rem) !important;
+    padding-left: var(--bs-gutter-x, 0.75rem) !important;
+    -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 
   .Header2 {
-    height: 25px;
+    height: 60px;
   }
 
   .logoImg {
-    width: 68%;
-    margin-top: -25px;
+    width: 100%;
+    margin-top: 9px;
   }
 
   .menu_icon{
     font-size: 2rem !important;
-    margin-top: -87px;
+    margin-top: -73px;
   }
 
   .headerMenu {
-    margin-top: -9px;
+    margin-top: 0px;
+    box-shadow: 0px 1px #e1e1e1;
   }
 
   .headerMenu li a {

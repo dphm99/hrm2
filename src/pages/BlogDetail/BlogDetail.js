@@ -9,7 +9,6 @@ function BlogDetail() {
   const blogIndex = window.location.hash.split("#")[1];
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
-  console.log(data);
   const breadcrumItem = [
     {
       href: "/",
@@ -25,9 +24,7 @@ function BlogDetail() {
 
     {
       href: "/",
-      title: 
-      data.find((ele) => ele.id ===  blogId) &&
-      `${data.find((ele) => ele.id ===  blogId).title}`,
+      title: data.find((ele) => ele.id === Number(blogId)) && data.find((ele) => ele.id === Number(blogId)).title,
       isActive: true,
     },
   ];
@@ -39,20 +36,20 @@ function BlogDetail() {
           breadItem={breadcrumItem}
           className={`${styles.Breadcrumbs}`}
         />
-        {data[blogIndex] && (
+        {data.find((ele) => ele.id === Number(blogId)) && (
           <>
             <div className={`row`}>
               <h1
                 className={`${styles.title} col-xl-8 col-lg-8`}
                 style={{ margin: `5rem 0` }}
               >
-                {data[blogIndex].title}
+                {data.find((ele) => ele.id === Number(blogId)).title}
               </h1>
             </div>
             <div className={`row`}>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[blogIndex].content,
+                  __html: data.find((ele) => ele.id === Number(blogId)).title,
                 }}
                 className={`${styles.content} col-xl-8 col-lg-8`}
               ></div>

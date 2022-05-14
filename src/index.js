@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { RecruitProvider } from "./components/contexts/ContextRecuit";
@@ -15,12 +15,14 @@ import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import RecruitPosition from "./pages/RecruitPosition/RecruitPosition";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import Index from "./pages/FAQs/index";
-import ScrollToTop from "./components/extensions/scrollToTop"
+import ScrollToTop from "./components/extensions/scrollToTop";
+import FlowHiring from "./pages/FlowHiring/FlowHiring";
+import Research from "../src/pages/Research/Research"
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
+const rootElement = createRoot(document.getElementById("root"));
+rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
       <BlogProvider>
@@ -39,12 +41,13 @@ ReactDOM.render(
             <Route exact path="/ung-tuyen/" component={FormRecruit} />
             <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
             <Route path="/tro-giup" component={Index} />
+            <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
+            <Route path="/tra-cuu" component={Research} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
         <ScrollToTop />
       </BlogProvider>
     </RecruitProvider>
-  </BrowserRouter>,
-  rootElement
+  </BrowserRouter>
 );

@@ -1,6 +1,6 @@
 .SearchBox {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   z-index: 998;
   transform: translateY(100%) translateX(-50%);
@@ -48,6 +48,7 @@
   height: 72px;
   padding: 8px 12px;
   font-size: 1rem;
+  border-radius: 15px;
 }
 
 .SelectWrapper select option {

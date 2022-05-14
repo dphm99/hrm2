@@ -15,29 +15,37 @@
     object-fit: cover;
     object-position: 100% 100%;
 }
+/* -------------------------small mobile--------------------- */
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-    
+@media only screen and (max-width: 480px) {
+    .Career2_box {
+        padding: 0 !important;
+    }
+    .Career2_img {
+        justify-content: center;
+    }
+    .Career2_img img {
+        width: 49vw;
+    }
 }
 
 /* -------------------------mobile--------------------- */
-@media only screen and (max-width: 739px) {
+@media only screen and (max-width: 481px) and (max-width: 739px) {
     .Career2_img img {
-        width: 40vw;
+        width: 49vw;
         object-fit: contain;
         float: left;
     }
 
     .Career2_img {
-        width: 100%!important;
+        width: 100% !important;
         height: unset;
     }
 
     .Career2_box {
-        width: 50%!important;
+        width: 50% !important;
         float: left;
     }
-
 }
 
 /* -------------------------tablets--------------------- */
@@ -50,10 +58,8 @@
     /* .Career2_img {
         height: unset;
     } */
-
 }
 
 /* -------------------------PC--------------------- */
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
-  
 }

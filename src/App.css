@@ -37,3 +37,52 @@
     transform: rotate(360deg);
   }
 }
+.MuiSelect-select {
+  padding:0 !important;
+  height:48px !important;
+  background-color: transparent !important; 
+}
+.MuiFormControl-root {
+  margin: 0 0 0 45px !important;
+  width: calc(100% - 45px) !important;
+}
+.MuiFilledInput-root::before {
+  border:none !important;
+}
+.MuiInputBase-colorPrimary:after { 
+  border-bottom:none !important;
+}
+.Mui-focused {
+  background-color: transparent !important;
+}
+.MuiInputLabel-root {
+  color:"#c03b47" !important;
+}
+.MuiFilledInput-input {
+  display: flex !important;
+  align-items: center !important;
+}
+.MuiSelect-iconFilled {
+  top:5px !important;
+}
+.MuiMenu-list {
+  max-height: 300px !important;
+}
+.MuiPaper-root::-webkit-scrollbar {
+  width: 10px;
+}
+.MuiPaper-root::-webkit-scrollbar-track {
+  background: #ddd;
+}
+.MuiPaper-root::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 30px;
+}
+.MuiPaper-root::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-light);
+  border-radius: 30px;
+}
+.MuiFilledInput-root {
+  background-color:transparent !important;
+} 
+ 

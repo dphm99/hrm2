@@ -11,11 +11,9 @@ import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [index, setIndex] = useState(0);
   return (
     <div className={styles.headerWrapper}>
-      <div className={styles.topHeader}>
-      </div>
+      <div className={styles.topHeader}></div>
       <div className={styles.headerBox}>
         <div className="container">
           <div
@@ -36,59 +34,34 @@ function Header() {
                     : ` ${styles.headerMenu} col-lg-12 col-md-12 col-sm-12`
                 }
               >
-                <li
-                className={0 === index ? `${styles.activeIndex}` : ``}
-                onClick={() => {
-                  setIndex(0);
-                }}
-                >
-                  <NavLink className="navbar-item" to="/">
+                <li>
+                  <NavLink to="/">
                     TRANG CHỦ
                   </NavLink>
                 </li>
-                <li 
-                className={1 === index ? `${styles.active}` : ``}
-                onClick={() => {
-                  setIndex(1);
-                }}>
-                  <NavLink className="navbar-item" to="/tuyen-dung">
+                <li>
+                  <NavLink to="/tuyen-dung">
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
                 </li>
-                <li
-                className={2 === index ? `${styles.active}` : ``}
-                onClick={() => {
-                  setIndex(2);
-                }}
-                >
-                  <NavLink className="navbar-item" to="/dinh-huong-nghe-nghiep">
+                <li>
+                  <NavLink to="/dinh-huong-nghe-nghiep">
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
-                <li 
-                className={3 === index ? `${styles.active}` : ``}
-                onClick={() => {
-                  setIndex(3);
-                }}
-                >
-                  <NavLink
-                    className="navbar-item"
-                    to="/dao-tao"
-                  >
+                <li>
+                  <NavLink to="/dao-tao">
                     ĐÀO TẠO
                   </NavLink>
                 </li>
-                <li
-                className={4 === index ? `${styles.active}` : ``}
-                onClick={() => {
-                  setIndex(4);
-                }}
-                >
-                  <NavLink className="navbar-item" to="/tro-giup">
+                <li>
+                  <NavLink to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
                 </li>
-                <li className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}>
+                <li
+                  className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}
+                >
                   <form action="/tuyen-dung/" className={styles.formInputMb}>
                     <input
                       type="text"

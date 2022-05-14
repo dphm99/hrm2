@@ -19,54 +19,61 @@ const RecruitBlog = () => {
           className="card-header py-3"
           style={{ borderBottom: `solid 1px #ddd` }}
         >
-          <h5 className={`${styles.title}  my-0 `}><strong>TIN TUYỂN DỤNG NỔI BẬT</strong></h5>
+          <h5 className={`${styles.title}  my-0 `}>
+            <strong>TIN TUYỂN DỤNG NỔI BẬT</strong>
+          </h5>
         </div>
-        {data && data.map((e, index) => {
-          if (index < 5) {
-            return (
-              <div className={`${styles.block} card-header py-3`} key={index}>
-                <div
-                  className={`row d-flex`}
-                  style={{
-                    fontSize: `18px`,
-                  }}
-                >
-                  <Link 
-                  to={{
-                    pathname: `/tuyen-dung/${toSlug(e.name.name)}`,
-                      search: `#${index}#${e.id}`,
-                  }}
-                  className={`${styles.jobName} my-0 col-8`}>
-                    {e.name.name}
-                  </Link>
-                  <p className={`${styles.deadLine}  col-4`}>
-                    {e.deadline
-                    .split('-')
-                    .reverse()
-                    .join('/')}
-                    </p>
-                </div>
-
-                <div className={`row d-flex`}>
-                  <p className={`${styles.address}  col-8`}>{e.address.name}</p>
-                  <Link
+        {data &&
+          data
+            .filter((e) => e.status === true)
+            .map((e, index) => {
+              if (index < 5) {
+                return (
+                  <div
+                    className={`${styles.block} card-header py-3`}
                     key={index}
-                    to={{
-                      pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
-                      search: `#${index}#${e.id}`,
-                    }}
-                    className={`col-4 ${styles.link}`}
+                  >
+                    <div
+                      className={`row d-flex`}
+                      style={{
+                        fontSize: `18px`,
+                      }}
+                    >
+                      <Link
+                        to={{
+                          pathname: `/tuyen-dung/${toSlug(e.name.name)}`,
+                          search: `#${index}#${e.id}`,
+                        }}
+                        className={`${styles.jobName} my-0 col-8`}
+                      >
+                        {e.name.name}
+                      </Link>
+                      <p className={`${styles.deadLine}  col-4`}>
+                        {e.deadline.split("-").reverse().join("/")}
+                      </p>
+                    </div>
 
-                  >ỨNG TUYỂN
-                  </Link>
-                </div>
-              </div>
-            );
-          }
-          else {
-            return false;
-          }
-        })}
+                    <div className={`row d-flex`}>
+                      <p className={`${styles.address}  col-8`}>
+                        {e.address.name}
+                      </p>
+                      <Link
+                        key={index}
+                        to={{
+                          pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
+                          search: `#${index}#${e.id}`,
+                        }}
+                        className={`col-4 ${styles.link}`}
+                      >
+                        ỨNG TUYỂN
+                      </Link>
+                    </div>
+                  </div>
+                );
+              } else {
+                return false;
+              }
+            })}
       </div>
     </>
   );
