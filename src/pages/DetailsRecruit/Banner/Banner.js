@@ -29,16 +29,18 @@ const Banner = () => {
   const currentURL = window.location.href
 
   const [copySuccess, setCopySuccess] = useState("");
+  const [copied, setCopied] = useState(false);
 
   // your function to copy here
 
-  const copyToClipBoard = async (copyMe) => {
-    try {
-      await navigator.clipboard.writeText(copyMe);
-      setCopySuccess("Đã lưu");
-    } catch (err) {
-      setCopySuccess("Đã xảy ra lỗi");
-    }
+  function copy() {
+    const el = document.createElement("input");
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    setCopied(true);
   };
 
   const currentCategory =
@@ -261,7 +263,7 @@ const Banner = () => {
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
-                        <button onClick={() => copyToClipBoard(currentURL)}>Copy link</button>
+                        <button onClick={copy}>{!copied ? "Copy link" : "Đã copy!"}</button>
                         {copySuccess}
                       </div>
                       <div className={`${styles.detailsIcon} `}>
