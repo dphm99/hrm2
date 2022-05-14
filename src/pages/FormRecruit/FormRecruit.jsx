@@ -17,7 +17,7 @@ function FormRecruit() {
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
-  // console.log(data);
+  console.log(data);
 
   const inputFileRef = useRef(null);
 
@@ -29,6 +29,11 @@ function FormRecruit() {
     /*Collecting node-element and performing click*/
     inputFileRef.current.click();
   };
+  // React.useEffect(() => {
+  //   if(name !== '' && phone !=="" && email!=="") {
+  //     handleLogin()
+  //   }
+  // },[])
 
   const handleLogin = () => {
     const bodyFormData = new FormData();
@@ -45,7 +50,7 @@ function FormRecruit() {
     bodyFormData.append("phone", phone);
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
-    console.log(bodyFormData);
+    // console.log(bodyFormData);
     axios({
       method: "POST",
       url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
@@ -164,13 +169,13 @@ function FormRecruit() {
                   name="url"
                 />
               </div>
-              <button
-                type="submit"
-                onClick={handleLogin}
+              <div
+                // type="submit"
+                onClick={() => handleLogin()}
                 className={`${styles.buttonSubmit} ${styles.active}`}
               >
                 Gửi CV
-              </button>
+              </div>
               <div>
                 Không có CV,{" "}
                 <a href={filesCV} download>
