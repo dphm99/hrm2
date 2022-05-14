@@ -54,6 +54,8 @@ function FormRecruit() {
     bodyFormData.append("email", email);
     bodyFormData.append("cv", cvv);
     // console.log(bodyFormData);
+    if(name !== "" && phone !== "" && email !== "" && cvv!==undefined) {
+
     axios({
       method: "POST",
       url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
@@ -72,6 +74,7 @@ function FormRecruit() {
           history.push("/ung-tuyen-thanh-cong");
         }, 1000);
       });
+    }
   };
 
   const breadcrumItem = [
@@ -169,6 +172,7 @@ function FormRecruit() {
                   ref={inputFileRef}
                   onChange={onFileChange}
                   name="file"
+                  accept="image/*,video/*,.pdf,.doc, .docx"
                   style={{ display: "none" }}
                 />
                 <div
