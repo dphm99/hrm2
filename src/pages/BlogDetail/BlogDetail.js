@@ -60,7 +60,7 @@ function BlogDetail() {
             <div className={`row`}>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.find((ele) => ele.id === Number(blogId)).title,
+                  __html: data.find((ele) => ele.id === Number(blogId)).content,
                 }}
                 className={`${styles.content} col-xl-8 col-lg-8`}
               ></div>
