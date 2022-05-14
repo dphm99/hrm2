@@ -145,7 +145,7 @@ export default function BlogContent() {
                                 {e.quiz_ids.name}
                               </p>
 
-                              <p style={{ color: `#000` }}>- 2.500 lượt xem</p>
+                              {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
                             </div>
                           </div>
                         </div>
