@@ -23,21 +23,21 @@
 
 /* -------------------------mobile--------------------- */
 @media only screen and (max-width: 739px) {
-    .Career2_img img {
+    /* .Career2_img img {
         width: 40vw;
         object-fit: contain;
         float: left;
-    }
+    } */
 
     .Career2_img {
         width: 100%!important;
         height: unset;
     }
-
+/* 
     .Career2_box {
         width: 50%!important;
         float: left;
-    }
+    } */
 
 }
 
