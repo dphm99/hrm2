@@ -14,9 +14,14 @@
     background-color: #b7b7b7;
   }
   .formRecruit {
-    margin: 90px auto 16px;
+    margin: 90px auto ;
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-end;
+  }
+  .formInfo{
+    margin: 90px auto ;
+    display: flex;
+    justify-content:flex-start;
   }
   .inputField {
     width: 100%;
@@ -40,8 +45,8 @@
   .Recruit form {
     width: 490px;
     text-align: center;
-    margin: 0 auto;
-    background-color: #f3f3f3;
+    margin: 0 ;
+    background-color: #fff;
     padding: 40px;
     box-shadow: rgb(155 168 165 / 20%) 0px 4px 21px;
     border: none;
@@ -51,8 +56,21 @@
       text-align: center
   }
   .containALl{
-      background-image: url("https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg") ;
-      background-repeat: no-repeat;
+    background-color: #fcfcfc;
       margin-bottom: -48px;
       padding-bottom: 40px;
   }
+  .titleInfo{
+    text-align: justify;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.9rem;
+  }
+  .higlight_text{
+    color:#bf202e;
+    font-weight: 700;
+  }
+.higlight_light{
+  color:#bf202e;
+  font-weight: 300;
+}
