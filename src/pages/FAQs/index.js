@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./FAQ.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
@@ -6,6 +6,7 @@ import Accordition from "./Accordion/Accordion";
 // import Card from "./Card";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import "./custom.scss";
+import Header from "../../components/Header/Header";
 
 function Index() {
   const breadcrumItem = [
@@ -22,9 +23,22 @@ function Index() {
     },
   ];
 
+  let w = window.innerWidth
+  const [header,setHeader] = useState(true)
+  useEffect(() => {
+    if(w <= 768){
+      setHeader(false)
+    } else {
+      setHeader(true)
+    }
+  },[])
+
   return (
+    <>
+     {!header && <Header />}
+      {header && <Header2 />}
     <div className={`${styles.FAQ} FAQs`}>
-      <Header2 />
+      
       <Breadcrumbs
         breadItem={breadcrumItem}
       />
@@ -55,7 +69,7 @@ function Index() {
         </div>
       </div>
       <Footer />
-    </div>
+    </div></>
   );
 }
 

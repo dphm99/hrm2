@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import styles from "./FormRecruit.module.css";
 import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
@@ -7,6 +7,7 @@ import axios from "axios";
 import FormData from "form-data";
 import { RecruitContext } from "../../components/contexts/ContextRecuit";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
+import Header from "../../components/Header/Header";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
@@ -79,9 +80,20 @@ function FormRecruit() {
     },
   ];
 
+  let w = window.innerWidth
+  const [header,setHeader] = useState(true)
+  useEffect(() => {
+    if(w <= 768){
+      setHeader(false)
+    } else {
+      setHeader(true)
+    }
+  },[])
+
   return (
     <>
-      <Header2 />
+      {!header && <Header />}
+      {header && <Header2 />}
       <div className="container" style={{ margin: "286px auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>

@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
 import banner from "../../assets/img/icon-svg/banner.jpg";
 import { NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
+import { Link } from "react-router-dom";
 const Header2 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [navbar, setNavbar] = useState(true);
 
-  const [index, setIndex] = useState(0);
+  const changeBackground = () => {
+    if (window.screenY >= 0) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
+
 
   return (
     <>
-      <div className={styles.headerWrapper}>
+      <div
+        className={
+          navbar
+            ? `${styles.headerWrapper} ${styles.activeNav}`
+            : `${styles.headerWrapper}`
+        }
+      >
         <div className={styles.Header2}>
           <div className={styles.headerBox}>
             <div className="container">
@@ -22,9 +38,9 @@ const Header2 = () => {
                     : `${styles.header} row`
                 }
               >
-                <a href="/" className={`${styles.headerLogo} col-3`}>
+                <Link to="/" className={`${styles.headerLogo} col-3`}>
                   <img src={logo} alt="" className={styles.logoImg} />
-                </a>
+                </Link>
                 <div className={`d-flex  ${styles.menu_show} col-lg-9`}>
                   <ul
                     className={
@@ -32,58 +48,36 @@ const Header2 = () => {
                         ? `${styles.headerMenu} ${styles.active} col-9`
                         : `${styles.headerMenu} col-9`
                     }
-                    onClick={() => {
-                      setToggleMenu(toggleMenu);
-                    }}
                   >
-                    <li
-                      className={0 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(0);
-                      }}
-                    >
-                      <NavLink to="/">TRANG CHỦ</NavLink>
+                    <li>
+                      <NavLink to='/'>TRANG CHỦ</NavLink>
                     </li>
-                    <li
-                      className={1 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(1);
-                      }}
-                    >
-                      <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
+                    <li>
+                      <NavLink
+                        activeClassName={styles.selected}
+                        to="/tuyen-dung"
+                      >
+                        VỊ TRÍ TUYỂN DỤNG
+                      </NavLink>
                     </li>
 
-                    <li
-                      className={2 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(2);
-                      }}
-                    >
-                      <NavLink to="/dinh-huong-nghe-nghiep">
+                    <li>
+                      <NavLink
+                        to="/dinh-huong-nghe-nghiep"
+                        activeClassName={styles.selected}
+                      >
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
-                    <li
-                      className={3 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(3);
-                      }}
-                    >
-                      <a
-                        href="http://daotao.diligo.vn"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
+                    <li>
+                      <NavLink to="/dao-tao" activeClassName={styles.selected}>
                         ĐÀO TẠO
-                      </a>
+                      </NavLink>
                     </li>
-                    <li
-                      className={4 === index ? `${styles.active}` : ``}
-                      onClick={() => {
-                        setIndex(4);
-                      }}
-                    >
-                      <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
+                    <li>
+                      <NavLink to="/tro-giup" activeClassName={styles.selected}>
+                        TRỢ GIÚP
+                      </NavLink>
                     </li>
                   </ul>
                 </div>

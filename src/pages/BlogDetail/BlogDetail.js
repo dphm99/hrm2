@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./BlogDetail.module.css";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import { BlogContext } from "../../components/contexts/ContextBlog";
 import Header2 from "../../components/Header/Header2";
 import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
+import Header from "../../components/Header/Header";
 function BlogDetail() {
   const blogIndex = window.location.hash.split("#")[1];
   const blogId = window.location.hash.split("#")[2];
@@ -24,13 +25,26 @@ function BlogDetail() {
 
     {
       href: "/",
-      title: data.find((ele) => ele.id === Number(blogId)) && data.find((ele) => ele.id === Number(blogId)).title,
+      title:
+        data.find((ele) => ele.id === Number(blogId)) &&
+        data.find((ele) => ele.id === Number(blogId)).title,
       isActive: true,
     },
   ];
+
+  let w = window.innerWidth;
+  const [header, setHeader] = useState(true);
+  useEffect(() => {
+    if (w <= 768) {
+      setHeader(false);
+    } else {
+      setHeader(true);
+    }
+  }, []);
   return (
     <div className={``}>
-      <Header2 />
+      {!header && <Header />}
+      {header && <Header2 />}
       <div className={`${styles.main} container-lg`}>
         <Breadcrumbs
           breadItem={breadcrumItem}

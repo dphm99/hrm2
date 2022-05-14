@@ -11,28 +11,9 @@ import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);
-
   return (
     <div className={styles.headerWrapper}>
-      <div className={styles.topHeader}>
-        {/* <ul className={styles.icon}>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-          <li>
-            <img src="../../assets/img/FacebookMini Icon.png" alt="" />
-          </li>
-        </ul> */}
-      </div>
+      <div className={styles.topHeader}></div>
       <div className={styles.headerBox}>
         <div className="container">
           <div
@@ -54,36 +35,33 @@ function Header() {
                 }
               >
                 <li>
-                  <NavLink className="navbar-item" to="/">
+                  <NavLink to="/">
                     TRANG CHỦ
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navbar-item" to="/tuyen-dung">
+                  <NavLink to="/tuyen-dung">
                     VỊ TRÍ TUYỂN DỤNG
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navbar-item" to="/dinh-huong-nghe-nghiep">
+                  <NavLink to="/dinh-huong-nghe-nghiep">
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
                 <li>
-                  <a
-                    className="navbar-item"
-                    href="http://daotao.diligo.vn"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <NavLink to="/dao-tao">
                     ĐÀO TẠO
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navbar-item" to="/tro-giup">
+                  <NavLink to="/tro-giup">
                     TRỢ GIÚP
                   </NavLink>
                 </li>
-                <li className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}>
+                <li
+                  className={`d-block d-lg-none d-sm-block ${styles.active} ${styles.searchMb}`}
+                >
                   <form action="/tuyen-dung/" className={styles.formInputMb}>
                     <input
                       type="text"
