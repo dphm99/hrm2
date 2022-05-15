@@ -184,7 +184,7 @@ export default function BlogContent() {
               if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
                 return e
               }
-            }).length > 0 && (
+            }).length > 5 && (
               <div className="d-flex">
                 <button
                   className={`${styles.showMore}`}
