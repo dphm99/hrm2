@@ -13,7 +13,7 @@ import { toSlug } from "../extensions/toSlug";
 import { Link } from "react-router-dom";
 function Vancancies() {
   const [active] = useState(false);
-  const { data } = useContext(RecruitContext); 
+  const { data } = useContext(RecruitContext);
 
   const jobCategory = [
     {
@@ -44,7 +44,7 @@ function Vancancies() {
       img: nhaphanphoi,
       short: "nhaphanphoi",
     },
-  ]; 
+  ];
   return (
     <div className={styles.Vancancies}>
       <div className="container">
@@ -94,24 +94,20 @@ function Vancancies() {
                       </p>
                       <p className={styles.vancancieSalary}>
                         {/* {formatNumber(vancancies.minSalary, 0, ",", ".")} -{" "} */}
-
+                        {console.log(vancancies.salary)}
                         {vancancies.salary[0] !== "ltt" ? (
                           <>
                             Từ{" "}
-                            {formatNumber(
-                              vancancies.salary.split(" - ")[0].slice(0, -4),
-                              0,
-                              ",",
-                              "."
-                            )}{" "}
-                            -{" "}
-                            {formatNumber(
-                              vancancies.salary.split(" - ")[1].slice(0, -4),
-                              0,
-                              ",",
-                              "."
-                            )}{" "}
-                            {vancancies.salary.slice(-4)}
+                            {
+                              (vancancies.salary.split(" - ")[0].slice(0, -4) * 23000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                            }{" "}
+                            -
+                            {" "}
+                            {
+                              (vancancies.salary.split(" - ")[1].slice(0, -4) * 23000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                            }{" "}
+                            ++VNĐ
+
                           </>
                         ) : (
                           "Lương thoả thuận"
@@ -123,7 +119,7 @@ function Vancancies() {
               ))}
         </div>
         <div className={styles.overlay}>
-          <button  className={styles.vancanciesBtn}>
+          <button className={styles.vancanciesBtn}>
             <Link to="/tuyen-dung">Xem thêm</Link>
           </button>
         </div>

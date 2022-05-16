@@ -1,7 +1,6 @@
 .Vancancies {
   background-color: #eeeeee;
   padding: 16px 0 14px 0;
-
 }
 .vancancieImage {
   width: 64px;
@@ -16,6 +15,7 @@
 
 .vancanciesGroup {
   align-items: center;
+  background-color: #fff;
 }
 .vancanciesGroup:hover {
   color: #bf202e;
@@ -66,6 +66,7 @@
 .vancanciesText {
   overflow: hidden;
   margin-top: 16px;
+  flex: 1;
 }
 .containerImage {
   padding: 0 13px;
@@ -90,7 +91,7 @@
   color: #000;
   text-decoration: none;
 }
-.vancanciesBtn a:hover{
+.vancanciesBtn a:hover {
   color: #000;
   text-decoration: none;
 }
@@ -99,7 +100,7 @@
   padding: 12px 0;
   top: -34px;
   background: #eeeeee;
-  box-shadow: 0px -16px 12px 13px rgba(238, 238, 238,0.9);
+  box-shadow: 0px -16px 12px 13px rgba(238, 238, 238, 0.9);
   margin-top: -20px;
   border-radius: 4px;
 }
