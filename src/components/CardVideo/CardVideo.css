@@ -2,8 +2,7 @@
     position: relative;
     display: block;
     width: 100%;
-    overflow: hidden;
-    margin-bottom: 30px;
+    overflow: hidden; 
     border-radius: 0.5rem;
     background: #ffffff;
     color:#242525; 
@@ -17,7 +16,7 @@
 .crs_grid_thumb {
     position: relative;
     padding: 10px; 
-    background: #ffffff;
+    background: #d01c1c;
     min-height: 150px;
 }
 .crs_grid_thumb .crs_detail_link {

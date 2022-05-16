@@ -121,7 +121,7 @@ function FormRecruit() {
     <>
       {!header && <Header />}
       {header && <Header2 />}
-      <div className="container" style={{ margin: "5rem auto 90px" }}>
+      <div className="container" style={{ margin: "1rem auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
           <h3>Bạn đang ứng tuyển vị trí</h3>
@@ -196,9 +196,15 @@ function FormRecruit() {
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer" }}
                 >
-                  Tải lên CV của bạn
+                 Đính kèm file CV của bạn
                 </div>
                 {fileName}
+              </div><div>
+             <p className='m-0'> {`hoặc sử dụngform CV của Diligo`} </p>
+             <p  className='mt-1'> {`Ấn `}
+                <a href={filesCV} style={{color:"#c50c0c",textDecoration:'none'}} download>
+                vào đây 
+                </a>  để tải về</p>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -218,7 +224,7 @@ function FormRecruit() {
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer" }}
                 >
-                  Gửi CV
+                 ỨNG TUYỂN
                 </div>
               ) : (
                 <div
@@ -226,15 +232,10 @@ function FormRecruit() {
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer", backgroundColor: "#d7cfcf" }}
                 >
-                  Gửi CV
+                 ỨNG TUYỂN
                 </div>
               )}
-              <div>
-                Không có CV,{" "}
-                <a href={filesCV} download>
-                  Tải ngay
-                </a>
-              </div>
+              
               {/* <div className={styles.noCV}>
                 <a href={filesCV}  download>
                   Tải CV tiêu chuẩn của Diligo

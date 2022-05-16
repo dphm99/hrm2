@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import styles from "./JobRecruit.module.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -11,9 +11,14 @@ import { Link } from "react-router-dom";
 
 function Category({ category, address, industry }) {
   const [job, setJob] = useState(0);
+  const [expanded, setExpanded] = React.useState('');
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
   return (
     <div className={`${styles.wrapCategory}`}>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -44,7 +49,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel2'}onChange={handleChange('panel2')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -67,7 +72,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -93,7 +98,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel4'}onChange={handleChange('panel4')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}

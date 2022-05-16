@@ -259,7 +259,7 @@ const Banner = () => {
                         <button className="btn">Ứng tuyển ngay</button>
                       </Link>
                     </div>
-                    <div className={`${styles.detailsLink} row-md`}>
+                    <div className={`${styles.detailsLink} row-md d-flex justify-content-evenly align-items-center`}>
                       <div className={``}>
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
