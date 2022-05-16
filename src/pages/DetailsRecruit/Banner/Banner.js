@@ -4,7 +4,6 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import zalo from "../../../assets/img/icon-svg/zalo-logo.jpg";
-import demo from "../../../assets/img/icon-svg/anhhh.jpg";
 import CV from "../../../assets/img/Job-Icon-svg/CV.svg";
 import { RecruitContext } from "../../../components/contexts/ContextRecuit";
 import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
@@ -12,6 +11,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
 import formatNumber from "../../../components/extensions/formatNumber";
 import { formatDate } from "../../../components/extensions/formatDate"
+import longBanner from "../../../assets/img/banner3.jpg";
+
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -103,6 +104,8 @@ const Banner = () => {
 
   const postAPI =
     "https://api-nextcrm.nextcrm.vn/api/public/provinces?search[parent_id]=0";
+
+    const uniqueCity = [...new Set(data && data.map(item => item.address.name))]
 
   useEffect(() => {
     fetch(postAPI)
@@ -288,7 +291,7 @@ const Banner = () => {
             </div>
             <div className={`${styles.detailsSidebar} col-lg-8`}>
               <div className="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <img src={demo} style={{ width: "100%" }} alt="/" />
+                <img src={longBanner} style={{ width: "100%" }} alt="/" />
                 <h4>Mô tả công việc</h4>
                 <div>
                   <ul>
@@ -375,9 +378,9 @@ const Banner = () => {
                       <option disabled value="disabled">
                         Toàn quốc
                       </option>
-                      {data &&
-                        data.map((e, index) => (
-                          <option key={index}>{e.address.name}</option>
+                      {uniqueCity &&
+                        uniqueCity.map((e, index) => (
+                          <option key={index}>{e}</option>
                         ))}
                     </select>
 
@@ -627,7 +630,7 @@ const Banner = () => {
                       })}
                 </div>
                 <div className={styles.detailsImage}>
-                  <img src={demo} alt="/" />
+                  <img src={longBanner} alt="/" />
                 </div>
               </div>
             </div>

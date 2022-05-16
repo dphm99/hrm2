@@ -4,10 +4,12 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Highlight from 'react-highlight'
+
 function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
     const style = {
         position: "absolute",
-        top: "20%",
+        top: "40%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         bgcolor: "background.paper",
@@ -16,13 +18,13 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
         p: 4,
         minWidth: "40vw",
         outline: "none",
-        zIndex:9999,
+        zIndex:3,
       };
   return ( 
       <>
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" onClick={onClick}>
-            <div className="col-sm-3 crs_grid bordered d-flex justify-content-start align-items-start">
-              <div className="col-sm-4 crs_grid_thumb  position-relative">
+            <div className="col crs_grid bordered d-flex justify-content-start align-items-start">
+              <div className="col crs_grid_thumb  position-relative">
                 <div
                   className="position-absolute top-50 start-50 translate-middle"
                   style={{
@@ -58,14 +60,14 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
                   />
                 </p>
               </div>
-              <div className="crs_grid_caption">
+              {/* <div className="crs_grid_caption">
                 <div className="crs_title">
                   <h4 className="m-0">
                     <p className="crs_title_link">{title}</p>
                   </h4>
-                    <p className="text">{content}</p>
+                  <Highlight className="text" innerHTML={true}>{content}</Highlight>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div> 
           {show && (
