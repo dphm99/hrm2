@@ -9,6 +9,7 @@ import nodata from "../../../assets/img/nodata.jpg";
 import CardVideo from "../../../components/CardVideo/CardVideo";
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
+  console.log(data);
   const [showAlert, setShowAlert] = useState({
     show: false,
     name: "",
@@ -24,8 +25,8 @@ export default function BlogContent() {
     },
 
     {
-      href: "/vi-tri-tuyen-dung",
-      title: "Vị trí tuyển dụng",
+      href: "/dinh-huong-nghe-nghiep",
+      title: "Định hướng nghề nghiệp",
       isActive: true,
     },
   ];
@@ -52,7 +53,7 @@ export default function BlogContent() {
       short: "office",
     },
   ];
-  // console.log( 
+  // console.log(
   //    data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
   //      return e
   //    }})
@@ -86,20 +87,27 @@ export default function BlogContent() {
       <div className="row mb-2">
         <div className={`${styles.content} col-lg-8`}>
           {data &&
-            data.filter(e => {
-              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
-                return e
-              }
-            }).length > 0 ? (
-            data.filter(e => {
-              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
-                return e
-              }
-            })
+          data.filter((e) => {
+            return (
+              e.quiz_ids.filter(
+                (tag) =>
+                  tag.name === (active === "Mới nhất" ? tag.name : active)
+              ).length > 0
+            );
+          }).length > 0 ? (
+            data
+              .filter((e) => {
+                return (
+                  e.quiz_ids.filter(
+                    (tag) =>
+                      tag.name === (active === "Mới nhất" ? tag.name : active)
+                  ).length > 0
+                );
+              })
               .map((e, index) => {
                 if (index <= moreBlogs) {
-                  return (
-                    active !== "Video" ? <div key={index}>
+                  return active !== "Video" ? (
+                    <div key={index}>
                       <Link
                         className={styles.BannerLink}
                         to={{
@@ -109,7 +117,9 @@ export default function BlogContent() {
                           search: `#${index}#${e.id}`,
                         }}
                       >
-                        <div className= {`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}>
+                        <div
+                          className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
+                        >
                           <div
                             className={`${styles.Block_img} d-lg-block col-md-4`}
                           >
@@ -151,24 +161,76 @@ export default function BlogContent() {
                         </div>
                       </Link>
                       <div className="pb-1 mb-4 fst-italic border-bottom"></div>
-                    </div> : <CardVideo
-                      title={e.title}
-                      image={e.avatar}
-                      content={e.content}
-                      onClick={() => setShowAlert(
-                        {
-                          show: true,
-                          name: e.title,
-                          iframe: e.avatar,
-                        }
-                      )
-                      }
-                      onClose={() => setShowAlert(prev => ({
-                        ...prev,
-                        show: false,
-                      }))}
-                      show={showAlert.show}
-                    />
+                    </div>
+                  ) : (
+                    <div key={index}>
+                      <div
+                        className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
+                      >
+                        <div
+                          className={`${styles.Block_img} d-lg-block col-md-4`}
+                        >
+                          <CardVideo
+                            iframe={e.src}
+                            title={e.title}
+                            image={e.avatar}
+                            content={e.content}
+                            onClick={() =>
+                              setShowAlert({
+                                show: true,
+                                name: e.title,
+                                iframe: e.avatar,
+                              })
+                            }
+                            onClose={() =>
+                              setShowAlert((prev) => ({
+                                ...prev,
+                                show: false,
+                              }))
+                            }
+                            show={showAlert.show}
+                          />
+                        </div>
+                        <Link
+                          className={`${styles.BannerLink} d-lg-block col-md-8`}
+                          to={{
+                            pathname: `/dinh-huong-nghe-nghiep/${toSlug(
+                              e.title
+                            )}`,
+                            search: `#${index}#${e.id}`,
+                          }}
+                        >
+                          <div
+                            className={`${styles.BannerBlockflex} col-md-8 d-flex flex-column position-static`}
+                          >
+                            <h6 className={`${styles.Block_H6} mb-2`}>
+                              <strong>{e.title}</strong>
+                            </h6>
+                            <p
+                              className={`${styles.Block_P} mb-auto`}
+                              dangerouslySetInnerHTML={{
+                                __html: `${e.content}`,
+                              }}
+                            ></p>
+                            <div className={styles.Block__link}>
+                              <p
+                                to={{
+                                  pathname: `/dinh-huong-nghe-nghiep/${toSlug(
+                                    e.title
+                                  )}`,
+                                  search: `#${index}#${e.id}`,
+                                }}
+                                className={`${styles.Block_A} stretched-link`}
+                              >
+                                {e.quiz_ids.name}
+                              </p>
+
+                              {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
                   );
                 } else {
                   return false;
@@ -180,10 +242,13 @@ export default function BlogContent() {
             </div>
           )}
           {data &&
-            data.filter(e => {
-              if (e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name : active)).length > 0) {
-                return e
-              }
+            data.filter((e) => {
+              return (
+                e.quiz_ids.filter(
+                  (tag) =>
+                    tag.name === (active === "Mới nhất" ? tag.name : active)
+                ).length > 0
+              );
             }).length > 5 && (
               <div className="d-flex">
                 <button

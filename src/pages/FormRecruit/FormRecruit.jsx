@@ -14,7 +14,7 @@ function FormRecruit() {
   const { data } = useContext(RecruitContext);
   const history = useHistory();
 
-  const Index = window.location.hash.split("#")[1];
+  // const Index = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
 
   const [name, setName] = useState("");

@@ -31,7 +31,7 @@ function Footer() {
                       Tầng 2, Tòa nhà N03T5, khu Đoàn ngoại giao, phường Xuân
                       Tảo, quận Bắc Từ Liêm, Hà Nội, VN
                     </p>
-                    <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/Chung+c%C6%B0+N03-T5+Ngo%E1%BA%A1i+Giao+%C4%90o%C3%A0n/@21.0645021,105.797158,17z/data=!3m1!4b1!4m5!3m4!1s0x3135aad954cd6a6f:0x119a90b9e06b1a16!8m2!3d21.0644971!4d105.7993467" className={styles.map_link}>
+                    <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/U3cP9WAcwFENJX7QA" className={styles.map_link}>
                       Xem bản đồ
                     </a>
                   </div>
@@ -103,7 +103,7 @@ function Footer() {
                     <li className="d-flex align-items-center">
                       <ArrowRightIcon />
                       
-                      <a href="http://lipzo.com" target="_blank" rel="noreferrer">Lipzo.com</a>
+                      <a href="https://lipzo.com/" target="_blank" rel="noreferrer">Lipzo.com</a>
 
                     </li>
                     <li className="d-flex align-items-center">

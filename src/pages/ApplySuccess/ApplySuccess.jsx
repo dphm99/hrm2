@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Header2 from "../../components/Header/Header2";
 import { Checkmark } from "react-checkmark";
-import styles from "./Apply.module.css";
+// import styles from "./Apply.module.css";
 
 function ApplySuccess() {
   return (

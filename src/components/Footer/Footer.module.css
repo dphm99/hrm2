@@ -84,11 +84,12 @@ ul li {
 }
 .title_heading {
   margin-top: 46px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   font-size: 19px;
   min-height: 40px;
   font-weight: bold;
 }
+
 .listItem .footerTitle:last-child {
   padding-left: 0;
 }
