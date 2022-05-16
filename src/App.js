@@ -14,9 +14,9 @@ function App() {
       <Sliders />
       <JobBox />
       <Career2 />
-      <Career />
       <Vancancies/>
       <CareerVideo />
+      <Career />
       <Footer />
     </>
   );
