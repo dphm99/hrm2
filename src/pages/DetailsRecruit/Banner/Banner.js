@@ -11,7 +11,7 @@ import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { toSlug } from "../../../components/extensions/toSlug";
 import formatNumber from "../../../components/extensions/formatNumber";
-import { formatDate } from "../../../components/extensions/formatDate"
+import { formatDate } from "../../../components/extensions/formatDate";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -26,7 +26,7 @@ const Banner = () => {
   const { data } = useContext(RecruitContext);
   const jobIndex = window.location.hash.split("#")[1];
   const jobId = window.location.hash.split("#")[2];
-  const currentURL = window.location.href
+  const currentURL = window.location.href;
 
   const [copySuccess] = useState("");
   const [copied, setCopied] = useState(false);
@@ -41,7 +41,7 @@ const Banner = () => {
     document.execCommand("copy");
     document.body.removeChild(el);
     setCopied(true);
-  };
+  }
 
   const currentCategory =
     data.find((ele) => ele.id === Number(jobId)) &&
@@ -131,39 +131,31 @@ const Banner = () => {
                         <ul>
                           <li> Nơi làm việc: </li>
                           <h6>
-                            {
-                              data.find((ele) => ele.id === Number(jobId)).address.name
-                                ?
-                                data.find((ele) => ele.id === Number(jobId)).address.name
-                                :
-                                "Đang cập nhật"
-                            }
+                            {data.find((ele) => ele.id === Number(jobId))
+                              .address.name
+                              ? data.find((ele) => ele.id === Number(jobId))
+                                  .address.name
+                              : "Đang cập nhật"}
                           </h6>
                         </ul>
                         <ul>
                           <li> Bộ phận: </li>
                           <h6>
-                            {
-                              data.find((ele) => ele.id === Number(jobId)).department.name
-                                ?
-                                data.find((ele) => ele.id === Number(jobId)).department.name
-                                :
-                                "Đang cập nhật"
-
-                            }
+                            {data.find((ele) => ele.id === Number(jobId))
+                              .department.name
+                              ? data.find((ele) => ele.id === Number(jobId))
+                                  .department.name
+                              : "Đang cập nhật"}
                           </h6>
                         </ul>
                         <ul>
                           <li> Chuyên ngành: </li>
                           <h6>
-                            {
-                              data.find((ele) => ele.id === Number(jobId)).industry
-                                ?
-                                data.find((ele) => ele.id === Number(jobId)).industry
-                                :
-                                "Đang cập nhật"
-
-                            }
+                            {data.find((ele) => ele.id === Number(jobId))
+                              .industry
+                              ? data.find((ele) => ele.id === Number(jobId))
+                                  .industry
+                              : "Đang cập nhật"}
                           </h6>
                         </ul>
                         <ul>
@@ -173,14 +165,11 @@ const Banner = () => {
                         <ul>
                           <li> Bằng cấp: </li>
                           <h6>
-                            {
-                              data.find((ele) => ele.id === Number(jobId)).degree.name
-                                ?
-                                data.find((ele) => ele.id === Number(jobId)).degree.name
-                                :
-                                "Đang cập nhật"
-
-                            }
+                            {data.find((ele) => ele.id === Number(jobId)).degree
+                              .name
+                              ? data.find((ele) => ele.id === Number(jobId))
+                                  .degree.name
+                              : "Đang cập nhật"}
                           </h6>
                         </ul>
                         <ul>
@@ -190,55 +179,58 @@ const Banner = () => {
                               .salary[0] === "ltt"
                               ? "Lương thỏa thuận"
                               : formatNumber(
-                                data
-                                  .find((ele) => ele.id === Number(jobId))
-                                  .salary.split(" - ")[0]
-                                  .slice(0, -4),
-                                0,
-                                ",",
-                                "."
-                              ) +
-                              " - " +
-                              formatNumber(
+                                  data
+                                    .find((ele) => ele.id === Number(jobId))
+                                    .salary.split(" - ")[0]
+                                    .slice(0, -4),
+                                  0,
+                                  ",",
+                                  "."
+                                ) +
+                                " - " +
+                                formatNumber(
+                                  data
+                                    .find((ele) => ele.id === Number(jobId))
+                                    .salary.split(" - ")[1]
+                                    .slice(0, -4),
+                                  0,
+                                  ",",
+                                  "."
+                                ) +
+                                " " +
                                 data
                                   .find((ele) => ele.id === Number(jobId))
                                   .salary.split(" - ")[1]
-                                  .slice(0, -4),
-                                0,
-                                ",",
-                                "."
-                              ) +
-                              " " +
-                              data
-                                .find((ele) => ele.id === Number(jobId))
-                                .salary.split(" - ")[1]
-                                .slice(-4)}
+                                  .slice(-4)}
                           </h6>
                         </ul>
                         <ul>
                           <li> Số lượng tuyển: </li>
                           <h6>
                             {data.find((ele) => ele.id === Number(jobId)) &&
-                              (data.find((ele) => ele.id === Number(jobId)).number
-                                ?
-                                data.find((ele) => ele.id === Number(jobId)).number
-                                :
-                                "Đang cập nhật"
-
-                              )}
+                              (data.find((ele) => ele.id === Number(jobId))
+                                .number
+                                ? data.find((ele) => ele.id === Number(jobId))
+                                    .number
+                                : "Đang cập nhật")}
                           </h6>
                         </ul>
                         <ul>
                           <li> Hạn nộp hồ sơ: </li>
                           <h6>
-                            {
-                              formatDate(data.find((ele) => ele.id === Number(jobId)).deadline, "-", "/")
-                                ?
-                                formatDate(data.find((ele) => ele.id === Number(jobId)).deadline, "-", "/")
-                                :
-                                "Đang cập nhật"
-
-                            }
+                            {formatDate(
+                              data.find((ele) => ele.id === Number(jobId))
+                                .deadline,
+                              "-",
+                              "/"
+                            )
+                              ? formatDate(
+                                  data.find((ele) => ele.id === Number(jobId))
+                                    .deadline,
+                                  "-",
+                                  "/"
+                                )
+                              : "Đang cập nhật"}
                           </h6>
                         </ul>
                       </div>
@@ -251,35 +243,38 @@ const Banner = () => {
                             data.find((ele) => ele.id === Number(jobId)).name
                               .name
                           )}`,
-                          search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)).id
-                            }`,
+                          search: `#${jobIndex}#${
+                            data.find((ele) => ele.id === Number(jobId)).id
+                          }`,
                         }}
                       >
                         <button className="btn">Ứng tuyển ngay</button>
                       </Link>
                     </div>
-                    <div className={`${styles.detailsLink} row-md`}>
-                      <div className={``}>
+                    <div className={`${styles.detailsLink}`}>
+                      <div className={`${styles.detailsCopy} col-6`}>
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
-                        <button onClick={copy}>{!copied ? "Copy link" : "Đã copy!"}</button>
+                        <button onClick={copy}>
+                          {!copied ? "Copy link" : "Đã copy!"}
+                        </button>
                         {copySuccess}
                       </div>
-                      <div className={`${styles.detailsIcon} `}>
-                        <div className={styles.detailsfb}>
+                      <div className={`${styles.detailsIcon} col-6 `}>
+                       
                           <FacebookShareButton url={currentURL}>
                             <FacebookIcon size={28} />
                           </FacebookShareButton>
-                        </div>
-                        <div className={styles.detailsfb}>
-                          <img src={zalo} style={{ width: "30px" }} alt="/" />
-                        </div>
-                        <div className={styles.detailsfb}>
+                      
+                       
+                          <img src={zalo} style={{ width: "30px", marginRight: "6px"}} alt="/" />
+                      
+                        
                           <LinkedinShareButton url={currentURL}>
                             <LinkedinIcon size={28} />
                           </LinkedinShareButton>
-                        </div>
+                       
                       </div>
                     </div>
                   </div>
@@ -319,7 +314,7 @@ const Banner = () => {
                     </ul>
                   </div>
                 </div>
-                { }
+                {}
                 <div className={styles.welfare}>
                   <h5>Chính sách & Phúc lợi</h5>
                   {data.find((ele) => ele.id === Number(jobId)) ? (
@@ -576,12 +571,13 @@ const Banner = () => {
                       to={{
                         pathname: `/ung-tuyen/${toSlug(
                           data.find((ele) => ele.id === Number(jobId)) &&
-                          data.find((ele) => ele.id === Number(jobId)).name
-                            .name
+                            data.find((ele) => ele.id === Number(jobId)).name
+                              .name
                         )}`,
-                        search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)) &&
+                        search: `#${jobIndex}#${
+                          data.find((ele) => ele.id === Number(jobId)) &&
                           data.find((ele) => ele.id === Number(jobId)).id
-                          }`,
+                        }`,
                       }}
                     >
                       GỬI CV, ỨNG TUYỂN NGAY
