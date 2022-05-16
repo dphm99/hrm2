@@ -67,7 +67,9 @@
 }
 
 
-
+.headerMenu  a{
+  font-weight: bold;
+}
 .headerMenu a:hover {
   color: #bf202e;
 }

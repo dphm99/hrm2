@@ -27,7 +27,8 @@
 /* -------------------------PC--------------------- */
 @media only screen and (max-width: 1439px) {
     .main {
-        margin-top: 150px;
+        margin-top: 15
+        0px;
     }
     .title {
         margin: 2rem 0 !important;
