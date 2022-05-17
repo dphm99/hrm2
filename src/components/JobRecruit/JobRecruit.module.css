@@ -21,11 +21,11 @@
   font-size: 20px;
 }
 
-.JobLink_item{
+.JobLink_item {
   text-decoration: none;
   color: #000;
 }
-.JobLink_item:hover{
+.JobLink_item:hover {
   color: #000;
 }
 
@@ -99,30 +99,30 @@
   width: 31px;
   height: 31px;
   background-color: #ffffff;
-  border:2px solid #b3b3b3;
-  box-shadow:0px 0px 3px rgb(144 144 144 / 32%);
+  border: 2px solid #b3b3b3;
+  box-shadow: 0px 0px 3px rgb(144 144 144 / 32%);
   cursor: pointer;
 }
-.checkboxActive{
+.checkboxActive {
   background-color: #bf202e;
   position: absolute;
   height: 24px;
   width: 24px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.checkboxActive::before{
-      content: "\002714";
-    z-index: 4;
-    position: relative;
-    color: #fff;
-    font-size: 1.4rem;
-    line-height: 1.5rem;
-    align-items: center;
-    display: inline-block;
-    right: -3px;
-    cursor: pointer;
+.checkboxActive::before {
+  content: "\002714";
+  z-index: 4;
+  position: relative;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  align-items: center;
+  display: inline-block;
+  right: -3px;
+  cursor: pointer;
 }
 /* .head_checkbox:checked::before{ 
   content:"";
@@ -135,11 +135,10 @@
   box-shadow: inset 0px 0px 0px 3px #ffffff;
   z-index: 3;
 } */
-.wrap_Checkbox{
+.wrap_Checkbox {
   position: relative;
   display: inline-block;
   margin-right: 10px;
-
 }
 
 /* .head_checkbox:checked+.overlayCheck::after{
@@ -233,6 +232,43 @@
   font-size: 20px;
   font-weight: 500;
 }
+.options {
+  border: 1px solid #ddd;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 3;
+  bottom: -116px;
+  right: 10px;
+  transition: 0.3s;
+  opacity: 0;
+  
+}
+.optionsItem {
+  padding: 0 10px;
+  border-top: 1px solid #ddd;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.show{
+  opacity: 1;
+}
+
+.wrap_selectSort {
+  position: relative;
+}
+.selectSort {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  min-width: 90px;
+}
 .listJob_count {
   font-size: 20px;
   font-weight: 600;
@@ -272,7 +308,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
 .overlay_center {
@@ -284,12 +319,12 @@
   text-align: center;
 }
 
-
 /* component ItemJob */
-.warpItem {
+.wrapItem {
   border-bottom: 1px solid #f4f4f4;
+  cursor: default;
 }
-.warpIcon_job {
+.wrapIcon_job {
   width: 117px;
   min-width: 100px;
 }
@@ -346,11 +381,52 @@
 }
 .head_item {
   border-top: 1px solid #a4a4a4;
+  position: relative;
 }
-.active_item.warpItem {
+/* .head_item .tag {
+  position: absolute;
+  color: #fff;
+  background-color: #ff4747;
+  top: 10px;
+  right:  -10px;
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+} */
+.head_item .tag {
+  position: absolute;
+  color: #fff;
+  background-color: #ff4747;
+  top: 10px;
+  right: 16px;
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* .head_item .tag::after {
+  content: "";
+  display: block;
+  border: 5px solid;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-color: #ff4747 transparent transparent #ff4747;
+  filter: brightness(0.8);
+} */
+
+.active_item.wrapItem {
   background-color: #efefef;
 }
-.active_item .warpIcon_job .icon_job {
+.active_item .wrapIcon_job .icon_job {
   filter: invert(30%) brightness(0.9) sepia(1) hue-rotate(-59deg) saturate(5);
 }
 .active_item .head_item .title_job {
@@ -377,8 +453,19 @@
   text-decoration: none;
   margin-right: 3px;
 }
+.btnDeadline {
+  background-color: #ddd;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 2px 3px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 3px;
+  padding: 8px 16px;
+}
 .apply_job:hover {
   color: #fff;
+  transform: sca;
 }
 .foot_space {
   position: relative;
@@ -463,10 +550,10 @@
 .sortJob_sm {
   height: 60px;
 }
-.head__address{
+.head__address {
   user-select: none;
 }
-.head__address:hover{
+.head__address:hover {
   cursor: pointer;
 }
 /* Responsive */
@@ -485,7 +572,6 @@
     padding: 8px 16px;
   }
 }
-
 
 @media (max-width: 1440px) {
   .customContainer {
@@ -508,14 +594,14 @@
   .customContainer {
     max-width: 1140px;
   }
-  .checkboxActive{
+  .checkboxActive {
     background-color: #bf202e;
     position: absolute;
     height: 24px;
     width: 24px;
     left: 50%;
     top: 50%;
-    transform: translate(-99%,-49%);
+    transform: translate(-99%, -49%);
   }
   .head_col {
     width: 33.33333%;
@@ -548,10 +634,10 @@
     margin-left: 0;
   }
 }
-.clickSort{
+/* .clickSort {
   padding: 0 12px;
   cursor: pointer;
-}
+} */
 
 @media (max-width: 1200px) {
   .customContainer {
@@ -582,7 +668,6 @@
     margin-left: -20px;
     user-select: none;
   }
-  
 
   .foot_text {
     height: 100%;
@@ -602,7 +687,6 @@
     margin-top: -35px;
   }
 }
-
 
 @media (max-width: 992px) {
   .customContainer {
@@ -624,8 +708,8 @@
     margin-top: 6px;
     padding: 5px 3px;
   }
-  .checkboxActive{
-    transform: translate(-98%,-51%);
+  .checkboxActive {
+    transform: translate(-98%, -51%);
   }
   .foot_text {
     flex-wrap: wrap;
@@ -638,8 +722,8 @@
   }
 }
 @media (max-width: 768px) {
-  .checkboxActive{
-    transform: translate(-100%,-52%);
+  .checkboxActive {
+    transform: translate(-100%, -52%);
   }
   .customContainer {
     padding-left: 12px !important;
@@ -648,13 +732,11 @@
   .head_col {
     width: 100%;
   }
-  
 }
 
-
 @media (max-width: 576px) {
-  .checkboxActive{
-    transform: translate(-101%,-51%);
+  .checkboxActive {
+    transform: translate(-101%, -51%);
   }
   .job_address {
     display: block;
@@ -691,7 +773,6 @@
   .customContainer {
     margin-top: 4rem;
   }
-
 
   .head_recruit {
     margin: 30px -12px !important;

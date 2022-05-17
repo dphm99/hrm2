@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
@@ -65,21 +65,35 @@ function JobItem({
   lenght,
 }) {
   const [active, setActive] = useState(false);
+  const [disable, setDisable] = useState(false)
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
+
+  function checkDate(e) {
+    var today = new Date();
+    var end = new Date(e)
+    if (today > end) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
 
   return (
     <>
       <div
+
         className={
           active
-            ? `${styles.warpItem} ${styles.active_item}`
-            : `${styles.warpItem}`
+            ? `${styles.wrapItem} ${styles.active_item}`
+            : `${styles.wrapItem}`
         }
-        onMouseOut={(e) => setActive(false)}
-        onMouseOver={(e) => setActive(true)}
+        onMouseOut={(e) => { checkDate(end) && setActive(false) }}
+        onMouseOver={(e) => { checkDate(end) && setActive(true) }}
       >
         <div className={`${styles.head_item} d-flex align-items-center`}>
-          <div className={styles.warpIcon_job}>
+          {checkDate(end) && <span className={styles.tag}>New</span>}
+          <div className={styles.wrapIcon_job}>
             <img className={styles.icon_job} src={imgs} alt="/" />
           </div>
           <div className="overflow-hidden">
@@ -99,12 +113,11 @@ function JobItem({
               <AttachMoneyIcon
                 className={`${styles.money_icon} rounded-circle`}
               ></AttachMoneyIcon>{" "}
-              {/* {console.log(salary)} */}
               {salary && salary[0] === "ltt"
                 ? `Lương thỏa thuận`
                 : salary && salary[0] === "lct"
-                ? "Lương cạnh tranh"
-                : `${formatNumber(
+                  ? "Lương cạnh tranh"
+                  : `${formatNumber(
                     salary.split(" - ")[0].slice(0, -4),
                     0,
                     ",",
@@ -126,20 +139,28 @@ function JobItem({
               Ngày đăng tuyển {formatDate(start, "-", "/")}
             </p>
 
-            <p className={`${styles.text_job} ${styles.text_jobEnd}`}>
-              <span className={styles.foot_space}> | </span>
-              Ngày hết hạn {formatDate(end, "-", "/")}
+            <span className={styles.foot_space}> | </span>
+            <p 
+              className={`${styles.text_job} ${styles.text_jobEnd}`} 
+              style={  {color:`red`}}
+            >
+              Ngày hết hạn  {formatDate(end, "-", "/")}
             </p>
             <div className={`${styles.containApply}`}>
-              <Link
-                className={styles.apply_job}
-                to={{
-                  pathname: `/tuyen-dung/${toSlug(name)}`,
-                  search: `#${index}#${id}`,
-                }}
-              >
-                Ứng tuyển ngay
-              </Link>
+              {checkDate(end) ?
+                <Link
+
+                  className={styles.apply_job}
+                  to={{
+                    pathname: `/tuyen-dung/${toSlug(name)}`,
+                    search: `#${index}#${id}`,
+                  }}
+                >
+                  Ứng tuyển ngay
+                </Link>
+                :
+                <div className={styles.btnDeadline}>Hết hạn nộp cv</div>
+              }
             </div>
           </div>
         </div>
