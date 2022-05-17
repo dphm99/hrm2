@@ -13,6 +13,7 @@ import formatNumber from "../../../components/extensions/formatNumber";
 import { formatDate } from "../../../components/extensions/formatDate";
 import longBanner from "../../../assets/img/banner3.jpg";
 
+
 export const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -259,8 +260,8 @@ const Banner = () => {
                         <button className="btn">Ứng tuyển ngay</button>
                       </Link>
                     </div>
-                    <div className={`${styles.detailsLink} row-md d-flex justify-content-evenly align-items-center`}>
-                      <div className={``}>
+                    <div className={`${styles.detailsLink}`}>
+                      <div className={`${styles.detailsCopy} col-6`}>
                         <ContentCopyIcon
                           style={{ fontSize: "14px", marginTop: "-2px" }}
                         ></ContentCopyIcon>
@@ -269,20 +270,20 @@ const Banner = () => {
                         </button>
                         {copySuccess}
                       </div>
-                      <div className={`${styles.detailsIcon} `}>
-                        <div className={styles.detailsfb}>
+                      <div className={`${styles.detailsIcon} col-6 `}>
+                       
                           <FacebookShareButton url={currentURL}>
                             <FacebookIcon size={28} />
                           </FacebookShareButton>
-                        </div>
-                        <div className={styles.detailsfb}>
-                          <img src={zalo} style={{ width: "30px" }} alt="/" />
-                        </div>
-                        <div className={styles.detailsfb}>
+                      
+                       
+                          <img src={zalo} style={{ width: "30px", marginRight: "6px"}} alt="/" />
+                      
+                        
                           <LinkedinShareButton url={currentURL}>
                             <LinkedinIcon size={28} />
                           </LinkedinShareButton>
-                        </div>
+                       
                       </div>
                     </div>
                   </div>

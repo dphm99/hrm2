@@ -71,10 +71,11 @@
 }
 
 .detailsLink {
+
+  display: flex;
+
   width: 100%;
   text-align: center;
-  position: relative;
-  /* margin-left: 43px; */
   margin-bottom: 36px;
   cursor: pointer;
 }
@@ -92,12 +93,16 @@
   font-size: 14px;
   border: none;
   outline: none;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
-.detailsIcon {
-  display: flex;  
-}
+
+/* .detailsIcon {
+  display: flex;
+  margin-left: 212px;
+  margin-top: -26px;
+} */
+
 
 .detailsfb {
   margin-left: 10px;
@@ -255,7 +260,6 @@
   flex-direction: column;
   cursor: pointer;
   text-decoration: none;
-  /* opacity: 0.3; */
 }
 
 .detailsRecruitLI.active {
@@ -269,15 +273,18 @@
 }
 
 .detailsRecruitLI.active .detailsRecruiBuoc {
-  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg) brightness(92%);
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
 }
 
 .detailsRecruitLI.active .detailsRecruiUpload {
-  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg) brightness(92%);
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
 }
 
 .detailsRecruitLI.active .detailsRecruiIcon {
-  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg) brightness(92%);
+  filter: invert(49%) sepia(67%) saturate(7417%) hue-rotate(356deg)
+    brightness(92%);
 }
 
 .detailsRecruiIcon {
@@ -285,7 +292,8 @@
   width: 50px;
   height: 60px;
   color: #fff;
-  filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg) brightness(92%);
+  filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
+    brightness(92%);
 }
 
 .detailsRecruiBuoc {
@@ -426,7 +434,7 @@
   color: #ae1825;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .detailsRecuit h2 {
     font-size: 13px;
     margin-top: 185px;
@@ -435,15 +443,15 @@
   .detailsRecuit {
     width: 100%;
     margin-left: 0px;
-    margin-top: 100px;
+    margin-top: 150px;
   }
 
   .detailsIcon {
-    margin-left: 0px;
-    display: flex;
-    width: 163px;
-    margin-top: -6px;
-    float: right;
+    padding-left: 86px;
+  }
+
+  .detailsCopy {
+    padding-right: 82px;
   }
 
   .detailsRecruitUL {
@@ -456,13 +464,13 @@
 
   .detailsRecruitLI {
     margin-right: 9px;
-    width: 96%;
+    width: 102%;
     margin-left: 9px;
-    height: 54px;
+    height: 50px;
     background-color: rgba(248, 247, 247, 0.5);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: initial;
     flex-direction: column;
     cursor: pointer;
     margin-bottom: 6px;
@@ -482,94 +490,39 @@
     text-align: center;
     margin-bottom: 0px;
     margin-top: 0px;
+  }
+
+  .detailsLabelcheck {
+    margin-top: -6px;
   }
 
   .detailsRecruiIcon {
-    margin-top: -11px;
-    margin-left: -240px;
-    width: 34px;
+    width: 37px;
     height: 60px;
+    margin-top: 6px;
   }
 
   .detailsRecruiBuoc {
     margin-top: -40px;
+    text-align: center;
   }
 
   .detailsApply {
     font-size: 15px;
     margin-top: 18px;
   }
-}
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .detailsRecuit h2 {
-    font-size: 13px;
-    margin-top: 185px;
-    margin-bottom: 25px;
-  }
-
-  .detailsIcon {
-    margin-left: 0px;
-    display: flex;
-    width: 163px;
-    margin-top: -6px;
-    float: right;
-  }
-
-  .detailsRecruitUL {
-    display: block;
-    justify-content: space-between;
-    align-items: center;
+  .detailsRecruiUpload {
     width: 100%;
-    margin-top: 22px;
-  }
-
-  .detailsRecruitLI {
-    margin-right: 9px;
-    width: 96%;
-    margin-left: 9px;
-    height: 54px;
-    background-color: rgba(248, 247, 247, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    margin-bottom: 6px;
-  }
-
-  .detailsProcedure h4 {
-    font-size: 15px;
-    margin-top: 13px;
+    margin-top: -8px;
   }
 
   .detailsRecruiBtn {
-    font-size: 10px;
-    padding: 4px 23px;
-  }
-
-  .Banner__btoon5 {
     text-align: center;
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-
-  .detailsRecruiBtn button {
-    margin-top: -11px;
-    margin-left: -270px;
-    width: 34px;
-    height: 60px;
-  }
-
-  .detailsRecruiBuoc {
-    margin-top: -40px;
-  }
-
-  .detailsApply {
-    font-size: 15px;
-    margin-top: 18px;
+    margin-top: 10px;
   }
 }
+
 
 @media screen and (min-width: 1024px) and (max-width: 1224px) {
   .detailsRecuit {
@@ -580,13 +533,6 @@
 
   .detailsRecuit h2 {
     margin-bottom: 30px;
-  }
-
-  .detailsIcon {
-    display: flex;
-    width: 117px;
-    margin-left: 170px;
-    margin-top: -28px;
   }
 }
 
@@ -611,13 +557,36 @@
 @media only screen and (max-width: 1023px) {
   .detailsSticky {
     position: relative;
-    top: 0; 
+    top: 0;
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .detailsSticky {
-    position: relative;
-    top: 0;
+@media only screen and (max-width: 425px) {
+  .detailsIcon {
+    padding-left: 0px;
+  }
+
+  .detailsCopy {
+    padding-right: 0px;
+  }
+
+  .detailsLabelcheck {
+    padding: 0px;
+    padding-left: 18px;
+    margin-top: -37px;
+  }
+
+  .detailsFormcheck {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .detailsRecruiBtn button {
+    font-size: 15px;
+  }
+
+  .detailsIcon {
+    margin-left: -10px;
   }
 }
