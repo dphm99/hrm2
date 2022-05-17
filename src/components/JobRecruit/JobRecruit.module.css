@@ -204,7 +204,7 @@
   cursor: pointer;
 }
 .filter_text {
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
   color: #000;
 }
@@ -251,7 +251,7 @@
 .joinText {
   text-align: center;
   color: #fff;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 22px;
   font-size: 24px;
 }
@@ -265,7 +265,7 @@
   overflow: hidden;
 }
 .ul_listFilter p {
-  font-weight: 900;
+  font-weight: 700;
   color: #000 !important;
   font-size: 20px !important;
   margin-left: 6px;
@@ -322,7 +322,7 @@
 }
 .title_job {
   margin-top: 20px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .text_job {

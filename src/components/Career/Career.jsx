@@ -64,12 +64,12 @@ function Career() {
               <h5 className={styles.Career__title}>{props.title}</h5>
             </div>
             <div className={styles.Career__tikitiki}>
-              <p
+              {/* <p
                 className={styles.Career__tiki}
                 dangerouslySetInnerHTML={{ __html: `${props.text}` }}
               >
-                {/* <h8 className={styles.Career__h8}>Đọc thêm</h8> */}
-              </p>
+                <h8 className={styles.Career__h8}>Đọc thêm</h8>
+              </p> */}
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group"></div>
@@ -83,7 +83,7 @@ function Career() {
     <>
       <div className="container">
         <div className={styles.Career__h4}>
-          <h4>ĐỊNH HƯỚNG NGHỀ NGHỆP</h4>
+          <h4>ĐỊNH HƯỚNG NGHỀ NGHIỆP</h4>
         </div>
         <div className="row career">
           <Slider {...settings}>
@@ -101,7 +101,6 @@ function Career() {
                     <CardItem
                       title={e.title}
                       src={e.avatar}
-                      text={e.content}
                       key={index}
                     />
                   </Link>

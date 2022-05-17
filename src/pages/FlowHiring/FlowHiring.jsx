@@ -21,7 +21,6 @@ function FlowHiring() {
       <div className={`${styles.flowhiring} container`}>
         <img src={flowhiring} alt="Quy trình tuyển dụng" />
       </div>
-      <Footer/>
     </>
   );
 }

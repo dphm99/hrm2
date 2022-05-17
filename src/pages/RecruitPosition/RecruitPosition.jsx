@@ -303,7 +303,7 @@ function RecruitPosition() {
                           onClick={handleBack}
                           sx={{ mt: 1, mr: 1 }}
                         >
-                          Back
+                          Quay lại
                         </Button>
                       </div>
                     </Box>

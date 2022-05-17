@@ -2,8 +2,7 @@
     position: relative;
     display: block;
     width: 100%;
-    overflow: hidden;
-    margin-bottom: 30px;
+    overflow: hidden; 
     border-radius: 0.5rem;
     background: #ffffff;
     color:#242525; 
@@ -17,7 +16,7 @@
 .crs_grid_thumb {
     position: relative;
     padding: 10px; 
-    background: #ffffff;
+    background: #d01c1c;
     min-height: 150px;
 }
 .crs_grid_thumb .crs_detail_link {
@@ -65,13 +64,19 @@
     display: block;
     background-color: #f6f6f6;
 }
-p.crs_title_link {
+.crs_grid_caption .text{
     margin-top: 10px; 
     overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 900;
+}
+p.crs_title_link {
+    margin-top: 10px; 
+    /* overflow: hidden; */
     color: #000;
     font-size: 1rem;
     font-weight: 900;

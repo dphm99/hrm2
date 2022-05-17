@@ -25,7 +25,7 @@
   margin-top: -19px;
   color: black;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -71,7 +71,9 @@
 }
 
 .detailsLink {
+
   display: flex;
+
   width: 100%;
   text-align: center;
   margin-bottom: 36px;
@@ -94,11 +96,13 @@
   margin-right: 6px;
 }
 
+
 /* .detailsIcon {
   display: flex;
   margin-left: 212px;
   margin-top: -26px;
 } */
+
 
 .detailsfb {
   margin-left: 10px;

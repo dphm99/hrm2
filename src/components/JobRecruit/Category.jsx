@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import styles from "./JobRecruit.module.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -7,14 +7,18 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
 import { jobCategory } from "./JobRecruit";
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 function Category({ category, address, industry }) {
   const [job, setJob] = useState(0);
+  const [expanded, setExpanded] = React.useState('');
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
   return (
     <div className={`${styles.wrapCategory}`}>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -26,7 +30,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <Typography className={styles.ul_listFilterbot} >
+          <Typography className={styles.ul_listFilterbot}>
             {category.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
                 <a
@@ -45,7 +49,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel2'}onChange={handleChange('panel2')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -53,7 +57,7 @@ function Category({ category, address, industry }) {
           id="panel2a-header"
         >
           <Typography className={styles.accordi_title}>
-            Việc làm theo vi trí địa lý
+            Việc làm theo vị trí địa lý
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
@@ -68,7 +72,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -94,7 +98,7 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion  expanded={expanded === 'panel4'}onChange={handleChange('panel4')} >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -126,8 +130,7 @@ function Category({ category, address, industry }) {
         <img className={styles.banner_cate} src={banner1} alt="/" />
         <div className={styles.overlay}>
           <div className={styles.overlay_center}>
-            <h5>Banner tuyển TTS</h5>
-            <h5> (Demo)</h5>
+            <h5 style={{ fontWeight: "bold" }}>Ứng tuyển ngay</h5>
           </div>
         </div>
       </div>
