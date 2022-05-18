@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+.FormPosition span {
+  color: red;
+}
+
 .inputRadioItem .inputRadioButton:after {
   width: 24px;
   height: 24px;
@@ -96,6 +100,45 @@
   font-weight: bold;
 }
 
+.buttonSubmit {
+  margin: 16px auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #b7b7b7;
+}
+.buttonSubmit.active {
+  margin: 16px auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #c50c0c;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.noCV {
+  margin-top: 32px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  background-color: #b7b7b7;
+  font-weight: bold;
+}
+
+.noCV a {
+  text-decoration: none;
+  color: black;
+}
+
+.inputUrl {
+  margin-bottom: 20px;
+}
+
 /* -------------------------small mobile--------------------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .inputRadio {
@@ -110,6 +153,9 @@
 @media only screen and (max-width: 1023px) {
   .main {
     margin: 150px auto !important;
+  }
+  .desc{
+    width: 100% !important;
   }
 }
 

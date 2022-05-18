@@ -1,6 +1,6 @@
 .Header2 {
   position: fixed;
-  z-index: 999; 
+  z-index: 999;
   height: 70px;
   width: 100%;
   background-color: #bf202e;
@@ -62,14 +62,25 @@
   text-decoration: none;
 }
 
-.headerMenu a.selected { 
-     padding: 10px 0;
-     border-bottom: 2px solid #fff;
+.headerMenu a.selected {
+  padding: 10px 0;
+  position: relative;
+}
+.headerMenu a.selected:before {
+  content: "";
+  position: absolute;
+  left: 35%;
+  bottom: 0;
+  padding: 10px 0;
+  height  : 2px;
+  width   : 25%;
+  border-bottom: 2px solid #fff;
+  z-index: 1000;
 }
 
-.linkActive { 
-      padding: 10px 0;
-      border-bottom: 2px solid #fff;
+.linkActive {
+  padding: 10px 0;
+  border-bottom: 2px solid #fff;
 }
 
 .menu_show a:hover {
@@ -103,7 +114,6 @@
   padding: 10px;
 }
 
-
 .formInputMb {
   display: flex;
   justify-content: space-between;
@@ -132,10 +142,9 @@
 }
 
 .activeNav {
-    opacity: 1; 
-    /* margin-top: 100px;   */
+  opacity: 1;
+  /* margin-top: 100px;   */
 }
-
 
 /* ------------------------- tablets & mobile--------------------- */
 @media only screen and (max-width: 768px) {
@@ -181,8 +190,6 @@
     /* height: 255px; */
     display: block;
   }
-
-
 
   .headerMenu {
     display: none;
@@ -266,7 +273,6 @@
 
   .headerMenu li a {
     color: #000;
-
   }
 
   .header__fixx {
@@ -440,7 +446,7 @@
     margin-top: 9px;
   }
 
-  .menu_icon{
+  .menu_icon {
     font-size: 2rem !important;
     margin-top: -73px;
   }

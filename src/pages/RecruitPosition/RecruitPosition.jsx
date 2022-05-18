@@ -15,6 +15,10 @@ import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header/Header";
+import Step2 from "./Step2";
+import Step1 from "./Step1";
+import Step3 from "./Step3";
+import Step4 from "./Step4";
 // import { useForm } from "react-hook-form";
 // import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
@@ -25,8 +29,7 @@ const steps = [
   },
   {
     label: "Kỹ năng chuyên môn",
-    description:
-      "Kỹ năng chuyên môn",
+    description: "Kỹ năng chuyên môn",
   },
   {
     label: "Kinh nghiệm làm việc",
@@ -49,17 +52,10 @@ function RecruitPosition() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
+  const handleDone = () => {
     setActiveStep(0);
   };
 
-  // const { getValues } = useForm({
-  //   mode: "onChange",
-  // });
-  const [checkList, setCheckList] = React.useState({
-    gender: "male",
-    status: "singel"
-  })
   const breadcrumItem = [
     {
       href: "/",
@@ -78,19 +74,22 @@ function RecruitPosition() {
       isActive: true,
     },
   ];
-  const [header,setHeader] = useState(true)
+  const [header, setHeader] = useState(true);
   useEffect(() => {
-    if(window.innerWidth <= 768){
-      setHeader(false)
+    if (window.innerWidth <= 768) {
+      setHeader(false);
     } else {
-      setHeader(true)
+      setHeader(true);
     }
-  }, [])
+  }, []);
   return (
     <>
       {!header && <Header />}
       {header && <Header2 />}
-      <div className={`${styles.main} container`} style={{ margin: "90px auto 90px" }}>
+      <div
+        className={`${styles.main} container`}
+        style={{ margin: "90px auto 90px" }}
+      >
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div className={`RecruitPosition`}>
           <Box sx={{ width: "40%" }}>
@@ -112,199 +111,37 @@ function RecruitPosition() {
                     <Typography>{step.description}</Typography>
                     {index === 0 ? (
                       <>
-                        <form className={`${styles.FormPosition}`}>
-                          <div className={`${styles.inputRadio} `}>
-                            <div className={`${styles.inputRadioSide}`}>
-                              <div className={`${styles.inputRadioItemTitle}`}>
-                                Giới tính
-                              </div>
-                              <div className={`${styles.inputRadioItems}`}>
-                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {
-                                    ...checkList,
-                                    gender: 'male'
-                                  }
-                                )}>
-                                  <p>
-                                    <input
-                                      type="radio"
-                                      id="sex"
-                                      name="radio-sex"
-                                      value="male"
-                                      checked={checkList.gender === "male" ? true : false}
-                                      className={styles.inputRadioButton}
-                                    />
-                                    <label
-                                      className={styles.labelRadio}
-                                      for="sex"
-                                    >
-                                      Nam
-                                    </label>
-                                  </p>
-                                </div>
-                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {
-                                    ...checkList,
-                                    gender: 'female'
-                                  }
-                                )}>
-                                  <p>
-                                    <input
-                                      type="radio"
-                                      id="sex"
-                                      name="radio-sex"
-                                      value={checkList.gender === "female" ? true : false}
-                                      className={styles.inputRadioButton}
-                                    />
-                                    <label
-                                      className={styles.labelRadio}
-                                      for="sex"
-                                    >
-                                      Nữ
-                                    </label>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className={`${styles.inputRadioSide} ` }>
-                              <div className={`${styles.inputRadioItemTitle}`}>
-                                Tình trạng
-                              </div>
-                              <div className={`${styles.inputRadioItems}`}>
-                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {
-                                    ...checkList,
-                                    status: 'singel'
-                                  }
-                                )}>
-                                  <p>
-                                    <input
-                                      type="radio"
-                                      id="alone"
-                                      name="radio-relation"
-                                      value="alone"
-                                      checked={checkList.status === "singel" ? true : false}
-                                      className={styles.inputRadioButton}
-                                    />
-                                    <label
-                                      className={styles.labelRadio}
-                                      for="alone"
-                                    >
-                                      Độc thân
-                                    </label>
-                                  </p>
-                                </div>
-                                <div className={`${styles.inputRadioItem}`} onClick={() => setCheckList(
-                                  {
-                                    ...checkList,
-                                    status: 'married'
-                                  }
-                                )}>
-                                  <p>
-                                    <input
-                                      type="radio"
-                                      id="married"
-                                      name="radio-relation"
-                                      value={checkList.status === "married" ? true : false}
-
-                                      className={styles.inputRadioButton}
-                                    />
-                                    <label
-                                      className={styles.labelRadio}
-                                      style={{ fontSize: "15px" }}
-                                      for="married"
-                                    >
-                                      Đã kết hôn
-                                    </label>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className={styles.input}>
-                            <label htmlFor="name">Họ và tên đầy đủ</label>
-                            <input type="text" id="name" />
-                          </div>
-                          <div className={styles.inputGroup}>
-                            <div className={styles.inputGroupLine}>
-                              <div className={styles.input}>
-                                <label htmlFor="dob">Ngày tháng năm sinh</label>
-                                <input type="text" id="dob" />
-                              </div>
-                              <div className={styles.input}>
-                                <label htmlFor="name">Số CCCD / CMND</label>
-                                <input type="text" id="name" />
-                              </div>
-                            </div>
-                            <div className={styles.inputGroupLine}>
-                              <div className={styles.input}>
-                                <label htmlFor="phone">Số điện thoại</label>
-                                <input type="text" id="phone" />
-                              </div>
-                              <div className={styles.input}>
-                                <label htmlFor="email">Email</label>
-                                <input type="text" id="email" />
-                              </div>
-                            </div>
-                            <div className={styles.inputGroupAddress}>
-                              <p className={styles.inputAddressTitle}>
-                                Nơi ở hiện nay
-                              </p>
-                              <div className={styles.inputGroupLine}>
-                                <div className={styles.input}>
-                                  <input
-                                    type="text"
-                                    id="province"
-                                    placeholder="Tỉnh/Thành phố"
-                                  />
-                                </div>
-                                <div className={styles.input}>
-                                  <input
-                                    type="text"
-                                    id="district"
-                                    placeholder="Quận/Huyện"
-                                  />
-                                </div>
-                              </div>
-                              <div className={styles.inputGroupLine}>
-                                <div className={styles.input}>
-                                  <input
-                                    type="text"
-                                    id="street"
-                                    placeholder="Phường/ Xã"
-                                  />
-                                </div>
-                                <div className={styles.input}>
-                                  <input
-                                    type="text"
-                                    id="housenumber"
-                                    placeholder="Số nhà"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
+                        <Step1 />
                       </>
-                    ) : null}
+                    ) : index === 1 ? (
+                      <Step2 />
+                    ) : index === 2 ? (
+                      <Step3 />
+                    ) : (
+                      <Step4 />
+                    )}
                     <Box sx={{ mb: 2 }}>
                       <div>
-                        <Button
-                          variant="contained"
-                          onClick={handleNext}
-                          sx={{ mt: 1, mr: 1 }}
-                        >
-                          {index === steps.length - 1
-                            ? "Ứng tuyển"
-                            : "Bước tiếp theo"}
-                        </Button>
-                        <Button
-                          disabled={index === 0}
-                          onClick={handleBack}
-                          sx={{ mt: 1, mr: 1 }}
-                        >
-                          Quay lại
-                        </Button>
+                        {index < steps.length-1 ?
+                        <>
+                          <Button
+                            variant="contained"
+                            onClick={handleNext}
+                            sx={{ mt: 1, mr: 1 }}
+                          >
+                            {index === steps.length - 1
+                              ? "Hoàn thành"
+                              : "Bước tiếp theo"}
+                          </Button>
+                          <Button
+                            disabled={index === 0}
+                            onClick={handleBack}
+                            sx={{ mt: 1, mr: 1 }}
+                          >
+                            Quay lại
+                          </Button>
+                        </>
+                        : ""}
                       </div>
                     </Box>
                   </StepContent>
@@ -316,13 +153,31 @@ function RecruitPosition() {
                 <Typography>
                   All steps completed - you&apos;re finished
                 </Typography>
-                <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                  Reset
+                <Button onClick={handleDone} sx={{ mt: 1, mr: 1 }}>
+                  Hoàn thành
                 </Button>
               </Paper>
             )}
           </Box>
         </div>
+        {activeStep === 3 ? (
+          <div className={` container ${styles.desc}`} style={{width: "40%",marginTop:"2rem",color:"rgb(145 145 145)"}}>
+            <ul>
+              Lưu ý khi đăng CV
+              <li>
+                1. Chỉ đăng tải file CV dưới dạng PDF, có kích thước không vượt
+                100mb
+              </li>
+              <li>2. Lưu tên cần đảm bảo thực hiện theo thứ tự:</li>
+              <p className="text-center">
+                CV_[Tên vị trí ứng tuyển]_Họ tên đầy đủ
+              </p>
+              <p className="text-center">Ví dụ: CV_TPHCNS_Nguyễn Văn A</p>
+            </ul>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <Footer />
     </>

@@ -55,6 +55,14 @@ const Header2 = () => {
                     <li>
                       <NavLink
                         activeClassName={styles.selected}
+                        to="/van-hoa"
+                      >
+                        VĂN HÓA
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        activeClassName={styles.selected}
                         to="/tuyen-dung"
                       >
                         VỊ TRÍ TUYỂN DỤNG

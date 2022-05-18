@@ -11,15 +11,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DetailsRecuit from "./pages/DetailsRecruit/DetailsRecuit";
 // const Recruit = lazy(() => import("./pages/Recruit"));
 import Blog from "./pages/Blog/Blog";
+import Culture from "./pages/Culture/Culture";
+import CultureDetail from "./pages/Culture/CultureDetail/CultureDetail";
 import FormRecruit from "./pages/FormRecruit/FormRecruit";
 import RecruitPosition from "./pages/RecruitPosition/RecruitPosition";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import Index from "./pages/FAQs/index";
 import ScrollToTop from "./components/extensions/scrollToTop";
 import FlowHiring from "./pages/FlowHiring/FlowHiring";
-import Research from "../src/pages/Research/Research"
-import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess"
-import Alert from "../src/components/Alert/alert"
+import Research from "../src/pages/Research/Research";
+import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
+import Alert from "../src/components/Alert/alert";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -39,6 +41,12 @@ rootElement.render(
               path="/dinh-huong-nghe-nghiep/:name"
               component={BlogDetail}
             />
+            <Route exact path="/van-hoa" component={Culture} />
+            <Route path="/van-hoa/:name" component={CultureDetail} />
+            <Route
+              path="/dinh-huong-nghe-nghiep/:name"
+              component={BlogDetail}
+            />
             <Route path="/ung-tuyen/:name" component={FormRecruit} />
             <Route exact path="/ung-tuyen/" component={FormRecruit} />
             <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
@@ -46,7 +54,7 @@ rootElement.render(
             <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
             <Route path="/tra-cuu" component={Research} />
             <Route path="/ung-tuyen-thanh-cong" component={ApplySuccess} />
-            <Route path="/alert" component={Alert}/>
+            <Route path="/alert" component={Alert} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>
