@@ -44,14 +44,6 @@ export default function BlogContent() {
       title: "Bản tin tuyển dụng",
       short: "office",
     },
-    {
-      title: "Văn hóa Diligo",
-      short: "office",
-    },
-    {
-      title: "Video",
-      short: "office",
-    },
   ];
   // console.log(
   //    data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Mới nhất" ? tag.name  : active) ).length > 0) {
