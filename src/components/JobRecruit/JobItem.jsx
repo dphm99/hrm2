@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
@@ -65,7 +65,7 @@ function JobItem({
   lenght,
 }) {
   const [active, setActive] = useState(false);
-  const [disable, setDisable] = useState(false)
+  // const [disable, setDisable] = useState(false)
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
 
   function checkDate(e) {
