@@ -200,7 +200,7 @@ function FormRecruit() {
                 </div>
                 {fileName}
               </div><div>
-             <p className='m-0'> {`hoặc sử dụngform CV của Diligo`} </p>
+             <p className='m-0'> {`hoặc sử dụng biểu mẫu CV của Diligo`} </p>
              <p  className='mt-1'> {`Ấn `}
                 <a href={filesCV} style={{color:"#c50c0c",textDecoration:'none'}} download>
                 vào đây 
