@@ -25,9 +25,6 @@
 }
 .relatedPost {
   margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .relatedPostImg {
@@ -37,12 +34,14 @@
 }
 
 .relatedPostItem {
-  width: 18rem;
-  height: 18rem;
+  width: 17rem;
+  height: 17rem;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   border: 1px solid #000;
+  color: #000;
+  text-decoration: none;
 }
 .relatedPostInfo {
   padding: 10px;
