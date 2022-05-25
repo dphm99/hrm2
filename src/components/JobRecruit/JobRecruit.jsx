@@ -32,7 +32,7 @@ export const jobCategory = [
   {
     img: nhasanxuat,
     short: "nhasanxuat",
-    name: "Nhà sản xuất",
+    name: "Nhà máy",
   },
   {
     img: taichinh,

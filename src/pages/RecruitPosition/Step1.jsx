@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import styles from "./RecruitPosition.module.css";
 
 function Step1() {
@@ -6,6 +6,8 @@ function Step1() {
     gender: "male",
     status: "single",
   });
+  const checkListContext = useContext(checkList)
+
   return (
     <form className={`${styles.FormPosition}`}>
       <div className={`${styles.inputRadio} `}>
@@ -126,7 +128,17 @@ function Step1() {
         <label htmlFor="name">
           Họ và tên đầy đủ <span>*</span>
         </label>
-        <input type="text" id="name" required />
+        <input
+          type="text"
+          id="name"
+          onChange={(e) =>
+            setCheckList({
+              ...checkList,
+              fullname: e.target.value,
+            })
+          }
+          required
+        />
       </div>
       <div className={styles.inputGroup}>
         <div className={styles.inputGroupLine}>
@@ -134,13 +146,33 @@ function Step1() {
             <label htmlFor="dob">
               Ngày tháng năm sinh <span>*</span>
             </label>
-            <input type="text" id="dob" required />
+            <input
+              type="date"
+              id="dob"
+              required
+              onChange={(e) =>
+                setCheckList({
+                  ...checkList,
+                  dob: e.target.value,
+                })
+              }
+            />
           </div>
           <div className={styles.input}>
             <label htmlFor="ccid">
               Số CCCD / CMND <span>*</span>
             </label>
-            <input type="text" id="ccid" required />
+            <input
+              type="text"
+              id="ccid"
+              required
+              onChange={(e) =>
+                setCheckList({
+                  ...checkList,
+                  ccid: e.target.value,
+                })
+              }
+            />
           </div>
         </div>
         <div className={styles.inputGroupLine}>
@@ -148,36 +180,105 @@ function Step1() {
             <label htmlFor="phone">
               Số điện thoại <span>*</span>
             </label>
-            <input type="text" id="phone" required />
+            <input
+              type="number"
+              id="phone"
+              required
+              onChange={(e) =>
+                setCheckList({
+                  ...checkList,
+                  phone: e.target.value,
+                })
+              }
+            />
           </div>
           <div className={styles.input}>
             <label htmlFor="email">
               Email <span>*</span>
             </label>
-            <input type="text" id="email" required />
+            <input
+              type="text"
+              id="email"
+              required
+              onChange={(e) =>
+                setCheckList({
+                  ...checkList,
+                  email: e.target.value,
+                })
+              }
+            />
           </div>
         </div>
         <div className={styles.inputGroupAddress}>
           <p className={styles.inputAddressTitle}>Nơi ở hiện nay</p>
           <div className={styles.inputGroupLine}>
             <div className={styles.input}>
-              <input type="text" id="province" placeholder="Tỉnh/Thành phố" />
+              <input
+                type="text"
+                id="province"
+                placeholder="Tỉnh/Thành phố"
+                onChange={(e) =>
+                  setCheckList({
+                    ...checkList,
+                    city: e.target.value,
+                  })
+                }
+              />
             </div>
             <div className={styles.input}>
-              <input type="text" id="district" placeholder="Quận/Huyện" />
+              <input
+                type="text"
+                id="district"
+                placeholder="Quận/Huyện"
+                onChange={(e) =>
+                  setCheckList({
+                    ...checkList,
+                    district: e.target.value,
+                  })
+                }
+              />
             </div>
           </div>
           <div className={styles.inputGroupLine}>
             <div className={styles.input}>
-              <input type="text" id="street" placeholder="Phường/ Xã" />
+              <input
+                type="text"
+                id="street"
+                placeholder="Phường/ Xã"
+                onChange={(e) =>
+                  setCheckList({
+                    ...checkList,
+                    street: e.target.value,
+                  })
+                }
+              />
             </div>
             <div className={styles.input}>
-              <input type="text" id="housenumber" placeholder="Số nhà" />
+              <input
+                type="text"
+                id="housenumber"
+                placeholder="Số nhà"
+                onChange={(e) =>
+                  setCheckList({
+                    ...checkList,
+                    housenumber: e.target.value,
+                  })
+                }
+              />
             </div>
           </div>
           <div className={styles.input}>
             <label htmlFor="link">Link Facebook | KinkedIn | Instagram</label>
-            <input type="text" id="link" />
+            <input
+              type="text"
+              id="link"
+              onChange={(e) =>
+                setCheckList({
+                  ...checkList,
+                  link: e.target.value,
+                })
+              }
+            />
           </div>
         </div>
       </div>
