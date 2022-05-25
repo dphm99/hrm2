@@ -205,7 +205,7 @@ export default function Culture() {
                               }}
                             >
                               <div
-                                className={`${styles.BannerBlockflex} col-md-8 d-flex flex-column position-static`}
+                                className={`${styles.BannerBlockflex} col-md-12 d-flex flex-column position-static`}
                               >
                                 <h6 className={`${styles.Block_H6} mb-2`}>
                                   <strong>{e.title}</strong>

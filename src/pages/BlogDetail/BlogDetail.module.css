@@ -1,36 +1,77 @@
 .main {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .title {
-    text-align: center;
-    margin: 3rem 0 !important;
+  text-align: center;
+  margin: 3rem 0 !important;
 }
 .content img {
-    width: 100%;
-    margin: 1.5rem 0 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0 1.5rem;
 }
 .content h2 {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 .content h3 {
-    margin: 2rem 0 1.5rem;
+  margin: 2rem 0 1.5rem;
 }
 .content {
-    text-align: justify;
+  text-align: justify;
 }
 .RecruitSideBar {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
+}
+.relatedPost {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relatedPostImg {
+  height: 50%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.relatedPostItem {
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+.relatedPostInfo {
+  padding: 10px;
+}
+.relatedPostItem .title {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0 !important;
+}
+.relatedPostItem .short {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* -------------------------PC--------------------- */
 @media only screen and (max-width: 1439px) {
-    .main {
-        margin-top: 15
-        0px;
-    }
-    .title {
-        margin: 2rem 0 !important;
-    }
+  .main {
+    margin-top: 15 0px;
+  }
+  .title {
+    margin: 2rem 0 !important;
+  }
 }

@@ -5,6 +5,7 @@ function RecruitProvider({ children }) {
   const [keySearch, setKeySearch] = useState('');
   const [targetSearch] = useState(['category']);
   const [data, setData] = useState([]);
+  const [datatest, setDatatest] = useState([]);
   useEffect(() => {
     fetch('http://test.diligo.vn:15000/api/v1/recruitment')
       .then((result) => result.json())

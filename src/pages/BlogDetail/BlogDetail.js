@@ -6,9 +6,15 @@ import { BlogContext } from "../../components/contexts/ContextBlog";
 import Header2 from "../../components/Header/Header2";
 import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
 import Header from "../../components/Header/Header";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import { FacebookShareButton, LinkedinShareButton } from "react-share";
+import { FacebookIcon, LinkedinIcon } from "react-share";
+import zalo from "../../assets/img/icon-svg/zalo-logo.jpg";
+import RelatedPost from "./RelatedPost/RelatedPost";
 function BlogDetail() {
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
+  const currentURL = window.location.href;
   const breadcrumItem = [
     {
       href: "/",
@@ -68,8 +74,51 @@ function BlogDetail() {
                 <RecruitSideBar className={`${styles.RecruitSideBar}`} />
               </div>
             </div>
+            <div className={`${styles.detailsIcon} col-6 `}>
+              <FacebookShareButton url={currentURL}>
+                <FacebookIcon size={28} />
+              </FacebookShareButton>
+
+              <img
+                src={zalo}
+                style={{ width: "30px", marginRight: "6px" }}
+                alt="/"
+              />
+
+              <LinkedinShareButton url={currentURL}>
+                <LinkedinIcon size={28} />
+              </LinkedinShareButton>
+            </div>
           </>
         )}
+        <section>
+          <div className={styles.relatedPost}>
+            {console.log(
+              data.filter((ele) => ele.quiz_ids.name === "Văn hóa Diligo")
+            )}
+            {data
+              .filter((ele) => ele.quiz_ids[0].name === "Văn hóa Diligo")
+              .map(
+                (ele, index) =>
+                  index < 4 && (
+                    <div className={styles.relatedPostItem} key={index}>
+                      <img
+                        className={styles.relatedPostImg}
+                        src={ele.avatar}
+                        alt=""
+                      />
+                      <div className={styles.relatedPostInfo}>
+                        <p className={styles.title}>{ele.title}</p>
+                        <p
+                          className={styles.short}
+                          dangerouslySetInnerHTML={{ __html: ele.description }}
+                        ></p>
+                      </div>
+                    </div>
+                  )
+              )}
+          </div>
+        </section>
       </div>
       <Footer />
     </div>
