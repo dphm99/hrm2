@@ -128,12 +128,12 @@ export default function BlogContent() {
                             <h6 className={`${styles.Block_H6} mb-2`}>
                               <strong>{e.title}</strong>
                             </h6>
-                            <p
+                            <div
                               className={`${styles.Block_P} mb-auto`}
                               dangerouslySetInnerHTML={{
                                 __html: `${e.content}`,
                               }}
-                            ></p>
+                            ></div>
                             <div className={styles.Block__link}>
                               <p
                                 to={{

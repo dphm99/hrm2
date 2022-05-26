@@ -46,7 +46,7 @@
   color: #fff;
   /* filter: invert(100%) sepia(0) saturate(7464%) hue-rotate(183deg)
     brightness(92%); */
-} 
+}
 .Block_img img {
   width: 100%;
   border-radius: 3px;
@@ -67,8 +67,12 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   color: black;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  height: 100px;
+}
+.Block_P img {
+  display: none;
 }
 
 .Block_P * {
@@ -168,6 +172,9 @@ ul li {
     padding-bottom: 10px;
     gap: 0 10px;
   }
+  .wrapNav strong{
+    font-size: 12px;
+  }
   .Block_img img {
     object-fit: contain;
   }
@@ -179,7 +186,10 @@ ul li {
 /* -------------------------PC--------------------- */
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .nav {
-    width: 190px;
+    width: 30%;
+  }
+  .main {
+    overflow: hidden;
   }
 }
 
