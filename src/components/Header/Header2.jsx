@@ -78,7 +78,7 @@ const Header2 = () => {
                       </NavLink>
                     </li>
                     <li>
-                      <a style={{color:"#fff"}} href="http://daotao.diligo.vn" target="_blank" rel="noreferrer" activeClassName={styles.selected}>
+                      <a  href="http://daotao.diligo.vn" target="_blank" rel="noreferrer" activeClassName={styles.selected}>
                         ĐÀO TẠO
                       </a>
                     </li>
