@@ -141,11 +141,11 @@
     text-decoration: none;
   }
   
-  ul li {
+  .Culture ul li {
     padding-top: -10px !important;
   }
   
-  ul li {
+  .Culture ul li {
     padding: -3px !important;
   }
   .showMore {
@@ -181,7 +181,7 @@
   /* -------------------------PC--------------------- */
   @media only screen and (min-width: 1024px) and (max-width: 1439px) {
     .nav {
-      width: 190px;
+      width: 48%;
     }
   }
   

@@ -172,7 +172,7 @@
     color: #fff;
     z-index: 6;
     float: right;
-    margin-top: -71px;
+    margin-top: -50px;
   }
 
   .headerMenu li a {
@@ -268,7 +268,7 @@
     color: #fff;
     z-index: 6;
     float: right;
-    margin-top: -71px;
+    margin-top: -50px;
   }
 
   .headerMenu li a {
@@ -451,7 +451,6 @@
 
   .menu_icon {
     font-size: 2rem !important;
-    margin-top: -73px;
   }
 
   .headerMenu {
