@@ -3,6 +3,8 @@ import Header2 from "../../components/Header/Header2";
 import Footer from "../../components/Footer/Footer";
 import FormResearch from "../../components/FormResearch/FormResearch";
 import Header from "../../components/Header/Header";
+import { Helmet } from "react-helmet";
+
 function Research() {
   const [header, setHeader] = useState(true);
   useEffect(() => {
@@ -14,6 +16,10 @@ function Research() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Tra cứu kết quả ứng tuyển - Diligo</title>
+        <meta name="description" content="Tra cứu kết quả ứng tuyển - Diligo" />
+      </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
       <FormResearch />

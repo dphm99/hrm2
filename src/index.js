@@ -43,10 +43,6 @@ rootElement.render(
             />
             <Route exact path="/van-hoa" component={Culture} />
             <Route path="/van-hoa/:name" component={CultureDetail} />
-            <Route
-              path="/dinh-huong-nghe-nghiep/:name"
-              component={BlogDetail}
-            />
             <Route path="/ung-tuyen/:name" component={FormRecruit} />
             <Route exact path="/ung-tuyen/" component={FormRecruit} />
             <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
@@ -54,7 +50,6 @@ rootElement.render(
             <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
             <Route path="/tra-cuu" component={Research} />
             <Route path="/ung-tuyen-thanh-cong" component={ApplySuccess} />
-            <Route path="/alert" component={Alert} />
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </Suspense>

@@ -7,6 +7,7 @@ import Accordition from "./Accordion/Accordion";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import "./custom.scss";
 import Header from "../../components/Header/Header";
+import { Helmet } from "react-helmet";
 
 function Index() {
   const breadcrumItem = [
@@ -22,52 +23,57 @@ function Index() {
       isActive: true,
     },
   ];
-  const [header,setHeader] = useState(true)
+  const [header, setHeader] = useState(true);
   useEffect(() => {
-    if(window.innerWidth <= 768){
-      setHeader(false)
+    if (window.innerWidth <= 768) {
+      setHeader(false);
     } else {
-      setHeader(true)
+      setHeader(true);
     }
-  },[])
+  }, []);
 
   return (
     <>
-     {!header && <Header />}
+      <Helmet>
+        <title>Trợ giúp - Diligo</title>
+        <meta name="description" content="Trợ giúp" />
+      </Helmet>
+      {!header && <Header />}
       {header && <Header2 />}
-    <div className={`${styles.FAQ} FAQs`}>
-      
-      <Breadcrumbs
-        breadItem={breadcrumItem}
-      />
-      <div className="container-md">
-
-        <p className={`${styles.greeting}`}
-
-        >
-          "Xin chào! Anh (chị) đang cần trợ giúp điều gì"</p>
-        <div className={`${styles.nav}`}>
-          <div className={`${styles.navItem} ${styles.active} `}>
-            Câu hỏi thường gặp
-          </div>
-          <div className={`${styles.navItem}`}>
-            <a style={{textDecoration:"none", color:"#bf202e",fontWeight:"600"}} href="https://www.facebook.com/tuyendungdiligo">Trò chuyện với chúng tôi</a>
-          </div>
-        </div>
-
-        <div
-          className={`container-md `}
-          style={{ marginTop: "35px" }}>
-          <p
-            className={`${styles.title}`}
-          >
-            Câu hỏi các ứng viên thường hay thắc mắc
+      <div className={`${styles.FAQ} FAQs`}>
+        <Breadcrumbs breadItem={breadcrumItem} />
+        <div className="container-md">
+          <p className={`${styles.greeting}`}>
+            "Xin chào! Anh (chị) đang cần trợ giúp điều gì"
           </p>
-          <Accordition />
+          <div className={`${styles.nav}`}>
+            <div className={`${styles.navItem} ${styles.active} `}>
+              Câu hỏi thường gặp
+            </div>
+            <div className={`${styles.navItem}`}>
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "#bf202e",
+                  fontWeight: "600",
+                }}
+                href="https://www.facebook.com/tuyendungdiligo"
+              >
+                Trò chuyện với chúng tôi
+              </a>
+            </div>
+          </div>
+
+          <div className={`container-md `} style={{ marginTop: "35px" }}>
+            <p className={`${styles.title}`}>
+              Câu hỏi các ứng viên thường hay thắc mắc
+            </p>
+            <Accordition />
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div></>
+    </>
   );
 }
 

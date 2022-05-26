@@ -6,6 +6,8 @@ import { BlogContext } from "../../../components/contexts/ContextBlog";
 import Header2 from "../../../components/Header/Header2";
 import RecruitSideBar from "../../../components/RecruitSideBar/RecruitSideBar";
 import Header from "../../../components/Header/Header";
+import { Helmet } from "react-helmet";
+
 function CultureDetail() {
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
@@ -40,6 +42,19 @@ function CultureDetail() {
   }, []);
   return (
     <div className={``}>
+      <Helmet>
+        <title>
+          {data.find((ele) => ele.id === Number(blogId)) &&
+            data.find((ele) => ele.id === Number(blogId)).title}
+        </title>
+        <meta
+          name="description"
+          content={
+            data.find((ele) => ele.id === Number(blogId)) &&
+            `${data.find((ele) => ele.id === Number(blogId)).title}`
+          }
+        />
+      </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
       <div className={`${styles.main} container-lg`}>

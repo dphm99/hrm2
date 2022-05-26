@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import './PageNotFound.css'
-import {Helmet} from "react-helmet";
+import React, { Component } from "react";
+import "./PageNotFound.css";
+import { Helmet } from "react-helmet";
 export class PageNotFound extends Component {
-    render() {
-        return ( 
-               <section className="four-zero-four-section version-1">
-               <Helmet>
-                 <title>Error</title>
-               </Helmet>
+  render() {
+    return (
+      <section className="four-zero-four-section version-1">
+        <Helmet>
+          <title>Error</title>
+        </Helmet>
         {/*======= Stars =======*/}
         <div id="stars" />
         <div id="stars2" />
@@ -30,19 +30,19 @@ export class PageNotFound extends Component {
                 <h1 className="second">4</h1>
               </div>
               <h2>Không tìm thấy trang</h2>
-              <p className="pt-10">
-                Chúng tôi không tìm thấy trang ...
-              </p>
-              <a href="/" className="mt-30">Quay lại trang chủ</a>
+              <p className="pt-10">Chúng tôi không tìm thấy trang ...</p>
+              <a href="/" className="mt-30">
+                Quay lại trang chủ
+              </a>
             </div>
           </div>
         </div>
         <div className="small-planet-1" />
         <div className="small-planet-2" />
-        <div className="small-planet-3" /> 
-      </section> 
-        )
-    }
+        <div className="small-planet-3" />
+      </section>
+    );
+  }
 }
 
-export default PageNotFound
+export default PageNotFound;

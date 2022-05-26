@@ -11,6 +11,7 @@ import Header from "../../components/Header/Header";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import Slider from "react-slick";
+import { Helmet } from "react-helmet";
 
 import zalo from "../../assets/img/icon-svg/zalo-logo.jpg";
 function BlogDetail() {
@@ -86,6 +87,19 @@ function BlogDetail() {
   };
   return (
     <div className={``}>
+      <Helmet>
+        <title>
+          {data.find((ele) => ele.id === Number(blogId)) &&
+            data.find((ele) => ele.id === Number(blogId)).title}
+        </title>
+        <meta
+          name="description"
+          content={
+            data.find((ele) => ele.id === Number(blogId)) &&
+            `${data.find((ele) => ele.id === Number(blogId)).title}`
+          }
+        />
+      </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
       <div className={`${styles.main} container-lg`}>
@@ -133,35 +147,47 @@ function BlogDetail() {
         )}
         <section>
           <div className={styles.relatedPost}>
-            <div style={{fontSize:"20px",fontWeight:"bold", marginBottom:"1rem", textTransform:"uppercase"}}>Các bài viết liên quan</div>
+            <div
+              style={{
+                fontSize: "20px",
+                fontWeight: "bold",
+                marginBottom: "1rem",
+                textTransform: "uppercase",
+              }}
+            >
+              Các bài viết liên quan
+            </div>
             <Slider {...settings}>
-              {data && data
-                .filter((ele) => ele.quiz_ids[0].name === relatedCategory)
-                .map((ele, index) => (
-                  <Link
-                    to={{
-                      pathname: `/dinh-huong-nghe-nghiep/${toSlug(ele.title)}`,
-                      search: `#${index}#${ele.id}`,
-                    }}
-                    className={styles.relatedPostItem}
-                    key={index}
-                  >
-                    <img
-                      className={styles.relatedPostImg}
-                      src={ele.avatar}
-                      alt=""
-                    />
-                    <div className={styles.relatedPostInfo}>
-                      <p className={styles.title}>{ele.title}</p>
-                      <p
-                        className={styles.short}
-                        dangerouslySetInnerHTML={{
-                          __html: ele.description,
-                        }}
-                      ></p>
-                    </div>
-                  </Link>
-                ))}
+              {data &&
+                data
+                  .filter((ele) => ele.quiz_ids[0].name === relatedCategory)
+                  .map((ele, index) => (
+                    <Link
+                      to={{
+                        pathname: `/dinh-huong-nghe-nghiep/${toSlug(
+                          ele.title
+                        )}`,
+                        search: `#${index}#${ele.id}`,
+                      }}
+                      className={styles.relatedPostItem}
+                      key={index}
+                    >
+                      <img
+                        className={styles.relatedPostImg}
+                        src={ele.avatar}
+                        alt=""
+                      />
+                      <div className={styles.relatedPostInfo}>
+                        <p className={styles.title}>{ele.title}</p>
+                        <p
+                          className={styles.short}
+                          dangerouslySetInnerHTML={{
+                            __html: ele.description,
+                          }}
+                        ></p>
+                      </div>
+                    </Link>
+                  ))}
             </Slider>
           </div>
         </section>
