@@ -21,7 +21,6 @@ import ScrollToTop from "./components/extensions/scrollToTop";
 import FlowHiring from "./pages/FlowHiring/FlowHiring";
 import Research from "../src/pages/Research/Research";
 import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
-import Alert from "../src/components/Alert/alert";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
