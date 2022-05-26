@@ -9,6 +9,7 @@ import { RecruitContext } from "../../components/contexts/ContextRecuit";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
 import Header from "../../components/Header/Header";
 import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
@@ -69,7 +70,7 @@ function FormRecruit() {
               name !== "" &&
               phone !== "" &&
               email !== "" &&
-              fileName !== "" 
+              fileName !== ""
             ) {
               history.push("/ung-tuyen-thanh-cong");
             } else {
@@ -84,7 +85,7 @@ function FormRecruit() {
               name !== "" &&
               phone !== "" &&
               email !== "" &&
-              fileName !== "" 
+              fileName !== ""
             ) {
               history.push("/ung-tuyen-thanh-cong");
             } else {
@@ -108,10 +109,10 @@ function FormRecruit() {
       isActive: true,
     },
   ];
-  const [header,setHeader] = useState(true)
+  const [header, setHeader] = useState(true);
   useEffect(() => {
-    if(window.innerWidth <= 768){
-      setHeader(false)
+    if (window.innerWidth <= 768) {
+      setHeader(false);
     } else {
       setHeader(true);
     }
@@ -119,6 +120,19 @@ function FormRecruit() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {data.find((ele) => ele.id === Number(jobId)) &&
+            data.find((ele) => ele.id === Number(jobId)).name.name}
+        </title>
+        <meta
+          name="description"
+          content={
+            data.find((ele) => ele.id === Number(jobId)) &&
+            data.find((ele) => ele.id === Number(jobId)).name.name
+          }
+        />
+      </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
       <div className="container" style={{ margin: "1rem auto 90px" }}>
@@ -196,15 +210,24 @@ function FormRecruit() {
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer" }}
                 >
-                 Đính kèm file CV của bạn
+                  Đính kèm file CV của bạn
                 </div>
                 {fileName}
-              </div><div>
-             <p className='m-0'> {`hoặc sử dụng biểu mẫu CV của Diligo`} </p>
-             <p  className='mt-1'> {`Ấn `}
-                <a href={filesCV} style={{color:"#c50c0c",textDecoration:'none'}} download>
-                vào đây 
-                </a>  để tải về</p>
+              </div>
+              <div>
+                <p className="m-0"> {`hoặc sử dụng biểu mẫu CV của Diligo`} </p>
+                <p className="mt-1">
+                  {" "}
+                  {`Ấn `}
+                  <a
+                    href={filesCV}
+                    style={{ color: "#c50c0c", textDecoration: "none" }}
+                    download
+                  >
+                    vào đây
+                  </a>{" "}
+                  để tải về
+                </p>
               </div>
               <div className={styles.inputUrl}>
                 <label htmlFor="inputUrl" className={styles.inputLabel}>
@@ -217,14 +240,17 @@ function FormRecruit() {
                   name="url"
                 />
               </div>
-              {name !== "" && phone !== "" && email !== "" && fileName !== ""? (
+              {name !== "" &&
+              phone !== "" &&
+              email !== "" &&
+              fileName !== "" ? (
                 <div
                   // type="submit"
                   onClick={() => handleLogin()}
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer" }}
                 >
-                 ỨNG TUYỂN
+                  ỨNG TUYỂN
                 </div>
               ) : (
                 <div
@@ -232,10 +258,10 @@ function FormRecruit() {
                   className={`${styles.buttonSubmit} ${styles.active}`}
                   style={{ cursor: "pointer", backgroundColor: "#d7cfcf" }}
                 >
-                 ỨNG TUYỂN
+                  ỨNG TUYỂN
                 </div>
               )}
-              
+
               {/* <div className={styles.noCV}>
                 <a href={filesCV}  download>
                   Tải CV tiêu chuẩn của Diligo

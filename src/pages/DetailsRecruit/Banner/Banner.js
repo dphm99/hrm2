@@ -12,7 +12,7 @@ import { toSlug } from "../../../components/extensions/toSlug";
 import formatNumber from "../../../components/extensions/formatNumber";
 import { formatDate } from "../../../components/extensions/formatDate";
 import longBanner from "../../../assets/img/banner3.jpg";
-
+import { Helmet } from "react-helmet";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -119,6 +119,19 @@ const Banner = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {data.find((ele) => ele.id === Number(jobId)) &&
+            data.find((ele) => ele.id === Number(jobId)).name.name}
+        </title>
+        <meta
+          name="description"
+          content={
+            data.find((ele) => ele.id === Number(jobId)) &&
+            `${data.find((ele) => ele.id === Number(jobId)).name.name}`
+          }
+        />
+      </Helmet>
       <div className="container">
         <div className={styles.detailsRecuit}>
           <Breadcrumbs breadItem={breadcrumItem} />
@@ -183,7 +196,8 @@ const Banner = () => {
                             {data.find((ele) => ele.id === Number(jobId))
                               .salary[0] === "ltt"
                               ? "Lương thỏa thuận"
-                              : data.find((ele) => ele.id === Number(jobId)).salary &&
+                              : data.find((ele) => ele.id === Number(jobId))
+                                  .salary &&
                                 data.find((ele) => ele.id === Number(jobId))
                                   .salary[0] === "lct"
                               ? "Lương cạnh tranh"
@@ -271,19 +285,19 @@ const Banner = () => {
                         {copySuccess}
                       </div>
                       <div className={`${styles.detailsIcon} col-6 `}>
-                       
-                          <FacebookShareButton url={currentURL}>
-                            <FacebookIcon size={28} />
-                          </FacebookShareButton>
-                      
-                       
-                          <img src={zalo} style={{ width: "30px", marginRight: "6px"}} alt="/" />
-                      
-                        
-                          <LinkedinShareButton url={currentURL}>
-                            <LinkedinIcon size={28} />
-                          </LinkedinShareButton>
-                       
+                        <FacebookShareButton url={currentURL}>
+                          <FacebookIcon size={28} />
+                        </FacebookShareButton>
+
+                        <img
+                          src={zalo}
+                          style={{ width: "30px", marginRight: "6px" }}
+                          alt="/"
+                        />
+
+                        <LinkedinShareButton url={currentURL}>
+                          <LinkedinIcon size={28} />
+                        </LinkedinShareButton>
                       </div>
                     </div>
                   </div>

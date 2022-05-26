@@ -15,9 +15,11 @@ import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
 import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
 import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
 import { useLocation } from "react-router-dom";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import longBanner from "../../assets/img/banner3.jpg";
-import clsx from 'clsx'
+import clsx from "clsx";
+import { Helmet } from "react-helmet";
+
 export const jobCategory = [
   {
     img: marketing,
@@ -67,7 +69,7 @@ function JobRecruits() {
   const major = new URLSearchParams(search).get("major");
   const [check, setCheck] = useState(false);
   const [sort, setSort] = useState(0);
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (jobName) {
@@ -80,19 +82,18 @@ function JobRecruits() {
   Array.prototype.sortAlpha = function () {
     switch (sort) {
       case 0:
-        return (this.sort())
+        return this.sort();
       case 1:
-        return (this.reverse())
+        return this.reverse();
       case 2:
-        return (this.sort(function (a, b) {
-          var dateA = new Date(a.deadline), dateB = new Date(b.deadline)
-          return dateA - dateB
-        }))
+        return this.sort(function (a, b) {
+          var dateA = new Date(a.deadline),
+            dateB = new Date(b.deadline);
+          return dateA - dateB;
+        });
       default:
         console.log("");
     }
-
-
   };
   const breadcrumItem = [
     {
@@ -120,6 +121,10 @@ function JobRecruits() {
 
   return (
     <div className={`container ${styles.customContainer}`}>
+      <Helmet>
+        <title>Vị trí tuyển dụng - Diligo</title>
+        <meta name="description" content={`Vị trí tuyển dụng - Diligo`} />
+      </Helmet>
       <Breadcrumbs breadItem={breadcrumItem} />
       <div className={`${styles.head_recruit} row`}>
         <div className={`${styles.head_col}  ${styles.head_input_search} `}>
@@ -220,59 +225,54 @@ function JobRecruits() {
                       className={`${styles.selectSort}`}
                       onClick={() => setShow(!show)}
                     >
-                      {
-                        sort === 0
-                          ?
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="currentColor"
-                            className="bi bi-sort-alpha-down"
-                            viewBox="0 0 16 16"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371h-1.781zm1.57-.785L11 2.687h-.047l-.652 2.157h1.351z"
-                            />
-                            <path d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
-                          </svg>
-                          : (
-                            sort === 1
-                              ?
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="currentColor"
-                                className={`${styles.optionsItem}bi bi-sort-alpha-up-alt`}
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M12.96 7H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V7z" />
-                                <path
-                                  fillRule="evenodd"
-                                  d="M10.082 12.629 9.664 14H8.598l1.789-5.332h1.234L13.402 14h-1.12l-.419-1.371h-1.781zm1.57-.785L11 9.688h-.047l-.652 2.156h1.351z"
-                                />
-                                <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
-                              </svg>
-                              :
-                              <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
-                          )
-                      }
-
-
-
+                      {sort === 0 ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
+                          className="bi bi-sort-alpha-down"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371h-1.781zm1.57-.785L11 2.687h-.047l-.652 2.157h1.351z"
+                          />
+                          <path d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
+                        </svg>
+                      ) : sort === 1 ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
+                          className={`${styles.optionsItem}bi bi-sort-alpha-up-alt`}
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M12.96 7H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V7z" />
+                          <path
+                            fillRule="evenodd"
+                            d="M10.082 12.629 9.664 14H8.598l1.789-5.332h1.234L13.402 14h-1.12l-.419-1.371h-1.781zm1.57-.785L11 9.688h-.047l-.652 2.156h1.351z"
+                          />
+                          <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
+                        </svg>
+                      ) : (
+                        <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
+                      )}
 
                       <ArrowDropDownIcon />
                     </div>
                     <div
                       className={clsx(styles.options, {
-                        [styles.show]: show
+                        [styles.show]: show,
                       })}
-
                     >
-                      <div className={`${styles.optionsItem}`}
-                        onClick={() => { setSort(0); setShow(false) }}
+                      <div
+                        className={`${styles.optionsItem}`}
+                        onClick={() => {
+                          setSort(0);
+                          setShow(false);
+                        }}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +282,6 @@ function JobRecruits() {
                           className={`bi bi-sort-alpha-down`}
                           viewBox="0 0 16 16"
                           style={sort === 0 ? { color: `#bf202e` } : {}}
-
                         >
                           <path
                             fillRule="evenodd"
@@ -291,8 +290,12 @@ function JobRecruits() {
                           <path d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
                         </svg>
                       </div>
-                      <div className={`${styles.optionsItem}`}
-                        onClick={() => { setSort(1); setShow(false) }}
+                      <div
+                        className={`${styles.optionsItem}`}
+                        onClick={() => {
+                          setSort(1);
+                          setShow(false);
+                        }}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -302,7 +305,6 @@ function JobRecruits() {
                           className={`${styles.optionsItem}bi bi-sort-alpha-up-alt`}
                           viewBox="0 0 16 16"
                           style={sort === 1 ? { color: `#bf202e` } : {}}
-
                         >
                           <path d="M12.96 7H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V7z" />
                           <path
@@ -312,10 +314,17 @@ function JobRecruits() {
                           <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
                         </svg>
                       </div>
-                      <div className={`${styles.optionsItem}`}
-                        onClick={() => { setSort(2); setShow(false) }}
-                        style={sort === 2 ? { color: `#bf202e`, fontWeight: 600 } : { fontWeight: 600 }}
-
+                      <div
+                        className={`${styles.optionsItem}`}
+                        onClick={() => {
+                          setSort(2);
+                          setShow(false);
+                        }}
+                        style={
+                          sort === 2
+                            ? { color: `#bf202e`, fontWeight: 600 }
+                            : { fontWeight: 600 }
+                        }
                       >
                         Ngày hết hạn
                       </div>
@@ -343,10 +352,7 @@ function JobRecruits() {
                   )
                   .sortAlpha()
                   .map((job, index) => (
-                    <div
-                      className={styles.JobLink_item}
-                      key={index}
-                    >
+                    <div className={styles.JobLink_item} key={index}>
                       <JobItem
                         id={job.id}
                         key={index}

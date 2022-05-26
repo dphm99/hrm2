@@ -7,6 +7,8 @@ import Breadcrumbs from "../../../components/BreadCrumb/Breadcrumb";
 import { toSlug } from "../../../components/extensions/toSlug";
 import nodata from "../../../assets/img/nodata.jpg";
 import CardVideo from "../../../components/CardVideo/CardVideo";
+import { Helmet } from "react-helmet";
+
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
   console.log(data);
@@ -53,6 +55,10 @@ export default function BlogContent() {
 
   return (
     <div className={`${styles.main}`}>
+      <Helmet>
+        <title>Định hướng nghề nghiệp - Diligo</title>
+        <meta name="description" content={`Định hướng nghề nghiệp - Diligo`} />
+      </Helmet>
       <Breadcrumbs breadItem={breadcrumItem} />
 
       <div className={`${styles.wrapNav}`}>

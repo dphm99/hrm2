@@ -19,6 +19,8 @@ import Step2 from "./Step2";
 import Step1 from "./Step1";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
+import { Helmet } from "react-helmet";
+
 // import { useForm } from "react-hook-form";
 // import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
@@ -84,6 +86,10 @@ function RecruitPosition() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Ứng tuyển theo năng lực</title>
+        <meta name="description" content="Ứng tuyển theo năng lực - Diligo" />
+      </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
       <div
@@ -111,7 +117,7 @@ function RecruitPosition() {
                     <Typography>{step.description}</Typography>
                     {index === 0 ? (
                       <>
-                      <Step1 />
+                        <Step1 />
                       </>
                     ) : index === 1 ? (
                       <Step2 />
@@ -122,26 +128,28 @@ function RecruitPosition() {
                     )}
                     <Box sx={{ mb: 2 }}>
                       <div>
-                        {index < steps.length-1 ?
-                        <>
-                          <Button
-                            variant="contained"
-                            onClick={handleNext}
-                            sx={{ mt: 1, mr: 1 }}
-                          >
-                            {index === steps.length - 1
-                              ? "Hoàn thành"
-                              : "Bước tiếp theo"}
-                          </Button>
-                          <Button
-                            disabled={index === 0}
-                            onClick={handleBack}
-                            sx={{ mt: 1, mr: 1 }}
-                          >
-                            Quay lại
-                          </Button>
-                        </>
-                        : ""}
+                        {index < steps.length - 1 ? (
+                          <>
+                            <Button
+                              variant="contained"
+                              onClick={handleNext}
+                              sx={{ mt: 1, mr: 1 }}
+                            >
+                              {index === steps.length - 1
+                                ? "Hoàn thành"
+                                : "Bước tiếp theo"}
+                            </Button>
+                            <Button
+                              disabled={index === 0}
+                              onClick={handleBack}
+                              sx={{ mt: 1, mr: 1 }}
+                            >
+                              Quay lại
+                            </Button>
+                          </>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </Box>
                   </StepContent>
@@ -150,9 +158,7 @@ function RecruitPosition() {
             </Stepper>
             {activeStep === steps.length && (
               <Paper square elevation={0} sx={{ p: 3 }}>
-                <Typography>
-                  
-                </Typography>
+                <Typography></Typography>
                 <Button onClick={handleDone} sx={{ mt: 1, mr: 1 }}>
                   Hoàn thành
                 </Button>
@@ -161,7 +167,14 @@ function RecruitPosition() {
           </Box>
         </div>
         {activeStep === 3 ? (
-          <div className={` container ${styles.desc}`} style={{width: "40%",marginTop:"2rem",color:"rgb(145 145 145)"}}>
+          <div
+            className={` container ${styles.desc}`}
+            style={{
+              width: "40%",
+              marginTop: "2rem",
+              color: "rgb(145 145 145)",
+            }}
+          >
             <ul>
               Lưu ý khi đăng CV
               <li>
