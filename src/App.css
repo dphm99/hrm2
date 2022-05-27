@@ -98,3 +98,5 @@ a:active, a:focus, a:hover {
 .MuiButton-textPrimary {
   color:#bf202e !important
 }
+.slick-prev:before{content:'' !important} 
+.slick-next:before{content:'' !important} 
