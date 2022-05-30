@@ -12,9 +12,12 @@ import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import Slider from "react-slick";
 import { Helmet } from "react-helmet";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 import zalo from "../../assets/img/icon-svg/zalo-logo.jpg";
 function BlogDetail() {
+  const [copySuccess] = useState("");
+  const [copied, setCopied] = useState(false);
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
   const currentURL = window.location.href;
@@ -85,6 +88,16 @@ function BlogDetail() {
       },
     ],
   };
+
+  function copy() {
+    const el = document.createElement("input");
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    setCopied(true);
+  }
   return (
     <div className={``}>
       <Helmet>
@@ -109,26 +122,34 @@ function BlogDetail() {
         />
         {data.find((ele) => ele.id === Number(blogId)) && (
           <>
-            <div className={`row`}>
-              <h1
-                className={`${styles.title} col-xl-8 col-lg-8`}
-                style={{ margin: `5rem 0` }}
-              >
-                {data.find((ele) => ele.id === Number(blogId)).title}
-              </h1>
-            </div>
-            <div className={`row`}>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.find((ele) => ele.id === Number(blogId)).content,
-                }}
-                className={`${styles.content} col-xl-8 col-lg-8`}
-              ></div>
+            <div className={`row`} style={{paddingTop: "4rem"}}>
+              <div className="col-xl-8 col-lg-8">
+                <h1 className={`${styles.title} `} style={{ margin: `5rem 0` }}>
+                  {data.find((ele) => ele.id === Number(blogId)).title}
+                </h1>
+
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.find((ele) => ele.id === Number(blogId))
+                      .content,
+                  }}
+                  className={`${styles.content}`}
+                ></div>
+              </div>
+
               <div className={`${styles.recruit} col-xl-4 col-lg-4`}>
                 <RecruitSideBar className={`${styles.RecruitSideBar}`} />
               </div>
             </div>
             <div className={`${styles.detailsIcon} col-6 `}>
+           
+                        <ContentCopyIcon
+                          style={{ fontSize: "14px", marginTop: "-2px" }}
+                        ></ContentCopyIcon>
+                        <button onClick={copy}>
+                          {!copied ? "Copy link" : "Đã copy!"}
+                        </button>
+                        {copySuccess}
               <FacebookShareButton url={currentURL}>
                 <FacebookIcon size={28} />
               </FacebookShareButton>
@@ -179,12 +200,12 @@ function BlogDetail() {
                       />
                       <div className={styles.relatedPostInfo}>
                         <p className={styles.title}>{ele.title}</p>
-                        <p
+                        {/* <p
                           className={styles.short}
                           dangerouslySetInnerHTML={{
                             __html: ele.description,
                           }}
-                        ></p>
+                        ></p> */}
                       </div>
                     </Link>
                   ))}

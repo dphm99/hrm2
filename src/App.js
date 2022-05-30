@@ -8,6 +8,7 @@ import Vancancies from "./components/Vacancies/Vacancies";
 import Career2 from "./components/Career2/Career";
 import CareerVideo from "./components/CareerVideo/CareerVideo";
 import Helmet from "react-helmet";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
       <Vancancies />
       <CareerVideo />
       <Career />
+      
       <Footer />
     </>
   );

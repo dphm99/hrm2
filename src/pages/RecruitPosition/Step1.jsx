@@ -7,7 +7,7 @@ function Step1() {
     status: "single",
   });
   const checkListContext = useContext(checkList)
-
+  
   return (
     <form className={`${styles.FormPosition}`}>
       <div className={`${styles.inputRadio} `}>
@@ -57,6 +57,7 @@ function Step1() {
                   name="radio-sex"
                   value={checkList.gender === "female" ? true : false}
                   className={styles.inputRadioButton}
+                  
                 />
                 <label className={styles.labelRadio} for="sex">
                   Nữ

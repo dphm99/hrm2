@@ -293,6 +293,8 @@
 .ul_listFilterbot {
   list-style: none;
   border: none !important;
+  overflow-y: scroll;
+  max-height: 200px;
 }
 .ul_listFilter div {
   height: 35px;

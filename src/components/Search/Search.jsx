@@ -29,7 +29,7 @@ function Search() {
 
   return (
     <div className={`container d-none d-md-block ${styles.SearchBox}`}>
-      <h3>Bạn đang tìm công việc gì?</h3>
+      {/* <h3>Bạn đang tìm công việc gì?</h3> */}
       <form action="/tuyen-dung/">
         <div className={styles.SearchWrapper}>
           <div className={styles.InputBox} style={{ position: "relative" }}>
@@ -38,7 +38,7 @@ function Search() {
             />
             <input
               type="text"
-              placeholder="Nhập tên công việc yêu thích?"
+              placeholder="Tìm kiếm theo công việc?"
               name="q"
               value={userInput}
               onChange={handleChange}
@@ -62,7 +62,7 @@ function Search() {
                     onSelect={(e) => {
                       setAge(e)
                     }}  
-                    placeholder="Tìm kiếm vị trí"
+                    placeholder="Tìm kiếm theo vị trí"
                     data={city.map((ele) => ({ label: ele.name.replace("Tỉnh ", "").replace("Thành phố ", ""), value: ele.name.replace("Tỉnh ", "").replace("Thành phố ", "") }))}
                     menuStyle={{ height: "200px" }}
                     searchable={false}

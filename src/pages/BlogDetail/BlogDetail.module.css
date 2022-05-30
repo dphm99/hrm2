@@ -4,7 +4,7 @@
 
 .title {
   text-align: center;
-  margin: 3rem 0 !important;
+  margin: 0rem 0 60px !important;
 }
 .content img {
   width: 100%;
@@ -63,6 +63,10 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.detailsIcon {
+  padding-left: 12px;
 }
 
 /* -------------------------PC--------------------- */

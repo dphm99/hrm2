@@ -94,7 +94,7 @@ function Header() {
                   <NavLink to="/van-hoa">VĂN HÓA</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/tuyen-dung">VỊ TRÍ TUYỂN DỤNG</NavLink>
+                  <NavLink to="/tuyen-dung"> TUYỂN DỤNG</NavLink>
                 </li>
                 <li>
                   <NavLink to="/dinh-huong-nghe-nghiep">

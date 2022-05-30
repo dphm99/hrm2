@@ -63,14 +63,18 @@ function JobItem({
   number,
   cate,
   lenght,
+  ento
 }) {
   const [active, setActive] = useState(false);
   // const [disable, setDisable] = useState(false)
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
+  const [catetory, setCatetory] = useState(false)
 
   function checkDate(e) {
     var today = new Date();
     var end = new Date(e)
+    console.log(end);
+
     if (today > end) {
       return false
     }
@@ -78,6 +82,17 @@ function JobItem({
       return true
     }
   }
+
+  function checkToday(e) {
+    var date = new Date();
+    var ento = new Date(e);
+    if (date = date - ento) {
+      return true
+    } else {
+      return false
+    }
+  }
+
 
   return (
     <>
@@ -91,8 +106,11 @@ function JobItem({
         onMouseOut={(e) => { checkDate(end) && setActive(false) }}
         onMouseOver={(e) => { checkDate(end) && setActive(true) }}
       >
-        <div className={`${styles.head_item} d-flex align-items-center`}>
-          {checkDate(end) && <span className={styles.tag}>New</span>}
+        <div className={`${styles.head_item} d-flex align-items-center`}
+        onMouseOut={(e) => { checkToday(ento) && setCatetory(false) }}
+        onMouseOver={(e) => { checkToday(ento) && setCatetory(true) }}
+        >
+          {checkToday() && <span className={styles.tag}>New</span>}
           <div className={styles.wrapIcon_job}>
             <img className={styles.icon_job} src={imgs} alt="/" />
           </div>
