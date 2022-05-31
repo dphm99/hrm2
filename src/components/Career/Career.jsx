@@ -98,12 +98,6 @@ function SampleNextArrow(props) {
               <h5 className={styles.Career__title}>{props.title}</h5>
             </div>
             <div className={styles.Career__tikitiki}>
-              {/* <p
-                className={styles.Career__tiki}
-                dangerouslySetInnerHTML={{ __html: `${props.text}` }}
-              >
-                <h8 className={styles.Career__h8}>Đọc thêm</h8>
-              </p> */}
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group"></div>

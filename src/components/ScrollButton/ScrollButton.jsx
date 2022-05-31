@@ -20,7 +20,6 @@ function ScrollButton() {
       setIsShow(false);
     }
   });
-  console.log(window.scrollY);
   return (
     <div
       onClick={handleScrollToTop}

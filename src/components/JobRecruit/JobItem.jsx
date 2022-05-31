@@ -73,8 +73,7 @@ function JobItem({
   function checkDate(e) {
     var today = new Date();
     var end = new Date(e)
-    console.log(end);
-
+    console.log(e);
     if (today > end) {
       return false
     }
@@ -84,12 +83,14 @@ function JobItem({
   }
 
   function checkToday(e) {
-    var date = new Date();
-    var ento = new Date(e);
-    if (date = date - ento) {
-      return true
-    } else {
+    var today = new Date();
+    var start = new Date(e);
+    console.log( (today - start)/(1000 * 3600 * 24));
+
+    if ( (today - start)/(1000 * 3600 * 24) > 14 ) {
       return false
+    } else {
+      return true
     }
   }
 
@@ -107,10 +108,9 @@ function JobItem({
         onMouseOver={(e) => { checkDate(end) && setActive(true) }}
       >
         <div className={`${styles.head_item} d-flex align-items-center`}
-        onMouseOut={(e) => { checkToday(ento) && setCatetory(false) }}
-        onMouseOver={(e) => { checkToday(ento) && setCatetory(true) }}
         >
-          {checkToday() && <span className={styles.tag}>New</span>}
+          {checkToday(start) && <span className={styles.tag}>New</span>}
+
           <div className={styles.wrapIcon_job}>
             <img className={styles.icon_job} src={imgs} alt="/" />
           </div>

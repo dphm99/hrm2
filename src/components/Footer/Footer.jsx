@@ -119,10 +119,10 @@ function Footer() {
                 </div>
                 <div className={styles.footerContent}>
                   <ul className={styles.ul_Element}>
-                    <li className="d-flex ">
+                    {/* <li className="d-flex ">
                       <ArrowRightIcon />
                       <Link to="/tra-cuu">Kiểm tra kết quả ứng tuyển</Link>
-                    </li>
+                    </li> */}
                     <li className="d-flex ">
                       <ArrowRightIcon />
                       <Link to="/tim-viec-gan-ban">Tìm việc gần bạn</Link>

@@ -59,7 +59,7 @@ function BlogDetail() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -167,7 +167,7 @@ function BlogDetail() {
           </>
         )}
         <section>
-          <div className={styles.relatedPost}>
+          <div className={styles.relatedPost} >
             <div
               style={{
                 fontSize: "20px",
@@ -178,7 +178,8 @@ function BlogDetail() {
             >
               Các bài viết liên quan
             </div>
-            <Slider {...settings}>
+            <div className="row career">
+            <Slider {...settings} >
               {data &&
                 data
                   .filter((ele) => ele.quiz_ids[0].name === relatedCategory)
@@ -192,6 +193,7 @@ function BlogDetail() {
                       }}
                       className={styles.relatedPostItem}
                       key={index}
+                      
                     >
                       <img
                         className={styles.relatedPostImg}
@@ -200,16 +202,11 @@ function BlogDetail() {
                       />
                       <div className={styles.relatedPostInfo}>
                         <p className={styles.title}>{ele.title}</p>
-                        {/* <p
-                          className={styles.short}
-                          dangerouslySetInnerHTML={{
-                            __html: ele.description,
-                          }}
-                        ></p> */}
                       </div>
                     </Link>
                   ))}
             </Slider>
+            </div>
           </div>
         </section>
       </div>
