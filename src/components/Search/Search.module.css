@@ -1,6 +1,6 @@
 .SearchBox {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   z-index: 998;
   transform: translateY(100%) translateX(-50%);
@@ -38,6 +38,7 @@
   border-radius: 0 4px 4px 0;
   font-weight: bold;
   font-size: 20px;
+  padding-left: 40px;
 }
 
 .SearchWrapper {

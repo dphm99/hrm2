@@ -201,6 +201,7 @@ export default function BlogContent() {
                           <div
                             className={`${styles.BannerBlockflex} col-md-8 d-flex flex-column position-static`}
                           >
+                            
                             <h6 className={`${styles.Block_H6} mb-2`}>
                               <strong>{e.title}</strong>
                             </h6>

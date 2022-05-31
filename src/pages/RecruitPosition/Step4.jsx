@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./RecruitPosition.module.css";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
+import Button from "@mui/material/Button";
 
 function Step4() {
   const [fileName, setFileName] = useState("");
@@ -28,13 +29,6 @@ function Step4() {
   return (
     <form style={{textAlign:"center"}}>
       <div className={styles.inputFile}>
-        {/* <input
-                      type="file"
-                      id="file"
-                      className={styles.inputFile}
-                      name="file"
-                      required
-                    /> */}
         <input
           type="file"
           id="file"
@@ -89,6 +83,8 @@ function Step4() {
           ỨNG TUYỂN
         </div>
       )}
+
+      {/* <button>Quay lại</button> */}
 
       {/* <div className={styles.noCV}>
                     <a href={filesCV}  download>

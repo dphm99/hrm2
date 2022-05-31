@@ -7,9 +7,9 @@ function Step1() {
     status: "single",
   });
   const checkListContext = useContext(checkList)
-
+  
   return (
-    <form className={`${styles.FormPosition}`}>
+    <form className={`${styles.FormPosition}`} novalidate>
       <div className={`${styles.inputRadio} `}>
         <div className={`${styles.inputRadioSide}`}>
           <div className={`${styles.inputRadioItemTitle}`}>
@@ -38,6 +38,9 @@ function Step1() {
                 <label className={styles.labelRadio} for="sex">
                   Nam
                 </label>
+                <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
               </p>
             </div>
             <div
@@ -57,6 +60,7 @@ function Step1() {
                   name="radio-sex"
                   value={checkList.gender === "female" ? true : false}
                   className={styles.inputRadioButton}
+                  
                 />
                 <label className={styles.labelRadio} for="sex">
                   Nữ
@@ -139,6 +143,9 @@ function Step1() {
           }
           required
         />
+        <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
       </div>
       <div className={styles.inputGroup}>
         <div className={styles.inputGroupLine}>

@@ -4,7 +4,7 @@
 
 .title {
   text-align: center;
-  margin: 3rem 0 !important;
+  margin: 0rem 0 60px !important;
 }
 .content img {
   width: 100%;
@@ -28,29 +28,30 @@
 }
 
 .relatedPostImg {
-  height: 50%;
+  height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .relatedPostItem {
-  width: 17rem;
-  height: 17rem;
+  width: 95% !important;
+  height: 13rem;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  border: 1px solid #000;
   color: #000;
   text-decoration: none;
 }
 .relatedPostInfo {
-  padding: 10px;
+  padding: 21px;
+  border: 1px solid rgb(223, 220, 220);
+  max-height: 66px;
 }
 .relatedPostItem .title {
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  font-size: 13px;
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -59,10 +60,14 @@
 .relatedPostItem .short {
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  /* display: -webkit-box; */
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.detailsIcon {
+  padding-left: 12px;
 }
 
 /* -------------------------PC--------------------- */

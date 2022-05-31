@@ -64,21 +64,28 @@ function CultureDetail() {
         />
         {data.find((ele) => ele.id === Number(blogId)) && (
           <>
-            <div className={`row`}>
+            {/* <div className={`row`}>
               <h1
                 className={`${styles.title} col-xl-8 col-lg-8`}
                 style={{ margin: `5rem 0` }}
               >
                 {data.find((ele) => ele.id === Number(blogId)).title}
               </h1>
-            </div>
-            <div className={`row`}>
+            </div> */}
+            <div className={`row`}  style={{paddingTop: "4rem"}}>
+              <div className="col-xl-8 col-lg-8">
+              <h1
+                className={`${styles.title} `}
+              >
+                {data.find((ele) => ele.id === Number(blogId)).title}
+              </h1>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.find((ele) => ele.id === Number(blogId)).content,
                 }}
-                className={`${styles.content} col-xl-8 col-lg-8`}
+                className={`${styles.content} `}
               ></div>
+              </div>
               <div className={`${styles.recruit} col-xl-4 col-lg-4`}>
                 <RecruitSideBar className={`${styles.RecruitSideBar}`} />
               </div>
