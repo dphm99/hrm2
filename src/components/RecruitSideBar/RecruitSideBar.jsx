@@ -54,12 +54,12 @@ const RecruitBlog = ({
                        {checkDate(end) && <span className={styles.tag}>Hot</span>}
                       <Link
                         to={{
-                          pathname: `/tuyen-dung/${toSlug(e.name.name)}`,
+                          pathname: `/tuyen-dung/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`${styles.jobName} my-0 col-8`}
                       >
-                        {e.name.name}
+                        {e.name}
                       </Link>
                       <p className={`${styles.deadLine}  col-4`}>
                         {e.deadline.split("-").reverse().join("/")}
@@ -73,7 +73,7 @@ const RecruitBlog = ({
                       <Link
                         key={index}
                         to={{
-                          pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
+                          pathname: `/ung-tuyen/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`col-4 ${styles.link}`}
