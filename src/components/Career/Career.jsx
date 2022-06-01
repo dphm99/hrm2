@@ -12,13 +12,47 @@ import longBanner from "../../assets/img/banner3.jpg";
 
 function Career() {
   const { data } = useContext(BlogContext);
+  const styleArrow = { 
+    background: 'rgb(192 59 70 / 21%)',
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex:'4',
+}
+  function SamplePrevArrow(props) {
+    const { className , onClick } = props;
+    return (
+        <div
+            className={className}
+            style={styleArrow}
+            onClick={onClick}>
+              <svg viewBox="0 0 24 24" width={24} height={24} stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><line x1={19} y1={12} x2={5} y2={12} /><polyline points="12 19 5 12 12 5" /></svg>
+        </div>
+    );
+  }
+function SampleNextArrow(props) {
+    const { className , onClick } = props;
+    return (
+        <div
+            className={className}
+            style={styleArrow}
+            onClick={onClick}>
+              <svg viewBox="0 0 24 24" width={24} height={24} stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><line x1={5} y1={12} x2={19} y2={12} /><polyline points="12 5 19 12 12 19" /></svg>
+        </div> 
+    );
+  }
   const settings = {
     autoplay: true,
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -64,12 +98,6 @@ function Career() {
               <h5 className={styles.Career__title}>{props.title}</h5>
             </div>
             <div className={styles.Career__tikitiki}>
-              {/* <p
-                className={styles.Career__tiki}
-                dangerouslySetInnerHTML={{ __html: `${props.text}` }}
-              >
-                <h8 className={styles.Career__h8}>Đọc thêm</h8>
-              </p> */}
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group"></div>

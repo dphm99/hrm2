@@ -118,19 +118,10 @@
 .Career__titlename{
   height: 60px;
 }
-.Career__titlename .Career__title {
-  /* width: 242px;
-    height: 44px;
-    text-overflow: ellipsis */
-  /* white-space: nowrap; */
+.Career__titlename .Career__title { 
   width: 96%;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  overflow: hidden; 
 }
 .link {
   text-decoration: none;

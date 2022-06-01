@@ -22,6 +22,7 @@ import FlowHiring from "./pages/FlowHiring/FlowHiring";
 import Research from "../src/pages/Research/Research";
 import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
 import { TestProvider } from "./components/contexts/ContextTest";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 

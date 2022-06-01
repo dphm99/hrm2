@@ -82,7 +82,7 @@
 
   text-overflow: ellipsis !important;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -117,10 +117,10 @@
     overflow: scroll;
   }
   .jobCategoryImg {
-    width: 150px;
+    width: 135px;
     height: unset;
     object-fit: contain;
-    padding: 0 20px;
+    padding: 12px 25px;
   }
   .jobCategoryName {
     padding: 0 10px;

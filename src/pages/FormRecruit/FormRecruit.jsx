@@ -204,6 +204,17 @@ function FormRecruit() {
                   accept="image/*,video/*,.pdf,.doc, .docx"
                   style={{ display: "none" }}
                 />
+                <div className={styles.inputUrl}>
+                <label htmlFor="inputUrl" className={styles.inputLabel}>
+                  Link Facebook | LinkedIn | Youtube cá nhân
+                </label>
+                <input
+                  type="text"
+                  id="inputField"
+                  className={styles.inputField}
+                  name="url"
+                />
+              </div>
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
@@ -228,17 +239,7 @@ function FormRecruit() {
                   để tải về
                 </p>
               </div>
-              <div className={styles.inputUrl}>
-                <label htmlFor="inputUrl" className={styles.inputLabel}>
-                  Link Facebook | LinkedIn | Youtube cá nhân
-                </label>
-                <input
-                  type="text"
-                  id="inputField"
-                  className={styles.inputField}
-                  name="url"
-                />
-              </div>
+              
               {name !== "" &&
               phone !== "" &&
               email !== "" &&

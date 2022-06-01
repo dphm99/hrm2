@@ -3,8 +3,20 @@ import styles from "../RecruitSideBar/RecruitSideBar.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
 import { toSlug } from "../extensions/toSlug";
 import { Link } from "react-router-dom";
-const RecruitBlog = () => {
+const RecruitBlog = ({
+  end
+}) => {
   const { data } = useContext(RecruitContext);
+  function checkDate(e) {
+    var today = new Date();
+    var end = new Date(e)
+    if (today > end) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
   return (
     <>
       <div
@@ -30,15 +42,16 @@ const RecruitBlog = () => {
               if (index < 5) {
                 return (
                   <div
-                    className={`${styles.block} card-header py-3`}
+                    className={`${styles.block} card-header  `}
                     key={index}
                   >
                     <div
-                      className={`row d-flex`}
+                      className={`${styles.head_item} row d-flex `}
                       style={{
                         fontSize: `18px`,
                       }}
                     >
+                       {checkDate(end) && <span className={styles.tag}>Hot</span>}
                       <Link
                         to={{
                           pathname: `/tuyen-dung/${toSlug(e.name.name)}`,

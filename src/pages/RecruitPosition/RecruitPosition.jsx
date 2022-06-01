@@ -21,7 +21,7 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import { Helmet } from "react-helmet";
 
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 // import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
 const steps = [
@@ -84,6 +84,9 @@ function RecruitPosition() {
       setHeader(true);
     }
   }, []);
+
+  const {register,handleSubmit} = useForm({}); 
+  const onSubmit = handleSubmit((data) => alert(JSON.stringify(data)));
   return (
     <>
       <Helmet>
@@ -123,17 +126,18 @@ function RecruitPosition() {
                       <Step2 />
                     ) : index === 2 ? (
                       <Step3 />
-                    ) : (
+                    ) :  (
                       <Step4 />
                     )}
                     <Box sx={{ mb: 2 }}>
                       <div>
-                        {index < steps.length - 1 ? (
+                        {index < steps.length  ? (
                           <>
                             <Button
                               variant="contained"
                               onClick={handleNext}
                               sx={{ mt: 1, mr: 1 }}
+                              onSubmit={onSubmit}
                             >
                               {index === steps.length - 1
                                 ? "Hoàn thành"
@@ -166,6 +170,7 @@ function RecruitPosition() {
             )}
           </Box>
         </div>
+        
         {activeStep === 3 ? (
           <div
             className={` container ${styles.desc}`}

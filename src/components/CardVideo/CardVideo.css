@@ -23,6 +23,7 @@
     height: auto;
     display: block;
     position: relative;
+    margin-bottom: 0px;
 }
 .crs_detail_link img{
     width: 100%;

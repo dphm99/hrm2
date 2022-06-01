@@ -65,7 +65,7 @@ const Header2 = () => {
                         activeClassName={styles.selected}
                         to="/tuyen-dung"
                       >
-                        VỊ TRÍ TUYỂN DỤNG
+                         TUYỂN DỤNG
                       </NavLink>
                     </li>
 
