@@ -11,7 +11,6 @@ import { Helmet } from "react-helmet";
 
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
-  console.log(data);
   const [showAlert, setShowAlert] = useState({
     show: false,
     name: "",
