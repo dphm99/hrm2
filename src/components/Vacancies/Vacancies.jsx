@@ -57,7 +57,7 @@ function Vancancies() {
                 index < 9 && (<Link
                   key={index}
                   to={{
-                    pathname: `/tuyen-dung/${toSlug(vancancies.name.name)}`,
+                    pathname: `/tuyen-dung/${toSlug(vancancies.name)}`,
                     search: `#${index}#${vancancies.id}`
                   }}
                   className={
@@ -87,7 +87,7 @@ function Vancancies() {
                     </div>
                     <div className={styles.vancanciesText}>
                       <h4 className={styles.vancancieTitle}>
-                        {vancancies.name.name}
+                        {vancancies.name}
                       </h4>
                       <p className={styles.vancancieAddress}>
                         Tại: {vancancies.address.name}
