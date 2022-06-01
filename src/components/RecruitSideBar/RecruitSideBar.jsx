@@ -53,15 +53,16 @@ console.log(data);
                       
                       <Link
                         to={{
-                          pathname: `/tuyen-dung/${toSlug(e.name.name)}`,
+                          pathname: `/tuyen-dung/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`${styles.jobName} my-0 col-8`}
                       >
-                        {e.name.name } {
+                        {e.name } {
                         e.status === true ?  <span className={styles.tag}>Hot</span>
                         :  ""
                       }
+
                       </Link>
                       <p className={`${styles.deadLine}  col-4`}>
                         {e.deadline.split("-").reverse().join("/")}
@@ -75,7 +76,7 @@ console.log(data);
                       <Link
                         key={index}
                         to={{
-                          pathname: `/ung-tuyen/${toSlug(e.name.name)}`,
+                          pathname: `/ung-tuyen/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`col-4 ${styles.link}`}

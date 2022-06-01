@@ -64,7 +64,7 @@ const Banner = () => {
       href: "/nhan-viên-kinh-doanh",
       title:
         data.find((ele) => ele.id === Number(jobId)) &&
-        `${data.find((ele) => ele.id === Number(jobId)).name.name}`,
+        `${data.find((ele) => ele.id === Number(jobId)).name}`,
 
       isActive: true,
     },
@@ -122,13 +122,13 @@ const Banner = () => {
       <Helmet>
         <title>
           {data.find((ele) => ele.id === Number(jobId)) &&
-            data.find((ele) => ele.id === Number(jobId)).name.name}
+            data.find((ele) => ele.id === Number(jobId)).name}
         </title>
         <meta
           name="description"
           content={
             data.find((ele) => ele.id === Number(jobId)) &&
-            `${data.find((ele) => ele.id === Number(jobId)).name.name}`
+            `${data.find((ele) => ele.id === Number(jobId)).name}`
           }
         />
       </Helmet>
@@ -137,7 +137,7 @@ const Banner = () => {
           <Breadcrumbs breadItem={breadcrumItem} />
           <h2 className={styles.title}>
             {data.find((ele) => ele.id === Number(jobId)) &&
-              `${data.find((ele) => ele.id === Number(jobId)).name.name}`}
+              `${data.find((ele) => ele.id === Number(jobId)).name}`}
           </h2>
           <div className="row mb-2">
             <div className={`${styles.detailsCol4} col-lg-4`}>
@@ -621,7 +621,7 @@ const Banner = () => {
                               <Link
                                 to={{
                                   pathname: `/tuyen-dung/${toSlug(
-                                    value.name.name
+                                    value.name
                                   )}`,
                                   search: `#${index}#${value.id}`,
                                 }}
@@ -635,7 +635,7 @@ const Banner = () => {
                                   scrollToTop();
                                 }}
                               >
-                                - {value.name.name} tại{" "}
+                                - {value.name} tại{" "}
                                 <small className={styles.detailsDecoration}>
                                   {value.address.name}
                                 </small>

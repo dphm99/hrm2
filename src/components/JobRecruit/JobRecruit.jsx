@@ -207,7 +207,7 @@ function JobRecruits() {
                           )
                           .filter(
                             (ele) =>
-                              ele.name.name
+                              ele.name
                                 .toString()
                                 .toLowerCase()
                                 .indexOf(keySearch.toString().toLowerCase()) !==
@@ -345,7 +345,7 @@ function JobRecruits() {
                   )
                   .filter(
                     (ele) =>
-                      ele.name.name
+                      ele.name
                         .toString()
                         .toLowerCase()
                         .indexOf(keySearch.toString().toLowerCase()) !== -1
@@ -357,7 +357,7 @@ function JobRecruits() {
                         id={job.id}
                         key={index}
                         index={index}
-                        name={job.name.name}
+                        name={job.name}
                         address={job.address.name}
                         salary={job.salary}
                         start={job.start}
