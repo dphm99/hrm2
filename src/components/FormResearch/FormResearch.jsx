@@ -1,13 +1,29 @@
 import React from "react";
 import styles from "./FormResearch.module.css";
 import Infomation from "./Infomation";
+
+
 function FormResearch() {
   const [info] = React.useState(false);
+  
+  function Onclip() {
+    const alert1 = document.getElementById('inputName').value;
+    if(alert1.length == 0) {
+      
+      return false
+    }
 
-  const Onclip = () => {
-      const alert = document.getElementById('Infoma');
-      alert.style.display = "block"
+
+    const alert = document.getElementById('Infoma');
+    alert.style.display = "block"
   }
+
+  function validateForm() {
+    if(!Onclip() ){
+      return false
+    }
+  }
+
   return (
     <div className={` ${styles.containALl}`}>
       <div className="container">
@@ -47,7 +63,7 @@ function FormResearch() {
                   </div>
                   <button
                     type="submit"
-                    onClick={Onclip}
+                    onClick={validateForm}
                     className={`${styles.buttonSubmit} ${styles.active}`}
                   >
                     Tra cứu

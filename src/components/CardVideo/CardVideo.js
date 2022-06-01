@@ -24,7 +24,7 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
       
   return ( 
       <>
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div style={{zIndex: "99"}} className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div className="col  bordered d-flex justify-content-start align-items-start">
               <div className="col position-relative">
               <div

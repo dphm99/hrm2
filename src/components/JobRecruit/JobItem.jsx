@@ -87,7 +87,7 @@ function JobItem({
     var start = new Date(e);
     console.log( (today - start)/(1000 * 3600 * 24));
 
-    if ( (today - start)/(1000 * 3600 * 24) > 28 ) {
+    if ( (today - start)/(1000 * 3600 * 24) > 14 ) {
       return false
     } else {
       return true

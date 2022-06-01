@@ -159,12 +159,14 @@ function Footer() {
                 <div className={styles.footerContent}>
                   <iframe
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftuyendungdiligo&tabs=timeline&width=220&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=719322076103425"
-                    width="220"
+                    width="290"
                     height="400"
                     style={{
+                      width: `290px`,
                       border: "none",
                       overflow: "hidden",
                       paddingTop: `20px`,
+                      paddingLeft: '10px',
                     }}
                     scrolling="no"
                     frameBorder="0"
