@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../RecruitSideBar/RecruitSideBar.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
 import { toSlug } from "../extensions/toSlug";
@@ -7,16 +7,16 @@ const RecruitBlog = ({
   end
 }) => {
   const { data } = useContext(RecruitContext);
-  function checkDate(e) {
-    var today = new Date();
-    var end = new Date(e)
-    if (today > end) {
-      return false
-    }
-    else {
-      return true
-    }
-  }
+console.log(data);
+
+  // function checkDate(e) {
+  //   if (1=1) {
+  //     return false
+  //   }
+  //   else {
+  //     return true
+  //   }
+  // }
   return (
     <>
       <div
@@ -37,7 +37,6 @@ const RecruitBlog = ({
         </div>
         {data &&
           data
-            .filter((e) => e.status === true)
             .map((e, index) => {
               if (index < 5) {
                 return (
@@ -51,7 +50,7 @@ const RecruitBlog = ({
                         fontSize: `18px`,
                       }}
                     >
-                       {checkDate(end) && <span className={styles.tag}>Hot</span>}
+                      
                       <Link
                         to={{
                           pathname: `/tuyen-dung/${toSlug(e.name)}`,
@@ -59,7 +58,11 @@ const RecruitBlog = ({
                         }}
                         className={`${styles.jobName} my-0 col-8`}
                       >
-                        {e.name}
+                        {e.name } {
+                        e.status === true ?  <span className={styles.tag}>Hot</span>
+                        :  ""
+                      }
+
                       </Link>
                       <p className={`${styles.deadLine}  col-4`}>
                         {e.deadline.split("-").reverse().join("/")}
@@ -77,6 +80,7 @@ const RecruitBlog = ({
                           search: `#${index}#${e.id}`,
                         }}
                         className={`col-4 ${styles.link}`}
+                        style={{paddingLeft: "22px"}}
                       >
                         ỨNG TUYỂN
                       </Link>

@@ -163,7 +163,7 @@ export default function BlogContent() {
                   ) : (
                     <div key={index}>
                       <div
-                        className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
+                      style={{maxHeight: "200px"}}  className={`${styles.wrapper}  row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
                       >
                         <div
                           className={`${styles.Block_img} d-lg-block col-md-4`}
@@ -173,20 +173,20 @@ export default function BlogContent() {
                             title={e.title}
                             image={e.avatar}
                             content={e.content}
-                            onClick={() =>
-                              setShowAlert({
-                                show: true,
-                                name: e.title,
-                                iframe: e.avatar,
-                              })
-                            }
-                            onClose={() =>
-                              setShowAlert((prev) => ({
-                                ...prev,
-                                show: false,
-                              }))
-                            }
-                            show={showAlert.show}
+                            // onClick={() =>
+                            //   setShowAlert({
+                            //     show: true,
+                            //     name: e.title,
+                            //     iframe: e.avatar,
+                            //   })
+                            // }
+                            // onClose={() =>
+                            //   setShowAlert((prev) => ({
+                            //     ...prev,
+                            //     show: false,
+                            //   }))
+                            // }
+                            // show={showAlert.show}
                           />
                         </div>
                         <Link
