@@ -48,7 +48,7 @@ function FormRecruit() {
     bodyFormData.append(
       "job_name",
       data.find((ele) => ele.id === Number(jobId)) &&
-        data.find((ele) => ele.id === Number(jobId)).name.name
+        data.find((ele) => ele.id === Number(jobId)).name
     );
     bodyFormData.append("name", name);
     bodyFormData.append("phone", phone);
@@ -122,13 +122,13 @@ function FormRecruit() {
       <Helmet>
         <title>
           {data.find((ele) => ele.id === Number(jobId)) &&
-            data.find((ele) => ele.id === Number(jobId)).name.name}
+            data.find((ele) => ele.id === Number(jobId)).name}
         </title>
         <meta
           name="description"
           content={
             data.find((ele) => ele.id === Number(jobId)) &&
-            data.find((ele) => ele.id === Number(jobId)).name.name
+            data.find((ele) => ele.id === Number(jobId)).name
           }
         />
       </Helmet>
@@ -140,7 +140,7 @@ function FormRecruit() {
           <h3>Bạn đang ứng tuyển vị trí</h3>
           <h4 className={styles.jobTitle}>
             {data.find((ele) => ele.id === Number(jobId)) &&
-              `"${data.find((ele) => ele.id === Number(jobId)).name.name}"`}
+              `"${data.find((ele) => ele.id === Number(jobId)).name}"`}
           </h4>
           <div className={styles.formRecruit}>
             <form encType="multipart/form-data">

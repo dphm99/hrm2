@@ -126,7 +126,7 @@ export default function Culture() {
                           }}
                         >
                           <div
-                            className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
+                           className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
                           >
                             <div
                               className={`${styles.Block_img} d-lg-block col-md-4`}
@@ -160,8 +160,6 @@ export default function Culture() {
                                 >
                                   {e.quiz_ids.name}
                                 </p>
-
-                                {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
                               </div>
                             </div>
                           </div>
@@ -171,9 +169,11 @@ export default function Culture() {
                     ) : (
                       <div key={index}>
                         <div
+                        
                           className={`${styles.wrapper} row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
                         >
                           <div
+                          style={{zIndex: "99"}}
                             className={`${styles.Block_img} d-lg-block col-md-4`}
                           >
                             <CardVideo
@@ -197,7 +197,7 @@ export default function Culture() {
                               show={showAlert.show}
                             />
                           </div>
-                          <Link
+                          <div
                             className={`${styles.BannerLink} d-lg-block col-md-8`}
                             to={{
                               pathname: `/van-hoa/${toSlug(e.title)}`,
@@ -226,12 +226,11 @@ export default function Culture() {
                                 >
                                   {e.quiz_ids.name}
                                 </p>
-
-                                {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
                               </div>
                             </div>
-                          </Link>
+                          </div>
                         </div>
+                        
                       </div>
                     );
                   } else {
