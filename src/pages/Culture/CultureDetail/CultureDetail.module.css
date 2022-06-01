@@ -2,6 +2,11 @@
     margin-top: 80px;
 }
 
+.detailsCopy {
+    width: 10% !important;
+}
+
+
 .title {
     text-align: center;
 }

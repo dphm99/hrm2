@@ -20,54 +20,27 @@ function CardVideo({ image, title,iframe, onClick,content,show ,onClose}) {
         outline: "none",
         zIndex:3,
       };
+
+      
   return ( 
       <>
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" onClick={onClick}>
-            <div className="col crs_grid bordered d-flex justify-content-start align-items-start">
-              <div className="col crs_grid_thumb  position-relative">
-                <div
-                  className="position-absolute top-50 start-50 translate-middle"
-                  style={{
-                    width: "60px",
-                    height: "60px",
-                    background: "#fff",
-                    zIndex: "1",
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="circle-play"
-                    className="svg-inline--fa fa-circle-play CourseDetail_icon__sLJtd"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="#d01c1c"
-                      d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM176 168V344C176 352.7 180.7 360.7 188.3 364.9C195.8 369.2 205.1 369 212.5 364.5L356.5 276.5C363.6 272.1 368 264.4 368 256C368 247.6 363.6 239.9 356.5 235.5L212.5 147.5C205.1 142.1 195.8 142.8 188.3 147.1C180.7 151.3 176 159.3 176 168V168z"
-                    />
-                  </svg>
-                </div>
-                <p className="crs_detail_link">
-                  <img
-                    src={image}
-                    className="img-fluid rounded"
-                    alt="course_poster"
-                  />
-                </p>
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div className="col  bordered d-flex justify-content-start align-items-start">
+              <div className="col position-relative">
+              <div
+              className={`row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative`}
+            >
+                <iframe
+                height="220"
+                  src="https://www.youtube.com/embed/3V0jdXteJdQ"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+            </div>
+                
               </div>
-              {/* <div className="crs_grid_caption">
-                <div className="crs_title">
-                  <h4 className="m-0">
-                    <p className="crs_title_link">{title}</p>
-                  </h4>
-                  <Highlight className="text" innerHTML={true}>{content}</Highlight>
-                </div>
-              </div> */}
             </div>
           </div> 
           {show && (
