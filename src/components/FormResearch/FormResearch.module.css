@@ -12,6 +12,10 @@
     outline: none;
     padding: 16px 0;
     background-color: #b7b7b7;
+  } 
+   .buttonSubmit:hover{
+    
+    cursor: default;
   }
   .formRecruit {
     margin: 90px auto ;
@@ -80,4 +84,10 @@
 .higlight_light{
   color:#bf202e;
   font-weight: 300;
+}
+
+
+.inputField{
+  -webkit-appearance: none;
+  margin: 0;
 }

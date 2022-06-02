@@ -2,26 +2,27 @@ import React from "react";
 import styles from "./FormResearch.module.css";
 import Infomation from "./Infomation";
 
-
 function FormResearch() {
   const [info] = React.useState(false);
-  
-  function Onclip() {
-    const alert1 = document.getElementById('inputName').value;
-    if(alert1.length == 0) {
-      
-      return false
+  const [phone, setPhone] = React.useState("");
+  const [mail, setMail] = React.useState("");
+
+  function handleSubmit() {}
+
+  function validateEmail() {
+    if (!mail.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+      return false;
     }
-
-
-    const alert = document.getElementById('Infoma');
-    alert.style.display = "block"
+    return true;
   }
 
+    // const alert = document.getElementById('Infoma');
+    //alert.style.display = "block"
+
   function validateForm() {
-    if(!Onclip() ){
-      return false
-    }
+    // if(!Onclip() ){
+    //   return false
+    // }
   }
 
   return (
@@ -41,30 +42,40 @@ function FormResearch() {
                   </p>
                   <div className={styles.inputName}>
                     <input
-                      type="text"
-                      id="inputName"
-                      name="fullname"
+                      type="number"
                       className={styles.inputField}
-                      // onChange={(e) => setName(e.target.value)}
-                      placeholder="Số CCCD"
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="Số điện thoại"
+                      pattern="/^[0-9]$/"
                       required
                     />
+                    {console.log(phone)}
                   </div>
                   <div className={styles.inputName}>
                     <input
-                      type="text"
-                      id="inputName"
-                      name="fullname"
+                      type="email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                       className={styles.inputField}
-                      // onChange={(e) => setName(e.target.value)}
-                      placeholder="Số điện thoại"
+                      onChange={(e) => setMail(e.target.value)}
+                      placeholder="Email"
                       required
                     />
                   </div>
                   <button
                     type="submit"
-                    onClick={validateForm}
-                    className={`${styles.buttonSubmit} ${styles.active}`}
+                    onClick={() => {
+                      handleSubmit();
+                    }}
+                    className={`${styles.buttonSubmit}`}
+                    style={
+                      phone.length === 10 && validateEmail()
+                        ? {
+                            backgroundColor: "#bf202e",
+                            color: "#fff",
+                            cursor: "pointer",
+                          }
+                        : {}
+                    }
                   >
                     Tra cứu
                   </button>
