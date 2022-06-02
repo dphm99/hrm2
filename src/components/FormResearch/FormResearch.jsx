@@ -16,6 +16,15 @@ function FormResearch() {
     return true;
   }
 
+    // const alert = document.getElementById('Infoma');
+    //alert.style.display = "block"
+
+  function validateForm() {
+    // if(!Onclip() ){
+    //   return false
+    // }
+  }
+
   return (
     <div className={` ${styles.containALl}`}>
       <div className="container">
@@ -74,7 +83,7 @@ function FormResearch() {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className={`${styles.FormInfoma} col-lg-6`} id="Infoma">
             {info ? <Infomation /> : <Infomation />}
           </div>
         </div>

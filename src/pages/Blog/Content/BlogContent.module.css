@@ -163,6 +163,10 @@ ul li {
   border-radius: 3px;
 }
 
+.wrapper {
+  max-height: 220px;
+}
+
 /* -------------------------mobile & tablets--------------------- */
 @media only screen and (max-width: 1023px) {
   .main {

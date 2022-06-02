@@ -3,12 +3,13 @@
   color: #000;
   font-weight: 700;
   font-size: 15px;
+  display: flex;
 }
 .jobName:hover {
   color: rgb(177, 0, 0);
 }
 .deadLine {
-  font-size: 15px;
+  padding-left: 22px;
 }
 .address {
   font-size: 11px;
@@ -26,35 +27,29 @@
   margin-top: 13rem;
 }
 
-.block {
-  min-height: 86px;
-  padding: 40px 25px 5px;
-}
-
 .head_item {
   /* border-top: 1px solid #a4a4a4; */
   position: relative;
 }
 
 .head_item .tag {
-  position: absolute;
   color: #fff;
   background-color: #ff0000;
-  top: -36px;
-  right: -24px;
-  width: 60px;
-  height: 26px;
-  font-size: 15px;
+  width: 45px;
+  border-radius: 11px 11px 11px 11px;
+  height: 22px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
   vertical-align: middle;
+  animation: RecruitSideBar_my__0VfIh 700ms infinite;
   -webkit-animation: my 700ms infinite;
   -moz-animation: my 700ms infinite;
   -o-animation: my 700ms infinite;
   animation: my 700ms infinite;
 }
 
-.head_item .tag::after {
+/* .head_item .tag::after {
   content: "";
   display: block;
   border: 5px solid;
@@ -63,7 +58,7 @@
   right: 0;
   border-color: #970000 transparent transparent #9b0000;
   filter: brightness(0.8);
-}
+} */
 
 @-webkit-keyframes my {
   0% {

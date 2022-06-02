@@ -56,8 +56,15 @@
     border: none;
     border-radius:4px;
   }
+
+  .FormInfoma {
+    display: none;
+  }
   .title{
-      text-align: center
+      text-align: center;
+      width: 100%;
+      font-size: 30px;
+      margin-bottom: 10px;
   }
   .containALl{
     background-color: #fcfcfc;
