@@ -7,7 +7,9 @@ function FormResearch() {
   const [phone, setPhone] = React.useState("");
   const [mail, setMail] = React.useState("");
 
-  function handleSubmit() {}
+  function handleSubmit() {
+    
+  }
 
   function validateEmail() {
     if (!mail.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
@@ -30,7 +32,7 @@ function FormResearch() {
       <div className="container">
         <div
           className={`row ${styles.wrap} justify-content-center`}
-          style={{ marginTop: "10rem" }}
+          style={{ paddingTop: "5rem", paddingBottom: "10rem" }}
         >
           <div className="col-lg-6">
             <div style={{ textAlign: "center" }} className={styles.Recruit}>
