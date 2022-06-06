@@ -8,7 +8,10 @@ function FormResearch() {
   const [mail, setMail] = React.useState("");
 
   function handleSubmit() {
-    
+   const phoneee = document.getElementById('phone').value
+   const email = document.getElementById("email").value
+
+   console.log({phoneee,email});
   }
 
   function validateEmail() {
@@ -39,7 +42,7 @@ function FormResearch() {
           <div className="col-lg-6">
             <div style={{ textAlign: "center" }} className={styles.Recruit}>
               <div className={styles.formRecruit}>
-                <form encType="multipart/form-data">
+                <div encType="multipart/form-data">
                   <h2 className={styles.title}>Tra cứu kết quả ứng tuyển</h2>
                   <p className={styles.text}>
                     Anh / Chị vui lòng nhập cả 2 thông tin sau đây
@@ -47,6 +50,7 @@ function FormResearch() {
                   <div className={styles.inputName}>
                     <input
                       type="number"
+                      id="phone"
                       className={styles.inputField}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="Số điện thoại"
@@ -58,6 +62,7 @@ function FormResearch() {
                   <div className={styles.inputName}>
                     <input
                       type="email"
+                      id="email"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                       className={styles.inputField}
                       onChange={(e) => setMail(e.target.value)}
@@ -83,12 +88,13 @@ function FormResearch() {
                   >
                     Tra cứu
                   </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
           <div className={`${styles.FormInfoma} col-lg-6`} id="Infoma">
-            {info ? <Infomation /> : <Infomation />}
+            {info ? <Infomation /> : <Infomation />}\
+            {/* {info && <Infomation />} */}
           </div>
         </div>
       </div>
