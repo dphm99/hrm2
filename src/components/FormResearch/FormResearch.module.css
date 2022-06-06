@@ -5,6 +5,13 @@
   align-items: flex-start;
   margin: 12px auto;
 }
+
+.inputName .inputField{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -moz-appearance: textfield;
+}
+
 .buttonSubmit {
   margin: 16px auto;
   width: 100%;

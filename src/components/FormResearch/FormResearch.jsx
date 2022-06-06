@@ -12,12 +12,19 @@ function FormResearch() {
   }
 
   function validateEmail() {
-    //eslint-disable-next-line
-    if (!mail.match(/^[A-Za-z_\-[0-9]*[@][A-Za-z]*[][a-z]{2,4}$/)) {
+    if (!mail.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
       return false;
     }
     return true;
   }
+
+  // function validateEmail() {
+  //   //eslint-disable-next-line
+  //   if (!mail.match(/^[A-Za-z_\-[0-9]*[@][A-Za-z]*[][a-z]{2,4}$/)) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
     // const alert = document.getElementById('Infoma');
     //alert.style.display = "block" 
