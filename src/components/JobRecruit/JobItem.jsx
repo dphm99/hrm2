@@ -4,13 +4,13 @@ import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
 import formatNumber from "../extensions/formatNumber";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
-import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
-import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
-import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
-import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import kinhdoanh from "../../assets/img/Vacancies/Kinh-doanh.svg";
+import marketing from "../../assets/img/Vacancies/Marketing.svg";
+import nhasanxuat from "../../assets/img/Vacancies/San-xuat.svg";
+import taichinh from "../../assets/img/Vacancies/Tai-chinh.svg";
+import nhansu from "../../assets/img/Vacancies/Nhan-su.svg";
+import congnghe from "../../assets/img/Vacancies/Ban-cong-nghe.svg";
+import nhaphanphoi from "../../assets/img/Vacancies/Nha-phan-phoi.svg";
 import styles from "./JobRecruit.module.css";
 
 const jobCategory = [
@@ -68,7 +68,7 @@ function JobItem({
   const [active, setActive] = useState(false);
   // const [disable, setDisable] = useState(false)
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
-  const [catetory, setCatetory] = useState(false)
+  // const [catetory, setCatetory] = useState(false)
 
   function checkDate(e) {
     var today = new Date();
