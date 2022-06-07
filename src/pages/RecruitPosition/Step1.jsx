@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from "react";
+import React from "react";
+// , { createContext, useContext }
 import styles from "./RecruitPosition.module.css";
 
 function Step1() {
@@ -6,7 +7,7 @@ function Step1() {
     gender: "male",
     status: "single",
   });
-  const checkListContext = useContext(checkList)
+  // const checkListContext = useContext(checkList)
   
   return (
     <form className={`${styles.FormPosition}`} novalidate>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, createContext } from "react";
-import axios from "axios";
+// import axios from "axios";
 const RecruitContext = createContext("");
 function RecruitProvider({ children }) {
   const [category, setCategory] = useState("");
   const [keySearch, setKeySearch] = useState("");
   const [targetSearch] = useState(["category"]);
   const [data, setData] = useState([]);
-  const [datatest, setDatatest] = useState([]);
+  // const [datatest, setDatatest] = useState([]);
   useEffect(() => {
     fetch("http://test.diligo.vn:15000/api/v1/recruitment")
       .then((result) => result.json())

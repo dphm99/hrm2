@@ -84,8 +84,8 @@ function RecruitPosition() {
       setHeader(true);
     }
   }, []);
-
-  const {register,handleSubmit} = useForm({}); 
+  // register,
+  const {handleSubmit} = useForm({}); 
   const onSubmit = handleSubmit((data) => alert(JSON.stringify(data)));
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "../RecruitSideBar/RecruitSideBar.module.css";
 import { RecruitContext } from "../contexts/ContextRecuit";
 import { toSlug } from "../extensions/toSlug";
