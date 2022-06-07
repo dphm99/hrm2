@@ -41,7 +41,6 @@ function Sliders() {
   return (
     <div className="Slider">
       <Search />
-
       <Slider {...settings}>{renderSlides}</Slider>
     </div>
   );
