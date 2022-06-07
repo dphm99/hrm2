@@ -1,7 +1,6 @@
 import React, { useState} from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
-import banner from "../../assets/img/icon-svg/banner.jpg";
 import { NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 import { Link } from "react-router-dom";
@@ -107,9 +106,7 @@ const Header2 = () => {
             </div>
           </div>
         </div>
-        <div className={styles.Header3}>
-          <img src={banner} alt="/" className={`w-100`} />
-        </div>
+        
       </div>
     </>
   );

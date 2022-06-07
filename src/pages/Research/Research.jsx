@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header2 from "../../components/Header/Header2";
+import Slogan from "../../components/Header/Slogan";
 import Footer from "../../components/Footer/Footer";
 import FormResearch from "../../components/FormResearch/FormResearch";
 import Header from "../../components/Header/Header";
@@ -22,6 +23,7 @@ function Research() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <FormResearch />
       <Footer />
     </>

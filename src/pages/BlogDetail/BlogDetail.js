@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import { BlogContext } from "../../components/contexts/ContextBlog";
 import Header2 from "../../components/Header/Header2";
+import Slogan from "../../components/Header/Slogan";
 import RecruitSideBar from "../../components/RecruitSideBar/RecruitSideBar";
 import Header from "../../components/Header/Header";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
@@ -115,6 +116,7 @@ function BlogDetail() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <div className={`${styles.main} container-lg`}>
         <Breadcrumbs
           breadItem={breadcrumItem}

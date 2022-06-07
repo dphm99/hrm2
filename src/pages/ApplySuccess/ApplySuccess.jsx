@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Header2 from "../../components/Header/Header2";
 import { Checkmark } from "react-checkmark";
 import Helmet from "react-helmet";
+import Slogan from "../../components/Header/Slogan";
 // import styles from "./Apply.module.css";
 
 function ApplySuccess() {
@@ -16,6 +17,7 @@ function ApplySuccess() {
         />
     </Helmet>
       <Header2 />
+      <Slogan/>
       <div style={{ margin: "5rem 0" }}>
         <Checkmark size={"240"} color={"#bf202e"} />
         <h3 style={{ marginTop: "12rem", textAlign: "center" }}>

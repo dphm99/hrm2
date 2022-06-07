@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Header2 from "../../components/Header/Header2";
 import BlogContent from "./Content/BlogContent";
+import Slogan from "../../components/Header/Slogan";
 
 const Blog = () => {
   const [header, setHeader] = useState(true);
@@ -17,6 +18,7 @@ const Blog = () => {
     <>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <BlogContent />
       <Footer />
     </>
