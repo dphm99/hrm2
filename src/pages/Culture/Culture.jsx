@@ -10,6 +10,7 @@ import CardVideo from "../../components/CardVideo/CardVideo";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Header2 from "../../components/Header/Header2";
+import Slides from "../../components/Slider/Slider"
 import { Helmet } from "react-helmet";
 
 export default function Culture() {
@@ -69,6 +70,7 @@ export default function Culture() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slides/>
       <div className={`${styles.main}`}>
         <Breadcrumbs breadItem={breadcrumItem} />
 

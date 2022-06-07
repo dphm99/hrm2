@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FAQ.module.css";
 import Header2 from "../../components/Header/Header2";
+import Slogan from "../../components/Header/Slogan";
 import Footer from "../../components/Footer/Footer";
 import Accordition from "./Accordion/Accordion";
 // import Card from "./Card";
@@ -40,6 +41,7 @@ function Index() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <div className={`${styles.FAQ} FAQs`}>
         <Breadcrumbs breadItem={breadcrumItem} />
         <div className="container-md">
