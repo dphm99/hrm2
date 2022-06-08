@@ -17,7 +17,7 @@ const Header2 = () => {
   };
   window.addEventListener("scroll", changeBackground);
 
-
+  
   return (
     <>
       <div
