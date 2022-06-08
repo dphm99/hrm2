@@ -1,3 +1,9 @@
+.containALl{
+  position: relative;
+}
+.containALl div{
+  transition: 0.3s;
+}
 .inputName {
   display: flex;
   justify-content: space-between;
@@ -5,29 +11,52 @@
   align-items: flex-start;
   margin: 12px auto;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-.inputName .inputField{
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.inputName .inputField {
   border: 1px solid #ccc;
   border-radius: 3px;
   -moz-appearance: textfield;
 }
 
 .buttonSubmit {
+  margin-top: 45px;
   margin: 16px auto;
   width: 100%;
   border: none;
   outline: none;
   padding: 16px 0;
   background-color: #b7b7b7;
-}
-.buttonSubmit:hover {
+  border-radius: 4px;
   cursor: default;
 }
+
+
 .formRecruit {
+  position: absolute;
   margin: 90px auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  z-index: 2;
+left: 0;
+right: 0;
+  width: 590px;
+  height: 451px;
+  background-color: #fff;
+  box-shadow: rgb(155 168 165 / 20%) 0px 4px 21px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 90px;
 }
 .formInfo {
   margin: 90px auto;
@@ -38,8 +67,7 @@
   width: 100%;
   margin-top: 16px;
 }
-.Recruit input {                                                       
-
+.Recruit input {
   outline: none;
   padding: 7px;
 }
@@ -62,13 +90,19 @@
 }
 
 .FormInfoma {
-  display: none;
+  position: relative;
+display: flex;
+justify-content: center;
+
+  
 }
 .title {
   text-align: center;
   width: 100%;
   font-size: 30px;
   margin-bottom: 10px;
+  margin-top: 40px;
+
 }
 .containALl {
   background-color: #fcfcfc;
@@ -80,6 +114,12 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 1.9rem;
+}
+.titleInfo> a{
+  text-decoration: none;
+color: #bf202e;
+font-weight: 700;
+
 }
 .higlight_text {
   color: #bf202e;
