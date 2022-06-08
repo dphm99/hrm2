@@ -416,6 +416,8 @@
   align-items: center;
 } */
 
+
+
 .head_item .tag::after {
   content: "";
   display: block;
