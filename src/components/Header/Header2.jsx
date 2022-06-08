@@ -76,11 +76,11 @@ const Header2 = () => {
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                       <a  href="http://daotao.diligo.vn" target="_blank" rel="noreferrer" activeClassName={styles.selected}>
                         ĐÀO TẠO
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <NavLink to="/tro-giup" activeClassName={styles.selected}>
                         TRỢ GIÚP

@@ -182,6 +182,7 @@ function JobRecruits() {
               industry={uniqueArray(industry)}
             />
           </div>
+             
           <div className={`${styles.col_wrap} col-lg-8 col-md-12`}>
             <div className={`${styles.wrapListJob}`}>
               <div className={styles.head_listJob}>
@@ -220,6 +221,7 @@ function JobRecruits() {
                   <div
                     className={`${styles.wrap_selectSort} d-flex align-items-center`}
                   >
+                    
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
                     <div
                       className={`${styles.selectSort}`}
@@ -267,6 +269,8 @@ function JobRecruits() {
                         [styles.show]: show,
                       })}
                     >
+                    
+
                       <div
                         className={`${styles.optionsItem}`}
                         onClick={() => {
@@ -333,6 +337,7 @@ function JobRecruits() {
                 </div>
               </div>
               <div className={styles.listJob_item}>
+              
                 {data
                   .filter((e) => (!jobIndex ? e : e.category === jobIndex))
                   .filter((e) => (!major ? e : e.industry === major))
@@ -364,7 +369,12 @@ function JobRecruits() {
                         end={job.deadline}
                         number={job.number}
                         cate={job.category}
-                      />
+                        />
+                       
+                     {job.status } {
+                       job.status === true ?  <span className={styles.tag}>Hot</span>
+                       :  ""
+                      }
                     </div>
                   ))}
               </div>
