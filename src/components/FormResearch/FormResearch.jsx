@@ -11,7 +11,7 @@ function FormResearch() {
 
   const getData = (phone, email) => {
     axios
-      .get("http://test.diligo.vn:15000/api/v1/result-recruitment", {
+      .get("http://hrm.diligo.vn/api/v1/result-recruitment", {
         params: {
           phone: phone,
           email: email,
