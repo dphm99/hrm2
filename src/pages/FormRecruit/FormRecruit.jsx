@@ -61,7 +61,7 @@ function FormRecruit() {
     if (name !== "" && phone !== "" && email !== "" && cvv !== undefined) {
       axios({
         method: "POST",
-        url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
+        url: "http://hrm.diligo.vn/api/v1/recruitment/apply",
         data: bodyFormData,
         headers: { "Content-Type": "multipart/form-data" },
       })

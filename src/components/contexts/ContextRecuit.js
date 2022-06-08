@@ -8,14 +8,14 @@ function RecruitProvider({ children }) {
   const [data, setData] = useState([]);
   // const [datatest, setDatatest] = useState([]);
   useEffect(() => {
-    fetch("http://test.diligo.vn:15000/api/v1/recruitment")
+    fetch("http://hrm.diligo.vn/api/v1/recruitment")
       .then((result) => result.json())
       .then((data) => {
         setData(data.data);
       });
     // try {
     //   const response = axios.post(
-    //     "http://localhost:15000/web/session/authenticate",
+    //     "http://localhost/web/session/authenticate",
     //     {
     //       jsonrpc: "2.0",
     //       params: {
@@ -40,7 +40,7 @@ function RecruitProvider({ children }) {
     // }
     // try {
     //   const response2 = axios.get(
-    //     "http://localhost:15000/api/v1/attendance",
+    //     "http://localhost/api/v1/attendance",
     //     {
     //       headers: {
     //         access_token:
