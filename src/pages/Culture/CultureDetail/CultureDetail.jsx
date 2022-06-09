@@ -47,8 +47,12 @@ function CultureDetail() {
     axios
       .get(`http://hrm.diligo.vn/api/v1/blog-by-id?blog_id=${blogId}`)
       .then((res) => {
-        console.log(res);
-        setDataBlog(res);
+        return res.data;
+      })
+      .then((data) => {
+        
+        setDataBlog(data.data);
+        console.log(data.data);
       });
     if (window.innerWidth <= 768) {
       setHeader(false);
@@ -89,16 +93,16 @@ function CultureDetail() {
           breadItem={breadcrumItem}
           className={`${styles.Breadcrumbs}`}
         />
-        {data.find((ele) => ele.id === Number(blogId)) && (
+        {dataBlog.find((ele) => ele.id === Number(blogId)) && (
           <>
             <div className={`row`} style={{ paddingTop: "4rem" }}>
               <div className="col-xl-8 col-lg-8">
                 <h1 className={`${styles.title} `}>
-                  {data.find((ele) => ele.id === Number(blogId)).title}
+                  {dataBlog.find((ele) => ele.id === Number(blogId)).title}
                 </h1>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.find((ele) => ele.id === Number(blogId))
+                    __html: dataBlog.find((ele) => ele.id === Number(blogId))
                       .content,
                   }}
                   className={`${styles.content} `}

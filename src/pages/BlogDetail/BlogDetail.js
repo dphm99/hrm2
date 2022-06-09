@@ -14,9 +14,12 @@ import { FacebookIcon, LinkedinIcon } from "react-share";
 import Slider from "react-slick";
 import { Helmet } from "react-helmet";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import axios from "axios";
+
 
 import zalo from "../../assets/img/icon-svg/zalo-logo.jpg";
 function BlogDetail() {
+  const [dataBlog, setDataBlog] = useState([]);
   const [copySuccess] = useState("");
   const [copied, setCopied] = useState(false);
   const blogId = window.location.hash.split("#")[2];
@@ -49,6 +52,16 @@ function BlogDetail() {
       .name;
   const [header, setHeader] = useState(true);
   useEffect(() => {
+    axios
+      .get(`http://hrm.diligo.vn/api/v1/blog-by-id?blog_id=${blogId}`)
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        
+        setDataBlog(data.data);
+        console.log(data.data);
+      });
     if (window.innerWidth <= 768) {
       setHeader(false);
     } else {
@@ -122,17 +135,17 @@ function BlogDetail() {
           breadItem={breadcrumItem}
           className={`${styles.Breadcrumbs}`}
         />
-        {data.find((ele) => ele.id === Number(blogId)) && (
+        {dataBlog.find((ele) => ele.id === Number(blogId)) && (
           <>
             <div className={`row`} style={{paddingTop: "4rem"}}>
               <div className="col-xl-8 col-lg-8">
                 <h1  className={`${styles.title} `} style={{ margin: `5rem 0` }}>
-                  {data.find((ele) => ele.id === Number(blogId)).title}
+                  {dataBlog.find((ele) => ele.id === Number(blogId)).title}
                 </h1>
 
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.find((ele) => ele.id === Number(blogId))
+                    __html: dataBlog.find((ele) => ele.id === Number(blogId))
                       .content,
                   }}
                   className={`${styles.content}`}

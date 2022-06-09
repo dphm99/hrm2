@@ -6,8 +6,9 @@ function BlogProvider({ children }) {
   const [category, setCategory] = useState("");
   useEffect(() => {
     axios.get("http://hrm.diligo.vn/api/v1/blog")
-      .then((result) => result.json())
+      .then((result) => (result.data))
       .then((data) => {
+        console.log(data.data)
         setData(data.data);
       });
   }, []);

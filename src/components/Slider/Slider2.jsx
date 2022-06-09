@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import image1 from "../../assets/img/slider2-1.jpg";
 import image2 from "../../assets/img/slider2-2.jpg";
+import image3 from "../../assets/img/slider2-3.jpg";
 function Slider2() {
   var settings = {
     autoplay: true,
@@ -19,7 +20,7 @@ function Slider2() {
     arrows: false,
   };
 
-  const mang = [image1, image2];
+  const mang = [image1, image2, image3];
 
   let renderSlides = mang.map((ele, index) => {
     return (

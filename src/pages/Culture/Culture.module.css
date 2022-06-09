@@ -76,9 +76,9 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     color: black;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-    height: 100px;
+    height: 158px;
   }
   
   .Block_P * {
