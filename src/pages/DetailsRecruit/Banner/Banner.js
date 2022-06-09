@@ -294,7 +294,13 @@ const Banner = () => {
                         {copySuccess}
                       </div>
                       <div className={`${styles.detailsIcon} col-6 `}>
-                        <FacebookShareButton url={currentURL}>
+                        <FacebookShareButton
+                          url={currentURL}
+                          quote={currentURL}
+                          image={longBanner}
+                          imageURL={longBanner}
+                          hashtag="#tuyendungdiligo"
+                        >
                           <FacebookIcon size={28} />
                         </FacebookShareButton>
 
