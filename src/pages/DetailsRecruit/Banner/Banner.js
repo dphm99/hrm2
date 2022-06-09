@@ -131,6 +131,13 @@ const Banner = () => {
             `${data.find((ele) => ele.id === Number(jobId)).name}`
           }
         />
+        <meta
+          name="og:image"
+          content={
+            data.find((ele) => ele.id === Number(jobId)) &&
+            `${data.find((ele) => ele.id === Number(jobId)).description}`
+          }
+        />
       </Helmet>
       <div className="container">
         <div className={styles.detailsRecuit}>
