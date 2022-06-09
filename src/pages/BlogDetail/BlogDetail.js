@@ -126,7 +126,7 @@ function BlogDetail() {
           <>
             <div className={`row`} style={{paddingTop: "4rem"}}>
               <div className="col-xl-8 col-lg-8">
-                <h1 className={`${styles.title} `} style={{ margin: `5rem 0` }}>
+                <h1  className={`${styles.title} `} style={{ margin: `5rem 0` }}>
                   {data.find((ele) => ele.id === Number(blogId)).title}
                 </h1>
 

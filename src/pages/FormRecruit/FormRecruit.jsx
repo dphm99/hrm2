@@ -24,7 +24,6 @@ function FormRecruit() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [fileName, setFileName] = useState("");
-  console.log(data);
 
   const inputFileRef = useRef(null);
 
