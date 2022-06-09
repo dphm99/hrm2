@@ -50,19 +50,20 @@ console.log(data);
                         fontSize: `18px`,
                       }}
                     >
-                      
+                    
                       <Link
                         to={{
                           pathname: `/tuyen-dung/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`${styles.jobName} my-0 col-8`}
+                        style={{display: "flex", justifyContent: "space-between"}}
                       >
-                        {e.name } {
-                        e.status === true ?  <span className={styles.tag}>Hot</span>
-                        :  ""
-                      }
-
+                       
+                       {e.name } {
+                      e.status === true ?  <span className={styles.tag}>Hot</span>
+                      :  ""
+                    }
                       </Link>
                       <p className={`${styles.deadLine}  col-4`}>
                         {e.deadline.split("-").reverse().join("/")}
