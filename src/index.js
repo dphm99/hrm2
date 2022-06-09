@@ -21,6 +21,7 @@ import ScrollToTop from "./components/extensions/scrollToTop";
 import FlowHiring from "./pages/FlowHiring/FlowHiring";
 import Research from "../src/pages/Research/Research";
 import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
+import { TestProvider } from "./components/contexts/ContextTest";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
 import Loadings from "./components/Loadings/Loadings";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
@@ -57,6 +58,7 @@ rootElement.render(
         <ScrollToTop />
         <ScrollButton />
       </BlogProvider>
+
     </RecruitProvider>
   </BrowserRouter>
 );
