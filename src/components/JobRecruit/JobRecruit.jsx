@@ -14,7 +14,7 @@ import taichinh from "../../assets/img/Vacancies/Tai-chinh.svg";
 import nhansu from "../../assets/img/Vacancies/Nhan-su.svg";
 import congnghe from "../../assets/img/Vacancies/Ban-cong-nghe.svg";
 import nhaphanphoi from "../../assets/img/Vacancies/Nha-phan-phoi.svg";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import longBanner from "../../assets/img/banner3.jpg";
 import clsx from "clsx";
@@ -357,7 +357,8 @@ function JobRecruits() {
                   )
                   .sortAlpha()
                   .map((job, index) => (
-                    <div className={styles.JobLink_item} key={index}>
+                    <div className={styles.JobLink_item} key={index} 
+                    >
                       <JobItem
                         id={job.id}
                         key={index}
@@ -372,7 +373,7 @@ function JobRecruits() {
                         />
                        
                      {job.status } {
-                       job.status === true ?  <span className={styles.tag}>Hot</span>
+                       job.status === true ?  <span className={styles.tag1}>Hot</span>
                        :  ""
                       }
                     </div>
