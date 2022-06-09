@@ -12,6 +12,7 @@ import Header from "../../components/Header/Header";
 import Header2 from "../../components/Header/Header2";
 import Slides from "../../components/Slider/Slider"
 import { Helmet } from "react-helmet";
+import Loadings from "../../components/Loadings/Loadings";
 
 export default function Culture() {
   const { data } = useContext(BlogContext);
@@ -93,9 +94,9 @@ export default function Culture() {
                 </div>
               );
             })}
-        </div>
-
-        <div className="row mb-2">
+        </div>       
+        {data !== [] ? 
+          <><div className="row mb-2">
           <div className={`${styles.content} col-lg-8`}>
             {data &&
             data.filter((e) => {
@@ -268,7 +269,7 @@ export default function Culture() {
           <div className={`${styles.recruitSideBar} col-lg-4`}>
             <RecruitSideBar />
           </div>
-        </div>
+        </div></> : <Loadings />}
       </div>
       <Footer />
     </>

@@ -22,6 +22,7 @@ import FlowHiring from "./pages/FlowHiring/FlowHiring";
 import Research from "../src/pages/Research/Research";
 import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
+import Loadings from "./components/Loadings/Loadings";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -30,7 +31,7 @@ rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
       <BlogProvider>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loadings />}>
           <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/tuyen-dung/:name" component={DetailsRecuit} />
