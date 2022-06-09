@@ -1,7 +1,6 @@
 import React, { useState} from "react";
 import styles from "./Header2.module.css";
 import logo from "../../assets/img/logo.png";
-import banner from "../../assets/img/icon-svg/banner.jpg";
 import { NavLink } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 import { Link } from "react-router-dom";
@@ -18,7 +17,7 @@ const Header2 = () => {
   };
   window.addEventListener("scroll", changeBackground);
 
-
+  
   return (
     <>
       <div
@@ -77,11 +76,11 @@ const Header2 = () => {
                         ĐỊNH HƯỚNG NGHỀ NGHIỆP
                       </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                       <a  href="http://daotao.diligo.vn" target="_blank" rel="noreferrer" activeClassName={styles.selected}>
                         ĐÀO TẠO
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <NavLink to="/tro-giup" activeClassName={styles.selected}>
                         TRỢ GIÚP
@@ -107,9 +106,7 @@ const Header2 = () => {
             </div>
           </div>
         </div>
-        <div className={styles.Header3}>
-          <img src={banner} alt="/" className={`w-100`} />
-        </div>
+        
       </div>
     </>
   );

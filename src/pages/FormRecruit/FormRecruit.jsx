@@ -10,6 +10,8 @@ import filesCV from "../../assets/files/CV Diligo Holdings.doc";
 import Header from "../../components/Header/Header";
 import { useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Slogan from "../../components/Header/Slogan";
+
 
 function FormRecruit() {
   const { data } = useContext(RecruitContext);
@@ -48,7 +50,7 @@ function FormRecruit() {
     bodyFormData.append(
       "job_name",
       data.find((ele) => ele.id === Number(jobId)) &&
-        data.find((ele) => ele.id === Number(jobId)).name
+      data.find((ele) => ele.id === Number(jobId)).name
     );
     bodyFormData.append("name", name);
     bodyFormData.append("phone", phone);
@@ -58,7 +60,7 @@ function FormRecruit() {
     if (name !== "" && phone !== "" && email !== "" && cvv !== undefined) {
       axios({
         method: "POST",
-        url: "http://test.diligo.vn:15000/api/v1/recruitment/apply",
+        url: "http://hrm.diligo.vn/api/v1/recruitment/apply",
         data: bodyFormData,
         headers: { "Content-Type": "multipart/form-data" },
       })
@@ -134,6 +136,7 @@ function FormRecruit() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan />
       <div className="container" style={{ margin: "1rem auto 90px" }}>
         <Breadcrumbs separator=">" breadItem={breadcrumItem} />
         <div style={{ textAlign: "center" }} className={styles.Recruit}>
@@ -205,16 +208,16 @@ function FormRecruit() {
                   style={{ display: "none" }}
                 />
                 <div className={styles.inputUrl}>
-                <label htmlFor="inputUrl" className={styles.inputLabel}>
-                  Link Facebook | LinkedIn | Youtube cá nhân
-                </label>
-                <input
-                  type="text"
-                  id="inputField"
-                  className={styles.inputField}
-                  name="url"
-                />
-              </div>
+                  <label htmlFor="inputUrl" className={styles.inputLabel}>
+                    Link Facebook | LinkedIn | Youtube cá nhân
+                  </label>
+                  <input
+                    type="text"
+                    id="inputField"
+                    className={styles.inputField}
+                    name="url"
+                  />
+                </div>
                 <div
                   onClick={onBtnClick}
                   className={`${styles.buttonSubmit} ${styles.active}`}
@@ -239,11 +242,11 @@ function FormRecruit() {
                   để tải về
                 </p>
               </div>
-              
+
               {name !== "" &&
-              phone !== "" &&
-              email !== "" &&
-              fileName !== "" ? (
+                phone !== "" &&
+                email !== "" &&
+                fileName !== "" ? (
                 <div
                   // type="submit"
                   onClick={() => handleLogin()}

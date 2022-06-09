@@ -7,8 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 import image1 from "../../assets/img/banner1.png";
-import image2 from "../../assets/img/banner2.jpg";
-import image3 from "../../assets/img/banner3.jpg";
+import image2 from "../../assets/img/banner1.png";
+import image3 from "../../assets/img/banner1.png";
 function Sliders() {
   var settings = {
     autoplay: true,
@@ -41,7 +41,6 @@ function Sliders() {
   return (
     <div className="Slider">
       <Search />
-
       <Slider {...settings}>{renderSlides}</Slider>
     </div>
   );

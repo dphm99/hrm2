@@ -4,7 +4,7 @@ function BlogProvider({ children }) {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState("");
   useEffect(() => {
-    fetch("http://test.diligo.vn:15000/api/v1/blog")
+    fetch("http://hrm.diligo.vn/api/v1/blog")
       .then((result) => result.json())
       .then((data) => {
         setData(data.data);

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import "./RecruitPosition.scss";
 import styles from "./RecruitPosition.module.css";
 import Header2 from "../../components/Header/Header2";
+import Slogan from "../../components/Header/Slogan";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "../../components/BreadCrumb/Breadcrumb";
 import Box from "@mui/material/Box";
@@ -84,8 +85,8 @@ function RecruitPosition() {
       setHeader(true);
     }
   }, []);
-
-  const {register,handleSubmit} = useForm({}); 
+  // register,
+  const {handleSubmit} = useForm({}); 
   const onSubmit = handleSubmit((data) => alert(JSON.stringify(data)));
   return (
     <>
@@ -95,6 +96,7 @@ function RecruitPosition() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <div
         className={`${styles.main} container`}
         style={{ margin: "90px auto 90px" }}

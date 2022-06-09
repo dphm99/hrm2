@@ -11,6 +11,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import zalo from "../../../assets/img/icon-svg/zalo-logo.jpg";
+import Slogan from "../../../components/Header/Slogan"
 
 function CultureDetail() {
   const blogId = window.location.hash.split("#")[2];
@@ -74,6 +75,7 @@ function CultureDetail() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
+      <Slogan/>
       <div className={`${styles.main} container-lg`}>
         <Breadcrumbs
           breadItem={breadcrumItem}

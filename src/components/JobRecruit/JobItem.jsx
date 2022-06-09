@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
 import formatNumber from "../extensions/formatNumber";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
-import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
-import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
-import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
-import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import kinhdoanh from "../../assets/img/Vacancies/Kinh-doanh.svg";
+import marketing from "../../assets/img/Vacancies/Marketing.svg";
+import nhasanxuat from "../../assets/img/Vacancies/San-xuat.svg";
+import taichinh from "../../assets/img/Vacancies/Tai-chinh.svg";
+import nhansu from "../../assets/img/Vacancies/Nhan-su.svg";
+import congnghe from "../../assets/img/Vacancies/Ban-cong-nghe.svg";
+import nhaphanphoi from "../../assets/img/Vacancies/Nha-phan-phoi.svg";
 import styles from "./JobRecruit.module.css";
+import { RecruitContext } from "../contexts/ContextRecuit";
 
 const jobCategory = [
   {
@@ -68,7 +69,7 @@ function JobItem({
   const [active, setActive] = useState(false);
   // const [disable, setDisable] = useState(false)
   const imgs = jobCategory.find((jobcate) => jobcate.short === cate).img;
-  const [catetory, setCatetory] = useState(false)
+  // const [catetory, setCatetory] = useState(false)
 
   function checkDate(e) {
     var today = new Date();
@@ -86,13 +87,15 @@ function JobItem({
     var today = new Date();
     var start = new Date(e);
     console.log( (today - start)/(1000 * 3600 * 24));
-
     if ( (today - start)/(1000 * 3600 * 24) > 14 ) {
       return false
     } else {
       return true
     }
   }
+
+  const { data } = useContext(RecruitContext);
+  console.log(data);
 
 
   return (
@@ -110,10 +113,12 @@ function JobItem({
         <div className={`${styles.head_item} d-flex align-items-center`}
         >
           {checkToday(start) && <span className={styles.tag}>New</span>}
-
-          <div className={styles.wrapIcon_job}>
+           
+           
+        
+            <div className={styles.wrapIcon_job}>
             <img className={styles.icon_job} src={imgs} alt="/" />
-          </div>
+            </div>
           <div className="overflow-hidden">
             <h5 className={styles.title_job}>
               {index + 1}. {name}{" "}
@@ -134,10 +139,10 @@ function JobItem({
               {salary && salary[0] === "ltt"
                 ? `Lương thỏa thuận`
                 : salary && salary[0] === "lct"
-                  ? "Lương cạnh tranh"
-                  : `${formatNumber(
-                    salary.split(" - ")[0].slice(0, -4),
-                    0,
+                ? "Lương cạnh tranh"
+                : `${formatNumber(
+                  salary.split(" - ")[0].slice(0, -4),
+                  0,
                     ",",
                     "."
                   )} - ${formatNumber(
@@ -164,7 +169,7 @@ function JobItem({
             >
               Ngày hết hạn  {formatDate(end, "-", "/")}
             </p>
-            <div className={`${styles.containApply}`}>
+              <div className={`${styles.containApply}`}>
               {checkDate(end) ?
                 <Link
 
@@ -174,6 +179,7 @@ function JobItem({
                     search: `#${index}#${id}`,
                   }}
                 >
+
                   Ứng tuyển ngay
                 </Link>
                 :

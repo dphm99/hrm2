@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import styles from "./JobBox.module.css";
-import kinhdoanh from "../../assets/img/Job-Icon-svg/1kinhdoanh.svg";
-import marketing from "../../assets/img/Job-Icon-svg/2marketing.svg";
-import nhasanxuat from "../../assets/img/Job-Icon-svg/3nhasanxuat.svg";
-import taichinh from "../../assets/img/Job-Icon-svg/4taichinh.svg";
-import nhansu from "../../assets/img/Job-Icon-svg/5nhansu.svg";
-import congnghe from "../../assets/img/Job-Icon-svg/6congnghe.svg";
-import nhaphanphoi from "../../assets/img/Job-Icon-svg/7nhaphanphoi.svg";
+import kinhdoanh from "../../assets/img/Vacancies/Kinh-doanh.svg";
+import marketing from "../../assets/img/Vacancies/Marketing.svg";
+import nhasanxuat from "../../assets/img/Vacancies/San-xuat.svg";
+import taichinh from "../../assets/img/Vacancies/Tai-chinh.svg";
+import nhansu from "../../assets/img/Vacancies/Nhan-su.svg";
+import congnghe from "../../assets/img/Vacancies/Ban-cong-nghe.svg";
+import nhaphanphoi from "../../assets/img/Vacancies/Nha-phan-phoi.svg";
+
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";

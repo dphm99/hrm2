@@ -101,7 +101,7 @@ function Header() {
                     ĐỊNH HƯỚNG NGHỀ NGHIỆP
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="http://daotao.diligo.vn"
                     target="_blank"
@@ -110,7 +110,7 @@ function Header() {
                   >
                     ĐÀO TẠO
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/tro-giup">TRỢ GIÚP</NavLink>
                 </li>

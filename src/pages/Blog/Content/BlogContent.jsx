@@ -11,11 +11,13 @@ import { Helmet } from "react-helmet";
 
 export default function BlogContent() {
   const { data } = useContext(BlogContext);
+
   const [showAlert, setShowAlert] = useState({
     show: false,
     name: "",
     iframe: "",
   });
+
   const [active, setActive] = useState("Mới nhất");
   const [moreBlogs, setMoreBlogs] = useState(4);
   const breadcrumItem = [
