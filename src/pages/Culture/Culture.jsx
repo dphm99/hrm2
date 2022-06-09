@@ -10,8 +10,8 @@ import CardVideo from "../../components/CardVideo/CardVideo";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Header2 from "../../components/Header/Header2";
-import Slides from "../../components/Slider/Slider"
 import { Helmet } from "react-helmet";
+import Slider2 from "../../components/Slider/Slider2";
 
 export default function Culture() {
   const { data } = useContext(BlogContext);
@@ -69,7 +69,7 @@ export default function Culture() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
-      <Slides/>
+      <Slider2/>
       <div className={`${styles.main}`}>
         <Breadcrumbs breadItem={breadcrumItem} />
 

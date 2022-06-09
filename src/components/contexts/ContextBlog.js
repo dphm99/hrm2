@@ -1,10 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
+import axios from 'axios'
 const BlogContext = createContext();
 function BlogProvider({ children }) {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState("");
   useEffect(() => {
-    fetch("http://hrm.diligo.vn/api/v1/blog")
+    axios.get("http://hrm.diligo.vn/api/v1/blog")
       .then((result) => result.json())
       .then((data) => {
         setData(data.data);
