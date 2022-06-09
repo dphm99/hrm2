@@ -11,9 +11,11 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { FacebookShareButton, LinkedinShareButton } from "react-share";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import zalo from "../../../assets/img/icon-svg/zalo-logo.jpg";
-import Slogan from "../../../components/Header/Slogan"
+import Slogan from "../../../components/Header/Slogan";
+import axios from "axios";
 
 function CultureDetail() {
+  const [dataBlog, setDataBlog] = useState([]);
   const blogId = window.location.hash.split("#")[2];
   const { data } = useContext(BlogContext);
   const currentURL = window.location.href;
@@ -42,6 +44,12 @@ function CultureDetail() {
   const [copied, setCopied] = useState(false);
   const [header, setHeader] = useState(true);
   useEffect(() => {
+    axios
+      .get(`http://hrm.diligo.vn/api/v1/blog-by-id?blog_id=${blogId}`)
+      .then((res) => {
+        console.log(res);
+        setDataBlog(res);
+      });
     if (window.innerWidth <= 768) {
       setHeader(false);
     } else {
@@ -75,7 +83,7 @@ function CultureDetail() {
       </Helmet>
       {!header && <Header />}
       {header && <Header2 />}
-      <Slogan/>
+      <Slogan />
       <div className={`${styles.main} container-lg`}>
         <Breadcrumbs
           breadItem={breadcrumItem}

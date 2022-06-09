@@ -91,6 +91,12 @@ function JobRecruits() {
             dateB = new Date(b.deadline);
           return dateA - dateB;
         });
+      case 3:
+        return this.sort(function (a, b) {
+          var statusA = new Date(a.status),
+            statusB = new Date(b.status);
+          return statusA - statusB;
+        });
       default:
         console.log("");
     }
@@ -182,7 +188,7 @@ function JobRecruits() {
               industry={uniqueArray(industry)}
             />
           </div>
-             
+
           <div className={`${styles.col_wrap} col-lg-8 col-md-12`}>
             <div className={`${styles.wrapListJob}`}>
               <div className={styles.head_listJob}>
@@ -221,7 +227,6 @@ function JobRecruits() {
                   <div
                     className={`${styles.wrap_selectSort} d-flex align-items-center`}
                   >
-                    
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
                     <div
                       className={`${styles.selectSort}`}
@@ -258,6 +263,8 @@ function JobRecruits() {
                           />
                           <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
                         </svg>
+                      ) : sort === 2 ? (
+                        <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
                       ) : (
                         <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
                       )}
@@ -269,8 +276,6 @@ function JobRecruits() {
                         [styles.show]: show,
                       })}
                     >
-                    
-
                       <div
                         className={`${styles.optionsItem}`}
                         onClick={() => {
@@ -337,7 +342,6 @@ function JobRecruits() {
                 </div>
               </div>
               <div className={styles.listJob_item}>
-              
                 {data
                   .filter((e) => (!jobIndex ? e : e.category === jobIndex))
                   .filter((e) => (!major ? e : e.industry === major))
@@ -357,8 +361,7 @@ function JobRecruits() {
                   )
                   .sortAlpha()
                   .map((job, index) => (
-                    <div className={styles.JobLink_item} key={index} 
-                    >
+                    <div className={styles.JobLink_item} key={index}>
                       <JobItem
                         id={job.id}
                         key={index}
@@ -370,12 +373,13 @@ function JobRecruits() {
                         end={job.deadline}
                         number={job.number}
                         cate={job.category}
-                        />
-                       
-                     {job.status } {
-                       job.status === true ?  <span className={styles.tag1}>Hot</span>
-                       :  ""
-                      }
+                      />
+                      {job.status}{" "}
+                      {job.status === true ? (
+                        <span className={styles.tag1}>Hot</span>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   ))}
               </div>
