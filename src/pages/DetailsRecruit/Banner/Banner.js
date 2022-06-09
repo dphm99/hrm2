@@ -131,7 +131,8 @@ const Banner = () => {
             `${data.find((ele) => ele.id === Number(jobId)).name}`
           }
         />
-        <meta property="og:image" content={longBanner} />
+        <meta property="og:url" content={currentURL} />
+        <meta property="og:image" content={`${longBanner}`} />
         <meta
           property="og:title"
           content={
