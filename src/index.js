@@ -23,6 +23,7 @@ import Research from "../src/pages/Research/Research";
 import ApplySuccess from "../src/pages/ApplySuccess/ApplySuccess";
 import { TestProvider } from "./components/contexts/ContextTest";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
+import Loadings from "./components/Loadings/Loadings";
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const JobList = lazy(() => import("./pages/JobList/JobList"));
 
@@ -30,34 +31,34 @@ const rootElement = createRoot(document.getElementById("root"));
 rootElement.render(
   <BrowserRouter>
     <RecruitProvider>
-      <TestProvider>
-        <BlogProvider>
-          <Suspense fallback={<Loading />}>
-            <Switch>
-              <Route exact path="/" component={App} />
-              <Route exact path="/tuyen-dung/:name" component={DetailsRecuit} />
-              {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
-              <Route path="/tuyen-dung" component={JobList} />
-              <Route exact path="/dinh-huong-nghe-nghiep" component={Blog} />
-              <Route
-                path="/dinh-huong-nghe-nghiep/:name"
-                component={BlogDetail}
-              />
-              <Route exact path="/van-hoa" component={Culture} />
-              <Route path="/van-hoa/:name" component={CultureDetail} />
-              <Route path="/ung-tuyen/:name" component={FormRecruit} />
-              <Route exact path="/ung-tuyen/" component={FormRecruit} />
-              <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
-              <Route path="/tro-giup" component={Index} />
-              <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
-              <Route path="/tra-cuu" component={Research} />
-              <Route path="/ung-tuyen-thanh-cong" component={ApplySuccess} />
-              <Route path="/*" component={PageNotFound} />
-            </Switch>
-          </Suspense>
-          <ScrollToTop />
-        </BlogProvider>
-      </TestProvider>
+      <BlogProvider>
+        <Suspense fallback={<Loadings />}>
+          <Switch>
+            <Route exact path="/" component={App} />
+            <Route exact path="/tuyen-dung/:name" component={DetailsRecuit} />
+            {/* <Route exact path="/tuyen-dung" component={Recruit} /> */}
+            <Route path="/tuyen-dung" component={JobList} />
+            <Route exact path="/dinh-huong-nghe-nghiep" component={Blog} />
+            <Route
+              path="/dinh-huong-nghe-nghiep/:name"
+              component={BlogDetail}
+            />
+            <Route exact path="/van-hoa" component={Culture} />
+            <Route path="/van-hoa/:name" component={CultureDetail} />
+            <Route path="/ung-tuyen/:name" component={FormRecruit} />
+            <Route exact path="/ung-tuyen/" component={FormRecruit} />
+            <Route path="/ung-tuyen-nang-luc" component={RecruitPosition} />
+            <Route path="/tro-giup" component={Index} />
+            <Route path="/quy-trinh-tuyen-dung" component={FlowHiring} />
+            <Route path="/tra-cuu" component={Research} />
+            <Route path="/ung-tuyen-thanh-cong" component={ApplySuccess} />
+            <Route path="/*" component={PageNotFound} />
+          </Switch>
+        </Suspense>
+        <ScrollToTop />
+        <ScrollButton />
+      </BlogProvider>
+
     </RecruitProvider>
   </BrowserRouter>
 );
