@@ -131,9 +131,13 @@ const Banner = () => {
             `${data.find((ele) => ele.id === Number(jobId)).name}`
           }
         />
+        <meta property="og:image" content={longBanner} />
         <meta
-          name="og:image"
-          content={longBanner}
+          property="og:title"
+          content={
+            data.find((ele) => ele.id === Number(jobId)) &&
+            `${data.find((ele) => ele.id === Number(jobId)).name}`
+          }
         />
       </Helmet>
       <div className="container">
@@ -624,9 +628,7 @@ const Banner = () => {
                             <ul>
                               <Link
                                 to={{
-                                  pathname: `/tuyen-dung/${toSlug(
-                                    value.name
-                                  )}`,
+                                  pathname: `/tuyen-dung/${toSlug(value.name)}`,
                                   search: `#${index}#${value.id}`,
                                 }}
                                 className={
