@@ -138,10 +138,10 @@ export default function BlogContent() {
                             <div
                               className={`${styles.Block_P} mb-auto`}
                               dangerouslySetInnerHTML={{
-                                __html: `${e.content}`,
+                                __html: `${e.description}`,
                               }}
                             ></div>
-                            <div className={styles.Block__link}>
+                            {/* <div className={styles.Block__link}>
                               <p
                                 to={{
                                   pathname: `/dinh-huong-nghe-nghiep/${toSlug(
@@ -154,8 +154,8 @@ export default function BlogContent() {
                                 {e.quiz_ids.name}
                               </p>
 
-                              {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
-                            </div>
+                            </div> */}
+                            {/* <p style={{ color: `#000` }}>- 2.500 lượt xem</p> */}
                           </div>
                         </div>
                       </Link>
@@ -164,7 +164,8 @@ export default function BlogContent() {
                   ) : (
                     <div key={index}>
                       <div
-                      style={{maxHeight: "200px"}}  className={`${styles.wrapper}  row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
+                        style={{ maxHeight: "200px" }}
+                        className={`${styles.wrapper}  row g-0 overflow-hidden flex-md-row mb-4 bg-light h-md-250 position-relative`}
                       >
                         <div
                           className={`${styles.Block_img} d-lg-block col-md-4`}
@@ -173,7 +174,7 @@ export default function BlogContent() {
                             iframe={e.src}
                             title={e.title}
                             image={e.avatar}
-                            content={e.content}
+                            content={e.description}
                             // onClick={() =>
                             //   setShowAlert({
                             //     show: true,
@@ -202,14 +203,13 @@ export default function BlogContent() {
                           <div
                             className={`${styles.BannerBlockflex} col-md-8 d-flex flex-column position-static`}
                           >
-                            
                             <h6 className={`${styles.Block_H6} mb-2`}>
                               <strong>{e.title}</strong>
                             </h6>
                             <p
                               className={`${styles.Block_P} mb-auto`}
                               dangerouslySetInnerHTML={{
-                                __html: `${e.content}`,
+                                __html: `${e.description}`,
                               }}
                             ></p>
                             <div className={styles.Block__link}>
