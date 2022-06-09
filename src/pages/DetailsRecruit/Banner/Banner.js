@@ -133,10 +133,7 @@ const Banner = () => {
         />
         <meta
           name="og:image"
-          content={
-            data.find((ele) => ele.id === Number(jobId)) &&
-            `${data.find((ele) => ele.id === Number(jobId)).description}`
-          }
+          content={longBanner}
         />
       </Helmet>
       <div className="container">
