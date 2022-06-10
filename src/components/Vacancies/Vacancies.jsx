@@ -99,12 +99,12 @@ function Vancancies() {
                           <>
                             Từ{" "}
                             {
-                              (vancancies.salary.split(" - ")[0].slice(0, -4) * 23000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                              (vancancies.salary.split(" - ")[0].slice(0, -4) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
                             }{" "}
                             -
                             {" "}
                             {
-                              (vancancies.salary.split(" - ")[1].slice(0, -4) * 23000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                              (vancancies.salary.split(" - ")[1].slice(0, -4) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
                             }{" "}
                             ++VNĐ
 

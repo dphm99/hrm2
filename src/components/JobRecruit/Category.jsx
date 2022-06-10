@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import styles from "./JobRecruit.module.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -6,19 +6,22 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import banner1 from "../../assets/img/Vacancies/banner2.png";
-import { jobCategory } from "./JobRecruit";
+import { jobCategory, timeWork } from "./JobRecruit";
 import { Link } from "react-router-dom";
 
-function Category({ category, address, industry }) {
+function Category({ category, address, industry, timing }) {
   const [job, setJob] = useState(0);
-  const [expanded, setExpanded] = React.useState('');
+  const [expanded, setExpanded] = React.useState("");
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
   return (
     <div className={`${styles.wrapCategory}`}>
-      <Accordion  expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+      <Accordion
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel1")}
+      >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -49,7 +52,10 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion  expanded={expanded === 'panel2'}onChange={handleChange('panel2')} >
+      <Accordion
+        expanded={expanded === "panel2"}
+        onChange={handleChange("panel2")}
+      >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -72,7 +78,10 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion  expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+      <Accordion
+        expanded={expanded === "panel3"}
+        onChange={handleChange("panel3")}
+      >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -98,7 +107,10 @@ function Category({ category, address, industry }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion  expanded={expanded === 'panel4'}onChange={handleChange('panel4')} >
+      <Accordion
+        expanded={expanded === "panel4"}
+        onChange={handleChange("panel4")}
+      >
         <AccordionSummary
           className={styles.ul_listFilter}
           expandIcon={<ExpandMoreIcon />}
@@ -111,11 +123,16 @@ function Category({ category, address, industry }) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.ul_listFilterbot}>
-            <li className={styles.filter_item}>
-              <a href="/" className={styles.filter_text}>
-                kinh doanh
-              </a>
-            </li>
+            {timing.map(
+              (ele, index) =>
+                ele && (
+                  <li className={styles.filter_item} key={index}>
+                    <a href={`?timing=${ele}`} className={styles.filter_text}>
+                      {timeWork.find((e) => e.short === ele).name}
+                    </a>
+                  </li>
+                )
+            )}
           </Typography>
         </AccordionDetails>
       </Accordion>
