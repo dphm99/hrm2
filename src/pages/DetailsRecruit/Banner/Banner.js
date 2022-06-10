@@ -280,7 +280,18 @@ const Banner = () => {
                           }`,
                         }}
                       >
-                        <button className="btn">Ứng tuyển ngay</button>
+                        {data.find((ele) => ele.id === Number(jobId)).state ===
+                        "recruit" ? (
+                          <button className="btn">Ứng tuyển ngay</button>
+                        ) : (
+                          <button
+                            className={`btn btn-secondary ${styles.btnDisable}`}
+                            disabled
+                            aria-disabled="true"
+                          >
+                            Chưa ứng tuyển
+                          </button>
+                        )}
                       </Link>
                     </div>
                     <div className={`${styles.detailsLink}`}>
@@ -605,21 +616,43 @@ const Banner = () => {
 
                 <div className={styles.detailsApplynow}>
                   <div className={styles.detailsApply}>
-                    <Link
-                      to={{
-                        pathname: `/ung-tuyen/${toSlug(
-                          data.find((ele) => ele.id === Number(jobId)) &&
-                            data.find((ele) => ele.id === Number(jobId)).name
-                              .name
-                        )}`,
-                        search: `#${jobIndex}#${
-                          data.find((ele) => ele.id === Number(jobId)) &&
-                          data.find((ele) => ele.id === Number(jobId)).id
-                        }`,
-                      }}
-                    >
-                      GỬI CV, ỨNG TUYỂN NGAY
-                    </Link>
+                    {data.find((ele) => ele.id === Number(jobId)) && data.find((ele) => ele.id === Number(jobId)).state ===
+                    "recruit" ? (
+                      <Link
+                        to={{
+                          pathname: `/ung-tuyen/${toSlug(
+                            data.find((ele) => ele.id === Number(jobId)) &&
+                              data.find((ele) => ele.id === Number(jobId)).name
+                                .name
+                          )}`,
+                          search: `#${jobIndex}#${
+                            data.find((ele) => ele.id === Number(jobId)) &&
+                            data.find((ele) => ele.id === Number(jobId)).id
+                          }`,
+                        }}
+                      >
+                        GỬI CV, ỨNG TUYỂN NGAY
+                      </Link>
+                    ) : (
+                      <Link
+                        
+                        to={{
+                          pathname: `/ung-tuyen/${toSlug(
+                            data.find((ele) => ele.id === Number(jobId)) &&
+                              data.find((ele) => ele.id === Number(jobId)).name
+                                .name
+                          )}`,
+                          search: `#${jobIndex}#${
+                            data.find((ele) => ele.id === Number(jobId)) &&
+                            data.find((ele) => ele.id === Number(jobId)).id
+                          }`,
+                        }}
+                      >
+                        <button className={`${styles.btnDisable}`} disabled aria-disabled="true">
+                          CHƯA ỨNG TUYỂN
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -631,30 +664,34 @@ const Banner = () => {
                       .filter((e) => e.category === currentCategory)
                       .map((value, index) => {
                         return (
-                          <div key={index}>
-                            <ul>
-                              <Link
-                                to={{
-                                  pathname: `/tuyen-dung/${toSlug(value.name)}`,
-                                  search: `#${index}#${value.id}`,
-                                }}
-                                className={
-                                  activelocation === index
-                                    ? `${styles.location} ${styles.activelocation}`
-                                    : `${styles.location}`
-                                }
-                                onClick={() => {
-                                  setActivelocation(index);
-                                  scrollToTop();
-                                }}
-                              >
-                                - {value.name} tại{" "}
-                                <small className={styles.detailsDecoration}>
-                                  {value.address.name}
-                                </small>
-                              </Link>
-                            </ul>
-                          </div>
+                          index < 5 && (
+                            <div key={index}>
+                              <ul>
+                                <Link
+                                  to={{
+                                    pathname: `/tuyen-dung/${toSlug(
+                                      value.name
+                                    )}`,
+                                    search: `#${index}#${value.id}`,
+                                  }}
+                                  className={
+                                    activelocation === index
+                                      ? `${styles.location} ${styles.activelocation}`
+                                      : `${styles.location}`
+                                  }
+                                  onClick={() => {
+                                    setActivelocation(index);
+                                    scrollToTop();
+                                  }}
+                                >
+                                  - {value.name} tại{" "}
+                                  <small className={styles.detailsDecoration}>
+                                    {value.address.name}
+                                  </small>
+                                </Link>
+                              </ul>
+                            </div>
+                          )
                         );
                       })}
                 </div>

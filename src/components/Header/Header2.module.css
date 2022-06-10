@@ -60,6 +60,7 @@
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
+  padding: 10px 0;
 }
 
 .headerMenu a.selected {
