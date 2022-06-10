@@ -13,6 +13,7 @@ function RecruitProvider({ children }) {
       .then((data) => {
         setData(data.data);
       });
+      
     // try {
     //   const response = axios.post(
     //     "http://localhost/web/session/authenticate",
@@ -57,6 +58,7 @@ function RecruitProvider({ children }) {
     //   console.error(error);
     // }
   }, [setData]);
+  console.log(data)
 
   const value = {
     data,

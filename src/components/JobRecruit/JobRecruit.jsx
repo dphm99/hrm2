@@ -82,6 +82,11 @@ function JobRecruits() {
   const [sort, setSort] = useState(0);
   const [show, setShow] = useState(false);
 
+  let status = {
+    true: 1,
+    "": 2,
+  };
+
   useEffect(() => {
     if (jobName) {
       setKeySearch(jobName);
@@ -103,10 +108,8 @@ function JobRecruits() {
           return dateA - dateB;
         });
       case 3:
-        return this.sort(function (a, b) {
-          var statusA = new Date(a.status),
-            statusB = new Date(b.status);
-          return statusA - statusB;
+        return this.sort((a, b) => {
+          return status[a.status] - status[b.status];
         });
       default:
         console.log("");
@@ -247,7 +250,10 @@ function JobRecruits() {
                     <p className={`${styles.sort__text} mb-0`}>Xếp theo:</p>
                     <div
                       className={`${styles.selectSort}`}
-                      onClick={() => setShow(!show)}
+                      onClick={() => {
+                        
+                        setShow(!show);
+                      }}
                     >
                       {sort === 0 ? (
                         <svg
@@ -283,7 +289,7 @@ function JobRecruits() {
                       ) : sort === 2 ? (
                         <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
                       ) : (
-                        <span style={{ fontWeight: 600 }}>Ngày hết hạn</span>
+                        <span style={{ fontWeight: 600 }}>Trạng thái</span>
                       )}
 
                       <ArrowDropDownIcon />
@@ -353,6 +359,20 @@ function JobRecruits() {
                         }
                       >
                         Ngày hết hạn
+                      </div>
+                      <div
+                        className={`${styles.optionsItem}`}
+                        onClick={() => {
+                          setSort(3);
+                          setShow(false);
+                        }}
+                        style={
+                          sort === 3
+                            ? { color: `#bf202e`, fontWeight: 600 }
+                            : { fontWeight: 600 }
+                        }
+                      >
+                        Trạng thái
                       </div>
                     </div>
                   </div>

@@ -240,10 +240,10 @@
   flex-direction: column;
   background-color: #fff;
   z-index: 3;
-  bottom: -116px;
+  bottom: -141px;
   right: 10px;
   transition: 0.3s;
-  opacity: 0;
+  display: none;
 }
 .optionsItem {
   padding: 0 10px;
@@ -254,7 +254,7 @@
   cursor: pointer;
 }
 .show {
-  opacity: 1;
+  display: block;
 }
 
 .wrap_selectSort {
