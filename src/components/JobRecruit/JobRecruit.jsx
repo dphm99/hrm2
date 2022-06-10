@@ -79,7 +79,7 @@ function JobRecruits() {
   const major = new URLSearchParams(search).get("major");
   const time_work = new URLSearchParams(search).get("timing");
   const [check, setCheck] = useState(false);
-  const [sort, setSort] = useState(0);
+  const [sort, setSort] = useState(3);
   const [show, setShow] = useState(false);
 
   let status = {
@@ -251,7 +251,7 @@ function JobRecruits() {
                     <div
                       className={`${styles.selectSort}`}
                       onClick={() => {
-                        
+
                         setShow(!show);
                       }}
                     >
