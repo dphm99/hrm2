@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
@@ -92,7 +92,7 @@ function JobItem({
 
   return (
     <>
-      { (
+      {
         <Link
           to={{
             pathname: `/tuyen-dung/${toSlug(name)}`,
@@ -167,24 +167,28 @@ function JobItem({
                 Ngày hết hạn {formatDate(end, "-", "/")}
               </p>
               <div className={`${styles.containApply}`}>
-                {checkDate(end) ? (
-                  <Link
-                    className={styles.apply_job}
-                    to={{
-                      pathname: `/tuyen-dung/${toSlug(name)}`,
-                      search: `#${index}#${id}`,
-                    }}
-                  >
-                    Ứng tuyển ngay
-                  </Link>
+                {start ? (
+                  checkDate(end) ? (
+                    <Link
+                      className={styles.apply_job}
+                      to={{
+                        pathname: `/tuyen-dung/${toSlug(name)}`,
+                        search: `#${index}#${id}`,
+                      }}
+                    >
+                      Ứng tuyển ngay
+                    </Link>
+                  ) : (
+                    <div className={styles.btnDeadline}>Hết hạn nộp cv</div>
+                  )
                 ) : (
-                  <div className={styles.btnDeadline}>Hết hạn nộp cv</div>
+                  <div className={styles.btnDeadline}>Chưa đăng tuyển</div>
                 )}
               </div>
             </div>
           </div>
         </Link>
-      )}
+      }
     </>
   );
 }

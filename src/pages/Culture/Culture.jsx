@@ -21,7 +21,7 @@ export default function Culture() {
     name: "",
     iframe: "",
   });
-  const [active, setActive] = useState("Văn hóa Diligo");
+  const [active, setActive] = useState("Văn hóa");
   const [moreBlogs, setMoreBlogs] = useState(4);
   const breadcrumItem = [
     {
@@ -32,14 +32,14 @@ export default function Culture() {
 
     {
       href: "/van-hoa",
-      title: "Văn hóa Diligo",
+      title: "Văn hóa",
       isActive: true,
     },
   ];
 
   const New = [
     {
-      title: "Văn hóa Diligo",
+      title: "Văn hóa",
       short: "office",
     },
     {
@@ -47,11 +47,18 @@ export default function Culture() {
       short: "office",
     },
   ];
-  // console.log(
-  //    data.filter(e => {if(e.quiz_ids.filter(tag => tag.name === (active === "Văn hóa Diligo" ? tag.name  : active) ).length > 0) {
-  //      return e
-  //    }})
-  // )
+  console.log(
+    data.filter((e) => {
+      if (
+        e.quiz_ids.filter(
+          (tag) =>
+            tag.name === (active === "Văn hóa Diligo" ? tag.name : active)
+        ).length > 0
+      ) {
+        return e;
+      }
+    })
+  );
 
   const [header, setHeader] = useState(true);
   useEffect(() => {
