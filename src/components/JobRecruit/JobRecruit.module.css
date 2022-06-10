@@ -481,46 +481,46 @@
 
 @-webkit-keyframes my {
   0% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
   50% {
     color: #fff;
   }
   100% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
 }
 @-moz-keyframes my {
   0% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
   50% {
     color: #fff;
   }
   100% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
 }
 @-o-keyframes my {
   0% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
   50% {
     color: #fff;
   }
   100% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
 }
 @keyframes my {
   0% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
   50% {
     color: #fff;
   }
   100% {
-    color: #FFFA4D;
+    color: #fffa4d;
   }
 }
 
@@ -687,7 +687,6 @@
   .apply_job {
     padding: 8px 16px;
   }
-
 }
 
 @media (max-width: 1320px) {
@@ -834,15 +833,21 @@
   .head_col {
     width: 100%;
   }
-  .banner_foot{
+  .banner_foot {
     height: unset;
   }
-  .banner_recruit{
+  .banner_recruit {
     margin: 20px auto;
+  }
+  .JobLink_item {
+    margin: 10px 0 !important;
   }
 }
 
 @media (max-width: 576px) {
+  .customContainer {
+    margin-top: 5rem !important;
+  }
   .checkboxActive {
     transform: translate(-101%, -51%);
   }
@@ -875,6 +880,9 @@
     height: auto;
     margin: 12px 0;
   }
+  .JobLink_item {
+    margin: 10px 0 !important;
+  }
 }
 
 @media (max-width: 425px) {
@@ -884,5 +892,8 @@
 
   .head_recruit {
     margin: 30px -12px !important;
+  }
+  .JobLink_item {
+    margin: 10px 0 !important;
   }
 }

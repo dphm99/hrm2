@@ -210,7 +210,8 @@ ul li {
   }
   .wrapper {
     padding: 0 10px;
-    height: 220px;
+    height: 230px;
+    max-height: 230px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -222,5 +223,8 @@ ul li {
     height: 100px;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
+  }
+  .Block_H6 {
+    min-height: 2rem;
   }
 }

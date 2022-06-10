@@ -1,40 +1,66 @@
 .main {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .detailsCopy {
-    width: 10% !important;
+  width: 10% !important;
 }
-
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 .content img {
-    width: 100%;
-    margin: 1.5rem 0 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0 1.5rem;
 }
 .content h2 {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 .content h3 {
-    margin: 2rem 0 1.5rem;
+  margin: 2rem 0 1.5rem;
 }
 .content {
-    text-align: justify;
+  text-align: justify;
 }
 .RecruitSideBar {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 }
 
 /* -------------------------PC--------------------- */
 @media only screen and (max-width: 1439px) {
-    .main {
-        margin-top: 15
-        0px;
-    }
-    .title {
-        margin: 2rem 0 !important;
-    }
+  .main {
+    margin-top: 15 0px;
+  }
+  .title {
+    margin: 2rem 0 !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .content {
+    padding-top: 1rem !important;
+  }
+  .detailsCopy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30% !important;
+  }
+  .detailsCopy svg {
+    width: 50%;
+  }
+  .detailsCopy button {
+    width: 50%;
+  }
+  .detailsLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .detailsIcon {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }

@@ -95,7 +95,7 @@ function CultureDetail() {
         />
         {dataBlog.find((ele) => ele.id === Number(blogId)) && (
           <>
-            <div className={`row`} style={{ paddingTop: "4rem" }}>
+            <div className={`row ${styles.content}`} style={{ paddingTop: "4rem" }}>
               <div className="col-xl-8 col-lg-8">
                 <h1 className={`${styles.title} `}>
                   {dataBlog.find((ele) => ele.id === Number(blogId)).title}
