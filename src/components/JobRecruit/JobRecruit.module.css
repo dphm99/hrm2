@@ -834,6 +834,12 @@
   .head_col {
     width: 100%;
   }
+  .banner_foot{
+    height: unset;
+  }
+  .banner_recruit{
+    margin: 20px auto;
+  }
 }
 
 @media (max-width: 576px) {
