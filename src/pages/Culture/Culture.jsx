@@ -184,7 +184,7 @@ export default function Culture() {
                               >
                                 <div
                                   style={{ zIndex: "99" }}
-                                  className={`${styles.Block_img} d-lg-block col-md-4`}
+                                  className={`${styles.Block_img} ${styles.Block_video} d-lg-block col-md-4`}
                                 >
                                   <CardVideo
                                     iframe={e.src}

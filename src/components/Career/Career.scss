@@ -4,3 +4,22 @@
     bottom: -5px;
   }
 }
+/* -------------------------mobile & tablets--------------------- */
+@media only screen and (max-width: 1023px) {
+}
+
+/* -------------------------PC--------------------- */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+}
+
+/* -------------------------mobile--------------------- */
+@media only screen and (max-width: 739px) {
+  .career {
+    .slick-arrow.slick-next {
+      right: 0;
+    }
+    .slick-arrow.slick-prev {
+      left: 0;
+    }
+  }
+}

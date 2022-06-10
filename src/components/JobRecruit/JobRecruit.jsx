@@ -57,6 +57,16 @@ export const jobCategory = [
     name: "Nhà phân phối",
   },
 ];
+export const timeWork = [
+  {
+    short: "fulltime",
+    name: "Toàn thời gian",
+  },
+  {
+    short: "part_time",
+    name: "Bán thời gian",
+  },
+];
 
 function JobRecruits() {
   const { keySearch, setKeySearch, data } = useContext(RecruitContext);
@@ -67,6 +77,7 @@ function JobRecruits() {
   const jobName = new URLSearchParams(search).get("q");
   const jobLocation = new URLSearchParams(search).get("city");
   const major = new URLSearchParams(search).get("major");
+  const time_work = new URLSearchParams(search).get("timing");
   const [check, setCheck] = useState(false);
   const [sort, setSort] = useState(0);
   const [show, setShow] = useState(false);
@@ -117,12 +128,14 @@ function JobRecruits() {
   const category = [];
   const address = [];
   const industry = [];
+  const timing = [];
 
   data &&
     data.forEach((job) => {
       category.push(job.category);
       address.push(job.address.name);
       industry.push(job.industry);
+      timing.push(job.time_work);
     });
 
   return (
@@ -186,6 +199,7 @@ function JobRecruits() {
               category={uniqueArray(category)}
               address={uniqueArray(address)}
               industry={uniqueArray(industry)}
+              timing={uniqueArray(timing)}
             />
           </div>
 
@@ -204,6 +218,9 @@ function JobRecruits() {
                             !jobIndex ? e : e.category === jobIndex
                           )
                           .filter((e) => (!major ? e : e.industry === major))
+                          .filter((e) =>
+                            !time_work ? e : e.time_work === time_work
+                          )
                           .filter(
                             (ele) =>
                               ele.address.name
@@ -345,6 +362,7 @@ function JobRecruits() {
                 {data
                   .filter((e) => (!jobIndex ? e : e.category === jobIndex))
                   .filter((e) => (!major ? e : e.industry === major))
+                  .filter((e) => (!time_work ? e : e.time_work === time_work))
                   .filter(
                     (ele) =>
                       ele.address.name

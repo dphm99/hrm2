@@ -177,8 +177,8 @@
     margin: 0 auto;
     padding-right: var(--bs-gutter-x, 0.75rem) !important;
     padding-left: var(--bs-gutter-x, 0.75rem) !important;
-    -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    /* -webkit-animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
+    /* animation: dropDown 1s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
   }
 
   .active.headerMenu li:last-child {
@@ -189,8 +189,8 @@
     background-color: #fff;
     position: fixed;
     left: 0;
-    -webkit-animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    /* -webkit-animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
+    /* animation: dropDown 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
   }
   .menu_show .active {
     right: 0;

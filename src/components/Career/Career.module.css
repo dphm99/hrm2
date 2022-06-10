@@ -142,6 +142,11 @@
   .Career__banner {
     width: 100%;
   }
+  .Career__banner img{
+    object-fit: contain;
+    margin: 0 auto;
+    height: 220px;
+  }
 }
 
 @media only screen and (min-width: 375px) {

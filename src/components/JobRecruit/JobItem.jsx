@@ -74,7 +74,6 @@ function JobItem({
   function checkDate(e) {
     var today = new Date();
     var end = new Date(e);
-    console.log(e);
     if (today > end) {
       return false;
     } else {
@@ -85,7 +84,6 @@ function JobItem({
   function checkToday(e) {
     var today = new Date();
     var start = new Date(e);
-    console.log((today - start) / (1000 * 3600 * 24));
     if ((today - start) / (1000 * 3600 * 24) > 14) {
       return false;
     } else {
@@ -94,7 +92,6 @@ function JobItem({
   }
 
   const { data } = useContext(RecruitContext);
-  console.log(data);
 
   return (
     <>
