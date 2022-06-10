@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
 import { toSlug } from "../extensions/toSlug";
 import { formatDate } from "../extensions/formatDate";
@@ -12,7 +12,6 @@ import nhansu from "../../assets/img/Vacancies/Nhan-su.svg";
 import congnghe from "../../assets/img/Vacancies/Ban-cong-nghe.svg";
 import nhaphanphoi from "../../assets/img/Vacancies/Nha-phan-phoi.svg";
 import styles from "./JobRecruit.module.css";
-import { RecruitContext } from "../contexts/ContextRecuit";
 
 const jobCategory = [
   {
@@ -91,11 +90,9 @@ function JobItem({
     }
   }
 
-  const { data } = useContext(RecruitContext);
-
   return (
     <>
-      {checkDate(end) ? (
+      { (
         <Link
           to={{
             pathname: `/tuyen-dung/${toSlug(name)}`,
@@ -187,8 +184,6 @@ function JobItem({
             </div>
           </div>
         </Link>
-      ) : (
-        <div className={styles.btnDeadline}>Hết hạn nộp cv</div>
       )}
     </>
   );
