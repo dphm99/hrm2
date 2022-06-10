@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-// import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import filesCV from "../../assets/files/CV Diligo Holdings.doc";
-
 import "./RecruitPosition.scss";
 import styles from "./RecruitPosition.module.css";
 import Header2 from "../../components/Header/Header2";
@@ -18,9 +16,6 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header/Header";
 import { Helmet } from "react-helmet";
-
-import { useForm } from "react-hook-form";
-// import { RecruitContext } from "../../components/contexts/ContextRecuit";
 
 const steps = [
   {
@@ -45,32 +40,53 @@ function RecruitPosition() {
   const [checkList, setCheckList] = React.useState({
     gender: "male",
     status: "single",
+    fullname: "",
+    dob: "",
+    email: "",
+    phone: "",
+    city: "",
+    housenumber: "",
+    street: "",
+    district: "",
+    ccid: "",
+    skill: "",
+    level: "Trung học",
+    exp: "under1"
   });
-
   const [fileName, setFileName] = useState("");
 
   const inputFileRef = useRef(null);
 
   const onFileChange = (e) => {
-    /*Selected files data can be collected here.*/
     setFileName(e.target.files[0].name);
   };
   const onBtnClick = () => {
-    /*Collecting node-element and performing click*/
     inputFileRef.current.click();
   };
-  // React.useEffect(() => {
-  //   if(name !== '' && phone !=="" && email!=="") {
-  //     handleLogin()
-  //   }
-  // },[])
-
-  // const { getValues } = useForm({
-  //   mode: "onChange",
-  // });
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const handleNext = () => {
+  const [errors, setErrors] = useState([]);
+  const [errors2, setErrors2] = useState([]);
+
+  const handleNext = (event) => {
+    event.preventDefault();
+    setCheckList({
+      ...checkList,
+      fullAddress: `${checkList.housenumber} ${checkList.street} ${checkList.district} ${checkList.city}`,
+    });
+    const errors = validate();
+    if (errors.length > 0) {
+      setErrors(errors);
+      return;
+    }
+    event.preventDefault();
+
+    const errors2 = validate2();
+    if (errors2.length > 0) {
+      setErrors2(errors2);
+      return;
+    }
+    console.log(checkList);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
@@ -79,7 +95,7 @@ function RecruitPosition() {
   };
 
   const handleDone = () => {
-    setActiveStep(0);
+    console.log("done");
   };
 
   const breadcrumItem = [
@@ -101,6 +117,55 @@ function RecruitPosition() {
     },
   ];
   const [header, setHeader] = useState(true);
+
+  function validate() {
+    const { fullname, dob, phone, ccid, email, skill } = checkList;
+    // we are going to store errors for all fields
+    // in a signle array
+    const errors = [];
+
+    if (fullname.length === "") {
+      errors.push("Tên là bắt buộc");
+    }
+    if (skill.length === "") {
+      errors.push("Kỹ năng chuyên môn là bắt buộc");
+    }
+    if (ccid.length < 5) {
+      errors.push("Tên là bắt buộc");
+    }
+    if (phone.length < 6) {
+      errors.push("Số điện thoại là bắt buộc");
+    }
+    if (email.length === "") {
+      errors.push("Email là bắt buộc");
+    }
+    if (email.split("").filter((x) => x === "@").length !== 1) {
+      errors.push("Email phải bao gồm @");
+    }
+    if (email.indexOf(".") === -1) {
+      errors.push("Email phải có ít nhất một dấu '.'");
+    }
+    if (dob.length < 8) {
+      errors.push("Ngày sinh là bắt buộc");
+    }
+    return errors;
+  }
+  function validate2() {
+    const { skill } = checkList;
+    // we are going to store errors for all fields
+    // in a signle array
+    const errors2 = [];
+    if (skill.length === "") {
+      errors2.push("Kỹ năng chuyên môn là bắt buộc");
+    }
+    return errors2;
+  }
+
+  const handleChange = (event) => {
+    event.persist();
+    setCheckList({ ...checkList, [event.target.name]: event.target.value });
+  };
+
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setHeader(false);
@@ -109,8 +174,7 @@ function RecruitPosition() {
     }
   }, []);
   // register,
-  const { handleSubmit } = useForm({});
-  const onSubmit = handleSubmit((data) => alert(JSON.stringify(data)));
+  const handleSubmit = (data) => alert(JSON.stringify(data));
   return (
     <>
       <Helmet>
@@ -145,7 +209,12 @@ function RecruitPosition() {
                     <Typography>{step.description}</Typography>
                     {index === 0 ? (
                       <>
-                        <form className={`${styles.FormPosition}`} novalidate>
+                        <form className={`${styles.FormPosition}`}>
+                          {errors.map((error) => (
+                            <p className={styles.errors} key={error}>
+                              Lỗi: {error}
+                            </p>
+                          ))}
                           <div className={`${styles.inputRadio} `}>
                             <div className={`${styles.inputRadioSide}`}>
                               <div className={`${styles.inputRadioItemTitle}`}>
@@ -295,17 +364,11 @@ function RecruitPosition() {
                             <input
                               type="text"
                               id="name"
-                              onChange={(e) =>
-                                setCheckList({
-                                  ...checkList,
-                                  fullname: e.target.value,
-                                })
-                              }
+                              name="fullname"
+                              onChange={handleChange}
                               required
+                              value={checkList.fullname}
                             />
-                            <div class="invalid-feedback">
-                              Please provide a valid city.
-                            </div>
                           </div>
                           <div className={styles.inputGroup}>
                             <div className={styles.inputGroupLine}>
@@ -314,15 +377,12 @@ function RecruitPosition() {
                                   Ngày tháng năm sinh <span>*</span>
                                 </label>
                                 <input
+                                  name="dob"
                                   type="date"
                                   id="dob"
                                   required
-                                  onChange={(e) =>
-                                    setCheckList({
-                                      ...checkList,
-                                      dob: e.target.value,
-                                    })
-                                  }
+                                  onChange={handleChange}
+                                  value={checkList.dob}
                                 />
                               </div>
                               <div className={styles.input}>
@@ -330,15 +390,12 @@ function RecruitPosition() {
                                   Số CCCD / CMND <span>*</span>
                                 </label>
                                 <input
+                                  name="ccid"
                                   type="text"
                                   id="ccid"
                                   required
-                                  onChange={(e) =>
-                                    setCheckList({
-                                      ...checkList,
-                                      ccid: e.target.value,
-                                    })
-                                  }
+                                  onChange={handleChange}
+                                  value={checkList.ccid}
                                 />
                               </div>
                             </div>
@@ -348,15 +405,12 @@ function RecruitPosition() {
                                   Số điện thoại <span>*</span>
                                 </label>
                                 <input
+                                  name="phone"
                                   type="number"
                                   id="phone"
                                   required
-                                  onChange={(e) =>
-                                    setCheckList({
-                                      ...checkList,
-                                      phone: e.target.value,
-                                    })
-                                  }
+                                  onChange={handleChange}
+                                  value={checkList.phone}
                                 />
                               </div>
                               <div className={styles.input}>
@@ -364,15 +418,12 @@ function RecruitPosition() {
                                   Email <span>*</span>
                                 </label>
                                 <input
+                                  name="email"
                                   type="text"
                                   id="email"
                                   required
-                                  onChange={(e) =>
-                                    setCheckList({
-                                      ...checkList,
-                                      email: e.target.value,
-                                    })
-                                  }
+                                  onChange={handleChange}
+                                  value={checkList.email}
                                 />
                               </div>
                             </div>
@@ -385,26 +436,20 @@ function RecruitPosition() {
                                   <input
                                     type="text"
                                     id="province"
+                                    name="city"
                                     placeholder="Tỉnh/Thành phố"
-                                    onChange={(e) =>
-                                      setCheckList({
-                                        ...checkList,
-                                        city: e.target.value,
-                                      })
-                                    }
+                                    onChange={handleChange}
+                                    value={checkList.city}
                                   />
                                 </div>
                                 <div className={styles.input}>
                                   <input
                                     type="text"
                                     id="district"
+                                    name="district"
                                     placeholder="Quận/Huyện"
-                                    onChange={(e) =>
-                                      setCheckList({
-                                        ...checkList,
-                                        district: e.target.value,
-                                      })
-                                    }
+                                    onChange={handleChange}
+                                    value={checkList.district}
                                   />
                                 </div>
                               </div>
@@ -413,26 +458,20 @@ function RecruitPosition() {
                                   <input
                                     type="text"
                                     id="street"
+                                    name="street"
                                     placeholder="Phường/ Xã"
-                                    onChange={(e) =>
-                                      setCheckList({
-                                        ...checkList,
-                                        street: e.target.value,
-                                      })
-                                    }
+                                    onChange={handleChange}
+                                    value={checkList.street}
                                   />
                                 </div>
                                 <div className={styles.input}>
                                   <input
                                     type="text"
                                     id="housenumber"
+                                    name="housenumber"
                                     placeholder="Số nhà"
-                                    onChange={(e) =>
-                                      setCheckList({
-                                        ...checkList,
-                                        housenumber: e.target.value,
-                                      })
-                                    }
+                                    onChange={handleChange}
+                                    value={checkList.housenumber}
                                   />
                                 </div>
                               </div>
@@ -441,14 +480,10 @@ function RecruitPosition() {
                                   Link Facebook | KinkedIn | Instagram
                                 </label>
                                 <input
+                                  name=""
                                   type="text"
                                   id="link"
-                                  onChange={(e) =>
-                                    setCheckList({
-                                      ...checkList,
-                                      link: e.target.value,
-                                    })
-                                  }
+                                  onChange={handleChange}
                                 />
                               </div>
                             </div>
@@ -457,6 +492,11 @@ function RecruitPosition() {
                       </>
                     ) : index === 1 ? (
                       <form className={`${styles.FormPosition}`}>
+                        {errors2.map((error) => (
+                          <p className={styles.errors} key={error}>
+                            Lỗi: {error}
+                          </p>
+                        ))}
                         <div className={styles.input}>
                           <label htmlFor="level">
                             Trình độ học vấn <span>*</span>
@@ -466,10 +506,43 @@ function RecruitPosition() {
                             id="level"
                             required
                             style={{ padding: "10px" }}
+                            defaultChecked={checkList.level}
+                            onChange={handleChange}
+                            value={checkList.level}
                           >
-                            <option value="TH">Trung học</option>
-                            <option value="THPT">Trung học phổ thông</option>
-                            <option value="CD/DH">Đại học / Cao đẳng</option>
+                            <option
+                              value="TH"
+                              onClick={() =>
+                                setCheckList({
+                                  ...checkList,
+                                  level: "Trung học",
+                                })
+                              }
+                            >
+                              Trung học
+                            </option>
+                            <option
+                              onClick={() =>
+                                setCheckList({
+                                  ...checkList,
+                                  level: "THPT",
+                                })
+                              }
+                              value="THPT"
+                            >
+                              Trung học phổ thông
+                            </option>
+                            <option
+                              onClick={() =>
+                                setCheckList({
+                                  ...checkList,
+                                  level: "CD/DH",
+                                })
+                              }
+                              value="CD/DH"
+                            >
+                              Đại học / Cao đẳng
+                            </option>
                           </select>
                         </div>
                         <div className={styles.input}>
@@ -481,6 +554,8 @@ function RecruitPosition() {
                             cols="40"
                             rows="5"
                             required
+                            onChange={handleChange}
+                            value={checkList.skill}
                             style={{ height: "200px", padding: "10px" }}
                             placeholder="Kỹ năng chuyên môn chính"
                           ></textarea>
@@ -489,8 +564,10 @@ function RecruitPosition() {
                           <label htmlFor="other">Các kỹ năng khác nếu có</label>
                           <textarea
                             type="option"
-                            id="skill"
+                            name="subskill"
                             required
+                            onChange={handleChange}
+                            value={checkList.subskill}
                             style={{ height: "200px", padding: "10px" }}
                             placeholder="Liệt kê thêm các kỹ năng khác (kỹ năng mềm, kỹ năng chuyên môn,...) nếu có. Việc thông thạo nhiều kỹ năng sẽ giúp hồ sơ của bạn được xem xét và ưu tiên hơn"
                           />
@@ -522,7 +599,7 @@ function RecruitPosition() {
                                     id="under1"
                                     name="radio-exp"
                                     value="under1"
-                                    checked={
+                                    defaultChecked={
                                       checkList.exp === "under1" ? true : false
                                     }
                                     className={styles.inputRadioButton}
@@ -631,7 +708,10 @@ function RecruitPosition() {
                           <input
                             type="text"
                             id="link"
+                            name="oldjob"
+                            value={checkList.oldjob}
                             placeholder="Ghi rõ vị trí cao nhất từng làm"
+                            onChange={handleChange}
                           />
                         </div>
                         <div className={styles.input}>
@@ -641,13 +721,26 @@ function RecruitPosition() {
                           <input
                             type="text"
                             id="link"
+                            name="oldcompany"
+                            value={checkList.oldcompany}
                             placeholder="Tên công ty"
+                            onChange={handleChange}
                           />
-                          <input type="text" id="link" placeholder="Địa chỉ" />
                           <input
                             type="text"
                             id="link"
+                            placeholder="Địa chỉ"
+                            name="oldaddress"
+                            value={checkList.oldaddress}
+                            onChange={handleChange}
+                          />
+                          <input
+                            type="text"
+                            id="link"
+                            value={checkList.oldmajor}
                             placeholder="Ngành nghề, lĩnh vực"
+                            name="oldmajor"
+                            onChange={handleChange}
                           />
                         </div>
                       </form>
@@ -729,7 +822,7 @@ function RecruitPosition() {
                               variant="contained"
                               onClick={handleNext}
                               sx={{ mt: 1, mr: 1 }}
-                              onSubmit={onSubmit}
+                              onSubmit={handleSubmit}
                             >
                               {index === steps.length - 1
                                 ? "Hoàn thành"

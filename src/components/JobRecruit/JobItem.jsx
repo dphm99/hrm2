@@ -182,7 +182,7 @@ function JobItem({
                     <div className={styles.btnDeadline}>Hết hạn nộp cv</div>
                   )
                 ) : (
-                  <div className={styles.btnDeadline}>Chưa đăng tuyển</div>
+                  <div className={styles.btnDeadline}>Hết hạn</div>
                 )}
               </div>
             </div>

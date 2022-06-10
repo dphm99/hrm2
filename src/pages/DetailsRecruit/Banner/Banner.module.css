@@ -561,6 +561,9 @@
 }
 
 @media only screen and (max-width: 425px) {
+  .detailsImage{
+    height: unset;
+  }
   .detailsIcon {
     padding-left: 0px;
   }

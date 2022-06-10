@@ -10,7 +10,14 @@
 .FormPosition span {
   color: red;
 }
-
+.errors:first-child {
+  margin-top: 1rem;
+}
+.errors {
+  color: red;
+  font-style: italic;
+  margin-bottom: 0;
+}
 .inputRadioItem .inputRadioButton:after {
   width: 24px;
   height: 24px;
@@ -154,7 +161,7 @@
   .main {
     margin: 150px auto !important;
   }
-  .desc{
+  .desc {
     width: 100% !important;
   }
 }
