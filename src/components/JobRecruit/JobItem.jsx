@@ -111,7 +111,7 @@ function JobItem({
           }}
         >
           <div className={`${styles.head_item} d-flex align-items-center`}>
-            {checkToday(start) && <span className={styles.tag}>New</span>}
+            {start ?(checkToday(start) && <span className={styles.tag}>New</span>):""}
 
             <div className={styles.wrapIcon_job}>
               <img className={styles.icon_job} src={imgs} alt="/" />
