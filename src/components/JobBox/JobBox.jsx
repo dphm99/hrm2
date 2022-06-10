@@ -70,6 +70,7 @@ function JobBox() {
       </div>
       <div className={styles.jobCategory}>
         <ul className={styles.jobCategoryGroup}>
+          
           {data &&
             jobCategory.map((e, index) => (
               <li

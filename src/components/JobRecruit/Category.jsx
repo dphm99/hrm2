@@ -34,6 +34,19 @@ function Category({ category, address, industry, timing }) {
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <Typography className={styles.ul_listFilterbot}>
+            <li className={styles.filter_item}>
+              <a
+                onClick={() => setJob(-1)}
+                href={`#`}
+                className={
+                  job === -1
+                    ? `${styles.filter_text} ${styles.ftActive}`
+                    : `${styles.filter_text}`
+                }
+              >
+                Tất cả
+              </a>
+            </li>
             {category.map((depar, index) => (
               <li key={index} className={styles.filter_item}>
                 <a
