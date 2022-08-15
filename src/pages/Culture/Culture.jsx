@@ -15,6 +15,7 @@ import Loadings from "../../components/Loadings/Loadings";
 import Slider2 from "../../components/Slider/Slider2";
 
 export default function Culture() {
+  const a = 0;
   const { data } = useContext(BlogContext);
   const [showAlert, setShowAlert] = useState({
     show: false,
@@ -106,15 +107,15 @@ export default function Culture() {
             <div className="row mb-2">
               <div className={`${styles.content} col-lg-8`}>
                 {data &&
-                data.filter((e) => {
-                  return (
-                    e.quiz_ids.filter(
-                      (tag) =>
-                        tag.name ===
-                        (active === "Văn hóa Diligo" ? tag.name : active)
-                    ).length > 0
-                  );
-                }).length > 0 ? (
+                  data.filter((e) => {
+                    return (
+                      e.quiz_ids.filter(
+                        (tag) =>
+                          tag.name ===
+                          (active === "Văn hóa Diligo" ? tag.name : active)
+                      ).length > 0
+                    );
+                  }).length > 0 ? (
                   data
                     .filter((e) => {
                       return (
