@@ -106,7 +106,7 @@ const Banner = () => {
     "https://api-nextcrm.nextcrm.vn/api/public/provinces?search[parent_id]=0";
 
   const uniqueCity = [
-    ...new Set(data && data.map((item) => item.address.name)),
+    ...new Set(data && data.map((item) => item.address?.name)),
   ];
 
   useEffect(() => {
@@ -159,9 +159,9 @@ const Banner = () => {
                           <li> Nơi làm việc: </li>
                           <h6>
                             {data.find((ele) => ele.id === Number(jobId))
-                              .address.name
+                              .address?.name
                               ? data.find((ele) => ele.id === Number(jobId))
-                                  .address.name
+                                .address?.name
                               : "Đang cập nhật"}
                           </h6>
                         </ul>
@@ -171,7 +171,7 @@ const Banner = () => {
                             {data.find((ele) => ele.id === Number(jobId))
                               .department.name
                               ? data.find((ele) => ele.id === Number(jobId))
-                                  .department.name
+                                .department.name
                               : "Đang cập nhật"}
                           </h6>
                         </ul>
@@ -181,7 +181,7 @@ const Banner = () => {
                             {data.find((ele) => ele.id === Number(jobId))
                               .industry
                               ? data.find((ele) => ele.id === Number(jobId))
-                                  .industry
+                                .industry
                               : "Đang cập nhật"}
                           </h6>
                         </ul>
@@ -195,7 +195,7 @@ const Banner = () => {
                             {data.find((ele) => ele.id === Number(jobId)).degree
                               .name
                               ? data.find((ele) => ele.id === Number(jobId))
-                                  .degree.name
+                                .degree.name
                               : "Đang cập nhật"}
                           </h6>
                         </ul>
@@ -206,11 +206,11 @@ const Banner = () => {
                               .salary[0] === "ltt"
                               ? "Lương thỏa thuận"
                               : data.find((ele) => ele.id === Number(jobId))
-                                  .salary &&
+                                .salary &&
                                 data.find((ele) => ele.id === Number(jobId))
                                   .salary[0] === "lct"
-                              ? "Lương cạnh tranh"
-                              : formatNumber(
+                                ? "Lương cạnh tranh"
+                                : formatNumber(
                                   data
                                     .find((ele) => ele.id === Number(jobId))
                                     .salary.split(" - ")[0]
@@ -243,7 +243,7 @@ const Banner = () => {
                               (data.find((ele) => ele.id === Number(jobId))
                                 .number
                                 ? data.find((ele) => ele.id === Number(jobId))
-                                    .number
+                                  .number
                                 : "Đang cập nhật")}
                           </h6>
                         </ul>
@@ -257,11 +257,11 @@ const Banner = () => {
                               "/"
                             )
                               ? formatDate(
-                                  data.find((ele) => ele.id === Number(jobId))
-                                    .deadline,
-                                  "-",
-                                  "/"
-                                )
+                                data.find((ele) => ele.id === Number(jobId))
+                                  .deadline,
+                                "-",
+                                "/"
+                              )
                               : "Đang cập nhật"}
                           </h6>
                         </ul>
@@ -275,13 +275,12 @@ const Banner = () => {
                             data.find((ele) => ele.id === Number(jobId)).name
                               .name
                           )}`,
-                          search: `#${jobIndex}#${
-                            data.find((ele) => ele.id === Number(jobId)).id
-                          }`,
+                          search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)).id
+                            }`,
                         }}
                       >
                         {data.find((ele) => ele.id === Number(jobId)).state ===
-                        "recruit" ? (
+                          "recruit" ? (
                           <button className="btn">Ứng tuyển ngay</button>
                         ) : (
                           <button
@@ -363,7 +362,7 @@ const Banner = () => {
                     </ul>
                   </div>
                 </div>
-                {}
+                { }
                 <div className={styles.welfare}>
                   <h5>Chính sách & Phúc lợi</h5>
                   {data.find((ele) => ele.id === Number(jobId)) ? (
@@ -617,35 +616,33 @@ const Banner = () => {
                 <div className={styles.detailsApplynow}>
                   <div className={styles.detailsApply}>
                     {data.find((ele) => ele.id === Number(jobId)) && data.find((ele) => ele.id === Number(jobId)).state ===
-                    "recruit" ? (
+                      "recruit" ? (
                       <Link
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
                             data.find((ele) => ele.id === Number(jobId)) &&
-                              data.find((ele) => ele.id === Number(jobId)).name
-                                .name
+                            data.find((ele) => ele.id === Number(jobId)).name
+                              .name
                           )}`,
-                          search: `#${jobIndex}#${
-                            data.find((ele) => ele.id === Number(jobId)) &&
+                          search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)) &&
                             data.find((ele) => ele.id === Number(jobId)).id
-                          }`,
+                            }`,
                         }}
                       >
                         GỬI CV, ỨNG TUYỂN NGAY
                       </Link>
                     ) : (
                       <Link
-                        
+
                         to={{
                           pathname: `/ung-tuyen/${toSlug(
                             data.find((ele) => ele.id === Number(jobId)) &&
-                              data.find((ele) => ele.id === Number(jobId)).name
-                                .name
+                            data.find((ele) => ele.id === Number(jobId)).name
+                              .name
                           )}`,
-                          search: `#${jobIndex}#${
-                            data.find((ele) => ele.id === Number(jobId)) &&
+                          search: `#${jobIndex}#${data.find((ele) => ele.id === Number(jobId)) &&
                             data.find((ele) => ele.id === Number(jobId)).id
-                          }`,
+                            }`,
                         }}
                       >
                         <button className={`${styles.btnDisable}`} disabled aria-disabled="true">
@@ -686,7 +683,7 @@ const Banner = () => {
                                 >
                                   - {value.name} tại{" "}
                                   <small className={styles.detailsDecoration}>
-                                    {value.address.name}
+                                    {value.address?.name}
                                   </small>
                                 </Link>
                               </ul>

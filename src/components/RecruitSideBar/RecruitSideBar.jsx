@@ -7,7 +7,7 @@ const RecruitBlog = ({
   end
 }) => {
   const { data } = useContext(RecruitContext);
-console.log(data);
+  console.log(data);
 
   // function checkDate(e) {
   //   if (1=1) {
@@ -50,20 +50,20 @@ console.log(data);
                         fontSize: `18px`,
                       }}
                     >
-                    
+
                       <Link
                         to={{
                           pathname: `/tuyen-dung/${toSlug(e.name)}`,
                           search: `#${index}#${e.id}`,
                         }}
                         className={`${styles.jobName} my-0 col-8`}
-                        style={{display: "flex", justifyContent: "space-between"}}
+                        style={{ display: "flex", justifyContent: "space-between" }}
                       >
-                       
-                       {e.name } {
-                      e.status === true ?  <span className={styles.tag}>Hot</span>
-                      :  ""
-                    }
+
+                        {e.name} {
+                          e.status === true ? <span className={styles.tag}>Hot</span>
+                            : ""
+                        }
                       </Link>
                       <p className={`${styles.deadLine}  col-4`}>
                         {e.deadline.split("-").reverse().join("/")}
@@ -72,7 +72,7 @@ console.log(data);
 
                     <div className={`row d-flex`}>
                       <p className={`${styles.address}  col-8`}>
-                        {e.address.name}
+                        {e.address?.name}
                       </p>
                       <Link
                         key={index}
@@ -81,7 +81,7 @@ console.log(data);
                           search: `#${index}#${e.id}`,
                         }}
                         className={`col-4 ${styles.link}`}
-                        style={{paddingLeft: "22px"}}
+                        style={{ paddingLeft: "22px" }}
                       >
                         ỨNG TUYỂN
                       </Link>

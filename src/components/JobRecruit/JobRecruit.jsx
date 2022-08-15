@@ -136,7 +136,7 @@ function JobRecruits() {
   data &&
     data.forEach((job) => {
       category.push(job.category);
-      address.push(job.address.name);
+      address.push(job.address?.name);
       industry.push(job.industry);
       timing.push(job.time_work);
     });
@@ -226,7 +226,7 @@ function JobRecruits() {
                           )
                           .filter(
                             (ele) =>
-                              ele.address.name
+                              ele.address?.name
                                 .toString()
                                 .toLowerCase()
                                 .indexOf(position.toString().toLowerCase()) !==
@@ -385,7 +385,7 @@ function JobRecruits() {
                   .filter((e) => (!time_work ? e : e.time_work === time_work))
                   .filter(
                     (ele) =>
-                      ele.address.name
+                      ele.address?.name
                         .toString()
                         .toLowerCase()
                         .indexOf(position.toString().toLowerCase()) !== -1
@@ -405,7 +405,7 @@ function JobRecruits() {
                         key={index}
                         index={index}
                         name={job.name}
-                        address={job.address.name}
+                        address={job.address?.name}
                         salary={job.salary}
                         start={job.start}
                         end={job.deadline}

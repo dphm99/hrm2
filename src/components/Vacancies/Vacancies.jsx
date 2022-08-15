@@ -90,7 +90,7 @@ function Vancancies() {
                         {vancancies.name}
                       </h4>
                       <p className={styles.vancancieAddress}>
-                        Tại: {vancancies.address.name}
+                        Tại: {vancancies.address?.name}
                       </p>
                       <p className={styles.vancancieSalary}>
                         {/* {formatNumber(vancancies.minSalary, 0, ",", ".")} -{" "} */}
@@ -99,12 +99,12 @@ function Vancancies() {
                           <>
                             Từ{" "}
                             {
-                              (vancancies.salary.split(" - ")[0].slice(0, -4) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                              (vancancies.salary.split(" - ")[0].slice(0, -4)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
                             }{" "}
                             -
                             {" "}
                             {
-                              (vancancies.salary.split(" - ")[1].slice(0, -4) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                              (vancancies.salary.split(" - ")[1].slice(0, -4)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
                             }{" "}
                             ++VNĐ
 
